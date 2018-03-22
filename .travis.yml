@@ -9,7 +9,7 @@ branches:
     - master
 env:
   global:
-    - GH_REF: github.com/wenshiguo/road-dev.git
+    - GH_REF: github.com/wenshiguo/articles.git
 #sudo: false
 script:
   - bash summary_create.sh
