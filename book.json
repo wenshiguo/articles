@@ -1,6 +1,7 @@
 {
+    "title": "blog",
     "author": "wenshiguo",
-    "description": "",
+    "description": "my notes",
     "extension": null,
     "generator": "site",
     "links": {
@@ -29,9 +30,31 @@
         "toggle-chapters",
         "theme-comscore",
         "splitter",
+        "github",
         "-sharing",
-        "search"
+        "-lunr",
+        "-search",
+        "search-plus",
+        "anchor-navigation-ex-toc@0.0.9",
+        "editlink"
     ],
-    "title": "articles",
-    "variables": {}
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/wenshiguo/articles"
+        },
+        "editlink": {
+            "base": "https://github.com/wenshiguo/articles/blob/master",
+            "label": "编辑本页"
+        },
+        "anchor-navigation-ex-toc": {
+            "showLevel": false,
+            "mode": "float",
+            "float": {
+                "showLevelIcon": false,
+                "level1Icon": "fa fa-hand-o-right",
+                "level2Icon": "fa fa-hand-o-right",
+                "level3Icon": "fa fa-hand-o-right"
+            }
+        }
+    }
 }
