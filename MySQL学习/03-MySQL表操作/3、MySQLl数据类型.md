@@ -620,7 +620,7 @@ length：查看字节数
 char_length:查看字符数
 ```
 
-### <span style="color:red">`1. char填充空格来满足固定长度，但是在查询时却会很不要脸地删除尾部的空格（装作自己好像没有浪费过空间一样），然后修改sql_mode让其现出原形`</span>
+<span style="color:red">`1. char填充空格来满足固定长度，但是在查询时却会很不要脸地删除尾部的空格（装作自己好像没有浪费过空间一样），然后修改sql_mode让其现出原形`</span>
 
 ```sql
 mysql> create table t1(x char(5),y varchar(5));
@@ -682,7 +682,7 @@ row in set (0.00 sec)
 
 [点击查看关于sql_mode的详细介绍](href "")
 
-### **<label style='color:red'>`2. 虽然 CHAR 和 VARCHAR 的存储方式不太相同,但是对于两个字符串的比较,都只比 较其值,忽略 CHAR 值存在的右填充,即使将 SQL _MODE 设置为 PAD_CHAR_TO_FULL_ LENGTH 也一样,,但这不适用于like`</span>**
+**<label style='color:red'>`2. 虽然 CHAR 和 VARCHAR 的存储方式不太相同,但是对于两个字符串的比较,都只比 较其值,忽略 CHAR 值存在的右填充,即使将 SQL _MODE 设置为 PAD_CHAR_TO_FULL_ LENGTH 也一样,,但这不适用于like`</span>**
 
 ```sql
 Values in CHAR and VARCHAR columns are sorted and compared according to the character set collation assigned to the column.
