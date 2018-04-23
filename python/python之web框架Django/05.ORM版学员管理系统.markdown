@@ -1,0 +1,372 @@
+# ORM版学员管理系统
+
+## 班级表
+
+### **表结构**
+
+```python
+class Class(models.Model):
+    id = models.AutoField(primary_key=True)  # 主键
+    cname = models.CharField(max_length=32)  # 班级名称
+    first_day = models.DateField()  # 开班时间
+```
+
+### **查询班级**
+
+URL部分：
+
+`url(r'^class_list/$', views.class_list, name="class_list"),`
+
+视图部分：
+```python
+def class_list(request):
+    class_list = models.Class.objects.all()
+    return render(request, "class_list.html", {"class_list": class_list})
+```
+
+HTML部分：
+
+```html
+<table border="1">
+  {% for class in class_list %}
+    <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ class.id }}</td>
+    <td>{{ class.cname }}</td>
+    <td>{{ class.first_day|date:'Y-m-d' }}</td>
+    </tr>
+  {% endfor %}
+</table>
+```
+
+### 新增班级
+
+URL部分：
+
+`url(r'^add_class/$', views.add_class, name="add_class"),`
+
+视图部分：
+
+```python
+def add_class(request):
+    # 前端POST填好的新班级信息
+    if request.method == "POST":
+        cname = request.POST.get("cname")
+        first_day = request.POST.get("first_day")
+        # 还可以这么获取提交的数据，但不推荐这么写
+        # data = request.POST.dict()
+        # del data["csrfmiddlewaretoken"]
+        # 创建新数据的两种方式
+        # new_class = models.Class(cname=cname, first_day=first_day)
+        # new_class.save()
+        models.Class.objects.create(cname=cname, first_day=first_day)
+        # 跳转到class_list
+        return redirect(reverse('class_list'))
+    # 返回添加班级的页面
+    return render(request, "add_class.html")
+```
+
+HTML部分：
+
+在班级列表页面添加一个a标签：
+```html
+<a href="{% url 'add_class' %}">新页面添加</a>
+```
+
+新添加页面：
+
+注意 `{% csrf_token %}` 和 `date类型`的input标签。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>添加班级</title>
+</head>
+<body>
+<form action="{% url 'add_class' %}" method="post">
+  {% csrf_token %}
+  <p>班级名称：<input type="text" name="cname"></p>
+  <p>开班日期：<input type="date" name="first_day"></p>
+  <p>提交<input type="submit"></p>
+</form>
+</body>
+</html>
+```
+
+### **删除班级**
+
+URL部分：
+
+```python
+url(r'^delete_class/$', views.delete_class, name="delete_class"),
+```
+
+视图部分：
+
+```python
+def delete_class(request):
+    class_id = request.GET.get("class_id")
+    models.Class.objects.filter(id=class_id).delete()
+    return redirect(reverse("class_list"))
+```
+
+HTML部分：
+
+在班级列表页面的表格中添加删除。
+
+```html
+<a href="{% url 'delete_class' %}?class_id={{ class.id }}">删除</a>
+```
+### **编辑班级**
+
+URL部分：
+```python
+url(r'^edit_class/$', views.edit_class, name="edit_class"),
+```
+
+视图部分：
+
+```python
+def edit_class(request):
+    if request.method == "POST":
+        class_id = request.POST.get("id")
+        cname = request.POST.get("cname")
+        first_day = request.POST.get("first_day")
+        models.Class.objects.create(id=class_id, cname=cname, first_day=first_day)
+        return redirect(reverse("class_list"))
+    class_id = request.GET.get("class_id")
+    class_obj = models.Class.objects.filter(id=class_id)
+    if class_obj:
+        class_obj = class_obj[0]
+        return render(request, "edit_class.html", {"class": class_obj})
+    # 找不到该条记录
+    else:
+        return redirect(reverse("class_list"))
+```
+
+HTML部分：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>编辑班级</title>
+</head>
+<body>
+<form action="{% url 'edit_class' %}" method="post">
+  {% csrf_token %}
+  <input type="text" value="{{ class.id }}" style="display: none">
+  <p>班级名称：<input type="text" name="cname" value="{{ class.cname }}"></p>
+  <p>开班日期：<input type="date" name="first_day" value="{{ class.first_day|date:'Y-m-d' }}"></p>
+  <p>提交<input type="submit"></p>
+</form>
+</body>
+</html>
+```
+### **补充**
+
+如果将之前的URL由 `/edit_class/?class_id=n`修改为 `/edit_class/n/` ，视图函数和HTML部分分别应该如何修改？
+
+URL部分：
+```python
+url(r'^edit_class/(\d+)$', views.edit_class, name="edit_class"),
+```
+
+视图部分：
+
+```python
+def edit_class(request, class_id):
+    if request.method == "POST":
+        cname = request.POST.get("cname")
+        first_day = request.POST.get("first_day")
+        models.Class.objects.create(id=class_id, cname=cname, first_day=first_day)
+        return redirect(reverse("class_list"))
+
+    class_obj = models.Class.objects.filter(id=class_id)
+    if class_obj:
+        class_obj = class_obj[0]
+        return render(request, "edit_class.html", {"class": class_obj})
+    # 找不到该条记录
+    else:
+        print("没有该班级")
+        return redirect(reverse("class_list"))
+```
+HTML部分：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>编辑班级</title>
+</head>
+<body>
+<form action="{% url 'edit_class' class.id %}" method="post">
+  {% csrf_token %}
+  <input type="text" value="{{ class.id }}" style="display: none">
+  <p>班级名称：<input type="text" name="cname" value="{{ class.cname }}"></p>
+  <p>开班日期：<input type="date" name="first_day" value="{{ class.first_day|date:'Y-m-d' }}"></p>
+  <p>提交<input type="submit"></p>
+</form>
+</body>
+</html>
+```
+
+单表查询API汇总
+
+```
+<1> all():                 查询所有结果
+ 
+<2> filter(**kwargs):      它包含了与所给筛选条件相匹配的对象
+ 
+<3> get(**kwargs):         返回与所给筛选条件相匹配的对象，返回结果有且只有一个，如果符合筛选条件的对象超过一个或者没有都会抛出错误。
+ 
+<4> exclude(**kwargs):     它包含了与所给筛选条件不匹配的对象
+ 
+<5> values(*field):        返回一个ValueQuerySet——一个特殊的QuerySet，运行后得到的并不是一系列model的实例化对象，而是一个可迭代的字典序列
+ 
+<6> values_list(*field):   它与values()非常相似，它返回的是一个元组序列，values返回的是一个字典序列
+ 
+<7> order_by(*field):      对查询结果排序
+ 
+<8> reverse():             对查询结果反向排序
+ 
+<9> distinct():            从返回结果中剔除重复纪录
+ 
+<10> count():              返回数据库中匹配查询(QuerySet)的对象数量。
+ 
+<11> first():              返回第一条记录
+ 
+<12> last():               返回最后一条记录
+ 
+<13> exists():             如果QuerySet包含数据，就返回True，否则返回False
+```
+
+注意：**一定区分`Object`与`QuerySet`的区别 ！！！**
+
+**`QuerySet`有`update`方法而`Object`默认没有。**
+
+单表查询之神奇的双下划线
+
+```
+models.Tb1.objects.filter(id__lt=10, id__gt=1)   # 获取id大于1 且 小于10的值
+ 
+models.Tb1.objects.filter(id__in=[11, 22, 33])   # 获取id等于11、22、33的数据
+models.Tb1.objects.exclude(id__in=[11, 22, 33])  # not in
+ 
+models.Tb1.objects.filter(name__contains="ven")  # 获取name字段包含"ven"的
+models.Tb1.objects.filter(name__icontains="ven") # icontains大小写不敏感
+ 
+models.Tb1.objects.filter(id__range=[1, 3])      # id范围是1到3的，等价于SQL的bettwen and
+ 
+类似的还有：startswith，istartswith, endswith, iendswith　
+
+date字段还可以：
+models.Class.objects.filter(first_day__year=2017)
+```
+备注：
+
+在Django的日志设置中，配置上一个名为django.db.backends的logger实例即可查看翻译后的SQL语句。
+
+```python
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}
+```
+ Django项目完整版LOGGING配置：
+ 
+```python
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]'
+                      '[%(levelname)s][%(message)s]'
+        },
+        'simple': {
+            'format': '[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d]%(message)s'
+        },
+        'collect': {
+            'format': '%(message)s'
+        }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],  # 只有在Django debug为True时才在屏幕打印日志
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'default': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件，自动切
+            'filename': os.path.join(BASE_LOG_DIR, "xxx_info.log"),  # 日志文件
+            'maxBytes': 1024 * 1024 * 50,  # 日志大小 50M
+            'backupCount': 3,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'error': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件，自动切
+            'filename': os.path.join(BASE_LOG_DIR, "xxx_err.log"),  # 日志文件
+            'maxBytes': 1024 * 1024 * 50,  # 日志大小 50M
+            'backupCount': 5,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'collect': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件，自动切
+            'filename': os.path.join(BASE_LOG_DIR, "xxx_collect.log"),
+            'maxBytes': 1024 * 1024 * 50,  # 日志大小 50M
+            'backupCount': 5,
+            'formatter': 'collect',
+            'encoding': "utf-8"
+        }
+    },
+    'loggers': {
+       # 默认的logger应用如下配置
+        '': {
+            'handlers': ['default', 'console', 'error'],  # 上线之后可以把'console'移除
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        # 名为 'collect'的logger还单独处理
+        'collect': {
+            'handlers': ['console', 'collect'],
+            'level': 'INFO',
+        }
+    },
+}
+
+```
