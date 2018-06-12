@@ -1,0 +1,1430 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3、MySQLl数据类型 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4、完整性约束.html" />
+    
+    
+    <link rel="prev" href="2、MySQL存储引擎.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-初识数据库.html">
+            
+                <a href="../01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-MySQL库操作.html">
+            
+                <a href="../02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="1、MySQL表操作.html">
+            
+                <a href="1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="2、MySQL存储引擎.html">
+            
+                <a href="2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.3" data-path="3、MySQLl数据类型.html">
+            
+                <a href="3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="4、完整性约束.html">
+            
+                <a href="4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="5、多表查询之补充.html">
+            
+                <a href="5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../04-MySQL数据操作/">
+            
+                <a href="../04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Python3连接MySQL.html">
+            
+                <a href="../Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../python/">
+            
+                <a href="../../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../python/Django/01.Django初识.html">
+            
+                <a href="../../python/Django/01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                <a href="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../python/Django/03.HTTP协议.html">
+            
+                <a href="../../python/Django/03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../python/Django/04.Django框架简介.html">
+            
+                <a href="../../python/Django/04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../python/Django/05.Django的视图.html">
+            
+                <a href="../../python/Django/05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../python/Django/06.Django的路由系统.html">
+            
+                <a href="../../python/Django/06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../python/Django/07.Django模板系统.html">
+            
+                <a href="../../python/Django/07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../python/Django/08.Django模型ORM.html">
+            
+                <a href="../../python/Django/08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../python/Django/09.Django路由系统.html">
+            
+                <a href="../../python/Django/09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../python/Django/10.ORM相关操作.html">
+            
+                <a href="../../python/Django/10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../python/Django/111.ORM版学员管理系统.html">
+            
+                <a href="../../python/Django/111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../python/Django/11.Form组件.html">
+            
+                <a href="../../python/Django/11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../python/Django/博客项目点赞与灭操作.html">
+            
+                <a href="../../python/Django/博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../python/Django/博客项目评论.html">
+            
+                <a href="../../python/Django/博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../python/lufei-payment/luffy结算中心.html">
+            
+                <a href="../../python/lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >3、MySQLl数据类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#3&#x3001;mysql&#x6570;&#x636E;&#x7C7B;&#x578B;"><b></b>3&#x3001;MySQL&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x4ECB;&#x7ECD;"><b></b>&#x4E00; &#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x6570;&#x503C;&#x7C7B;&#x578B;"><b></b>&#x4E8C; &#x6570;&#x503C;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;"><b></b>1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;</a></li><li><span class="title-icon "></span><a href="#2&#x3001;&#x6D6E;&#x70B9;&#x578B;"><b></b>2&#x3001;&#x6D6E;&#x70B9;&#x578B;</a></li><li><span class="title-icon "></span><a href="#3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><b></b>3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</a></li></ul><li><span class="title-icon "></span><a href="#&#x56DB;-&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;"><b></b>&#x56DB; &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#3&#x603B;&#x7ED3;"><b></b>3.&#x603B;&#x7ED3;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E94;-&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;"><b></b>&#x4E94; &#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;</a></li></ul></ul></div><a href="#3&#x3001;mysql&#x6570;&#x636E;&#x7C7B;&#x578B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="3&#x3001;mysql&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="3&#x3001;mysql&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#3&#x3001;mysql&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>3&#x3001;MySQL&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#3&#x3001;mysql&#x6570;&#x636E;&#x7C7B;&#x578B;"><b></b>3&#x3001;MySQL&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x4ECB;&#x7ECD;"><b></b>&#x4E00; &#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x6570;&#x503C;&#x7C7B;&#x578B;"><b></b>&#x4E8C; &#x6570;&#x503C;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;"><b></b>1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;</a></li><li><span class="title-icon "></span><a href="#2&#x3001;&#x6D6E;&#x70B9;&#x578B;"><b></b>2&#x3001;&#x6D6E;&#x70B9;&#x578B;</a></li><li><span class="title-icon "></span><a href="#3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><b></b>3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</a></li></ul><li><span class="title-icon "></span><a href="#&#x56DB;-&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;"><b></b>&#x56DB; &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#3&#x603B;&#x7ED3;"><b></b>3.&#x603B;&#x7ED3;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E94;-&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;"><b></b>&#x4E94; &#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;</a></li></ul></ul></div>
+
+<h2 id="&#x4E00;-&#x4ECB;&#x7ECD;"><a name="&#x4E00;-&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#&#x4E00;-&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00; &#x4ECB;&#x7ECD;</h2>
+<p>&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x51B3;&#x5B9A;&#x4E86;&#x8868;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x8868;&#x5185;&#x5B58;&#x653E;&#x7684;&#x6570;&#x636E;&#x4E5F;&#x8981;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6BCF;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x4F46;&#x5BBD;&#x5EA6;&#x662F;&#x53EF;&#x9009;&#x7684;</p>
+<p>&#x8BE6;&#x7EC6;&#x53C2;&#x8003;&#xFF1A;</p>
+<p><a href="http://www.runoob.com/mysql/mysql-data-types.html" target="_blank">http://www.runoob.com/mysql/mysql-data-types.html</a>
+<a href="http://dev.mysql.com/doc/refman/5.7/en/data-type-overview.html" target="_blank">http://dev.mysql.com/doc/refman/5.7/en/data-type-overview.html</a>
+mysql&#x5E38;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6982;&#x89C8;</p>
+<pre><code class="lang-sql">#1. &#x6570;&#x5B57;&#xFF1A;
+    &#x6574;&#x578B;&#xFF1A;tinyinit  int  bigint
+    &#x5C0F;&#x6570;&#xFF1A;
+        float &#xFF1A;&#x5728;&#x4F4D;&#x6570;&#x6BD4;&#x8F83;&#x77ED;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x7CBE;&#x51C6;
+        double &#xFF1A;&#x5728;&#x4F4D;&#x6570;&#x6BD4;&#x8F83;&#x957F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x7CBE;&#x51C6;
+            0.000001230123123123
+            &#x5B58;&#x6210;&#xFF1A;0.000001230000
+
+        decimal&#xFF1A;&#xFF08;&#x5982;&#x679C;&#x7528;&#x5C0F;&#x6570;&#xFF0C;&#x5219;&#x7528;&#x63A8;&#x8350;&#x4F7F;&#x7528;decimal&#xFF09;
+            &#x7CBE;&#x51C6;
+            &#x5185;&#x90E8;&#x539F;&#x7406;&#x662F;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x53BB;&#x5B58;
+
+#2. &#x5B57;&#x7B26;&#x4E32;&#xFF1A;
+    char&#xFF08;10&#xFF09;&#xFF1A;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#xFF0C;&#x6D6A;&#x8D39;&#x7A7A;&#x95F4;&#xFF0C;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x5FEB;
+        root&#x5B58;&#x6210;root000000
+    varchar&#xFF1A;&#x7CBE;&#x51C6;&#xFF0C;&#x8282;&#x7701;&#x7A7A;&#x95F4;&#xFF0C;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x6162;
+
+    sql&#x4F18;&#x5316;&#xFF1A;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#xFF0C;&#x5B9A;&#x957F;&#x7684;&#x7C7B;&#x578B;&#x5F80;&#x524D;&#x653E;&#xFF0C;&#x53D8;&#x957F;&#x7684;&#x5F80;&#x540E;&#x653E;
+                    &#x6BD4;&#x5982;&#x6027;&#x522B;           &#x6BD4;&#x5982;&#x5730;&#x5740;&#x6216;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;
+
+    &gt;255&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x8D85;&#x4E86;&#x5C31;&#x628A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x5B58;&#x653E;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;
+            &#x6BD4;&#x5982;&#x56FE;&#x7247;&#xFF0C;&#x89C6;&#x9891;&#x7B49;&#x627E;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x53EA;&#x5B58;&#x8DEF;&#x5F84;&#x6216;url&#x3002;
+
+
+
+#3. &#x65F6;&#x95F4;&#x7C7B;&#x578B;&#xFF1A;
+    &#x6700;&#x5E38;&#x7528;&#xFF1A;datetime
+
+
+#4. &#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;
+</code></pre>
+<h2 id="&#x4E8C;-&#x6570;&#x503C;&#x7C7B;&#x578B;"><a name="&#x4E8C;-&#x6570;&#x503C;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-&#x6570;&#x503C;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C; &#x6570;&#x503C;&#x7C7B;&#x578B;</h2>
+<h3 id="1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;"><a name="1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1&#x3001;&#x6574;&#x6570;&#x7C7B;&#x578B;</h3>
+<p>&#x6574;&#x6570;&#x7C7B;&#x578B;&#xFF1A;TINYINT SMALLINT MEDIUMINT INT BIGINT</p>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x5B58;&#x50A8;&#x5E74;&#x9F84;&#xFF0C;&#x7B49;&#x7EA7;&#xFF0C;id&#xFF0C;&#x5404;&#x79CD;&#x53F7;&#x7801;&#x7B49;</p>
+<pre><code class="lang-sql">========================================
+        tinyint[(m)] [unsigned] [zerofill]
+
+            &#x5C0F;&#x6574;&#x6570;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x4E00;&#x4E9B;&#x8303;&#x56F4;&#x7684;&#x6574;&#x6570;&#x6570;&#x503C;&#x8303;&#x56F4;&#xFF1A;
+            &#x6709;&#x7B26;&#x53F7;&#xFF1A;
+                -128 &#xFF5E; 127
+            &#x65E0;&#x7B26;&#x53F7;&#xFF1A;
+&#xFF5E; 255
+
+            PS&#xFF1A; MySQL&#x4E2D;&#x65E0;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x4F7F;&#x7528;tinyint(1)&#x6784;&#x9020;&#x3002;
+
+
+
+========================================
+        int[(m)][unsigned][zerofill]
+
+            &#x6574;&#x6570;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x4E00;&#x4E9B;&#x8303;&#x56F4;&#x7684;&#x6574;&#x6570;&#x6570;&#x503C;&#x8303;&#x56F4;&#xFF1A;
+            &#x6709;&#x7B26;&#x53F7;&#xFF1A;
+                    -2147483648 &#xFF5E; 2147483647
+            &#x65E0;&#x7B26;&#x53F7;&#xFF1A;
+&#xFF5E; 4294967295
+
+
+
+========================================
+        bigint[(m)][unsigned][zerofill]
+            &#x5927;&#x6574;&#x6570;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x4E00;&#x4E9B;&#x8303;&#x56F4;&#x7684;&#x6574;&#x6570;&#x6570;&#x503C;&#x8303;&#x56F4;&#xFF1A;
+            &#x6709;&#x7B26;&#x53F7;&#xFF1A;
+                    -9223372036854775808 &#xFF5E; 9223372036854775807
+            &#x65E0;&#x7B26;&#x53F7;&#xFF1A;
+ &#xFF5E;  18446744073709551615
+</code></pre>
+<pre><code class="lang-sql">=========&#x6709;&#x7B26;&#x53F7;&#x548C;&#x65E0;&#x7B26;&#x53F7;tinyint==========
+#tinyint&#x9ED8;&#x8BA4;&#x4E3A;&#x6709;&#x7B26;&#x53F7;
+MariaDB [db1]&gt; create table t1(x tinyint); #&#x9ED8;&#x8BA4;&#x4E3A;&#x6709;&#x7B26;&#x53F7;&#xFF0C;&#x5373;&#x6570;&#x5B57;&#x524D;&#x6709;&#x6B63;&#x8D1F;&#x53F7;
+MariaDB [db1]&gt; desc t1;
+MariaDB [db1]&gt; insert into t1 values
+    -&gt; (-129),
+    -&gt; (-128),
+    -&gt; (127),
+    -&gt; (128);
+MariaDB [db1]&gt; select * from t1;
++------+
+| x    |
++------+
+| -128 | #-129&#x5B58;&#x6210;&#x4E86;-128
+| -128 | #&#x6709;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4E3A;-128
+|  127 | #&#x6709;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5927;&#x503C;127
+|  127 | #128&#x5B58;&#x6210;&#x4E86;127
++------+
+
+
+
+#&#x8BBE;&#x7F6E;&#x65E0;&#x7B26;&#x53F7;tinyint
+MariaDB [db1]&gt; create table t2(x tinyint unsigned);
+MariaDB [db1]&gt; insert into t2 values
+    -&gt; (-1),
+    -&gt; (0),
+    -&gt; (255),
+    -&gt; (256);
+MariaDB [db1]&gt; select * from t2;
++------+
+| x    |
++------+
+|    0 | -1&#x5B58;&#x6210;&#x4E86;0
+|    0 | #&#x65E0;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4E3A;0
+|  255 | #&#x65E0;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5927;&#x503C;&#x4E3A;255
+|  255 | #256&#x5B58;&#x6210;&#x4E86;255
++------+
+
+
+
+============&#x6709;&#x7B26;&#x53F7;&#x548C;&#x65E0;&#x7B26;&#x53F7;int=============
+#int&#x9ED8;&#x8BA4;&#x4E3A;&#x6709;&#x7B26;&#x53F7;
+MariaDB [db1]&gt; create table t3(x int); #&#x9ED8;&#x8BA4;&#x4E3A;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;
+MariaDB [db1]&gt; insert into t3 values
+    -&gt; (-2147483649),
+    -&gt; (-2147483648),
+    -&gt; (2147483647),
+    -&gt; (2147483648);
+MariaDB [db1]&gt; select * from t3;
++-------------+
+| x           |
++-------------+
+| -2147483648 | #-2147483649&#x5B58;&#x6210;&#x4E86;-2147483648
+| -2147483648 | #&#x6709;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4E3A;-2147483648
+|  2147483647 | #&#x6709;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5927;&#x503C;&#x4E3A;2147483647
+|  2147483647 | #2147483648&#x5B58;&#x6210;&#x4E86;2147483647
++-------------+
+
+
+
+#&#x8BBE;&#x7F6E;&#x65E0;&#x7B26;&#x53F7;int
+MariaDB [db1]&gt; create table t4(x int unsigned);
+MariaDB [db1]&gt; insert into t4 values
+    -&gt; (-1),
+    -&gt; (0),
+    -&gt; (4294967295),
+    -&gt; (4294967296);
+MariaDB [db1]&gt; select * from t4;
++------------+
+| x          |
++------------+
+|          0 | #-1&#x5B58;&#x6210;&#x4E86;0
+|          0 | #&#x65E0;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4E3A;0
+| 4294967295 | #&#x65E0;&#x7B26;&#x53F7;&#xFF0C;&#x6700;&#x5927;&#x503C;&#x4E3A;4294967295
+| 4294967295 | #4294967296&#x5B58;&#x6210;&#x4E86;4294967295
++------------+
+
+
+
+
+==============&#x6709;&#x7B26;&#x53F7;&#x548C;&#x65E0;&#x7B26;&#x53F7;bigint=============
+MariaDB [db1]&gt; create table t6(x bigint);
+MariaDB [db1]&gt; insert into t5 values  
+    -&gt; (-9223372036854775809),
+    -&gt; (-9223372036854775808),
+    -&gt; (9223372036854775807),
+    -&gt; (9223372036854775808);
+
+MariaDB [db1]&gt; select * from t5;
++----------------------+
+| x                    |
++----------------------+
+| -9223372036854775808 |
+| -9223372036854775808 |
+|  9223372036854775807 |
+|  9223372036854775807 |
++----------------------+
+
+
+
+MariaDB [db1]&gt; create table t6(x bigint unsigned);
+MariaDB [db1]&gt; insert into t6 values  
+    -&gt; (-1),
+    -&gt; (0),
+    -&gt; (18446744073709551615),
+    -&gt; (18446744073709551616);
+
+MariaDB [db1]&gt; select * from t6;
++----------------------+
+| x                    |
++----------------------+
+|                    0 |
+|                    0 |
+| 18446744073709551615 |
+| 18446744073709551615 |
++----------------------+
+
+
+
+
+======&#x7528;zerofill&#x6D4B;&#x8BD5;&#x6574;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x663E;&#x793A;&#x5BBD;&#x5EA6;=============
+MariaDB [db1]&gt; create table t7(x int(3) zerofill);
+MariaDB [db1]&gt; insert into t7 values
+    -&gt; (1),
+    -&gt; (11),
+    -&gt; (111),
+    -&gt; (1111);
+MariaDB [db1]&gt; select * from t7;
++------+
+| x    |
++------+
+|  001 |
+|  011 |
+|  111 |
+| 1111 | #&#x8D85;&#x8FC7;&#x5BBD;&#x5EA6;&#x9650;&#x5236;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5B58;
++------+
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4E3A;&#x8BE5;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x5BBD;&#x5EA6;&#x65F6;&#xFF0C;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;&#x4E0E;&#x5B58;&#x50A8;&#x8303;&#x56F4;&#x65E0;&#x5173;&#xFF0C;&#x5B58;&#x50A8;&#x8303;&#x56F4;&#x5982;&#x4E0B;</p>
+<p>&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x6CA1;&#x5FC5;&#x8981;&#x4E3A;&#x6574;&#x6570;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</p>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x6700;&#x5927;&#x503C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;1</p>
+<p>int&#x7684;&#x5B58;&#x50A8;&#x5BBD;&#x5EA6;&#x662F;4&#x4E2A;Bytes&#xFF0C;&#x5373;32&#x4E2A;bit&#xFF0C;&#x5373;2**32</p>
+<p>&#x65E0;&#x7B26;&#x53F7;&#x6700;&#x5927;&#x503C;&#x4E3A;&#xFF1A;4294967296-1</p>
+<p>&#x6709;&#x7B26;&#x53F7;&#x6700;&#x5927;&#x503C;&#xFF1A;2147483648-1</p>
+<p>&#x6709;&#x7B26;&#x53F7;&#x548C;&#x65E0;&#x7B26;&#x53F7;&#x7684;&#x6700;&#x5927;&#x6570;&#x5B57;&#x9700;&#x8981;&#x7684;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#x5747;&#x4E3A;10&#xFF0C;&#x800C;&#x9488;&#x5BF9;&#x6709;&#x7B26;&#x53F7;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x5219;&#x9700;&#x8981;11&#x4F4D;&#x624D;&#x80FD;&#x663E;&#x793A;&#x5B8C;&#x5168;&#xFF0C;&#x6240;&#x4EE5;int&#x7C7B;&#x578B;&#x9ED8;&#x8BA4;&#x7684;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#x4E3A;11&#x662F;&#x975E;&#x5E38;&#x5408;&#x7406;&#x7684;</p>
+<p>&#x6700;&#x540E;&#xFF1A;&#x6574;&#x5F62;&#x7C7B;&#x578B;&#xFF0C;&#x5176;&#x5B9E;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x6307;&#x5B9A;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x5C31;ok</p>
+<h3 id="2&#x3001;&#x6D6E;&#x70B9;&#x578B;"><a name="2&#x3001;&#x6D6E;&#x70B9;&#x578B;" class="anchor-navigation-ex-anchor" href="#2&#x3001;&#x6D6E;&#x70B9;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x6D6E;&#x70B9;&#x578B;</h3>
+<p>&#x5B9A;&#x70B9;&#x6570;&#x7C7B;&#x578B;  DEC&#x7B49;&#x540C;&#x4E8E;DECIMAL&#x3000;&#x3000;</p>
+<p>&#x6D6E;&#x70B9;&#x7C7B;&#x578B;&#xFF1A;FLOAT DOUBLE</p>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x5B58;&#x50A8;&#x85AA;&#x8D44;&#x3001;&#x8EAB;&#x9AD8;&#x3001;&#x4F53;&#x91CD;&#x3001;&#x4F53;&#x8D28;&#x53C2;&#x6570;&#x7B49;</p>
+<pre><code class="lang-sql">======================================
+#FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]
+
+&#x5B9A;&#x4E49;&#xFF1A;
+        &#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#xFF08;&#x975E;&#x51C6;&#x786E;&#x5C0F;&#x6570;&#x503C;&#xFF09;&#xFF0C;m&#x662F;&#x6570;&#x5B57;&#x603B;&#x4E2A;&#x6570;&#xFF0C;d&#x662F;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x4E2A;&#x6570;&#x3002;m&#x6700;&#x5927;&#x503C;&#x4E3A;255&#xFF0C;d&#x6700;&#x5927;&#x503C;&#x4E3A;30
+
+&#x6709;&#x7B26;&#x53F7;&#xFF1A;
+           -3.402823466E+38 to -1.175494351E-38,
+           1.175494351E-38 to 3.402823466E+38
+&#x65E0;&#x7B26;&#x53F7;&#xFF1A;
+           1.175494351E-38 to 3.402823466E+38
+
+
+&#x7CBE;&#x786E;&#x5EA6;&#xFF1A; 
+           **** &#x968F;&#x7740;&#x5C0F;&#x6570;&#x7684;&#x589E;&#x591A;&#xFF0C;&#x7CBE;&#x5EA6;&#x53D8;&#x5F97;&#x4E0D;&#x51C6;&#x786E; ****
+
+
+======================================
+#DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]
+
+&#x5B9A;&#x4E49;&#xFF1A;
+           &#x53CC;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#xFF08;&#x975E;&#x51C6;&#x786E;&#x5C0F;&#x6570;&#x503C;&#xFF09;&#xFF0C;m&#x662F;&#x6570;&#x5B57;&#x603B;&#x4E2A;&#x6570;&#xFF0C;d&#x662F;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x4E2A;&#x6570;&#x3002;m&#x6700;&#x5927;&#x503C;&#x4E3A;255&#xFF0C;d&#x6700;&#x5927;&#x503C;&#x4E3A;30
+
+&#x6709;&#x7B26;&#x53F7;&#xFF1A;
+           -1.7976931348623157E+308 to -2.2250738585072014E-308
+           2.2250738585072014E-308 to 1.7976931348623157E+308
+
+&#x65E0;&#x7B26;&#x53F7;&#xFF1A;
+           2.2250738585072014E-308 to 1.7976931348623157E+308
+
+&#x7CBE;&#x786E;&#x5EA6;&#xFF1A;
+           ****&#x968F;&#x7740;&#x5C0F;&#x6570;&#x7684;&#x589E;&#x591A;&#xFF0C;&#x7CBE;&#x5EA6;&#x6BD4;float&#x8981;&#x9AD8;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x53D8;&#x5F97;&#x4E0D;&#x51C6;&#x786E; ****
+
+======================================
+decimal[(m[,d])] [unsigned] [zerofill]
+
+&#x5B9A;&#x4E49;&#xFF1A;
+          &#x51C6;&#x786E;&#x7684;&#x5C0F;&#x6570;&#x503C;&#xFF0C;m&#x662F;&#x6570;&#x5B57;&#x603B;&#x4E2A;&#x6570;&#xFF08;&#x8D1F;&#x53F7;&#x4E0D;&#x7B97;&#xFF09;&#xFF0C;d&#x662F;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x4E2A;&#x6570;&#x3002; m&#x6700;&#x5927;&#x503C;&#x4E3A;65&#xFF0C;d&#x6700;&#x5927;&#x503C;&#x4E3A;30&#x3002;
+
+
+&#x7CBE;&#x786E;&#x5EA6;&#xFF1A;
+           **** &#x968F;&#x7740;&#x5C0F;&#x6570;&#x7684;&#x589E;&#x591A;&#xFF0C;&#x7CBE;&#x5EA6;&#x59CB;&#x7EC8;&#x51C6;&#x786E; ****
+           &#x5BF9;&#x4E8E;&#x7CBE;&#x786E;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65F6;&#x9700;&#x8981;&#x7528;&#x6B64;&#x7C7B;&#x578B;
+           decaimal&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x7CBE;&#x786E;&#x503C;&#x7684;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x5176;&#x5185;&#x90E8;&#x6309;&#x7167;&#x5B57;&#x7B26;&#x4E32;&#x5B58;&#x50A8;&#x3002;
+</code></pre>
+<pre><code class="lang-sql">mysql&gt; create table t1(x float(256,31));
+ERROR 1425 (42000): Too big scale 31 specified for column &apos;x&apos;. Maximum is 30.
+mysql&gt; create table t1(x float(256,30));
+ERROR 1439 (42000): Display width out of range for column &apos;x&apos; (max = 255)
+mysql&gt; create table t1(x float(255,30)); #&#x5EFA;&#x8868;&#x6210;&#x529F;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; create table t2(x double(255,30)); #&#x5EFA;&#x8868;&#x6210;&#x529F;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; create table t3(x decimal(66,31));
+ERROR 1425 (42000): Too big scale 31 specified for column &apos;x&apos;. Maximum is 30.
+mysql&gt; create table t3(x decimal(66,30));
+ERROR 1426 (42000): Too-big precision 66 specified for &apos;x&apos;. Maximum is 65.
+mysql&gt; create table t3(x decimal(65,30)); #&#x5EFA;&#x8868;&#x6210;&#x529F;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| t1            |
+| t2            |
+| t3            |
++---------------+
+rows in set (0.00 sec)
+
+
+
+mysql&gt; insert into t1 values(1.1111111111111111111111111111111); #&#x5C0F;&#x6570;&#x70B9;&#x540E;31&#x4E2A;1
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; insert into t2 values(1.1111111111111111111111111111111);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into t3 values(1.1111111111111111111111111111111);
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql&gt; select * from t1; #&#x968F;&#x7740;&#x5C0F;&#x6570;&#x7684;&#x589E;&#x591A;&#xFF0C;&#x7CBE;&#x5EA6;&#x5F00;&#x59CB;&#x4E0D;&#x51C6;&#x786E;
++----------------------------------+
+| x                                |
++----------------------------------+
+| 1.111111164093017600000000000000 |
++----------------------------------+
+row in set (0.00 sec)
+
+mysql&gt; select * from t2; #&#x7CBE;&#x5EA6;&#x6BD4;float&#x8981;&#x51C6;&#x786E;&#x70B9;&#xFF0C;&#x4F46;&#x968F;&#x7740;&#x5C0F;&#x6570;&#x7684;&#x589E;&#x591A;&#xFF0C;&#x540C;&#x6837;&#x53D8;&#x5F97;&#x4E0D;&#x51C6;&#x786E;
++----------------------------------+
+| x                                |
++----------------------------------+
+| 1.111111111111111200000000000000 |
++----------------------------------+
+row in set (0.00 sec)
+
+mysql&gt; select * from t3; #&#x7CBE;&#x5EA6;&#x59CB;&#x7EC8;&#x51C6;&#x786E;,d&#x4E3A;30&#xFF0C;&#x4E8E;&#x662F;&#x53EA;&#x7559;&#x4E86;30&#x4F4D;&#x5C0F;&#x6570;
++----------------------------------+
+| x                                |
++----------------------------------+
+| 1.111111111111111111111111111111 |
++----------------------------------+
+row in set (0.00 sec)
+</code></pre>
+<h3 id="3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><a name="3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;" class="anchor-navigation-ex-anchor" href="#3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>3&#x3001;&#x4F4D;&#x7C7B;&#x578B;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</h3>
+<p>BIT(M)&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B58;&#x653E;&#x591A;&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#xFF0C;M&#x8303;&#x56F4;&#x4ECE;1~64&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5199;&#x9ED8;&#x8BA4;&#x4E3A;1&#x4F4D;&#x3002;
+&#x6CE8;&#x610F;&#xFF1A;&#x5BF9;&#x4E8E;&#x4F4D;&#x5B57;&#x6BB5;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x8BFB;&#x53D6;
+    bin()&#x663E;&#x793A;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;
+    hex()&#x663E;&#x793A;&#x4E3A;&#x5341;&#x516D;&#x8FDB;&#x5236;</p>
+<p>DATE TIME DATETIME TIMESTAMP YEAR </p>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x65F6;&#x95F4;&#xFF0C;&#x6587;&#x7AE0;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF0C;&#x5458;&#x5DE5;&#x5165;&#x804C;&#x65F6;&#x95F4;&#xFF0C;&#x51FA;&#x751F;&#x65F6;&#x95F4;&#xFF0C;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x7B49;</p>
+<pre><code class="lang-sql">        YEAR
+            YYYY&#xFF08;1901/2155&#xFF09;
+
+        DATE
+            YYYY-MM-DD&#xFF08;1000-01-01/9999-12-31&#xFF09;
+
+        TIME
+            HH:MM:SS&#xFF08;&apos;-838:59:59&apos;/&apos;838:59:59&apos;&#xFF09;
+
+        DATETIME
+
+            YYYY-MM-DD HH:MM:SS&#xFF08;1000-01-01 00:00:00/9999-12-31 23:59:59    Y&#xFF09;
+
+        TIMESTAMP
+
+            YYYYMMDD HHMMSS&#xFF08;1970-01-01 00:00:00/2037 &#x5E74;&#x67D0;&#x65F6;&#xFF09;
+</code></pre>
+<pre><code class="lang-sql">============year===========
+MariaDB [db1]&gt; create table t10(born_year year); #&#x65E0;&#x8BBA;year&#x6307;&#x5B9A;&#x4F55;&#x79CD;&#x5BBD;&#x5EA6;&#xFF0C;&#x6700;&#x540E;&#x90FD;&#x9ED8;&#x8BA4;&#x662F;year(4)
+MariaDB [db1]&gt; insert into t10 values  
+    -&gt; (1900),
+    -&gt; (1901),
+    -&gt; (2155),
+    -&gt; (2156);
+MariaDB [db1]&gt; select * from t10;
++-----------+
+| born_year |
++-----------+
+|      0000 |
+|      1901 |
+|      2155 |
+|      0000 |
++-----------+
+
+
+============date,time,datetime===========
+MariaDB [db1]&gt; create table t11(d date,t time,dt datetime);
+MariaDB [db1]&gt; desc t11;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| d     | date     | YES  |     | NULL    |       |
+| t     | time     | YES  |     | NULL    |       |
+| dt    | datetime | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+
+MariaDB [db1]&gt; insert into t11 values(now(),now(),now());
+MariaDB [db1]&gt; select * from t11;
++------------+----------+---------------------+
+| d          | t        | dt                  |
++------------+----------+---------------------+
+| 2017-07-25 | 16:26:54 | 2017-07-25 16:26:54 |
++------------+----------+---------------------+
+
+
+
+============timestamp===========
+MariaDB [db1]&gt; create table t12(time timestamp);
+MariaDB [db1]&gt; insert into t12 values();
+MariaDB [db1]&gt; insert into t12 values(null);
+MariaDB [db1]&gt; select * from t12;
++---------------------+
+| time                |
++---------------------+
+| 2017-07-25 16:29:17 |
+| 2017-07-25 16:30:01 |
++---------------------+
+
+
+
+============&#x6CE8;&#x610F;&#x5566;&#xFF0C;&#x6CE8;&#x610F;&#x5566;&#xFF0C;&#x6CE8;&#x610F;&#x5566;===========
+1. &#x5355;&#x72EC;&#x63D2;&#x5165;&#x65F6;&#x95F4;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6309;&#x7167;&#x5BF9;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#x63D2;&#x5165;
+2. &#x63D2;&#x5165;&#x5E74;&#x4EFD;&#x65F6;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;4&#x4F4D;&#x503C;
+3. &#x63D2;&#x5165;&#x4E24;&#x4F4D;&#x5E74;&#x4EFD;&#x65F6;&#xFF0C;&lt;=69&#xFF0C;&#x4EE5;20&#x5F00;&#x5934;&#xFF0C;&#x6BD4;&#x5982;50,  &#x7ED3;&#x679C;2050      
+                &gt;=70&#xFF0C;&#x4EE5;19&#x5F00;&#x5934;&#xFF0C;&#x6BD4;&#x5982;71&#xFF0C;&#x7ED3;&#x679C;1971
+MariaDB [db1]&gt; create table t12(y year);
+MariaDB [db1]&gt; insert into t12 values  
+    -&gt; (50),
+    -&gt; (71);
+MariaDB [db1]&gt; select * from t12;
++------+
+| y    |
++------+
+| 2050 |
+| 1971 |
++------+
+
+
+
+============&#x7EFC;&#x5408;&#x7EC3;&#x4E60;===========
+MariaDB [db1]&gt; create table student(
+    -&gt; id int,
+    -&gt; name varchar(20),
+    -&gt; born_year year,
+    -&gt; birth date,
+    -&gt; class_time time,
+    -&gt; reg_time datetime);
+
+MariaDB [db1]&gt; insert into student values
+    -&gt; (1,&apos;alex&apos;,&quot;1995&quot;,&quot;1995-11-11&quot;,&quot;11:11:11&quot;,&quot;2017-11-11 11:11:11&quot;),
+    -&gt; (2,&apos;egon&apos;,&quot;1997&quot;,&quot;1997-12-12&quot;,&quot;12:12:12&quot;,&quot;2017-12-12 12:12:12&quot;),
+    -&gt; (3,&apos;wsb&apos;,&quot;1998&quot;,&quot;1998-01-01&quot;,&quot;13:13:13&quot;,&quot;2017-01-01 13:13:13&quot;);
+
+MariaDB [db1]&gt; select * from student;
++------+------+-----------+------------+------------+---------------------+
+| id   | name | born_year | birth      | class_time | reg_time            |
++------+------+-----------+------------+------------+---------------------+
+|    1 | alex |      1995 | 1995-11-11 | 11:11:11   | 2017-11-11 11:11:11 |
+|    2 | egon |      1997 | 1997-12-12 | 12:12:12   | 2017-12-12 12:12:12 |
+|    3 | wsb  |      1998 | 1998-01-01 | 13:13:13   | 2017-01-01 13:13:13 |
++------+------+-----------+------------+------------+---------------------+
+</code></pre>
+<pre><code class="lang-sql">datetime&#x4E0E;timestamp&#x7684;&#x533A;&#x522B;
+&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x7684;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E2D;&#xFF0C;MySQL&#x7684;&#x8FD9;&#x4E24;&#x79CD;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x90FD;&#x80FD;&#x591F;&#x6EE1;&#x8DB3;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5B58;&#x50A8;&#x7CBE;&#x5EA6;&#x90FD;&#x4E3A;&#x79D2;&#xFF0C;&#x4F46;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F1A;&#x5C55;&#x73B0;&#x51FA;&#x4ED6;&#x4EEC;&#x5404;&#x81EA;&#x7684;&#x4F18;&#x52A3;&#x3002;&#x4E0B;&#x9762;&#x5C31;&#x6765;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x4E24;&#x79CD;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x7684;&#x533A;&#x522B;&#x3002;
+
+1.DATETIME&#x7684;&#x65E5;&#x671F;&#x8303;&#x56F4;&#x662F;1001&#x2014;&#x2014;9999&#x5E74;&#xFF0C;TIMESTAMP&#x7684;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x662F;1970&#x2014;&#x2014;2038&#x5E74;&#x3002;
+
+2.DATETIME&#x5B58;&#x50A8;&#x65F6;&#x95F4;&#x4E0E;&#x65F6;&#x533A;&#x65E0;&#x5173;&#xFF0C;TIMESTAMP&#x5B58;&#x50A8;&#x65F6;&#x95F4;&#x4E0E;&#x65F6;&#x533A;&#x6709;&#x5173;&#xFF0C;&#x663E;&#x793A;&#x7684;&#x503C;&#x4E5F;&#x4F9D;&#x8D56;&#x4E8E;&#x65F6;&#x533A;&#x3002;&#x5728;mysql&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4EE5;&#x53CA;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x90FD;&#x6709;&#x65F6;&#x533A;&#x7684;&#x8BBE;&#x7F6E;&#x3002;
+
+3.DATETIME&#x4F7F;&#x7528;8&#x5B57;&#x8282;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;TIMESTAMP&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E3A;4&#x5B57;&#x8282;&#x3002;&#x56E0;&#x6B64;&#xFF0C;TIMESTAMP&#x6BD4;DATETIME&#x7684;&#x7A7A;&#x95F4;&#x5229;&#x7528;&#x7387;&#x66F4;&#x9AD8;&#x3002;
+
+4.DATETIME&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;null&#xFF1B;TIMESTAMP&#x7684;&#x5B57;&#x6BB5;&#x9ED8;&#x8BA4;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF08;not null&#xFF09;,&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF08;CURRENT_TIMESTAMP&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x505A;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF0C;&#x5E76;&#x4E14;<span class="hljs-keyword">update</span>&#x8BED;&#x53E5;&#x4E2D;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8BE5;&#x5217;&#x7684;&#x66F4;&#x65B0;&#x503C;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x66F4;&#x65B0;&#x4E3A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x3002;
+</code></pre>
+<h2 id="&#x56DB;-&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;"><a name="&#x56DB;-&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x56DB;-&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB; &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</h2>
+<pre><code class="lang-sql">#&#x5B98;&#x7F51;&#xFF1A;https://dev.mysql.com/doc/refman/5.7/en/char.html
+#&#x6CE8;&#x610F;&#xFF1A;char&#x548C;varchar&#x62EC;&#x53F7;&#x5185;&#x7684;&#x53C2;&#x6570;&#x6307;&#x7684;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x7684;&#x957F;&#x5EA6;
+
+#char&#x7C7B;&#x578B;&#xFF1A;&#x5B9A;&#x957F;&#xFF0C;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#xFF0C;&#x6D6A;&#x8D39;&#x7A7A;&#x95F4;&#xFF0C;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x5FEB;
+    &#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x8303;&#x56F4;&#xFF1A;0-255&#xFF08;&#x4E00;&#x4E2A;&#x4E2D;&#x6587;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x662F;utf8&#x7F16;&#x7801;&#x7684;3&#x4E2A;&#x5B57;&#x8282;&#xFF09;
+    &#x5B58;&#x50A8;&#xFF1A;
+        &#x5B58;&#x50A8;char&#x7C7B;&#x578B;&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x4F1A;&#x5F80;&#x53F3;&#x586B;&#x5145;&#x7A7A;&#x683C;&#x6765;&#x6EE1;&#x8DB3;&#x957F;&#x5EA6;
+        &#x4F8B;&#x5982;&#xFF1A;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x4E3A;10&#xFF0C;&#x5B58;&gt;10&#x4E2A;&#x5B57;&#x7B26;&#x5219;&#x62A5;&#x9519;&#xFF0C;&#x5B58;&lt;10&#x4E2A;&#x5B57;&#x7B26;&#x5219;&#x7528;&#x7A7A;&#x683C;&#x586B;&#x5145;&#x76F4;&#x5230;&#x51D1;&#x591F;10&#x4E2A;&#x5B57;&#x7B26;&#x5B58;&#x50A8;
+
+    &#x68C0;&#x7D22;&#xFF1A;
+        &#x5728;&#x68C0;&#x7D22;&#x6216;&#x8005;&#x8BF4;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x67E5;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x4F1A;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x5C3E;&#x90E8;&#x7684;&#x7A7A;&#x683C;&#xFF0C;&#x9664;&#x975E;&#x6211;&#x4EEC;&#x6253;&#x5F00;pad_char_to_full_length SQL&#x6A21;&#x5F0F;&#xFF08;SET sql_mode = &apos;PAD_CHAR_TO_FULL_LENGTH&apos;;&#xFF09;
+
+#varchar&#x7C7B;&#x578B;&#xFF1A;&#x53D8;&#x957F;&#xFF0C;&#x7CBE;&#x51C6;&#xFF0C;&#x8282;&#x7701;&#x7A7A;&#x95F4;&#xFF0C;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x6162;
+    &#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x8303;&#x56F4;&#xFF1A;0-65535&#xFF08;&#x5982;&#x679C;&#x5927;&#x4E8E;21845&#x4F1A;&#x63D0;&#x793A;&#x7528;&#x5176;&#x4ED6;&#x7C7B;&#x578B; &#x3002;mysql&#x884C;&#x6700;&#x5927;&#x9650;&#x5236;&#x4E3A;65535&#x5B57;&#x8282;&#xFF0C;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x4E3A;utf-8&#xFF1A;https://dev.mysql.com/doc/refman/5.7/en/column-count-limit.html&#xFF09;
+    &#x5B58;&#x50A8;&#xFF1A;
+        varchar&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x771F;&#x5B9E;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x4F1A;&#x7528;&#x7A7A;&#x683C;&#x586B;&#x5145;&#xFF0C;&#x5982;&#x679C;&apos;ab  &apos;,&#x5C3E;&#x90E8;&#x7684;&#x7A7A;&#x683C;&#x4E5F;&#x4F1A;&#x88AB;&#x5B58;&#x8D77;&#x6765;
+        &#x5F3A;&#x8C03;&#xFF1A;varchar&#x7C7B;&#x578B;&#x4F1A;&#x5728;&#x771F;&#x5B9E;&#x6570;&#x636E;&#x524D;&#x52A0;1-2Bytes&#x7684;&#x524D;&#x7F00;&#xFF0C;&#x8BE5;&#x524D;&#x7F00;&#x7528;&#x6765;&#x8868;&#x793A;&#x771F;&#x5B9E;&#x6570;&#x636E;&#x7684;bytes&#x5B57;&#x8282;&#x6570;&#xFF08;1-2Bytes&#x6700;&#x5927;&#x8868;&#x793A;65535&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6B63;&#x597D;&#x7B26;&#x5408;mysql&#x5BF9;row&#x7684;&#x6700;&#x5927;&#x5B57;&#x8282;&#x9650;&#x5236;&#xFF0C;&#x5373;&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x4F7F;&#x7528;&#xFF09;
+        &#x5982;&#x679C;&#x771F;&#x5B9E;&#x7684;&#x6570;&#x636E;&lt;255bytes&#x5219;&#x9700;&#x8981;1Bytes&#x7684;&#x524D;&#x7F00;&#xFF08;1Bytes=8bit 2**8&#x6700;&#x5927;&#x8868;&#x793A;&#x7684;&#x6570;&#x5B57;&#x4E3A;255&#xFF09;
+        &#x5982;&#x679C;&#x771F;&#x5B9E;&#x7684;&#x6570;&#x636E;&gt;255bytes&#x5219;&#x9700;&#x8981;2Bytes&#x7684;&#x524D;&#x7F00;&#xFF08;2Bytes=16bit 2**16&#x6700;&#x5927;&#x8868;&#x793A;&#x7684;&#x6570;&#x5B57;&#x4E3A;65535&#xFF09;
+
+    &#x68C0;&#x7D22;&#xFF1A;
+        &#x5C3E;&#x90E8;&#x6709;&#x7A7A;&#x683C;&#x4F1A;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;&#xFF0C;&#x5728;&#x68C0;&#x7D22;&#x6216;&#x8005;&#x8BF4;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x6B63;&#x5E38;&#x663E;&#x793A;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x5728;&#x5185;&#x7684;&#x5185;&#x5BB9;
+</code></pre>
+<pre><code class="lang-sql">#&#x5B98;&#x7F51;&#xFF1A;https://dev.mysql.com/doc/refman/5.7/en/char.html
+CHAR &#x548C; VARCHAR &#x662F;&#x6700;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x4E24;&#x79CD;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x3002;
+&#x4E00;&#x822C;&#x6765;&#x8BF4;
+CHAR(N)&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5BF9;&#x4E8E; CHAR &#x7C7B;&#x578B;,N &#x7684;&#x8303;&#x56F4; &#x4E3A; 0 ~ 255
+VARCHAR(N)&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x53D8;&#x957F;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#xFF0C;&#x5BF9;&#x4E8E; VARCHAR &#x7C7B;&#x578B;,N &#x7684;&#x8303;&#x56F4;&#x4E3A; 0 ~ 65 535
+CHAR(N)&#x548C; VARCHAR(N) &#x4E2D;&#x7684; N &#x90FD;&#x4EE3;&#x8868;&#x5B57;&#x7B26;&#x957F;&#x5EA6;,&#x800C;&#x975E;&#x5B57;&#x8282;&#x957F;&#x5EA6;&#x3002;
+ps&#xFF1A;&#x5BF9;&#x4E8E; MySQL 4.1 &#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;,&#x5982; MySQL 3.23 &#x548C; MySQL 4.0,CHAR(N)&#x548C; VARCHAR (N)&#x4E2D;&#x7684; N &#x4EE3;&#x8868;&#x5B57;&#x8282;&#x957F;&#x5EA6;&#x3002;
+
+#CHAR&#x7C7B;&#x578B;
+&#x5BF9;&#x4E8E; CHAR &#x7C7B;&#x578B;&#x7684;&#x5B57;&#x7B26;&#x4E32;,MySQL &#x6570;&#x636E;&#x5E93;&#x4F1A;&#x81EA;&#x52A8;&#x5BF9;&#x5B58;&#x50A8;&#x5217;&#x7684;&#x53F3;&#x8FB9;&#x8FDB;&#x884C;&#x586B;&#x5145;(Right Padded)&#x64CD;&#x4F5C;,&#x76F4;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x8FBE;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x957F;&#x5EA6; N&#x3002;&#x800C;&#x5728;&#x8BFB;&#x53D6;&#x8BE5;&#x5217;&#x65F6;,MySQL &#x6570;&#x636E;&#x5E93;&#x4F1A;&#x81EA;&#x52A8;&#x5C06; &#x586B;&#x5145;&#x7684;&#x5B57;&#x7B26;&#x5220;&#x9664;&#x3002;&#x6709;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x4F8B;&#x5916;,&#x90A3;&#x5C31;&#x662F;&#x663E;&#x5F0F;&#x5730;&#x5C06; SQL_MODE &#x8BBE;&#x7F6E;&#x4E3A; PAD_CHAR_TO_ FULL_LENGTH,&#x4F8B;&#x5982;:
+mysql&gt; CREATE TABLE t ( a CHAR(10));
+      Query OK, 0 rows affected (0.03 sec)
+mysql&gt; INSERT INTO t SELECT &apos;abc&apos;;
+      Query OK, 1 row affected (0.03 sec)
+      Records: 1  Duplicates: 0  Warnings: 0
+mysql&gt; SELECT a,HEX(a),LENGTH(a) FROM t\G;
+      *************************** 1. row ***************************
+              a: abc
+         HEX(a): 616263
+      LENGTH (a): 3
+row in set (0.00 sec)
+      mysql&gt; SET SQL_MODE=&apos;PAD_CHAR_TO_FULL_LENGTH&apos;;
+      Query OK, 0 rows affected (0.00 sec)
+mysql&gt; SELECT a,HEX(a),LENGTH(a) FROM t\G;
+      *************************** 1. row ***************************
+              a: abc
+         HEX(a): 61626320202020202020
+      LENGTH (a): 10
+row in set (0.00 sec)
+</code></pre>
+<pre><code>&#x5728;&#x4E0A;&#x8FF0;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;,&#x5148;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x5F20;&#x8868; t,a &#x5217;&#x7684;&#x7C7B;&#x578B;&#x4E3A; CHAR(10)&#x3002;&#x7136;&#x540E;&#x901A;&#x8FC7; INSERT&#x8BED;&#x53E5;&#x63D2;&#x5165;&#x503C;&#x201C;abc&#x201D;,&#x56E0;&#x4E3A; a &#x5217;&#x7684;&#x7C7B;&#x578B;&#x4E3A; CHAR &#x578B;,&#x6240;&#x4EE5;&#x4F1A;&#x81EA;&#x52A8;&#x5728;&#x540E;&#x9762;&#x586B;&#x5145;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;,&#x4F7F;&#x5176;&#x957F; &#x5EA6;&#x4E3A; 10&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5728;&#x901A;&#x8FC7; SELECT &#x8BED;&#x53E5;&#x53D6;&#x51FA;&#x6570;&#x636E;&#x65F6;&#x4F1A;&#x5C06; a &#x5217;&#x53F3;&#x586B;&#x5145;&#x7684;&#x7A7A;&#x5B57;&#x7B26;&#x79FB;&#x9664;,&#x4ECE;&#x800C;&#x5F97;&#x5230; &#x503C;&#x201C;abc&#x201D;&#x3002;&#x901A;&#x8FC7; LENGTH &#x51FD;&#x6570;&#x770B;&#x5230; a &#x5217;&#x7684;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x4E3A; 3 &#x800C;&#x975E; 10&#x3002;
+&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x5C06; SQL_MODE &#x663E;&#x5F0F;&#x5730;&#x8BBE;&#x7F6E;&#x4E3A; PAD_CHAR_TO_FULL_LENGTH&#x3002;&#x8FD9;&#x65F6;&#x518D;&#x901A;&#x8FC7; SELECT &#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x65F6;,&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x201C;abc &#x201D;,abc &#x53F3;&#x8FB9;&#x6709; 7 &#x4E2A;&#x586B;&#x5145;&#x5B57;&#x7B26; 0x20,&#x5E76;&#x901A; &#x8FC7; HEX &#x51FD;&#x6570;&#x5F97;&#x5230;&#x4E86;&#x9A8C;&#x8BC1;&#x3002;&#x8FD9;&#x6B21; LENGTH &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x957F;&#x5EA6;&#x4E3A; 10&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;,LENGTH &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5B57;&#x8282;&#x957F;&#x5EA6;,&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x3002;&#x5BF9;&#x4E8E;&#x591A;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x96C6;,CHAR(N)&#x957F;&#x5EA6;&#x7684;&#x5217;&#x6700;&#x591A; &#x53EF;&#x5360;&#x7528;&#x7684;&#x5B57;&#x8282;&#x6570;&#x4E3A;&#x8BE5;&#x5B57;&#x7B26;&#x96C6;&#x5355;&#x5B57;&#x7B26;&#x6700;&#x5927;&#x5360;&#x7528;&#x5B57;&#x8282;&#x6570; *N&#x3002;&#x4F8B;&#x5982;,&#x5BF9;&#x4E8E; utf8 &#x4E0B;,CHAR(10)&#x6700; &#x591A;&#x53EF;&#x80FD;&#x5360;&#x7528; 30 &#x4E2A;&#x5B57;&#x8282;&#x3002;&#x901A;&#x8FC7;&#x5BF9;&#x591A;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x7528; CHAR_LENGTH &#x51FD;&#x6570;&#x548C; LENGTH &#x51FD;&#x6570;, &#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x4E24;&#x8005;&#x7684;&#x4E0D;&#x540C;,&#x793A;&#x4F8B;&#x5982;&#x4E0B;:
+</code></pre><pre><code class="lang-sql">mysql&gt; SET NAMES gbk;
+     Query OK, 0 rows affected (0.03 sec)
+mysql&gt; SELECT @a:=&apos;MySQL &#x6280;&#x672F;&#x5185;&#x5E55; &apos;; 
+-- Query OK, 0 rows affected (0.03 sec)
+</code></pre>
+<pre><code class="lang-sql">mysql&gt; SELECT @a,HEX(@a),LENGTH(@a),CHAR_LENGTH(@a)\G; ***************************** 1. row **************************** a: MySQL &#x6280;&#x672F;&#x5185;&#x5E55;
+HEX(a): 4D7953514CBCBCCAF5C4DAC4BB
+LENGTH (a): 13
+CHAR_LENGTH(a): 9
+row in set (0.00 sec)
+</code></pre>
+<pre><code>&#x53D8; &#x91CF; @ a &#x662F; g b k &#x5B57; &#x7B26; &#x96C6; &#x7684; &#x5B57; &#x7B26; &#x4E32; &#x7C7B; &#x578B; , &#x503C; &#x4E3A; &#x201C; M y S Q L &#x6280; &#x672F; &#x5185; &#x5E55; &#x201D;, &#x5341; &#x516D; &#x8FDB; &#x5236; &#x4E3A; 0x4D7953514CBCBCCAF5C4DAC4BB,LENGTH &#x51FD;&#x6570;&#x8FD4;&#x56DE; 13,&#x5373;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x5360;&#x7528; 13 &#x5B57;&#x8282;, &#x56E0;&#x4E3A; gbk &#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#x7684;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x5360;&#x7528;&#x4E24;&#x4E2A;&#x5B57;&#x8282;,&#x56E0;&#x6B64;&#x4E00;&#x5171;&#x5360;&#x7528; 13 &#x5B57;&#x8282;&#x3002;CHAR_LENGTH &#x51FD;&#x6570; &#x8FD4;&#x56DE; 9,&#x5F88;&#x663E;&#x7136;&#x8BE5;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x4E3A; 9&#x3002;
+</code></pre><pre><code>#VARCHAR&#x7C7B;&#x578B;
+VARCHAR &#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x53D8;&#x957F;&#x5B57;&#x6BB5;&#x7684;&#x5B57;&#x7B26;&#x7C7B;&#x578B;,&#x4E0E; CHAR &#x7C7B;&#x578B;&#x4E0D;&#x540C;&#x7684;&#x662F;,&#x5176;&#x5B58;&#x50A8;&#x65F6;&#x9700;&#x8981;&#x5728; &#x524D;&#x7F00;&#x957F;&#x5EA6;&#x5217;&#x8868;&#x52A0;&#x4E0A;&#x5B9E;&#x9645;&#x5B58;&#x50A8;&#x7684;&#x5B57;&#x7B26;,&#x8BE5;&#x5B57;&#x7B26;&#x5360;&#x7528; 1 ~ 2 &#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x5F53;&#x5B58;&#x50A8;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x5C0F; &#x4E8E; 255 &#x5B57;&#x8282;&#x65F6;,&#x5176;&#x9700;&#x8981; 1 &#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;,&#x5F53;&#x5927;&#x4E8E; 255 &#x5B57;&#x8282;&#x65F6;,&#x9700;&#x8981; 2 &#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x6240;&#x4EE5;,&#x5BF9; &#x4E8E;&#x5355;&#x5B57;&#x8282;&#x7684; latin1 &#x6765;&#x8BF4;,CHAR(10)&#x548C; VARCHAR(10)&#x6700;&#x5927;&#x5360;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x662F;&#x4E0D;&#x540C;&#x7684;, CHAR(10)&#x5360;&#x7528; 10 &#x4E2A;&#x5B57;&#x8282;&#x8FD9;&#x662F;&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#x7684;,&#x800C; VARCHAR(10)&#x7684;&#x6700;&#x5927;&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x6570;&#x662F; 11 &#x5B57;&#x8282;,&#x56E0;&#x4E3A;&#x5176;&#x9700;&#x8981; 1 &#x5B57;&#x8282;&#x6765;&#x5B58;&#x653E;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x3002;
+-------------------------------------------------
+&#x6CE8;&#x610F; &#x5BF9;&#x4E8E;&#x6709;&#x4E9B;&#x591A;&#x5B57;&#x8282;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x7C7B;&#x578B;,&#x5176; CHAR &#x548C; VARCHAR &#x5728;&#x5B58;&#x50A8;&#x65B9;&#x6CD5;&#x4E0A;&#x662F;&#x4E00;&#x6837;&#x7684;,&#x540C;&#x6837; &#x9700;&#x8981;&#x4E3A;&#x957F;&#x5EA6;&#x5217;&#x8868;&#x52A0;&#x4E0A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x503C;&#x3002;&#x5BF9;&#x4E8E; GBK &#x548C; UTF-8 &#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x7C7B;&#x578B;,&#x5176;&#x6709;&#x4E9B;&#x5B57;&#x7B26;&#x662F;&#x4EE5; 1 &#x5B57;&#x8282; &#x5B58;&#x653E;&#x7684;,&#x6709;&#x4E9B;&#x5B57;&#x7B26;&#x662F;&#x6309; 2 &#x6216; 3 &#x5B57;&#x8282;&#x5B58;&#x653E;&#x7684;,&#x56E0;&#x6B64;&#x540C;&#x6837;&#x9700;&#x8981; 1 ~ 2 &#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;&#x6765;&#x5B58;&#x50A8;&#x5B57;&#x7B26;&#x7684;&#x957F; &#x5EA6;&#x3002;
+-------------------------------------------------
+&#x867D;&#x7136; CHAR &#x548C; VARCHAR &#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x4E0D;&#x592A;&#x76F8;&#x540C;,&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6BD4;&#x8F83;,&#x90FD;&#x53EA;&#x6BD4; &#x8F83;&#x5176;&#x503C;,&#x5FFD;&#x7565; CHAR &#x503C;&#x5B58;&#x5728;&#x7684;&#x53F3;&#x586B;&#x5145;,&#x5373;&#x4F7F;&#x5C06; SQL _MODE &#x8BBE;&#x7F6E;&#x4E3A; PAD_CHAR_TO_FULL_ LENGTH &#x4E5F;&#x4E00;&#x6837;,&#x4F8B;&#x5982;:
+</code></pre><pre><code class="lang-sql">mysql&gt; CREATE TABLE t ( a CHAR(10), b VARCHAR(10));
+    Query OK, 0 rows affected (0.01 sec)
+mysql&gt; INSERT INTO t SELECT &apos;a&apos;,&apos;a&apos;;
+    Query OK, 1 row affected (0.00 sec)
+    Records: 1  Duplicates: 0  Warnings: 0
+mysql&gt; SELECT a=b FROM t\G;
+    *************************** 1. row ***************************
+    a=b: 1
+row in set (0.00 sec)
+    mysql&gt; SET SQL_MODE=&apos;PAD_CHAR_TO_FULL_LENGTH&apos;;
+    Query OK, 0 rows affected (0.00 sec)
+mysql&gt; SELECT a=b FROM t\G;
+    *************************** 1. row ***************************
+    a=b: 1
+row in set (0.00 sec)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>CHAR(4)</th>
+<th>Storage Required</th>
+<th>VARCHAR(4)</th>
+<th>Storage Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&apos;ab&apos;</td>
+<td>&apos;ab  &apos;</td>
+<td>4 bytes</td>
+<td>&apos;ab&apos;</td>
+<td>3 bytes</td>
+</tr>
+<tr>
+<td>&apos;abcd&apos;</td>
+<td>&apos;abcd&apos;</td>
+<td>4 bytes</td>
+<td>&apos;abcd&apos;</td>
+<td>5 bytes</td>
+</tr>
+<tr>
+<td>&apos;abcdefgh&apos;</td>
+<td>&apos;abcd&apos;</td>
+<td>4 bytes</td>
+<td>&apos;abcd&apos;</td>
+<td>5 bytes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&#x6D4B;&#x8BD5;&#x524D;&#x4E86;&#x89E3;&#x4E24;&#x4E2A;&#x51FD;&#x6570;
+length&#xFF1A;&#x67E5;&#x770B;&#x5B57;&#x8282;&#x6570;
+char_length:&#x67E5;&#x770B;&#x5B57;&#x7B26;&#x6570;
+</code></pre><p><span style="color:red"><code>1. char&#x586B;&#x5145;&#x7A7A;&#x683C;&#x6765;&#x6EE1;&#x8DB3;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x67E5;&#x8BE2;&#x65F6;&#x5374;&#x4F1A;&#x5F88;&#x4E0D;&#x8981;&#x8138;&#x5730;&#x5220;&#x9664;&#x5C3E;&#x90E8;&#x7684;&#x7A7A;&#x683C;&#xFF08;&#x88C5;&#x4F5C;&#x81EA;&#x5DF1;&#x597D;&#x50CF;&#x6CA1;&#x6709;&#x6D6A;&#x8D39;&#x8FC7;&#x7A7A;&#x95F4;&#x4E00;&#x6837;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x4FEE;&#x6539;sql_mode&#x8BA9;&#x5176;&#x73B0;&#x51FA;&#x539F;&#x5F62;</code></span></p>
+<pre><code class="lang-sql">mysql&gt; create table t1(x char(5),y varchar(5));
+Query OK, 0 rows affected (0.26 sec)
+
+#char&#x5B58;5&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x800C;varchar&#x5B58;4&#x4E2A;&#x5B57;&#x7B26;
+mysql&gt; insert into t1 values(&apos;&#x4F60;&#x7785;&#x5565; &apos;,&apos;&#x4F60;&#x7785;&#x5565; &apos;);
+Query OK, 1 row affected (0.05 sec)
+
+mysql&gt; SET sql_mode=&apos;&apos;;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+#&#x5728;&#x68C0;&#x7D22;&#x65F6;char&#x5F88;&#x4E0D;&#x8981;&#x8138;&#x5730;&#x5C06;&#x81EA;&#x5DF1;&#x6D6A;&#x8D39;&#x7684;2&#x4E2A;&#x5B57;&#x7B26;&#x7ED9;&#x5220;&#x6389;&#x4E86;&#xFF0C;&#x88C5;&#x7684;&#x597D;&#x50CF;&#x81EA;&#x5DF1;&#x6CA1;&#x6D6A;&#x8D39;&#x8FC7;&#x7A7A;&#x95F4;&#x4E00;&#x6837;&#xFF0C;&#x800C;varchar&#x5F88;&#x8001;&#x5B9E;&#xFF0C;&#x5B58;&#x4E86;&#x591A;&#x5C11;&#xFF0C;&#x5C31;&#x663E;&#x793A;&#x591A;&#x5C11;
+mysql&gt; select x,char_length(x),y,char_length(y) from t1; 
++-----------+----------------+------------+----------------+
+| x         | char_length(x) | y          | char_length(y) |
++-----------+----------------+------------+----------------+
+| &#x4F60;&#x7785;&#x5565;    |              3 | &#x4F60;&#x7785;&#x5565;     |              4 |
++-----------+----------------+------------+----------------+
+row in set (0.00 sec)
+
+#&#x7565;&#x65BD;&#x5C0F;&#x8BA1;&#xFF0C;&#x8BA9;char&#x73B0;&#x51FA;&#x539F;&#x5F62;
+mysql&gt; SET sql_mode = &apos;PAD_CHAR_TO_FULL_LENGTH&apos;;
+Query OK, 0 rows affected (0.00 sec)
+
+#&#x8FD9;&#x4E0B;&#x5B50;char&#x539F;&#x5F62;&#x6BD5;&#x9732;&#x4E86;......
+mysql&gt; select x,char_length(x),y,char_length(y) from t1;
++-------------+----------------+------------+----------------+
+| x           | char_length(x) | y          | char_length(y) |
++-------------+----------------+------------+----------------+
+| &#x4F60;&#x7785;&#x5565;      |              5 | &#x4F60;&#x7785;&#x5565;     |              4 |
++-------------+----------------+------------+----------------+
+row in set (0.00 sec)
+
+
+#char&#x7C7B;&#x578B;&#xFF1A;3&#x4E2A;&#x4E2D;&#x6587;&#x5B57;&#x7B26;+2&#x4E2A;&#x7A7A;&#x683C;=11Bytes
+#varchar&#x7C7B;&#x578B;:3&#x4E2A;&#x4E2D;&#x6587;&#x5B57;&#x7B26;+1&#x4E2A;&#x7A7A;&#x683C;=10Bytes
+mysql&gt; select x,length(x),y,length(y) from t1;
++-------------+-----------+------------+-----------+
+| x           | length(x) | y          | length(y) |
++-------------+-----------+------------+-----------+
+| &#x4F60;&#x7785;&#x5565;      |        11 | &#x4F60;&#x7785;&#x5565;     |        10 |
++-------------+-----------+------------+-----------+
+row in set (0.00 sec)
+</code></pre>
+<p><code>&#x4E86;&#x89E3;concat</code></p>
+<pre><code class="lang-sql">mysql&gt; select concat(&apos;&#x6570;&#x636E;: &apos;,x,&apos;&#x957F;&#x5EA6;: &apos;,char_length(x)),concat(y,char_length(y)
+) from t1;
++------------------------------------------------+--------------------------+
+| concat(&apos;&#x6570;&#x636E;: &apos;,x,&apos;&#x957F;&#x5EA6;: &apos;,char_length(x))     | concat(y,char_length(y)) |
++------------------------------------------------+--------------------------+
+| &#x6570;&#x636E;: &#x4F60;&#x7785;&#x5565;  &#x957F;&#x5EA6;: 5                          | &#x4F60;&#x7785;&#x5565; 4                 |
++------------------------------------------------+--------------------------+
+row in set (0.00 sec)
+</code></pre>
+<p><a href="href">&#x70B9;&#x51FB;&#x67E5;&#x770B;&#x5173;&#x4E8E;sql_mode&#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</a></p>
+<p><strong><label style="color:red"><code>2. &#x867D;&#x7136; CHAR &#x548C; VARCHAR &#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x4E0D;&#x592A;&#x76F8;&#x540C;,&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6BD4;&#x8F83;,&#x90FD;&#x53EA;&#x6BD4; &#x8F83;&#x5176;&#x503C;,&#x5FFD;&#x7565; CHAR &#x503C;&#x5B58;&#x5728;&#x7684;&#x53F3;&#x586B;&#x5145;,&#x5373;&#x4F7F;&#x5C06; SQL _MODE &#x8BBE;&#x7F6E;&#x4E3A; PAD_CHAR_TO_FULL_ LENGTH &#x4E5F;&#x4E00;&#x6837;,,&#x4F46;&#x8FD9;&#x4E0D;&#x9002;&#x7528;&#x4E8E;like</code>&lt;/span&gt;</label></strong></p>
+<pre><code class="lang-sql">Values in CHAR and VARCHAR columns are sorted and compared according to the character set collation assigned to the column.
+
+All MySQL collations are of type PAD SPACE. This means that all CHAR, VARCHAR, and TEXT values are compared without regard to any trailing spaces. &#x201C;Comparison&#x201D; in this context does not include the LIKE pattern-matching operator, for which trailing spaces are significant. For example:
+
+mysql&gt; CREATE TABLE names (myname CHAR(10));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql&gt; INSERT INTO names VALUES (&apos;Monty&apos;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; SELECT myname = &apos;Monty&apos;, myname = &apos;Monty  &apos; FROM names;
++------------------+--------------------+
+| myname = &apos;Monty&apos; | myname = &apos;Monty  &apos; |
++------------------+--------------------+
+|                1 |                  1 |
++------------------+--------------------+
+row in set (0.00 sec)
+
+mysql&gt; SELECT myname LIKE &apos;Monty&apos;, myname LIKE &apos;Monty  &apos; FROM names;
++---------------------+-----------------------+
+| myname LIKE &apos;Monty&apos; | myname LIKE &apos;Monty  &apos; |
++---------------------+-----------------------+
+|                   1 |                     0 |
++---------------------+-----------------------+
+row in set (0.00 sec)
+</code></pre>
+<h3 id="3&#x603B;&#x7ED3;"><a name="3&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#3&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a><strong><span style="color:red"><code>3.&#x603B;&#x7ED3;</code></span></strong></h3>
+<pre><code class="lang-sql">#&#x5E38;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x7CFB;&#x5217;&#xFF1A;char&#x4E0E;varchar
+&#x6CE8;&#xFF1A;&#x867D;&#x7136;varchar&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x8F83;&#x4E3A;&#x7075;&#x6D3B;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x6027;&#x80FD;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;char&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#xFF0C;&#x6709;&#x65F6;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x8D85;&#x51FA;varchar&#x5904;&#x7406;&#x901F;&#x5EA6;&#x7684;50%&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7528;&#x6237;&#x5728;&#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x5E93;&#x65F6;&#x5E94;&#x5F53;&#x7EFC;&#x5408;&#x8003;&#x8651;&#x5404;&#x65B9;&#x9762;&#x7684;&#x56E0;&#x7D20;&#xFF0C;&#x4EE5;&#x6C42;&#x8FBE;&#x5230;&#x6700;&#x4F73;&#x7684;&#x5E73;&#x8861;
+
+#&#x5176;&#x4ED6;&#x5B57;&#x7B26;&#x4E32;&#x7CFB;&#x5217;&#xFF08;&#x6548;&#x7387;&#xFF1A;char&gt;varchar&gt;text&#xFF09;
+TEXT&#x7CFB;&#x5217; TINYTEXT TEXT MEDIUMTEXT LONGTEXT
+BLOB &#x7CFB;&#x5217;    TINYBLOB BLOB MEDIUMBLOB LONGBLOB 
+BINARY&#x7CFB;&#x5217; BINARY VARBINARY
+
+text&#xFF1A;text&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x53D8;&#x957F;&#x7684;&#x5927;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x53EF;&#x4EE5;&#x7EC4;&#x591A;&#x5230;65535 (2**16 &#x2212; 1)&#x4E2A;&#x5B57;&#x7B26;&#x3002;
+mediumtext&#xFF1A;A TEXT column with a maximum length of 16,777,215 (2**24 &#x2212; 1) characters.
+longtext&#xFF1A;A TEXT column with a maximum length of 4,294,967,295 or 4GB (2**32 &#x2212; 1) characters.
+</code></pre>
+<h2 id="&#x4E94;-&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;"><a name="&#x4E94;-&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4E94;-&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94; &#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E0E;&#x96C6;&#x5408;&#x7C7B;&#x578B;</h2>
+<p>&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x53EA;&#x80FD;&#x5728;&#x7ED9;&#x5B9A;&#x8303;&#x56F4;&#x4E2D;&#x9009;&#x62E9;&#xFF0C;&#x5982;&#x5355;&#x9009;&#x6846;&#xFF0C;&#x591A;&#x9009;&#x6846;
+enum &#x5355;&#x9009;    &#x53EA;&#x80FD;&#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x5185;&#x9009;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5982;&#x6027;&#x522B; sex &#x7537;male/&#x5973;female
+set &#x591A;&#x9009; &#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x5185;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x503C;&#xFF08;&#x7231;&#x597D;1,&#x7231;&#x597D;2,&#x7231;&#x597D;3...&#xFF09;</p>
+<p><code>&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF08;enum&#xFF09;</code></p>
+<pre><code class="lang-sql">            An ENUM column can have a maximum of 65,535 distinct elements. (The practical limit is less than 3000.)
+</code></pre>
+<p><code>&#x793A;&#x4F8B;&#xFF1A;</code></p>
+<pre><code class="lang-sql">                <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> shirts (
+                    <span class="hljs-keyword">name</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">40</span>),
+                    <span class="hljs-keyword">size</span> ENUM(<span class="hljs-string">&apos;x-small&apos;</span>, <span class="hljs-string">&apos;small&apos;</span>, <span class="hljs-string">&apos;medium&apos;</span>, <span class="hljs-string">&apos;large&apos;</span>, <span class="hljs-string">&apos;x-large&apos;</span>)
+                );
+                <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> shirts (<span class="hljs-keyword">name</span>, <span class="hljs-keyword">size</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;dress shirt&apos;</span>,<span class="hljs-string">&apos;large&apos;</span>), (<span class="hljs-string">&apos;t-shirt&apos;</span>,<span class="hljs-string">&apos;medium&apos;</span>),(<span class="hljs-string">&apos;polo shirt&apos;</span>,<span class="hljs-string">&apos;small&apos;</span>);
+</code></pre>
+<p><code>&#x96C6;&#x5408;&#x7C7B;&#x578B;&#xFF08;set&#xFF09;</code></p>
+<pre><code class="lang-sql">            A <span class="hljs-keyword">SET</span> <span class="hljs-keyword">column</span> can have a maximum <span class="hljs-keyword">of</span> <span class="hljs-number">64</span> <span class="hljs-keyword">distinct</span> members.
+</code></pre>
+<p><code>&#x793A;&#x4F8B;&#xFF1A;</code></p>
+<pre><code class="lang-sql">                <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> myset (<span class="hljs-keyword">col</span> <span class="hljs-keyword">SET</span>(<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>, <span class="hljs-string">&apos;d&apos;</span>));
+                <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> myset (<span class="hljs-keyword">col</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;a,d&apos;</span>), (<span class="hljs-string">&apos;d,a&apos;</span>), (<span class="hljs-string">&apos;a,d,a&apos;</span>), (<span class="hljs-string">&apos;a,d,d&apos;</span>), (<span class="hljs-string">&apos;d,a,d&apos;</span>);
+</code></pre>
+<pre><code class="lang-sql">MariaDB [db1]&gt; create table consumer( 
+    -&gt; name varchar(50),
+    -&gt; sex enum(&apos;male&apos;,&apos;female&apos;),
+    -&gt; level enum(&apos;vip1&apos;,&apos;vip2&apos;,&apos;vip3&apos;,&apos;vip4&apos;,&apos;vip5&apos;), #&#x5728;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x591A;&#x9009;&#x4E00;
+    -&gt; hobby set(&apos;play&apos;,&apos;music&apos;,&apos;read&apos;,&apos;study&apos;) #&#x5728;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x591A;&#x9009;&#x591A;
+    -&gt; );
+
+MariaDB [db1]&gt; insert into consumer values  
+    -&gt; (&apos;egon&apos;,&apos;male&apos;,&apos;vip5&apos;,&apos;read,study&apos;),
+    -&gt; (&apos;alex&apos;,&apos;female&apos;,&apos;vip1&apos;,&apos;girl&apos;);
+
+MariaDB [db1]&gt; select * from consumer;
++------+--------+-------+------------+
+| name | sex    | level | hobby      |
++------+--------+-------+------------+
+| egon | male   | vip5  | read,study |
+| alex | female | vip1  |            |
++------+--------+-------+------------+
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2、MySQL存储引擎.html" class="navigation navigation-prev " aria-label="Previous page: 2、MySQL存储引擎">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4、完整性约束.html" class="navigation navigation-next " aria-label="Next page: 4、完整性约束">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3、MySQLl数据类型","level":"1.3.3.3","depth":3,"next":{"title":"4、完整性约束","level":"1.3.3.4","depth":3,"path":"MySQL学习/03-MySQL表操作/4、完整性约束.md","ref":"MySQL学习/03-MySQL表操作/4、完整性约束.md","articles":[]},"previous":{"title":"2、MySQL存储引擎","level":"1.3.3.2","depth":3,"path":"MySQL学习/03-MySQL表操作/2、MySQL存储引擎.md","ref":"MySQL学习/03-MySQL表操作/2、MySQL存储引擎.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"MySQL学习/03-MySQL表操作/3、MySQLl数据类型.md","mtime":"2018-06-12T01:20:56.972Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

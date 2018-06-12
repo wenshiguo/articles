@@ -1,0 +1,1012 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ORM版学员管理系统 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="11.Form组件.html" />
+    
+    
+    <link rel="prev" href="10.ORM相关操作.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../MySQL学习/">
+            
+                <a href="../../MySQL学习/">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../MySQL学习/01-初识数据库.html">
+            
+                <a href="../../MySQL学习/01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../MySQL学习/02-MySQL库操作.html">
+            
+                <a href="../../MySQL学习/02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../MySQL学习/03-MySQL表操作/">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../MySQL学习/04-MySQL数据操作/">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../MySQL学习/Python3连接MySQL.html">
+            
+                <a href="../../MySQL学习/Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01.Django初识.html">
+            
+                <a href="01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="02.Web框架本质及第一个Django实例.html">
+            
+                <a href="02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="03.HTTP协议.html">
+            
+                <a href="03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="04.Django框架简介.html">
+            
+                <a href="04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="05.Django的视图.html">
+            
+                <a href="05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="06.Django的路由系统.html">
+            
+                <a href="06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="07.Django模板系统.html">
+            
+                <a href="07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="08.Django模型ORM.html">
+            
+                <a href="08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="09.Django路由系统.html">
+            
+                <a href="09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10.ORM相关操作.html">
+            
+                <a href="10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.11" data-path="111.ORM版学员管理系统.html">
+            
+                <a href="111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="11.Form组件.html">
+            
+                <a href="11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="博客项目点赞与灭操作.html">
+            
+                <a href="博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="博客项目评论.html">
+            
+                <a href="博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../lufei-payment/luffy结算中心.html">
+            
+                <a href="../lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >ORM版学员管理系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#orm&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;"><b></b>ORM&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;</a></li><ul><li><span class="title-icon "></span><a href="#&#x73ED;&#x7EA7;&#x8868;"><b></b>&#x73ED;&#x7EA7;&#x8868;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8868;&#x7ED3;&#x6784;"><b></b>&#x8868;&#x7ED3;&#x6784;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;"><b></b>&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x65B0;&#x589E;&#x73ED;&#x7EA7;"><b></b>&#x65B0;&#x589E;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x5220;&#x9664;&#x73ED;&#x7EA7;"><b></b>&#x5220;&#x9664;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x7F16;&#x8F91;&#x73ED;&#x7EA7;"><b></b>&#x7F16;&#x8F91;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x8865;&#x5145;"><b></b>&#x8865;&#x5145;</a></li><li><span class="title-icon "></span><a href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;api&#x6C47;&#x603B;"><b></b>&#x5355;&#x8868;&#x67E5;&#x8BE2;API&#x6C47;&#x603B;</a></li><li><span class="title-icon "></span><a href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;"><b></b>&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;</a></li></ul></ul></ul></div><a href="#orm&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="orm&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;"><a name="orm&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#orm&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#orm&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;"><b></b>ORM&#x7248;&#x5B66;&#x5458;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;</a></li><ul><li><span class="title-icon "></span><a href="#&#x73ED;&#x7EA7;&#x8868;"><b></b>&#x73ED;&#x7EA7;&#x8868;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8868;&#x7ED3;&#x6784;"><b></b>&#x8868;&#x7ED3;&#x6784;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;"><b></b>&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x65B0;&#x589E;&#x73ED;&#x7EA7;"><b></b>&#x65B0;&#x589E;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x5220;&#x9664;&#x73ED;&#x7EA7;"><b></b>&#x5220;&#x9664;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x7F16;&#x8F91;&#x73ED;&#x7EA7;"><b></b>&#x7F16;&#x8F91;&#x73ED;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x8865;&#x5145;"><b></b>&#x8865;&#x5145;</a></li><li><span class="title-icon "></span><a href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;api&#x6C47;&#x603B;"><b></b>&#x5355;&#x8868;&#x67E5;&#x8BE2;API&#x6C47;&#x603B;</a></li><li><span class="title-icon "></span><a href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;"><b></b>&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;</a></li></ul></ul></ul></div>
+
+<h2 id="&#x73ED;&#x7EA7;&#x8868;"><a name="&#x73ED;&#x7EA7;&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x73ED;&#x7EA7;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x73ED;&#x7EA7;&#x8868;</h2>
+<h3 id="&#x8868;&#x7ED3;&#x6784;"><a name="&#x8868;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x8868;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x8868;&#x7ED3;&#x6784;</strong></h3>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Class</span><span class="hljs-params">(models.Model)</span>:</span>
+    id = models.AutoField(primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x4E3B;&#x952E;</span>
+    cname = models.CharField(max_length=<span class="hljs-number">32</span>)  <span class="hljs-comment"># &#x73ED;&#x7EA7;&#x540D;&#x79F0;</span>
+    first_day = models.DateField()  <span class="hljs-comment"># &#x5F00;&#x73ED;&#x65F6;&#x95F4;</span>
+</code></pre>
+<h3 id="&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;"><a name="&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x67E5;&#x8BE2;&#x73ED;&#x7EA7;</strong></h3>
+<p>URL&#x90E8;&#x5206;&#xFF1A;</p>
+<p><code>url(r&apos;^class_list/$&apos;, views.class_list, name=&quot;class_list&quot;),</code></p>
+<p>&#x89C6;&#x56FE;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">class_list</span><span class="hljs-params">(request)</span>:</span>
+    class_list = models.Class.objects.all()
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;class_list.html&quot;</span>, {<span class="hljs-string">&quot;class_list&quot;</span>: class_list})
+</code></pre>
+<p>HTML&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
+  {% for class in class_list %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{ forloop.counter }}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{ class.id }}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{ class.cname }}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{ class.first_day|date:&apos;Y-m-d&apos; }}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  {% endfor %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<h3 id="&#x65B0;&#x589E;&#x73ED;&#x7EA7;"><a name="&#x65B0;&#x589E;&#x73ED;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x65B0;&#x589E;&#x73ED;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B0;&#x589E;&#x73ED;&#x7EA7;</h3>
+<p>URL&#x90E8;&#x5206;&#xFF1A;</p>
+<p><code>url(r&apos;^add_class/$&apos;, views.add_class, name=&quot;add_class&quot;),</code></p>
+<p>&#x89C6;&#x56FE;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_class</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-comment"># &#x524D;&#x7AEF;POST&#x586B;&#x597D;&#x7684;&#x65B0;&#x73ED;&#x7EA7;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:
+        cname = request.POST.get(<span class="hljs-string">&quot;cname&quot;</span>)
+        first_day = request.POST.get(<span class="hljs-string">&quot;first_day&quot;</span>)
+        <span class="hljs-comment"># &#x8FD8;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x83B7;&#x53D6;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x4E0D;&#x63A8;&#x8350;&#x8FD9;&#x4E48;&#x5199;</span>
+        <span class="hljs-comment"># data = request.POST.dict()</span>
+        <span class="hljs-comment"># del data[&quot;csrfmiddlewaretoken&quot;]</span>
+        <span class="hljs-comment"># &#x521B;&#x5EFA;&#x65B0;&#x6570;&#x636E;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</span>
+        <span class="hljs-comment"># new_class = models.Class(cname=cname, first_day=first_day)</span>
+        <span class="hljs-comment"># new_class.save()</span>
+        models.Class.objects.create(cname=cname, first_day=first_day)
+        <span class="hljs-comment"># &#x8DF3;&#x8F6C;&#x5230;class_list</span>
+        <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&apos;class_list&apos;</span>))
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x6DFB;&#x52A0;&#x73ED;&#x7EA7;&#x7684;&#x9875;&#x9762;</span>
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;add_class.html&quot;</span>)
+</code></pre>
+<p>HTML&#x90E8;&#x5206;&#xFF1A;</p>
+<p>&#x5728;&#x73ED;&#x7EA7;&#x5217;&#x8868;&#x9875;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;a&#x6807;&#x7B7E;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{% url &apos;add_class&apos; %}&quot;</span>&gt;</span>&#x65B0;&#x9875;&#x9762;&#x6DFB;&#x52A0;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>&#x65B0;&#x6DFB;&#x52A0;&#x9875;&#x9762;&#xFF1A;</p>
+<p>&#x6CE8;&#x610F; <code>{% csrf_token %}</code> &#x548C; <code>date&#x7C7B;&#x578B;</code>&#x7684;input&#x6807;&#x7B7E;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;x-ua-compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x6DFB;&#x52A0;&#x73ED;&#x7EA7;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;{% url &apos;add_class&apos; %}&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  {% csrf_token %}
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x73ED;&#x7EA7;&#x540D;&#x79F0;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;cname&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x5F00;&#x73ED;&#x65E5;&#x671F;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;first_day&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="&#x5220;&#x9664;&#x73ED;&#x7EA7;"><a name="&#x5220;&#x9664;&#x73ED;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x5220;&#x9664;&#x73ED;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x5220;&#x9664;&#x73ED;&#x7EA7;</strong></h3>
+<p>URL&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python">url(<span class="hljs-string">r&apos;^delete_class/$&apos;</span>, views.delete_class, name=<span class="hljs-string">&quot;delete_class&quot;</span>),
+</code></pre>
+<p>&#x89C6;&#x56FE;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_class</span><span class="hljs-params">(request)</span>:</span>
+    class_id = request.GET.get(<span class="hljs-string">&quot;class_id&quot;</span>)
+    models.Class.objects.filter(id=class_id).delete()
+    <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&quot;class_list&quot;</span>))
+</code></pre>
+<p>HTML&#x90E8;&#x5206;&#xFF1A;</p>
+<p>&#x5728;&#x73ED;&#x7EA7;&#x5217;&#x8868;&#x9875;&#x9762;&#x7684;&#x8868;&#x683C;&#x4E2D;&#x6DFB;&#x52A0;&#x5220;&#x9664;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{% url &apos;delete_class&apos; %}?class_id={{ class.id }}&quot;</span>&gt;</span>&#x5220;&#x9664;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<h3 id="&#x7F16;&#x8F91;&#x73ED;&#x7EA7;"><a name="&#x7F16;&#x8F91;&#x73ED;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x7F16;&#x8F91;&#x73ED;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x7F16;&#x8F91;&#x73ED;&#x7EA7;</strong></h3>
+<p>URL&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python">url(<span class="hljs-string">r&apos;^edit_class/$&apos;</span>, views.edit_class, name=<span class="hljs-string">&quot;edit_class&quot;</span>),
+</code></pre>
+<p>&#x89C6;&#x56FE;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">edit_class</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:
+        class_id = request.POST.get(<span class="hljs-string">&quot;id&quot;</span>)
+        cname = request.POST.get(<span class="hljs-string">&quot;cname&quot;</span>)
+        first_day = request.POST.get(<span class="hljs-string">&quot;first_day&quot;</span>)
+        models.Class.objects.create(id=class_id, cname=cname, first_day=first_day)
+        <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&quot;class_list&quot;</span>))
+    class_id = request.GET.get(<span class="hljs-string">&quot;class_id&quot;</span>)
+    class_obj = models.Class.objects.filter(id=class_id)
+    <span class="hljs-keyword">if</span> class_obj:
+        class_obj = class_obj[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;edit_class.html&quot;</span>, {<span class="hljs-string">&quot;class&quot;</span>: class_obj})
+    <span class="hljs-comment"># &#x627E;&#x4E0D;&#x5230;&#x8BE5;&#x6761;&#x8BB0;&#x5F55;</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&quot;class_list&quot;</span>))
+</code></pre>
+<p>HTML&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;x-ua-compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x7F16;&#x8F91;&#x73ED;&#x7EA7;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;{% url &apos;edit_class&apos; %}&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  {% csrf_token %}
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;{{ class.id }}&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x73ED;&#x7EA7;&#x540D;&#x79F0;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;cname&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;{{ class.cname }}&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x5F00;&#x73ED;&#x65E5;&#x671F;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;first_day&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;{{ class.first_day|date:&apos;Y-m-d&apos; }}&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="&#x8865;&#x5145;"><a name="&#x8865;&#x5145;" class="anchor-navigation-ex-anchor" href="#&#x8865;&#x5145;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x8865;&#x5145;</strong></h3>
+<p>&#x5982;&#x679C;&#x5C06;&#x4E4B;&#x524D;&#x7684;URL&#x7531; <code>/edit_class/?class_id=n</code>&#x4FEE;&#x6539;&#x4E3A; <code>/edit_class/n/</code> &#xFF0C;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x548C;HTML&#x90E8;&#x5206;&#x5206;&#x522B;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x4FEE;&#x6539;&#xFF1F;</p>
+<p>URL&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python">url(<span class="hljs-string">r&apos;^edit_class/(\d+)$&apos;</span>, views.edit_class, name=<span class="hljs-string">&quot;edit_class&quot;</span>),
+</code></pre>
+<p>&#x89C6;&#x56FE;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">edit_class</span><span class="hljs-params">(request, class_id)</span>:</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:
+        cname = request.POST.get(<span class="hljs-string">&quot;cname&quot;</span>)
+        first_day = request.POST.get(<span class="hljs-string">&quot;first_day&quot;</span>)
+        models.Class.objects.create(id=class_id, cname=cname, first_day=first_day)
+        <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&quot;class_list&quot;</span>))
+
+    class_obj = models.Class.objects.filter(id=class_id)
+    <span class="hljs-keyword">if</span> class_obj:
+        class_obj = class_obj[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;edit_class.html&quot;</span>, {<span class="hljs-string">&quot;class&quot;</span>: class_obj})
+    <span class="hljs-comment"># &#x627E;&#x4E0D;&#x5230;&#x8BE5;&#x6761;&#x8BB0;&#x5F55;</span>
+    <span class="hljs-keyword">else</span>:
+        print(<span class="hljs-string">&quot;&#x6CA1;&#x6709;&#x8BE5;&#x73ED;&#x7EA7;&quot;</span>)
+        <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&quot;class_list&quot;</span>))
+</code></pre>
+<p>HTML&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;x-ua-compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x7F16;&#x8F91;&#x73ED;&#x7EA7;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;{% url &apos;edit_class&apos; class.id %}&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  {% csrf_token %}
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;{{ class.id }}&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x73ED;&#x7EA7;&#x540D;&#x79F0;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;cname&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;{{ class.cname }}&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x5F00;&#x73ED;&#x65E5;&#x671F;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;first_day&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;{{ class.first_day|date:&apos;Y-m-d&apos; }}&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="&#x5355;&#x8868;&#x67E5;&#x8BE2;api&#x6C47;&#x603B;"><a name="&#x5355;&#x8868;&#x67E5;&#x8BE2;api&#x6C47;&#x603B;" class="anchor-navigation-ex-anchor" href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;api&#x6C47;&#x603B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x8868;&#x67E5;&#x8BE2;API&#x6C47;&#x603B;</h3>
+<pre><code>&lt;1&gt; all():                 &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7ED3;&#x679C;
+
+&lt;2&gt; filter(**kwargs):      &#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x6240;&#x7ED9;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x76F8;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;
+
+&lt;3&gt; get(**kwargs):         &#x8FD4;&#x56DE;&#x4E0E;&#x6240;&#x7ED9;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x76F8;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6709;&#x4E14;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x5408;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x90FD;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x3002;
+
+&lt;4&gt; exclude(**kwargs):     &#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x6240;&#x7ED9;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;
+
+&lt;5&gt; values(*field):        &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;ValueQuerySet&#x2014;&#x2014;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;QuerySet&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x5F97;&#x5230;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x7CFB;&#x5217;model&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x7684;&#x5B57;&#x5178;&#x5E8F;&#x5217;
+
+&lt;6&gt; values_list(*field):   &#x5B83;&#x4E0E;values()&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x5E8F;&#x5217;&#xFF0C;values&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x5E8F;&#x5217;
+
+&lt;7&gt; order_by(*field):      &#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x6392;&#x5E8F;
+
+&lt;8&gt; reverse():             &#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x53CD;&#x5411;&#x6392;&#x5E8F;
+
+&lt;9&gt; distinct():            &#x4ECE;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E2D;&#x5254;&#x9664;&#x91CD;&#x590D;&#x7EAA;&#x5F55;
+
+&lt;10&gt; count():              &#x8FD4;&#x56DE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5339;&#x914D;&#x67E5;&#x8BE2;(QuerySet)&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x3002;
+
+&lt;11&gt; first():              &#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;
+
+&lt;12&gt; last():               &#x8FD4;&#x56DE;&#x6700;&#x540E;&#x4E00;&#x6761;&#x8BB0;&#x5F55;
+
+&lt;13&gt; exists():             &#x5982;&#x679C;QuerySet&#x5305;&#x542B;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;True&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;False
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;<strong>&#x4E00;&#x5B9A;&#x533A;&#x5206;<code>Object</code>&#x4E0E;<code>QuerySet</code>&#x7684;&#x533A;&#x522B; &#xFF01;&#xFF01;&#xFF01;</strong></p>
+<p><strong><code>QuerySet</code>&#x6709;<code>update</code>&#x65B9;&#x6CD5;&#x800C;<code>Object</code>&#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x3002;</strong></p>
+<h3 id="&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;"><a name="&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;" class="anchor-navigation-ex-anchor" href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;</h3>
+<pre><code>models.Tb1.objects.filter(id__lt=10, id__gt=1)   # &#x83B7;&#x53D6;id&#x5927;&#x4E8E;1 &#x4E14; &#x5C0F;&#x4E8E;10&#x7684;&#x503C;
+
+models.Tb1.objects.filter(id__in=[11, 22, 33])   # &#x83B7;&#x53D6;id&#x7B49;&#x4E8E;11&#x3001;22&#x3001;33&#x7684;&#x6570;&#x636E;
+models.Tb1.objects.exclude(id__in=[11, 22, 33])  # not in
+
+models.Tb1.objects.filter(name__contains=&quot;ven&quot;)  # &#x83B7;&#x53D6;name&#x5B57;&#x6BB5;&#x5305;&#x542B;&quot;ven&quot;&#x7684;
+models.Tb1.objects.filter(name__icontains=&quot;ven&quot;) # icontains&#x5927;&#x5C0F;&#x5199;&#x4E0D;&#x654F;&#x611F;
+
+models.Tb1.objects.filter(id__range=[1, 3])      # id&#x8303;&#x56F4;&#x662F;1&#x5230;3&#x7684;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;SQL&#x7684;bettwen and
+
+&#x7C7B;&#x4F3C;&#x7684;&#x8FD8;&#x6709;&#xFF1A;startswith&#xFF0C;istartswith, endswith, iendswith&#x3000;
+
+date&#x5B57;&#x6BB5;&#x8FD8;&#x53EF;&#x4EE5;&#xFF1A;
+models.Class.objects.filter(first_day__year=2017)
+</code></pre><p>&#x5907;&#x6CE8;&#xFF1A;</p>
+<p>&#x5728;Django&#x7684;&#x65E5;&#x5FD7;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x4E0A;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;django.db.backends&#x7684;logger&#x5B9E;&#x4F8B;&#x5373;&#x53EF;&#x67E5;&#x770B;&#x7FFB;&#x8BD1;&#x540E;&#x7684;SQL&#x8BED;&#x53E5;&#x3002;</p>
+<pre><code class="lang-python">LOGGING = {
+    <span class="hljs-string">&apos;version&apos;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&apos;disable_existing_loggers&apos;</span>: <span class="hljs-keyword">False</span>,
+    <span class="hljs-string">&apos;handlers&apos;</span>: {
+        <span class="hljs-string">&apos;console&apos;</span>:{
+            <span class="hljs-string">&apos;level&apos;</span>:<span class="hljs-string">&apos;DEBUG&apos;</span>,
+            <span class="hljs-string">&apos;class&apos;</span>:<span class="hljs-string">&apos;logging.StreamHandler&apos;</span>,
+        },
+    },
+    <span class="hljs-string">&apos;loggers&apos;</span>: {
+        <span class="hljs-string">&apos;django.db.backends&apos;</span>: {
+            <span class="hljs-string">&apos;handlers&apos;</span>: [<span class="hljs-string">&apos;console&apos;</span>],
+            <span class="hljs-string">&apos;propagate&apos;</span>: <span class="hljs-keyword">True</span>,
+            <span class="hljs-string">&apos;level&apos;</span>:<span class="hljs-string">&apos;DEBUG&apos;</span>,
+        },
+    }
+}
+</code></pre>
+<p> Django&#x9879;&#x76EE;&#x5B8C;&#x6574;&#x7248;LOGGING&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-python">LOGGING = {
+    <span class="hljs-string">&apos;version&apos;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&apos;disable_existing_loggers&apos;</span>: <span class="hljs-keyword">False</span>,
+    <span class="hljs-string">&apos;formatters&apos;</span>: {
+        <span class="hljs-string">&apos;standard&apos;</span>: {
+            <span class="hljs-string">&apos;format&apos;</span>: <span class="hljs-string">&apos;[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]&apos;</span>
+                      <span class="hljs-string">&apos;[%(levelname)s][%(message)s]&apos;</span>
+        },
+        <span class="hljs-string">&apos;simple&apos;</span>: {
+            <span class="hljs-string">&apos;format&apos;</span>: <span class="hljs-string">&apos;[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d]%(message)s&apos;</span>
+        },
+        <span class="hljs-string">&apos;collect&apos;</span>: {
+            <span class="hljs-string">&apos;format&apos;</span>: <span class="hljs-string">&apos;%(message)s&apos;</span>
+        }
+    },
+    <span class="hljs-string">&apos;filters&apos;</span>: {
+        <span class="hljs-string">&apos;require_debug_true&apos;</span>: {
+            <span class="hljs-string">&apos;()&apos;</span>: <span class="hljs-string">&apos;django.utils.log.RequireDebugTrue&apos;</span>,
+        },
+    },
+    <span class="hljs-string">&apos;handlers&apos;</span>: {
+        <span class="hljs-string">&apos;console&apos;</span>: {
+            <span class="hljs-string">&apos;level&apos;</span>: <span class="hljs-string">&apos;DEBUG&apos;</span>,
+            <span class="hljs-string">&apos;filters&apos;</span>: [<span class="hljs-string">&apos;require_debug_true&apos;</span>],  <span class="hljs-comment"># &#x53EA;&#x6709;&#x5728;Django debug&#x4E3A;True&#x65F6;&#x624D;&#x5728;&#x5C4F;&#x5E55;&#x6253;&#x5370;&#x65E5;&#x5FD7;</span>
+            <span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;logging.StreamHandler&apos;</span>,
+            <span class="hljs-string">&apos;formatter&apos;</span>: <span class="hljs-string">&apos;simple&apos;</span>
+        },
+        <span class="hljs-string">&apos;default&apos;</span>: {
+            <span class="hljs-string">&apos;level&apos;</span>: <span class="hljs-string">&apos;INFO&apos;</span>,
+            <span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;logging.handlers.RotatingFileHandler&apos;</span>,  <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x81EA;&#x52A8;&#x5207;</span>
+            <span class="hljs-string">&apos;filename&apos;</span>: os.path.join(BASE_LOG_DIR, <span class="hljs-string">&quot;xxx_info.log&quot;</span>),  <span class="hljs-comment"># &#x65E5;&#x5FD7;&#x6587;&#x4EF6;</span>
+            <span class="hljs-string">&apos;maxBytes&apos;</span>: <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">50</span>,  <span class="hljs-comment"># &#x65E5;&#x5FD7;&#x5927;&#x5C0F; 50M</span>
+            <span class="hljs-string">&apos;backupCount&apos;</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-string">&apos;formatter&apos;</span>: <span class="hljs-string">&apos;standard&apos;</span>,
+            <span class="hljs-string">&apos;encoding&apos;</span>: <span class="hljs-string">&apos;utf-8&apos;</span>,
+        },
+        <span class="hljs-string">&apos;error&apos;</span>: {
+            <span class="hljs-string">&apos;level&apos;</span>: <span class="hljs-string">&apos;ERROR&apos;</span>,
+            <span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;logging.handlers.RotatingFileHandler&apos;</span>,  <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x81EA;&#x52A8;&#x5207;</span>
+            <span class="hljs-string">&apos;filename&apos;</span>: os.path.join(BASE_LOG_DIR, <span class="hljs-string">&quot;xxx_err.log&quot;</span>),  <span class="hljs-comment"># &#x65E5;&#x5FD7;&#x6587;&#x4EF6;</span>
+            <span class="hljs-string">&apos;maxBytes&apos;</span>: <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">50</span>,  <span class="hljs-comment"># &#x65E5;&#x5FD7;&#x5927;&#x5C0F; 50M</span>
+            <span class="hljs-string">&apos;backupCount&apos;</span>: <span class="hljs-number">5</span>,
+            <span class="hljs-string">&apos;formatter&apos;</span>: <span class="hljs-string">&apos;standard&apos;</span>,
+            <span class="hljs-string">&apos;encoding&apos;</span>: <span class="hljs-string">&apos;utf-8&apos;</span>,
+        },
+        <span class="hljs-string">&apos;collect&apos;</span>: {
+            <span class="hljs-string">&apos;level&apos;</span>: <span class="hljs-string">&apos;INFO&apos;</span>,
+            <span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;logging.handlers.RotatingFileHandler&apos;</span>,  <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x81EA;&#x52A8;&#x5207;</span>
+            <span class="hljs-string">&apos;filename&apos;</span>: os.path.join(BASE_LOG_DIR, <span class="hljs-string">&quot;xxx_collect.log&quot;</span>),
+            <span class="hljs-string">&apos;maxBytes&apos;</span>: <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">50</span>,  <span class="hljs-comment"># &#x65E5;&#x5FD7;&#x5927;&#x5C0F; 50M</span>
+            <span class="hljs-string">&apos;backupCount&apos;</span>: <span class="hljs-number">5</span>,
+            <span class="hljs-string">&apos;formatter&apos;</span>: <span class="hljs-string">&apos;collect&apos;</span>,
+            <span class="hljs-string">&apos;encoding&apos;</span>: <span class="hljs-string">&quot;utf-8&quot;</span>
+        }
+    },
+    <span class="hljs-string">&apos;loggers&apos;</span>: {
+       <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x7684;logger&#x5E94;&#x7528;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</span>
+        <span class="hljs-string">&apos;&apos;</span>: {
+            <span class="hljs-string">&apos;handlers&apos;</span>: [<span class="hljs-string">&apos;default&apos;</span>, <span class="hljs-string">&apos;console&apos;</span>, <span class="hljs-string">&apos;error&apos;</span>],  <span class="hljs-comment"># &#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x628A;&apos;console&apos;&#x79FB;&#x9664;</span>
+            <span class="hljs-string">&apos;level&apos;</span>: <span class="hljs-string">&apos;DEBUG&apos;</span>,
+            <span class="hljs-string">&apos;propagate&apos;</span>: <span class="hljs-keyword">True</span>,
+        },
+        <span class="hljs-comment"># &#x540D;&#x4E3A; &apos;collect&apos;&#x7684;logger&#x8FD8;&#x5355;&#x72EC;&#x5904;&#x7406;</span>
+        <span class="hljs-string">&apos;collect&apos;</span>: {
+            <span class="hljs-string">&apos;handlers&apos;</span>: [<span class="hljs-string">&apos;console&apos;</span>, <span class="hljs-string">&apos;collect&apos;</span>],
+            <span class="hljs-string">&apos;level&apos;</span>: <span class="hljs-string">&apos;INFO&apos;</span>,
+        }
+    },
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10.ORM相关操作.html" class="navigation navigation-prev " aria-label="Previous page: ORM相关操作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="11.Form组件.html" class="navigation navigation-next " aria-label="Next page: Form组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ORM版学员管理系统","level":"1.4.11","depth":2,"next":{"title":"Form组件","level":"1.4.12","depth":2,"path":"python/Django/11.Form组件.md","ref":"python/Django/11.Form组件.md","articles":[]},"previous":{"title":"ORM相关操作","level":"1.4.10","depth":2,"path":"python/Django/10.ORM相关操作.md","ref":"python/Django/10.ORM相关操作.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"python/Django/111.ORM版学员管理系统.md","mtime":"2018-06-12T01:20:57.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

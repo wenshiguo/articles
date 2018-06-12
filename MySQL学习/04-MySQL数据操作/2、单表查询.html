@@ -1,0 +1,1269 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2、单表查询 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3、多表查询.html" />
+    
+    
+    <link rel="prev" href="1、MySQL数据操作.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-初识数据库.html">
+            
+                <a href="../01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-MySQL库操作.html">
+            
+                <a href="../02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../03-MySQL表操作/">
+            
+                <a href="../03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="../03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="../03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="../03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="../03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="../03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="1、MySQL数据操作.html">
+            
+                <a href="1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4.2" data-path="2、单表查询.html">
+            
+                <a href="2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="3、多表查询.html">
+            
+                <a href="3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="5、多表查询解析.html">
+            
+                <a href="5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Python3连接MySQL.html">
+            
+                <a href="../Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../python/">
+            
+                <a href="../../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../python/Django/01.Django初识.html">
+            
+                <a href="../../python/Django/01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                <a href="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../python/Django/03.HTTP协议.html">
+            
+                <a href="../../python/Django/03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../python/Django/04.Django框架简介.html">
+            
+                <a href="../../python/Django/04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../python/Django/05.Django的视图.html">
+            
+                <a href="../../python/Django/05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../python/Django/06.Django的路由系统.html">
+            
+                <a href="../../python/Django/06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../python/Django/07.Django模板系统.html">
+            
+                <a href="../../python/Django/07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../python/Django/08.Django模型ORM.html">
+            
+                <a href="../../python/Django/08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../python/Django/09.Django路由系统.html">
+            
+                <a href="../../python/Django/09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../python/Django/10.ORM相关操作.html">
+            
+                <a href="../../python/Django/10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../python/Django/111.ORM版学员管理系统.html">
+            
+                <a href="../../python/Django/111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../python/Django/11.Form组件.html">
+            
+                <a href="../../python/Django/11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../python/Django/博客项目点赞与灭操作.html">
+            
+                <a href="../../python/Django/博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../python/Django/博客项目评论.html">
+            
+                <a href="../../python/Django/博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../python/lufei-payment/luffy结算中心.html">
+            
+                <a href="../../python/lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2、单表查询</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;"><b></b>2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;"><b></b>&#x4E00; &#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;&#x91CD;&#x70B9;"><b></b>&#x4E8C; &#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;(&#x91CD;&#x70B9;)</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x7B80;&#x5355;&#x67E5;&#x8BE2;"><b></b>&#x4E09; &#x7B80;&#x5355;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-where&#x7EA6;&#x675F;"><b></b>&#x56DB; WHERE&#x7EA6;&#x675F;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-&#x5206;&#x7EC4;&#x67E5;&#x8BE2;group-by"><b></b>&#x4E94; &#x5206;&#x7EC4;&#x67E5;&#x8BE2;:GROUP BY</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-&#x805A;&#x5408;&#x51FD;&#x6570;"><b></b>&#x56DB; &#x805A;&#x5408;&#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;"><b></b>&#x4E94; &#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x516D;-having&#x8FC7;&#x6EE4;"><b></b>&#x516D; HAVING&#x8FC7;&#x6EE4;</a></li><li><span class="title-icon "></span><a href="#&#x4E03;-&#x67E5;&#x8BE2;&#x6392;&#x5E8F;order-by"><b></b>&#x4E03; &#x67E5;&#x8BE2;&#x6392;&#x5E8F;:ORDER BY</a></li><li><span class="title-icon "></span><a href="#&#x516B;-&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;limit"><b></b>&#x516B; &#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;:LIMIT</a></li><li><span class="title-icon "></span><a href="#&#x4E5D;-&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;"><b></b>&#x4E5D; &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;</a></li></ul></ul></div><a href="#2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;"><a name="2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;"><b></b>2&#x3001;&#x5355;&#x8868;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;"><b></b>&#x4E00; &#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;&#x91CD;&#x70B9;"><b></b>&#x4E8C; &#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;(&#x91CD;&#x70B9;)</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x7B80;&#x5355;&#x67E5;&#x8BE2;"><b></b>&#x4E09; &#x7B80;&#x5355;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-where&#x7EA6;&#x675F;"><b></b>&#x56DB; WHERE&#x7EA6;&#x675F;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-&#x5206;&#x7EC4;&#x67E5;&#x8BE2;group-by"><b></b>&#x4E94; &#x5206;&#x7EC4;&#x67E5;&#x8BE2;:GROUP BY</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-&#x805A;&#x5408;&#x51FD;&#x6570;"><b></b>&#x56DB; &#x805A;&#x5408;&#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;"><b></b>&#x4E94; &#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x516D;-having&#x8FC7;&#x6EE4;"><b></b>&#x516D; HAVING&#x8FC7;&#x6EE4;</a></li><li><span class="title-icon "></span><a href="#&#x4E03;-&#x67E5;&#x8BE2;&#x6392;&#x5E8F;order-by"><b></b>&#x4E03; &#x67E5;&#x8BE2;&#x6392;&#x5E8F;:ORDER BY</a></li><li><span class="title-icon "></span><a href="#&#x516B;-&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;limit"><b></b>&#x516B; &#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;:LIMIT</a></li><li><span class="title-icon "></span><a href="#&#x4E5D;-&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;"><b></b>&#x4E5D; &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;</a></li></ul></ul></div>
+
+<h2 id="&#x4E00;-&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;"><a name="&#x4E00;-&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x4E00;-&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00; &#x5355;&#x8868;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;</h2>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> &#x5B57;&#x6BB5;<span class="hljs-number">1</span>,&#x5B57;&#x6BB5;<span class="hljs-number">2.</span>.. <span class="hljs-keyword">FROM</span> &#x8868;&#x540D;
+                  <span class="hljs-keyword">WHERE</span> &#x6761;&#x4EF6;
+                  <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">field</span>
+                  <span class="hljs-keyword">HAVING</span> &#x7B5B;&#x9009;
+                  <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">field</span>
+                  <span class="hljs-keyword">LIMIT</span> &#x9650;&#x5236;&#x6761;&#x6570;
+</code></pre>
+<h2 id="&#x4E8C;-&#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;&#x91CD;&#x70B9;"><a name="&#x4E8C;-&#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;&#x91CD;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-&#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;&#x91CD;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C; &#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;(&#x91CD;&#x70B9;)</h2>
+<pre><code class="lang-sql">from
+where
+group by
+having
+<span class="hljs-keyword">select</span>
+<span class="hljs-keyword">distinct</span>
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span>
+<span class="hljs-keyword">limit</span>
+&#x91CD;&#x70B9;&#x4E2D;&#x7684;&#x91CD;&#x70B9;&#xFF1A;&#x5173;&#x952E;&#x5B57;&#x7684;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;
+</code></pre>
+<p><code>1.&#x627E;&#x5230;&#x8868;:from</code></p>
+<p><code>2.&#x62FF;&#x7740;where&#x6307;&#x5B9A;&#x7684;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C;&#x53BB;&#x6587;&#x4EF6;/&#x8868;&#x4E2D;&#x53D6;&#x51FA;&#x4E00;&#x6761;&#x6761;&#x8BB0;&#x5F55;</code></p>
+<p><code>3.&#x5C06;&#x53D6;&#x51FA;&#x7684;&#x4E00;&#x6761;&#x6761;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x5206;&#x7EC4;group by&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;group by&#xFF0C;&#x5219;&#x6574;&#x4F53;&#x4F5C;&#x4E3A;&#x4E00;&#x7EC4;</code></p>
+<p><code>4.&#x5C06;&#x5206;&#x7EC4;&#x7684;&#x7ED3;&#x679C;&#x8FDB;&#x884C;having&#x8FC7;&#x6EE4;</code></p>
+<p><code>5.&#x6267;&#x884C;select</code></p>
+<p><code>6.&#x53BB;&#x91CD;</code></p>
+<p><code>7.&#x5C06;&#x7ED3;&#x679C;&#x6309;&#x6761;&#x4EF6;&#x6392;&#x5E8F;&#xFF1A;order by</code></p>
+<p><code>8.&#x9650;&#x5236;&#x7ED3;&#x679C;&#x7684;&#x663E;&#x793A;&#x6761;&#x6570;</code></p>
+<p><a href="href">&#x8BE6;&#x7EC6;&#x89C1;&#xFF1A;</a></p>
+<h2 id="&#x4E09;-&#x7B80;&#x5355;&#x67E5;&#x8BE2;"><a name="&#x4E09;-&#x7B80;&#x5355;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x4E09;-&#x7B80;&#x5355;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09; &#x7B80;&#x5355;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-sql">&#x51C6;&#x5907;&#x8868;&#x548C;&#x8BB0;&#x5F55;
+company.employee
+    &#x5458;&#x5DE5;id      id                  int             
+    &#x59D3;&#x540D;        emp_name            varchar
+    &#x6027;&#x522B;        sex                 enum
+    &#x5E74;&#x9F84;        age                 int
+    &#x5165;&#x804C;&#x65E5;&#x671F;     hire_date           date
+    &#x5C97;&#x4F4D;        post                varchar
+    &#x804C;&#x4F4D;&#x63CF;&#x8FF0;     post_comment        varchar
+    &#x85AA;&#x6C34;        salary              double
+    &#x529E;&#x516C;&#x5BA4;       office              int
+    &#x90E8;&#x95E8;&#x7F16;&#x53F7;     depart_id           int
+
+
+
+#&#x521B;&#x5EFA;&#x8868;
+create table employee(
+id int not null unique auto_increment,
+name varchar(20) not null,
+sex enum(&apos;male&apos;,&apos;female&apos;) not null default &apos;male&apos;, #&#x5927;&#x90E8;&#x5206;&#x662F;&#x7537;&#x7684;
+age int(3) unsigned not null default 28,
+hire_date date not null,
+post varchar(50),
+post_comment varchar(100),
+salary double(15,2),
+office int, #&#x4E00;&#x4E2A;&#x90E8;&#x95E8;&#x4E00;&#x4E2A;&#x5C4B;&#x5B50;
+depart_id int
+);
+
+
+#&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;
+mysql&gt; desc employee;
++--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(20)           | NO   |     | NULL    |                |
+| sex          | enum(&apos;male&apos;,&apos;female&apos;) | NO   |     | male    |                |
+| age          | int(3) unsigned       | NO   |     | 28      |                |
+| hire_date    | date                  | NO   |     | NULL    |                |
+| post         | varchar(50)           | YES  |     | NULL    |                |
+| post_comment | varchar(100)          | YES  |     | NULL    |                |
+| salary       | double(15,2)          | YES  |     | NULL    |                |
+| office       | int(11)               | YES  |     | NULL    |                |
+| depart_id    | int(11)               | YES  |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+
+#&#x63D2;&#x5165;&#x8BB0;&#x5F55;
+#&#x4E09;&#x4E2A;&#x90E8;&#x95E8;&#xFF1A;&#x6559;&#x5B66;&#xFF0C;&#x9500;&#x552E;&#xFF0C;&#x8FD0;&#x8425;
+insert into employee(name,sex,age,hire_date,post,salary,office,depart_id) values
+(&apos;egon&apos;,&apos;male&apos;,18,&apos;20170301&apos;,&apos;&#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;&apos;,7300.33,401,1), #&#x4EE5;&#x4E0B;&#x662F;&#x6559;&#x5B66;&#x90E8;
+(&apos;alex&apos;,&apos;male&apos;,78,&apos;20150302&apos;,&apos;teacher&apos;,1000000.31,401,1),
+(&apos;wupeiqi&apos;,&apos;male&apos;,81,&apos;20130305&apos;,&apos;teacher&apos;,8300,401,1),
+(&apos;yuanhao&apos;,&apos;male&apos;,73,&apos;20140701&apos;,&apos;teacher&apos;,3500,401,1),
+(&apos;liwenzhou&apos;,&apos;male&apos;,28,&apos;20121101&apos;,&apos;teacher&apos;,2100,401,1),
+(&apos;jingliyang&apos;,&apos;female&apos;,18,&apos;20110211&apos;,&apos;teacher&apos;,9000,401,1),
+(&apos;jinxin&apos;,&apos;male&apos;,18,&apos;19000301&apos;,&apos;teacher&apos;,30000,401,1),
+(&apos;&#x6210;&#x9F99;&apos;,&apos;male&apos;,48,&apos;20101111&apos;,&apos;teacher&apos;,10000,401,1),
+
+(&apos;&#x6B6A;&#x6B6A;&apos;,&apos;female&apos;,48,&apos;20150311&apos;,&apos;sale&apos;,3000.13,402,2),#&#x4EE5;&#x4E0B;&#x662F;&#x9500;&#x552E;&#x90E8;&#x95E8;
+(&apos;&#x4E2B;&#x4E2B;&apos;,&apos;female&apos;,38,&apos;20101101&apos;,&apos;sale&apos;,2000.35,402,2),
+(&apos;&#x4E01;&#x4E01;&apos;,&apos;female&apos;,18,&apos;20110312&apos;,&apos;sale&apos;,1000.37,402,2),
+(&apos;&#x661F;&#x661F;&apos;,&apos;female&apos;,18,&apos;20160513&apos;,&apos;sale&apos;,3000.29,402,2),
+(&apos;&#x683C;&#x683C;&apos;,&apos;female&apos;,28,&apos;20170127&apos;,&apos;sale&apos;,4000.33,402,2),
+
+(&apos;&#x5F20;&#x91CE;&apos;,&apos;male&apos;,28,&apos;20160311&apos;,&apos;operation&apos;,10000.13,403,3), #&#x4EE5;&#x4E0B;&#x662F;&#x8FD0;&#x8425;&#x90E8;&#x95E8;
+(&apos;&#x7A0B;&#x54AC;&#x91D1;&apos;,&apos;male&apos;,18,&apos;19970312&apos;,&apos;operation&apos;,20000,403,3),
+(&apos;&#x7A0B;&#x54AC;&#x94F6;&apos;,&apos;female&apos;,18,&apos;20130311&apos;,&apos;operation&apos;,19000,403,3),
+(&apos;&#x7A0B;&#x54AC;&#x94DC;&apos;,&apos;male&apos;,18,&apos;20150411&apos;,&apos;operation&apos;,18000,403,3),
+(&apos;&#x7A0B;&#x54AC;&#x94C1;&apos;,&apos;female&apos;,18,&apos;20140512&apos;,&apos;operation&apos;,17000,403,3)
+;
+
+#ps&#xFF1A;&#x5982;&#x679C;&#x5728;windows&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x63D2;&#x5165;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#xFF0C;select&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#x7A7A;&#x767D;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x6210;gbk
+</code></pre>
+<pre><code class="lang-sql">#&#x7B80;&#x5355;&#x67E5;&#x8BE2;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">id</span>,<span class="hljs-keyword">name</span>,sex,age,hire_date,post,post_comment,salary,office,depart_id 
+    <span class="hljs-keyword">FROM</span> employee;
+
+    <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> employee;
+
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee;
+
+#&#x907F;&#x514D;&#x91CD;&#x590D;DISTINCT
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> post <span class="hljs-keyword">FROM</span> employee;    
+
+#&#x901A;&#x8FC7;&#x56DB;&#x5219;&#x8FD0;&#x7B97;&#x67E5;&#x8BE2;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>, salary*<span class="hljs-number">12</span> <span class="hljs-keyword">FROM</span> employee;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>, salary*<span class="hljs-number">12</span> <span class="hljs-keyword">AS</span> Annual_salary <span class="hljs-keyword">FROM</span> employee;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>, salary*<span class="hljs-number">12</span> Annual_salary <span class="hljs-keyword">FROM</span> employee;
+
+#&#x5B9A;&#x4E49;&#x663E;&#x793A;&#x683C;&#x5F0F;
+   CONCAT() &#x51FD;&#x6570;&#x7528;&#x4E8E;&#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x4E32;
+   <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CONCAT</span>(<span class="hljs-string">&apos;&#x59D3;&#x540D;: &apos;</span>,<span class="hljs-keyword">name</span>,<span class="hljs-string">&apos;  &#x5E74;&#x85AA;: &apos;</span>, salary*<span class="hljs-number">12</span>)  <span class="hljs-keyword">AS</span> Annual_salary 
+   <span class="hljs-keyword">FROM</span> employee;
+
+   CONCAT_WS() &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x5206;&#x9694;&#x7B26;
+   <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CONCAT_WS</span>(<span class="hljs-string">&apos;:&apos;</span>,<span class="hljs-keyword">name</span>,salary*<span class="hljs-number">12</span>)  <span class="hljs-keyword">AS</span> Annual_salary 
+   <span class="hljs-keyword">FROM</span> employee;
+
+   &#x7ED3;&#x5408;CASE&#x8BED;&#x53E5;&#xFF1A;
+   <span class="hljs-keyword">SELECT</span>
+       (
+           <span class="hljs-keyword">CASE</span>
+           <span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">NAME</span> = <span class="hljs-string">&apos;egon&apos;</span> <span class="hljs-keyword">THEN</span>
+               <span class="hljs-keyword">NAME</span>
+           <span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">NAME</span> = <span class="hljs-string">&apos;alex&apos;</span> <span class="hljs-keyword">THEN</span>
+               <span class="hljs-keyword">CONCAT</span>(<span class="hljs-keyword">name</span>,<span class="hljs-string">&apos;_BIGSB&apos;</span>)
+           <span class="hljs-keyword">ELSE</span>
+               <span class="hljs-keyword">concat</span>(<span class="hljs-keyword">NAME</span>, <span class="hljs-string">&apos;SB&apos;</span>)
+           <span class="hljs-keyword">END</span>
+       ) <span class="hljs-keyword">as</span> new_name
+   <span class="hljs-keyword">FROM</span>
+       emp;
+</code></pre>
+<p>&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</p>
+<pre><code>1 &#x67E5;&#x51FA;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x85AA;&#x8D44;,&#x683C;&#x5F0F;&#x4E3A;
+    &lt;&#x540D;&#x5B57;:egon&gt;    &lt;&#x85AA;&#x8D44;:3000&gt;
+2 &#x67E5;&#x51FA;&#x6240;&#x6709;&#x7684;&#x5C97;&#x4F4D;&#xFF08;&#x53BB;&#x6389;&#x91CD;&#x590D;&#xFF09;
+3 &#x67E5;&#x51FA;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x540D;&#x5B57;&#xFF0C;&#x4EE5;&#x53CA;&#x4ED6;&#x4EEC;&#x7684;&#x5E74;&#x85AA;,&#x5E74;&#x85AA;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x4E3A;annual_year
+</code></pre><pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">concat</span>(<span class="hljs-string">&apos;&lt;&#x540D;&#x5B57;:&apos;</span>,<span class="hljs-keyword">name</span>,<span class="hljs-string">&apos;&gt;    &apos;</span>,<span class="hljs-string">&apos;&lt;&#x85AA;&#x8D44;:&apos;</span>,salary,<span class="hljs-string">&apos;&gt;&apos;</span>) <span class="hljs-keyword">from</span> employee;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> depart_id <span class="hljs-keyword">from</span> employee;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,salary*<span class="hljs-number">12</span> annual_salary <span class="hljs-keyword">from</span> employee;
+</code></pre>
+<h2 id="&#x56DB;-where&#x7EA6;&#x675F;"><a name="&#x56DB;-where&#x7EA6;&#x675F;" class="anchor-navigation-ex-anchor" href="#&#x56DB;-where&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB; WHERE&#x7EA6;&#x675F;</h2>
+<p>where&#x5B57;&#x53E5;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ol>
+<li>&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&gt; &lt; &gt;= &lt;= &lt;&gt; !=</li>
+<li>between 80 and 100 &#x503C;&#x5728;10&#x5230;20&#x4E4B;&#x95F4;</li>
+<li>in(80,90,100) &#x503C;&#x662F;10&#x6216;20&#x6216;30</li>
+<li>like &apos;egon%&apos;
+ pattern&#x53EF;&#x4EE5;&#x662F;%&#x6216;<em>&#xFF0C;
+ %&#x8868;&#x793A;&#x4EFB;&#x610F;&#x591A;&#x5B57;&#x7B26;
+ </em>&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26; </li>
+<li>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&#x5728;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x76F4;&#x63A5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26; and or not</li>
+</ol>
+<p>where&#x5B57;&#x53E5;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ol>
+<li>&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&gt; &lt; &gt;= &lt;= &lt;&gt; !=</li>
+<li>between 80 and 100 &#x503C;&#x5728;10&#x5230;20&#x4E4B;&#x95F4;</li>
+<li>in(80,90,100) &#x503C;&#x662F;10&#x6216;20&#x6216;30</li>
+<li>like &apos;egon%&apos;
+ pattern&#x53EF;&#x4EE5;&#x662F;%&#x6216;<em>&#xFF0C;
+ %&#x8868;&#x793A;&#x4EFB;&#x610F;&#x591A;&#x5B57;&#x7B26;
+ </em>&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26; </li>
+<li>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;&#x5728;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x76F4;&#x63A5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26; and or not</li>
+</ol>
+<pre><code class="lang-sql">#1:&#x5355;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">FROM</span> employee
+        <span class="hljs-keyword">WHERE</span> post=<span class="hljs-string">&apos;sale&apos;</span>;
+
+#2:&#x591A;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee
+        <span class="hljs-keyword">WHERE</span> post=<span class="hljs-string">&apos;teacher&apos;</span> <span class="hljs-keyword">AND</span> salary&gt;<span class="hljs-number">10000</span>;
+
+#3:&#x5173;&#x952E;&#x5B57;BETWEEN AND
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> salary <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">10000</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">20000</span>;
+
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> salary <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">10000</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">20000</span>;
+
+#4:&#x5173;&#x952E;&#x5B57;IS NULL(&#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x4E3A;NULL&#x4E0D;&#x80FD;&#x7528;&#x7B49;&#x53F7;&#xFF0C;&#x9700;&#x8981;&#x7528;IS)
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,post_comment <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> post_comment <span class="hljs-keyword">IS</span> <span class="hljs-literal">NULL</span>;
+
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,post_comment <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> post_comment <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>;
+
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,post_comment <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> post_comment=<span class="hljs-string">&apos;&apos;</span>; &#x6CE8;&#x610F;&apos;&apos;&#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E0D;&#x662F;null
+    ps&#xFF1A;
+        &#x6267;&#x884C;
+        <span class="hljs-keyword">update</span> employee <span class="hljs-keyword">set</span> post_comment=<span class="hljs-string">&apos;&apos;</span> <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span>=<span class="hljs-number">2</span>;
+        &#x518D;&#x7528;&#x4E0A;&#x6761;&#x67E5;&#x770B;&#xFF0C;&#x5C31;&#x4F1A;&#x6709;&#x7ED3;&#x679C;&#x4E86;
+
+#5:&#x5173;&#x952E;&#x5B57;IN&#x96C6;&#x5408;&#x67E5;&#x8BE2;
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> salary=<span class="hljs-number">3000</span> <span class="hljs-keyword">OR</span> salary=<span class="hljs-number">3500</span> <span class="hljs-keyword">OR</span> salary=<span class="hljs-number">4000</span> <span class="hljs-keyword">OR</span> salary=<span class="hljs-number">9000</span> ;
+
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> salary <span class="hljs-keyword">IN</span> (<span class="hljs-number">3000</span>,<span class="hljs-number">3500</span>,<span class="hljs-number">4000</span>,<span class="hljs-number">9000</span>) ;
+
+    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">FROM</span> employee 
+        <span class="hljs-keyword">WHERE</span> salary <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">IN</span> (<span class="hljs-number">3000</span>,<span class="hljs-number">3500</span>,<span class="hljs-number">4000</span>,<span class="hljs-number">9000</span>) ;
+
+#6:&#x5173;&#x952E;&#x5B57;LIKE&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;
+    &#x901A;&#x914D;&#x7B26;&#x2019;%&#x2019;
+    <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> employee 
+            <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&apos;eg%&apos;</span>;
+
+    &#x901A;&#x914D;&#x7B26;&#x2019;_&#x2019;
+    <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> employee 
+            <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&apos;al__&apos;</span>;
+</code></pre>
+<p>&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</p>
+<pre><code>1. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x662F;teacher&#x7684;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x3001;&#x5E74;&#x9F84;
+2. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x662F;teacher&#x4E14;&#x5E74;&#x9F84;&#x5927;&#x4E8E;30&#x5C81;&#x7684;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x3001;&#x5E74;&#x9F84;
+3. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x662F;teacher&#x4E14;&#x85AA;&#x8D44;&#x5728;9000-1000&#x8303;&#x56F4;&#x5185;&#x7684;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x3001;&#x5E74;&#x9F84;&#x3001;&#x85AA;&#x8D44;
+4. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x63CF;&#x8FF0;&#x4E0D;&#x4E3A;NULL&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;
+5. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x662F;teacher&#x4E14;&#x85AA;&#x8D44;&#x662F;10000&#x6216;9000&#x6216;30000&#x7684;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x3001;&#x5E74;&#x9F84;&#x3001;&#x85AA;&#x8D44;
+6. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x662F;teacher&#x4E14;&#x85AA;&#x8D44;&#x4E0D;&#x662F;10000&#x6216;9000&#x6216;30000&#x7684;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x3001;&#x5E74;&#x9F84;&#x3001;&#x85AA;&#x8D44;
+7. &#x67E5;&#x770B;&#x5C97;&#x4F4D;&#x662F;teacher&#x4E14;&#x540D;&#x5B57;&#x662F;jin&#x5F00;&#x5934;&#x7684;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x3001;&#x5E74;&#x85AA;
+</code></pre><pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,age <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post = <span class="hljs-string">&apos;teacher&apos;</span>;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,age <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post=<span class="hljs-string">&apos;teacher&apos;</span> <span class="hljs-keyword">and</span> age &gt; <span class="hljs-number">30</span>; 
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,age,salary <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post=<span class="hljs-string">&apos;teacher&apos;</span> <span class="hljs-keyword">and</span> salary <span class="hljs-keyword">between</span> <span class="hljs-number">9000</span> <span class="hljs-keyword">and</span> <span class="hljs-number">10000</span>;
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post_comment <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,age,salary <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post=<span class="hljs-string">&apos;teacher&apos;</span> <span class="hljs-keyword">and</span> salary <span class="hljs-keyword">in</span> (<span class="hljs-number">10000</span>,<span class="hljs-number">9000</span>,<span class="hljs-number">30000</span>);
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,age,salary <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post=<span class="hljs-string">&apos;teacher&apos;</span> <span class="hljs-keyword">and</span> salary <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">10000</span>,<span class="hljs-number">9000</span>,<span class="hljs-number">30000</span>);
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,salary*<span class="hljs-number">12</span> <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> post=<span class="hljs-string">&apos;teacher&apos;</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">like</span> <span class="hljs-string">&apos;jin%&apos;</span>;
+</code></pre>
+<h2 id="&#x4E94;-&#x5206;&#x7EC4;&#x67E5;&#x8BE2;group-by"><a name="&#x4E94;-&#x5206;&#x7EC4;&#x67E5;&#x8BE2;group-by" class="anchor-navigation-ex-anchor" href="#&#x4E94;-&#x5206;&#x7EC4;&#x67E5;&#x8BE2;group-by"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94; &#x5206;&#x7EC4;&#x67E5;&#x8BE2;:GROUP BY</h2>
+<p>&#x4E00; &#x4EC0;&#x4E48;&#x662F;&#x5206;&#x7EC4;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5206;&#x7EC4;&#xFF1F;</p>
+<pre><code>#1&#x3001;&#x9996;&#x5148;&#x660E;&#x786E;&#x4E00;&#x70B9;&#xFF1A;&#x5206;&#x7EC4;&#x53D1;&#x751F;&#x5728;where&#x4E4B;&#x540E;&#xFF0C;&#x5373;&#x5206;&#x7EC4;&#x662F;&#x57FA;&#x4E8E;where&#x4E4B;&#x540E;&#x5F97;&#x5230;&#x7684;&#x8BB0;&#x5F55;&#x800C;&#x8FDB;&#x884C;&#x7684;
+
+#2&#x3001;&#x5206;&#x7EC4;&#x6307;&#x7684;&#x662F;&#xFF1A;&#x5C06;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x6309;&#x7167;&#x67D0;&#x4E2A;&#x76F8;&#x540C;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x5F52;&#x7C7B;&#xFF0C;&#x6BD4;&#x5982;&#x9488;&#x5BF9;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x8868;&#x7684;&#x804C;&#x4F4D;&#x5206;&#x7EC4;&#xFF0C;&#x6216;&#x8005;&#x6309;&#x7167;&#x6027;&#x522B;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x7B49;
+
+#3&#x3001;&#x4E3A;&#x4F55;&#x8981;&#x5206;&#x7EC4;&#x5462;&#xFF1F;
+    &#x53D6;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x7684;&#x6700;&#x9AD8;&#x5DE5;&#x8D44;
+    &#x53D6;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x7684;&#x5458;&#x5DE5;&#x6570;
+    &#x53D6;&#x7537;&#x4EBA;&#x6570;&#x548C;&#x5973;&#x4EBA;&#x6570;
+
+&#x5C0F;&#x7A8D;&#x95E8;&#xFF1A;&#x2018;&#x6BCF;&#x2019;&#x8FD9;&#x4E2A;&#x5B57;&#x540E;&#x9762;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5206;&#x7EC4;&#x7684;&#x4F9D;&#x636E;
+
+
+#4&#x3001;&#x5927;&#x524D;&#x63D0;&#xFF1A;
+    &#x53EF;&#x4EE5;&#x6309;&#x7167;&#x4EFB;&#x610F;&#x5B57;&#x6BB5;&#x5206;&#x7EC4;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x7EC4;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x6BD4;&#x5982;group by post&#xFF0C;&#x53EA;&#x80FD;&#x67E5;&#x770B;post&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x67E5;&#x770B;&#x7EC4;&#x5185;&#x4FE1;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x501F;&#x52A9;&#x4E8E;&#x805A;&#x5408;&#x51FD;&#x6570;
+</code></pre><p>&#x4E8C; ONLY_FULL_GROUP_BY</p>
+<pre><code>&#xFF01;&#xFF01;&#xFF01;SQL_MODE&#x8BBE;&#x7F6E;&#xFF01;&#xFF01;&#xFF01;
+#&#x67E5;&#x770B;MySQL 5.7&#x9ED8;&#x8BA4;&#x7684;sql_mode&#x5982;&#x4E0B;&#xFF1A;
+mysql&gt; select @@global.sql_mode;
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+#&#xFF01;&#xFF01;&#xFF01;&#x6CE8;&#x610F;
+ONLY_FULL_GROUP_BY&#x7684;&#x8BED;&#x4E49;&#x5C31;&#x662F;&#x786E;&#x5B9A;select target list&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5217;&#x7684;&#x503C;&#x90FD;&#x662F;&#x660E;&#x786E;&#x8BED;&#x4E49;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x6765;&#xFF0C;&#x5728;ONLY_FULL_GROUP_BY&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;target list&#x4E2D;&#x7684;&#x503C;&#x8981;&#x4E48;&#x662F;&#x6765;&#x81EA;&#x4E8E;&#x805A;&#x96C6;&#x51FD;&#x6570;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x6765;&#x81EA;&#x4E8E;group by list&#x4E2D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x3002;
+
+
+#&#x8BBE;&#x7F6E;sql_mole&#x5982;&#x4E0B;&#x64CD;&#x4F5C;(&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53BB;&#x6389;ONLY_FULL_GROUP_BY&#x6A21;&#x5F0F;)&#xFF1A;
+mysql&gt; set global sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;
+</code></pre><pre><code class="lang-sql">mysql&gt; select @@global.sql_mode;
++-------------------+
+| @@global.sql_mode |
++-------------------+
+|                   |
++-------------------+
+row in set (0.00 sec)
+
+mysql&gt; select * from emp group by post; 
++----+------+--------+-----+------------+----------------------------+--------------+------------+--------+-----------+
+| id | name | sex    | age | hire_date  | post                       | post_comment | salary     | office | depart_id |
++----+------+--------+-----+------------+----------------------------+--------------+------------+--------+-----------+
+| 14 | &#x5F20;&#x91CE; | male   |  28 | 2016-03-11 | operation                  | NULL         |   10000.13 |    403 |         3 |
+|  9 | &#x6B6A;&#x6B6A; | female |  48 | 2015-03-11 | sale                       | NULL         |    3000.13 |    402 |         2 |
+|  2 | alex | male   |  78 | 2015-03-02 | teacher                    | NULL         | 1000000.31 |    401 |         1 |
+|  1 | egon | male   |  18 | 2017-03-01 | &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F; | NULL         |    7300.33 |    401 |         1 |
++----+------+--------+-----+------------+----------------------------+--------------+------------+--------+-----------+
+rows in set (0.00 sec)
+
+
+#&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;ONLY_FULL_GROUP_BY,&#x4E8E;&#x662F;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x7ED3;&#x679C;&#xFF0C;&#x9ED8;&#x8BA4;&#x90FD;&#x662F;&#x7EC4;&#x5185;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x8FD9;&#x662F;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x7684;
+
+mysql&gt; set global sql_mode=&apos;ONLY_FULL_GROUP_BY&apos;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; quit #&#x8BBE;&#x7F6E;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x9000;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x767B;&#x5F55;&#x65B9;&#x53EF;&#x751F;&#x6548;
+Bye
+
+mysql&gt; use db1;
+Database changed
+mysql&gt; select * from emp group by post; #&#x62A5;&#x9519;
+ERROR 1055 (42000): &apos;db1.emp.id&apos; isn&apos;t in GROUP BY
+mysql&gt; select post,count(id) from emp group by post; #&#x53EA;&#x80FD;&#x67E5;&#x770B;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#x548C;&#x4F7F;&#x7528;&#x805A;&#x5408;&#x51FD;&#x6570;
++----------------------------+-----------+
+| post                       | count(id) |
++----------------------------+-----------+
+| operation                  |         5 |
+| sale                       |         5 |
+| teacher                    |         7 |
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F; |         1 |
++----------------------------+-----------+
+rows in set (0.00 sec)
+</code></pre>
+<p>&#x4E09; GROUP BY</p>
+<pre><code>&#x5355;&#x72EC;&#x4F7F;&#x7528;GROUP BY&#x5173;&#x952E;&#x5B57;&#x5206;&#x7EC4;
+    SELECT post FROM employee GROUP BY post;
+    &#x6CE8;&#x610F;&#xFF1A;&#x6211;&#x4EEC;&#x6309;&#x7167;post&#x5B57;&#x6BB5;&#x5206;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;select&#x67E5;&#x8BE2;&#x7684;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x662F;post&#xFF0C;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x7EC4;&#x5185;&#x7684;&#x5176;&#x4ED6;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x501F;&#x52A9;&#x51FD;&#x6570;
+
+GROUP BY&#x5173;&#x952E;&#x5B57;&#x548C;GROUP_CONCAT()&#x51FD;&#x6570;&#x4E00;&#x8D77;&#x4F7F;&#x7528;
+    SELECT post,GROUP_CONCAT(name) FROM employee GROUP BY post;#&#x6309;&#x7167;&#x5C97;&#x4F4D;&#x5206;&#x7EC4;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x7EC4;&#x5185;&#x6210;&#x5458;&#x540D;
+    SELECT post,GROUP_CONCAT(name) as emp_members FROM employee GROUP BY post;
+
+GROUP BY&#x4E0E;&#x805A;&#x5408;&#x51FD;&#x6570;&#x4E00;&#x8D77;&#x4F7F;&#x7528;
+    select post,count(id) as count from employee group by post;#&#x6309;&#x7167;&#x5C97;&#x4F4D;&#x5206;&#x7EC4;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x6BCF;&#x4E2A;&#x7EC4;&#x6709;&#x591A;&#x5C11;&#x4EBA;
+</code></pre><p><font style="color:red">&#x5F3A;&#x8C03;&#xFF1A;</font></p>
+<pre><code>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7528;unique&#x7684;&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5206;&#x7EC4;&#x7684;&#x4F9D;&#x636E;&#xFF0C;&#x5219;&#x6BCF;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x81EA;&#x6210;&#x4E00;&#x7EC4;&#xFF0C;&#x8FD9;&#x79CD;&#x5206;&#x7EC4;&#x6CA1;&#x6709;&#x610F;&#x4E49;
+&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x4E4B;&#x95F4;&#x7684;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x540C;&#xFF0C;&#x8BE5;&#x5B57;&#x6BB5;&#x901A;&#x5E38;&#x7528;&#x6765;&#x4F5C;&#x4E3A;&#x5206;&#x7EC4;&#x7684;&#x4F9D;&#x636E;
+</code></pre><h2 id="&#x56DB;-&#x805A;&#x5408;&#x51FD;&#x6570;"><a name="&#x56DB;-&#x805A;&#x5408;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x56DB;-&#x805A;&#x5408;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB; &#x805A;&#x5408;&#x51FD;&#x6570;</h2>
+<pre><code>#&#x5F3A;&#x8C03;&#xFF1A;&#x805A;&#x5408;&#x51FD;&#x6570;&#x805A;&#x5408;&#x7684;&#x662F;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x82E5;&#x662F;&#x6CA1;&#x6709;&#x5206;&#x7EC4;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4E00;&#x7EC4;
+
+&#x793A;&#x4F8B;&#xFF1A;
+    SELECT COUNT(*) FROM employee;
+    SELECT COUNT(*) FROM employee WHERE depart_id=1;
+    SELECT MAX(salary) FROM employee;
+    SELECT MIN(salary) FROM employee;
+    SELECT AVG(salary) FROM employee;
+    SELECT SUM(salary) FROM employee;
+    SELECT SUM(salary) FROM employee WHERE depart_id=3;
+</code></pre><h2 id="&#x4E94;-&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;"><a name="&#x4E94;-&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x4E94;-&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94; &#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</h2>
+<pre><code>1. &#x67E5;&#x8BE2;&#x5C97;&#x4F4D;&#x540D;&#x4EE5;&#x53CA;&#x5C97;&#x4F4D;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x540D;&#x5B57;
+2. &#x67E5;&#x8BE2;&#x5C97;&#x4F4D;&#x540D;&#x4EE5;&#x53CA;&#x5404;&#x5C97;&#x4F4D;&#x5185;&#x5305;&#x542B;&#x7684;&#x5458;&#x5DE5;&#x4E2A;&#x6570;
+3. &#x67E5;&#x8BE2;&#x516C;&#x53F8;&#x5185;&#x7537;&#x5458;&#x5DE5;&#x548C;&#x5973;&#x5458;&#x5DE5;&#x7684;&#x4E2A;&#x6570;
+4. &#x67E5;&#x8BE2;&#x5C97;&#x4F4D;&#x540D;&#x4EE5;&#x53CA;&#x5404;&#x5C97;&#x4F4D;&#x7684;&#x5E73;&#x5747;&#x85AA;&#x8D44;
+5. &#x67E5;&#x8BE2;&#x5C97;&#x4F4D;&#x540D;&#x4EE5;&#x53CA;&#x5404;&#x5C97;&#x4F4D;&#x7684;&#x6700;&#x9AD8;&#x85AA;&#x8D44;
+6. &#x67E5;&#x8BE2;&#x5C97;&#x4F4D;&#x540D;&#x4EE5;&#x53CA;&#x5404;&#x5C97;&#x4F4D;&#x7684;&#x6700;&#x4F4E;&#x85AA;&#x8D44;
+7. &#x67E5;&#x8BE2;&#x7537;&#x5458;&#x5DE5;&#x4E0E;&#x7537;&#x5458;&#x5DE5;&#x7684;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#xFF0C;&#x5973;&#x5458;&#x5DE5;&#x4E0E;&#x5973;&#x5458;&#x5DE5;&#x7684;&#x5E73;&#x5747;&#x85AA;&#x8D44;
+</code></pre><pre><code>#&#x9898;1&#xFF1A;&#x5206;&#x7EC4;
+mysql&gt; select post,group_concat(name) from employee group by post;
++-----------------------------------------+---------------------------------------------------------+
+| post                                    | group_concat(name)                                      |
++-----------------------------------------+---------------------------------------------------------+
+| operation                               | &#x5F20;&#x91CE;,&#x7A0B;&#x54AC;&#x91D1;,&#x7A0B;&#x54AC;&#x94F6;,&#x7A0B;&#x54AC;&#x94DC;,&#x7A0B;&#x54AC;&#x94C1;                        |
+| sale                                    | &#x6B6A;&#x6B6A;,&#x4E2B;&#x4E2B;,&#x4E01;&#x4E01;,&#x661F;&#x661F;,&#x683C;&#x683C;                                |
+| teacher                                 | alex,wupeiqi,yuanhao,liwenzhou,jingliyang,jinxin,&#x6210;&#x9F99;   |
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              | egon                                                    |
++-----------------------------------------+---------------------------------------------------------+
+
+
+#&#x9898;&#x76EE;2&#xFF1A;
+mysql&gt; select post,count(id) from employee group by post;
++-----------------------------------------+-----------+
+| post                                    | count(id) |
++-----------------------------------------+-----------+
+| operation                               |         5 |
+| sale                                    |         5 |
+| teacher                                 |         7 |
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              |         1 |
++-----------------------------------------+-----------+
+
+
+#&#x9898;&#x76EE;3&#xFF1A;
+mysql&gt; select sex,count(id) from employee group by sex;
++--------+-----------+
+| sex    | count(id) |
++--------+-----------+
+| male   |        10 |
+| female |         8 |
++--------+-----------+
+
+#&#x9898;&#x76EE;4&#xFF1A;
+mysql&gt; select post,avg(salary) from employee group by post;
++-----------------------------------------+---------------+
+| post                                    | avg(salary)   |
++-----------------------------------------+---------------+
+| operation                               |  16800.026000 |
+| sale                                    |   2600.294000 |
+| teacher                                 | 151842.901429 |
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              |   7300.330000 |
++-----------------------------------------+---------------+
+
+#&#x9898;&#x76EE;5
+mysql&gt; select post,max(salary) from employee group by post;
++-----------------------------------------+-------------+
+| post                                    | max(salary) |
++-----------------------------------------+-------------+
+| operation                               |    20000.00 |
+| sale                                    |     4000.33 |
+| teacher                                 |  1000000.31 |
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              |     7300.33 |
++-----------------------------------------+-------------+
+
+#&#x9898;&#x76EE;6
+mysql&gt; select post,min(salary) from employee group by post;
++-----------------------------------------+-------------+
+| post                                    | min(salary) |
++-----------------------------------------+-------------+
+| operation                               |    10000.13 |
+| sale                                    |     1000.37 |
+| teacher                                 |     2100.00 |
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              |     7300.33 |
++-----------------------------------------+-------------+
+
+#&#x9898;&#x76EE;&#x4E03;
+mysql&gt; select sex,avg(salary) from employee group by sex;
++--------+---------------+
+| sex    | avg(salary)   |
++--------+---------------+
+| male   | 110920.077000 |
+| female |   7250.183750 |
++--------+---------------+
+</code></pre><h2 id="&#x516D;-having&#x8FC7;&#x6EE4;"><a name="&#x516D;-having&#x8FC7;&#x6EE4;" class="anchor-navigation-ex-anchor" href="#&#x516D;-having&#x8FC7;&#x6EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516D; HAVING&#x8FC7;&#x6EE4;</h2>
+<p><font style="color:red">HAVING&#x4E0E;WHERE&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;!!!!!!</font></p>
+<pre><code>#&#xFF01;&#xFF01;&#xFF01;&#x6267;&#x884C;&#x4F18;&#x5148;&#x7EA7;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#xFF1A;where &gt; group by &gt; having 
+#1. Where &#x53D1;&#x751F;&#x5728;&#x5206;&#x7EC4;group by&#x4E4B;&#x524D;&#xFF0C;&#x56E0;&#x800C;Where&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x4EFB;&#x610F;&#x5B57;&#x6BB5;&#xFF0C;&#x4F46;&#x662F;&#x7EDD;&#x5BF9;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x805A;&#x5408;&#x51FD;&#x6570;&#x3002;
+
+#2. Having&#x53D1;&#x751F;&#x5728;&#x5206;&#x7EC4;group by&#x4E4B;&#x540E;&#xFF0C;&#x56E0;&#x800C;Having&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x53D6;&#x5230;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x805A;&#x5408;&#x51FD;&#x6570;
+</code></pre><pre><code>&#x9A8C;&#x8BC1;
+mysql&gt; select @@sql_mode;
++--------------------+
+| @@sql_mode         |
++--------------------+
+| ONLY_FULL_GROUP_BY |
++--------------------+
+row in set (0.00 sec)
+
+mysql&gt; select * from emp where salary &gt; 100000;
++----+------+------+-----+------------+---------+--------------+------------+--------+-----------+
+| id | name | sex  | age | hire_date  | post    | post_comment | salary     | office | depart_id |
++----+------+------+-----+------------+---------+--------------+------------+--------+-----------+
+|  2 | alex | male |  78 | 2015-03-02 | teacher | NULL         | 1000000.31 |    401 |         1 |
++----+------+------+-----+------------+---------+--------------+------------+--------+-----------+
+row in set (0.00 sec)
+
+mysql&gt; select * from emp having salary &gt; 100000;
+ERROR 1463 (42000): Non-grouping field &apos;salary&apos; is used in HAVING clause
+
+mysql&gt; select post,group_concat(name) from emp group by post having salary &gt; 10000;#&#x9519;&#x8BEF;&#xFF0C;&#x5206;&#x7EC4;&#x540E;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x53D6;&#x5230;salary&#x5B57;&#x6BB5;
+ERROR 1054 (42S22): Unknown column &apos;salary&apos; in &apos;having clause&apos;
+mysql&gt; select post,group_concat(name) from emp group by post having avg(salary) &gt; 10000;
++-----------+-------------------------------------------------------+
+| post | group_concat(name) |
++-----------+-------------------------------------------------------+
+| operation | &#x7A0B;&#x54AC;&#x94C1;,&#x7A0B;&#x54AC;&#x94DC;,&#x7A0B;&#x54AC;&#x94F6;,&#x7A0B;&#x54AC;&#x91D1;,&#x5F20;&#x91CE; |
+| teacher | &#x6210;&#x9F99;,jinxin,jingliyang,liwenzhou,yuanhao,wupeiqi,alex |
++-----------+-------------------------------------------------------+
+rows in set (0.00 sec)
+</code></pre><p>&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</p>
+<pre><code>1. &#x67E5;&#x8BE2;&#x5404;&#x5C97;&#x4F4D;&#x5185;&#x5305;&#x542B;&#x7684;&#x5458;&#x5DE5;&#x4E2A;&#x6570;&#x5C0F;&#x4E8E;2&#x7684;&#x5C97;&#x4F4D;&#x540D;&#x3001;&#x5C97;&#x4F4D;&#x5185;&#x5305;&#x542B;&#x5458;&#x5DE5;&#x540D;&#x5B57;&#x3001;&#x4E2A;&#x6570;
+3. &#x67E5;&#x8BE2;&#x5404;&#x5C97;&#x4F4D;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#x5927;&#x4E8E;10000&#x7684;&#x5C97;&#x4F4D;&#x540D;&#x3001;&#x5E73;&#x5747;&#x5DE5;&#x8D44;
+4. &#x67E5;&#x8BE2;&#x5404;&#x5C97;&#x4F4D;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#x5927;&#x4E8E;10000&#x4E14;&#x5C0F;&#x4E8E;20000&#x7684;&#x5C97;&#x4F4D;&#x540D;&#x3001;&#x5E73;&#x5747;&#x5DE5;&#x8D44;
+</code></pre><pre><code>#&#x9898;1&#xFF1A;
+mysql&gt; select post,group_concat(name),count(id) from employee group by post having count(id) &lt; 2;
++-----------------------------------------+--------------------+-----------+
+| post                                    | group_concat(name) | count(id) |
++-----------------------------------------+--------------------+-----------+
+| &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              | egon               |         1 |
++-----------------------------------------+--------------------+-----------+
+
+#&#x9898;&#x76EE;2&#xFF1A;
+mysql&gt; select post,avg(salary) from employee group by post having avg(salary) &gt; 10000;
++-----------+---------------+
+| post      | avg(salary)   |
++-----------+---------------+
+| operation |  16800.026000 |
+| teacher   | 151842.901429 |
++-----------+---------------+
+
+#&#x9898;&#x76EE;3&#xFF1A;
+mysql&gt; select post,avg(salary) from employee group by post having avg(salary) &gt; 10000 and avg(salary) &lt;20000;
++-----------+--------------+
+| post      | avg(salary)  |
++-----------+--------------+
+| operation | 16800.026000 |
++-----------+--------------+
+</code></pre><h2 id="&#x4E03;-&#x67E5;&#x8BE2;&#x6392;&#x5E8F;order-by"><a name="&#x4E03;-&#x67E5;&#x8BE2;&#x6392;&#x5E8F;order-by" class="anchor-navigation-ex-anchor" href="#&#x4E03;-&#x67E5;&#x8BE2;&#x6392;&#x5E8F;order-by"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E03; &#x67E5;&#x8BE2;&#x6392;&#x5E8F;:ORDER BY</h2>
+<pre><code>&#x6309;&#x5355;&#x5217;&#x6392;&#x5E8F;
+    SELECT * FROM employee ORDER BY salary;
+    SELECT * FROM employee ORDER BY salary ASC;
+    SELECT * FROM employee ORDER BY salary DESC;
+
+&#x6309;&#x591A;&#x5217;&#x6392;&#x5E8F;:&#x5148;&#x6309;&#x7167;age&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x5E74;&#x7EAA;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x6309;&#x7167;&#x85AA;&#x8D44;&#x6392;&#x5E8F;
+    SELECT * from employee
+        ORDER BY age,
+        salary DESC;
+</code></pre><p>&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</p>
+<pre><code>1. &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#xFF0C;&#x5148;&#x6309;&#x7167;age&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x679C;age&#x76F8;&#x540C;&#x5219;&#x6309;&#x7167;hire_date&#x964D;&#x5E8F;&#x6392;&#x5E8F;
+2. &#x67E5;&#x8BE2;&#x5404;&#x5C97;&#x4F4D;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#x5927;&#x4E8E;10000&#x7684;&#x5C97;&#x4F4D;&#x540D;&#x3001;&#x5E73;&#x5747;&#x5DE5;&#x8D44;,&#x7ED3;&#x679C;&#x6309;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#x5347;&#x5E8F;&#x6392;&#x5217;
+3. &#x67E5;&#x8BE2;&#x5404;&#x5C97;&#x4F4D;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#x5927;&#x4E8E;10000&#x7684;&#x5C97;&#x4F4D;&#x540D;&#x3001;&#x5E73;&#x5747;&#x5DE5;&#x8D44;,&#x7ED3;&#x679C;&#x6309;&#x5E73;&#x5747;&#x85AA;&#x8D44;&#x964D;&#x5E8F;&#x6392;&#x5217;
+</code></pre><h2 id="&#x516B;-&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;limit"><a name="&#x516B;-&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;limit" class="anchor-navigation-ex-anchor" href="#&#x516B;-&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;limit"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516B; &#x9650;&#x5236;&#x67E5;&#x8BE2;&#x7684;&#x8BB0;&#x5F55;&#x6570;:LIMIT</h2>
+<pre><code>&#x793A;&#x4F8B;&#xFF1A;
+    SELECT * FROM employee ORDER BY salary DESC 
+        LIMIT 3;                    #&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x4F4D;&#x7F6E;&#x4E3A;0 
+
+    SELECT * FROM employee ORDER BY salary DESC
+        LIMIT 0,5; #&#x4ECE;&#x7B2C;0&#x5F00;&#x59CB;&#xFF0C;&#x5373;&#x5148;&#x67E5;&#x8BE2;&#x51FA;&#x7B2C;&#x4E00;&#x6761;&#xFF0C;&#x7136;&#x540E;&#x5305;&#x542B;&#x8FD9;&#x4E00;&#x6761;&#x5728;&#x5185;&#x5F80;&#x540E;&#x67E5;5&#x6761;
+
+    SELECT * FROM employee ORDER BY salary DESC
+        LIMIT 5,5; #&#x4ECE;&#x7B2C;5&#x5F00;&#x59CB;&#xFF0C;&#x5373;&#x5148;&#x67E5;&#x8BE2;&#x51FA;&#x7B2C;6&#x6761;&#xFF0C;&#x7136;&#x540E;&#x5305;&#x542B;&#x8FD9;&#x4E00;&#x6761;&#x5728;&#x5185;&#x5F80;&#x540E;&#x67E5;5&#x6761;
+</code></pre><p>&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</p>
+<p><code>1. &#x5206;&#x9875;&#x663E;&#x793A;&#xFF0C;&#x6BCF;&#x9875;5&#x6761;</code></p>
+<pre><code class="lang-sql">mysql&gt; select * from  employee limit 0,5;
++----+-----------+------+-----+------------+-----------------------------------------+--------------+------------+--------+-----------+
+| id | name      | sex  | age | hire_date  | post                                    | post_comment | salary     | office | depart_id |
++----+-----------+------+-----+------------+-----------------------------------------+--------------+------------+--------+-----------+
+|  1 | egon      | male |  18 | 2017-03-01 | &#x8001;&#x7537;&#x5B69;&#x9A7B;&#x6C99;&#x6CB3;&#x529E;&#x4E8B;&#x5904;&#x5916;&#x4EA4;&#x5927;&#x4F7F;              | NULL         |    7300.33 |    401 |         1 |
+|  2 | alex      | male |  78 | 2015-03-02 | teacher                                 |              | 1000000.31 |    401 |         1 |
+|  3 | wupeiqi   | male |  81 | 2013-03-05 | teacher                                 | NULL         |    8300.00 |    401 |         1 |
+|  4 | yuanhao   | male |  73 | 2014-07-01 | teacher                                 | NULL         |    3500.00 |    401 |         1 |
+|  5 | liwenzhou | male |  28 | 2012-11-01 | teacher                                 | NULL         |    2100.00 |    401 |         1 |
++----+-----------+------+-----+------------+-----------------------------------------+--------------+------------+--------+-----------+
+rows in set (0.00 sec)
+
+mysql&gt; select * from  employee limit 5,5;
++----+------------+--------+-----+------------+---------+--------------+----------+--------+-----------+
+| id | name       | sex    | age | hire_date  | post    | post_comment | salary   | office | depart_id |
++----+------------+--------+-----+------------+---------+--------------+----------+--------+-----------+
+|  6 | jingliyang | female |  18 | 2011-02-11 | teacher | NULL         |  9000.00 |    401 |         1 |
+|  7 | jinxin     | male   |  18 | 1900-03-01 | teacher | NULL         | 30000.00 |    401 |         1 |
+|  8 | &#x6210;&#x9F99;       | male   |  48 | 2010-11-11 | teacher | NULL         | 10000.00 |    401 |         1 |
+|  9 | &#x6B6A;&#x6B6A;       | female |  48 | 2015-03-11 | sale    | NULL         |  3000.13 |    402 |         2 |
+| 10 | &#x4E2B;&#x4E2B;       | female |  38 | 2010-11-01 | sale    | NULL         |  2000.35 |    402 |         2 |
++----+------------+--------+-----+------------+---------+--------------+----------+--------+-----------+
+rows in set (0.00 sec)
+
+mysql&gt; select * from  employee limit 10,5;
++----+-----------+--------+-----+------------+-----------+--------------+----------+--------+-----------+
+| id | name      | sex    | age | hire_date  | post      | post_comment | salary   | office | depart_id |
++----+-----------+--------+-----+------------+-----------+--------------+----------+--------+-----------+
+| 11 | &#x4E01;&#x4E01;      | female |  18 | 2011-03-12 | sale      | NULL         |  1000.37 |    402 |         2 |
+| 12 | &#x661F;&#x661F;      | female |  18 | 2016-05-13 | sale      | NULL         |  3000.29 |    402 |         2 |
+| 13 | &#x683C;&#x683C;      | female |  28 | 2017-01-27 | sale      | NULL         |  4000.33 |    402 |         2 |
+| 14 | &#x5F20;&#x91CE;      | male   |  28 | 2016-03-11 | operation | NULL         | 10000.13 |    403 |         3 |
+| 15 | &#x7A0B;&#x54AC;&#x91D1;    | male   |  18 | 1997-03-12 | operation | NULL         | 20000.00 |    403 |         3 |
++----+-----------+--------+-----+------------+-----------+--------------+----------+--------+-----------+
+rows in set (0.00 sec)
+</code></pre>
+<h2 id="&#x4E5D;-&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;"><a name="&#x4E5D;-&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x4E5D;-&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E5D; &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> employee <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> REGEXP <span class="hljs-string">&apos;^ale&apos;</span>;
+
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> employee <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> REGEXP <span class="hljs-string">&apos;on$&apos;</span>;
+
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> employee <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> REGEXP <span class="hljs-string">&apos;m{2}&apos;</span>;
+
+
+&#x5C0F;&#x7ED3;&#xFF1A;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x65B9;&#x5F0F;
+WHERE name = &apos;egon&apos;;
+WHERE name LIKE &apos;yua%&apos;;
+WHERE name REGEXP &apos;on$&apos;;
+</code></pre>
+<p>&#x5C0F;&#x7EC3;&#x4E60;&#xFF1A;</p>
+<p><code>&#x67E5;&#x770B;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4E2D;&#x540D;&#x5B57;&#x662F;jin&#x5F00;&#x5934;&#xFF0C;n&#x6216;&#x8005;g&#x7ED3;&#x679C;&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;</code></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> <span class="hljs-keyword">name</span> regexp <span class="hljs-string">&apos;^jin.*[gn]$&apos;</span>;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1、MySQL数据操作.html" class="navigation navigation-prev " aria-label="Previous page: 1、MySQL数据操作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3、多表查询.html" class="navigation navigation-next " aria-label="Next page: 3、多表查询">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2、单表查询","level":"1.3.4.2","depth":3,"next":{"title":"3、多表查询","level":"1.3.4.3","depth":3,"path":"MySQL学习/04-MySQL数据操作/3、多表查询.md","ref":"MySQL学习/04-MySQL数据操作/3、多表查询.md","articles":[]},"previous":{"title":"1、MySQL数据操作","level":"1.3.4.1","depth":3,"path":"MySQL学习/04-MySQL数据操作/1、MySQL数据操作.md","ref":"MySQL学习/04-MySQL数据操作/1、MySQL数据操作.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"MySQL学习/04-MySQL数据操作/2、单表查询.md","mtime":"2018-06-12T01:20:56.984Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

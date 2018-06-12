@@ -1,0 +1,911 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python3连接MySQL · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../python/" />
+    
+    
+    <link rel="prev" href="04-MySQL数据操作/5、多表查询解析.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../SUMMARY.html">
+            
+                <a href="../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01-初识数据库.html">
+            
+                <a href="01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02-MySQL库操作.html">
+            
+                <a href="02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="03-MySQL表操作/">
+            
+                <a href="03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="04-MySQL数据操作/">
+            
+                <a href="04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="Python3连接MySQL.html">
+            
+                <a href="Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../python/Django/01.Django初识.html">
+            
+                <a href="../python/Django/01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                <a href="../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../python/Django/03.HTTP协议.html">
+            
+                <a href="../python/Django/03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../python/Django/04.Django框架简介.html">
+            
+                <a href="../python/Django/04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../python/Django/05.Django的视图.html">
+            
+                <a href="../python/Django/05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../python/Django/06.Django的路由系统.html">
+            
+                <a href="../python/Django/06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../python/Django/07.Django模板系统.html">
+            
+                <a href="../python/Django/07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../python/Django/08.Django模型ORM.html">
+            
+                <a href="../python/Django/08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../python/Django/09.Django路由系统.html">
+            
+                <a href="../python/Django/09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../python/Django/10.ORM相关操作.html">
+            
+                <a href="../python/Django/10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../python/Django/111.ORM版学员管理系统.html">
+            
+                <a href="../python/Django/111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../python/Django/11.Form组件.html">
+            
+                <a href="../python/Django/11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../python/Django/博客项目点赞与灭操作.html">
+            
+                <a href="../python/Django/博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../python/Django/博客项目评论.html">
+            
+                <a href="../python/Django/博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../python/lufei-payment/luffy结算中心.html">
+            
+                <a href="../python/lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Python3连接MySQL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#python3&#x8FDE;&#x63A5;mysql"><b></b>Python3&#x8FDE;&#x63A5;MySQL</a></li><ul><li><span class="title-icon "></span><a href="#pymysql&#x4ECB;&#x7ECD;"><b></b>PyMySQL&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#pymysql&#x5B89;&#x88C5;"><b></b>PyMySQL&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><b></b>&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;"><b></b>&#x57FA;&#x672C;&#x4F7F;&#x7528;</a></li></ul><li><span class="title-icon "></span><a href="#&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;"><b></b>&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x589E;"><b></b>&#x589E;</a></li><li><span class="title-icon "></span><a href="#&#x5220;"><b></b>&#x5220;</a></li><li><span class="title-icon "></span><a href="#&#x6539;"><b></b>&#x6539;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;"><b></b>&#x67E5;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;"><b></b>&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8FDB;&#x9636;&#x7528;&#x6CD5;"><b></b>&#x8FDB;&#x9636;&#x7528;&#x6CD5;</a></li></ul></ul></div><a href="#python3&#x8FDE;&#x63A5;mysql" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="python3&#x8FDE;&#x63A5;mysql"><a name="python3&#x8FDE;&#x63A5;mysql" class="anchor-navigation-ex-anchor" href="#python3&#x8FDE;&#x63A5;mysql"><i class="fa fa-link" aria-hidden="true"></i></a>Python3&#x8FDE;&#x63A5;MySQL</h1>
+<p>&#x672C;&#x6587;&#x4ECB;&#x7ECD;Python3&#x8FDE;&#x63A5;MySQL&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;--PyMySQL&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x3002;</p>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#python3&#x8FDE;&#x63A5;mysql"><b></b>Python3&#x8FDE;&#x63A5;MySQL</a></li><ul><li><span class="title-icon "></span><a href="#pymysql&#x4ECB;&#x7ECD;"><b></b>PyMySQL&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#pymysql&#x5B89;&#x88C5;"><b></b>PyMySQL&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><b></b>&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;"><b></b>&#x57FA;&#x672C;&#x4F7F;&#x7528;</a></li></ul><li><span class="title-icon "></span><a href="#&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;"><b></b>&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x589E;"><b></b>&#x589E;</a></li><li><span class="title-icon "></span><a href="#&#x5220;"><b></b>&#x5220;</a></li><li><span class="title-icon "></span><a href="#&#x6539;"><b></b>&#x6539;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;"><b></b>&#x67E5;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;"><b></b>&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8FDB;&#x9636;&#x7528;&#x6CD5;"><b></b>&#x8FDB;&#x9636;&#x7528;&#x6CD5;</a></li></ul></ul></div>
+
+<h2 id="pymysql&#x4ECB;&#x7ECD;"><a name="pymysql&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#pymysql&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>PyMySQL&#x4ECB;&#x7ECD;</h2>
+<p>PyMySQL &#x662F;&#x5728; Python3.x &#x7248;&#x672C;&#x4E2D;&#x7528;&#x4E8E;&#x8FDE;&#x63A5; MySQL &#x670D;&#x52A1;&#x5668;&#x7684;&#x4E00;&#x4E2A;&#x5E93;&#xFF0C;Python2&#x4E2D;&#x5219;&#x4F7F;&#x7528;mysqldb&#x3002;</p>
+<p>Django&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;PyMySQL&#x8FDE;&#x63A5;MySQL&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<h2 id="pymysql&#x5B89;&#x88C5;"><a name="pymysql&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#pymysql&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>PyMySQL&#x5B89;&#x88C5;</h2>
+<p>pip install pymysql</p>
+<h2 id="&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><a name="&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</h2>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<p>&#x5728;&#x8FDB;&#x884C;&#x672C;&#x6587;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x4F60;&#x6709;&#x4E00;&#x4E2A;MySQL&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x3002;
+&#x4F60;&#x6709;&#x53EF;&#x4EE5;&#x8FDE;&#x63A5;&#x8BE5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;
+&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x6709;&#x6743;&#x9650;&#x64CD;&#x4F5C;&#x7684;database</p>
+<h3 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a name="&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x8981;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;&quot;&quot;
+CREATE TABLE USER1 (
+id INT auto_increment PRIMARY KEY ,
+name CHAR(10) NOT NULL UNIQUE,
+age TINYINT NOT NULL
+)ENGINE=innodb DEFAULT CHARSET=utf8;
+&quot;&quot;&quot;</span>
+<span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+cursor.execute(sql)
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor.close()
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+conn.close()
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>==charset=&#x201C;utf8&#x201D;&#xFF0C;&#x7F16;&#x7801;&#x4E0D;&#x8981;&#x5199;&#x6210;&quot;utf-8&quot;==</p>
+<h2 id="&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;"><a name="&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;</h2>
+<h3 id="&#x589E;"><a name="&#x589E;" class="anchor-navigation-ex-anchor" href="#&#x589E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x589E;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+sql = <span class="hljs-string">&quot;INSERT INTO USER1(name, age) VALUES (%s, %s);&quot;</span>
+username = <span class="hljs-string">&quot;Alex&quot;</span>
+age = <span class="hljs-number">18</span>
+<span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+cursor.execute(sql, [username, age])
+<span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+conn.commit()
+cursor.close()
+conn.close()
+</code></pre>
+<p>&#x63D2;&#x5165;&#x6570;&#x636E;&#x5931;&#x8D25;&#x56DE;&#x6EDA;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+sql = <span class="hljs-string">&quot;INSERT INTO USER1(name, age) VALUES (%s, %s);&quot;</span>
+username = <span class="hljs-string">&quot;Alex&quot;</span>
+age = <span class="hljs-number">18</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+    cursor.execute(sql, [username, age])
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+    conn.commit()
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># &#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+    conn.rollback()
+cursor.close()
+conn.close()
+</code></pre>
+<p>&#x83B7;&#x53D6;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;ID(&#x5173;&#x8054;&#x64CD;&#x4F5C;&#x65F6;&#x4F1A;&#x7528;&#x5230;)</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+sql = <span class="hljs-string">&quot;INSERT INTO USER1(name, age) VALUES (%s, %s);&quot;</span>
+username = <span class="hljs-string">&quot;Alex&quot;</span>
+age = <span class="hljs-number">18</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+    cursor.execute(sql, [username, age])
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+    conn.commit()
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#xFF0C;&#x83B7;&#x53D6;&#x521A;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;ID</span>
+    last_id = cursor.lastrowid
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># &#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+    conn.rollback()
+cursor.close()
+conn.close()
+</code></pre>
+<p>&#x6279;&#x91CF;&#x6267;&#x884C;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+sql = <span class="hljs-string">&quot;INSERT INTO USER1(name, age) VALUES (%s, %s);&quot;</span>
+data = [(<span class="hljs-string">&quot;Alex&quot;</span>, <span class="hljs-number">18</span>), (<span class="hljs-string">&quot;Egon&quot;</span>, <span class="hljs-number">20</span>), (<span class="hljs-string">&quot;Yuan&quot;</span>, <span class="hljs-number">21</span>)]
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># &#x6279;&#x91CF;&#x6267;&#x884C;&#x591A;&#x6761;&#x63D2;&#x5165;SQL&#x8BED;&#x53E5;</span>
+    cursor.executemany(sql, data)
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+    conn.commit()
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># &#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+    conn.rollback()
+cursor.close()
+conn.close()
+</code></pre>
+<h3 id="&#x5220;"><a name="&#x5220;" class="anchor-navigation-ex-anchor" href="#&#x5220;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5220;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+sql = <span class="hljs-string">&quot;DELETE FROM USER1 WHERE id=%s;&quot;</span>
+<span class="hljs-keyword">try</span>:
+    cursor.execute(sql, [<span class="hljs-number">4</span>])
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+    conn.commit()
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># &#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+    conn.rollback()
+cursor.close()
+conn.close()
+</code></pre>
+<h3 id="&#x6539;"><a name="&#x6539;" class="anchor-navigation-ex-anchor" href="#&#x6539;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6539;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+<span class="hljs-comment"># &#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;SQL&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;UPDATE USER1 SET age=%s WHERE name=%s;&quot;</span>
+username = <span class="hljs-string">&quot;Alex&quot;</span>
+age = <span class="hljs-number">80</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+    cursor.execute(sql, [age, username])
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+    conn.commit()
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># &#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+    conn.rollback()
+cursor.close()
+conn.close()
+</code></pre>
+<h3 id="&#x67E5;"><a name="&#x67E5;" class="anchor-navigation-ex-anchor" href="#&#x67E5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+<span class="hljs-comment"># &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;SQL&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;SELECT id,name,age from USER1 WHERE id=1;&quot;</span>
+<span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+cursor.execute(sql)
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x5355;&#x6761;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+ret = cursor.fetchone()
+cursor.close()
+conn.close()
+<span class="hljs-comment"># &#x6253;&#x5370;&#x4E0B;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</span>
+print(ret)
+</code></pre>
+<h3 id="&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;"><a name="&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;&#x8BE2;&#x591A;&#x6761;&#x6570;&#x636E;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5165;pymysql&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> pymysql
+<span class="hljs-comment"># &#x8FDE;&#x63A5;database</span>
+conn = pymysql.connect(host=&#x201C;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;&#x201D;, user=&#x201C;&#x7528;&#x6237;&#x540D;&#x201D;,password=&#x201C;&#x5BC6;&#x7801;&#x201D;,database=&#x201C;&#x6570;&#x636E;&#x5E93;&#x540D;&#x201D;,charset=&#x201C;utf8&#x201D;)
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x7684;&#x5149;&#x6807;&#x5BF9;&#x8C61;</span>
+cursor = conn.cursor()
+<span class="hljs-comment"># &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;SQL&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;SELECT id,name,age from USER1;&quot;</span>
+<span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+cursor.execute(sql)
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x591A;&#x6761;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+ret = cursor.fetchall()
+cursor.close()
+conn.close()
+<span class="hljs-comment"># &#x6253;&#x5370;&#x4E0B;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</span>
+print(ret)
+</code></pre>
+<h2 id="&#x8FDB;&#x9636;&#x7528;&#x6CD5;"><a name="&#x8FDB;&#x9636;&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x9636;&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x9636;&#x7528;&#x6CD5;</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;</span>
+cursor.fetchmany(<span class="hljs-number">3</span>)
+<span class="hljs-comment"># &#x5149;&#x6807;&#x6309;&#x7EDD;&#x5BF9;&#x4F4D;&#x7F6E;&#x79FB;&#x52A8;1</span>
+cursor.scroll(<span class="hljs-number">1</span>, mode=<span class="hljs-string">&quot;absolute&quot;</span>)
+<span class="hljs-comment"># &#x5149;&#x6807;&#x6309;&#x7167;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;(&#x5F53;&#x524D;&#x4F4D;&#x7F6E;)&#x79FB;&#x52A8;1</span>
+cursor.scroll(<span class="hljs-number">1</span>, mode=<span class="hljs-string">&quot;relative&quot;</span>)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-MySQL数据操作/5、多表查询解析.html" class="navigation navigation-prev " aria-label="Previous page: 5、多表查询解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../python/" class="navigation navigation-next " aria-label="Next page: python">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Python3连接MySQL","level":"1.3.5","depth":2,"next":{"title":"python","level":"1.4","depth":1,"path":"python/README.md","ref":"python/README.md","articles":[{"title":"Django初识","level":"1.4.1","depth":2,"path":"python/Django/01.Django初识.md","ref":"python/Django/01.Django初识.md","articles":[]},{"title":"Web框架本质及第一个Django实例","level":"1.4.2","depth":2,"path":"python/Django/02.Web框架本质及第一个Django实例.md","ref":"python/Django/02.Web框架本质及第一个Django实例.md","articles":[]},{"title":"HTTP协议","level":"1.4.3","depth":2,"path":"python/Django/03.HTTP协议.md","ref":"python/Django/03.HTTP协议.md","articles":[]},{"title":"Django框架简介","level":"1.4.4","depth":2,"path":"python/Django/04.Django框架简介.md","ref":"python/Django/04.Django框架简介.md","articles":[]},{"title":"Django的视图","level":"1.4.5","depth":2,"path":"python/Django/05.Django的视图.md","ref":"python/Django/05.Django的视图.md","articles":[]},{"title":"Django的路由系统","level":"1.4.6","depth":2,"path":"python/Django/06.Django的路由系统.md","ref":"python/Django/06.Django的路由系统.md","articles":[]},{"title":"Django模板系统","level":"1.4.7","depth":2,"path":"python/Django/07.Django模板系统.md","ref":"python/Django/07.Django模板系统.md","articles":[]},{"title":"Django模型ORM","level":"1.4.8","depth":2,"path":"python/Django/08.Django模型ORM.md","ref":"python/Django/08.Django模型ORM.md","articles":[]},{"title":"Django路由系统","level":"1.4.9","depth":2,"path":"python/Django/09.Django路由系统.md","ref":"python/Django/09.Django路由系统.md","articles":[]},{"title":"ORM相关操作","level":"1.4.10","depth":2,"path":"python/Django/10.ORM相关操作.md","ref":"python/Django/10.ORM相关操作.md","articles":[]},{"title":"ORM版学员管理系统","level":"1.4.11","depth":2,"path":"python/Django/111.ORM版学员管理系统.md","ref":"python/Django/111.ORM版学员管理系统.md","articles":[]},{"title":"Form组件","level":"1.4.12","depth":2,"path":"python/Django/11.Form组件.md","ref":"python/Django/11.Form组件.md","articles":[]},{"title":"博客项目点赞与灭操作","level":"1.4.13","depth":2,"path":"python/Django/博客项目点赞与灭操作.md","ref":"python/Django/博客项目点赞与灭操作.md","articles":[]},{"title":"博客项目评论","level":"1.4.14","depth":2,"path":"python/Django/博客项目评论.md","ref":"python/Django/博客项目评论.md","articles":[]},{"title":"luffy结算中心","level":"1.4.15","depth":2,"path":"python/lufei-payment/luffy结算中心.md","ref":"python/lufei-payment/luffy结算中心.md","articles":[]}]},"previous":{"title":"5、多表查询解析","level":"1.3.4.5","depth":3,"path":"MySQL学习/04-MySQL数据操作/5、多表查询解析.md","ref":"MySQL学习/04-MySQL数据操作/5、多表查询解析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"MySQL学习/Python3连接MySQL.md","mtime":"2018-06-12T01:20:57.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

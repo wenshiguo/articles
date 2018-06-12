@@ -1,0 +1,958 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Django的路由系统 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07.Django模板系统.html" />
+    
+    
+    <link rel="prev" href="05.Django的视图.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../MySQL学习/">
+            
+                <a href="../../MySQL学习/">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../MySQL学习/01-初识数据库.html">
+            
+                <a href="../../MySQL学习/01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../MySQL学习/02-MySQL库操作.html">
+            
+                <a href="../../MySQL学习/02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../MySQL学习/03-MySQL表操作/">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../MySQL学习/04-MySQL数据操作/">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../MySQL学习/Python3连接MySQL.html">
+            
+                <a href="../../MySQL学习/Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01.Django初识.html">
+            
+                <a href="01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="02.Web框架本质及第一个Django实例.html">
+            
+                <a href="02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="03.HTTP协议.html">
+            
+                <a href="03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="04.Django框架简介.html">
+            
+                <a href="04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="05.Django的视图.html">
+            
+                <a href="05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="06.Django的路由系统.html">
+            
+                <a href="06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="07.Django模板系统.html">
+            
+                <a href="07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="08.Django模型ORM.html">
+            
+                <a href="08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="09.Django路由系统.html">
+            
+                <a href="09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10.ORM相关操作.html">
+            
+                <a href="10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="111.ORM版学员管理系统.html">
+            
+                <a href="111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="11.Form组件.html">
+            
+                <a href="11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="博客项目点赞与灭操作.html">
+            
+                <a href="博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="博客项目评论.html">
+            
+                <a href="博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../lufei-payment/luffy结算中心.html">
+            
+                <a href="../lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Django的路由系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;"><b></b>Django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;</a></li><ul><li><span class="title-icon "></span><a href="#urlconf&#x914D;&#x7F6E;"><b></b>URLconf&#x914D;&#x7F6E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;"><b></b>&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;"><b></b>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;"><b></b>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;</a></li><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x914D;&#x7F6E;"><b></b>&#x57FA;&#x672C;&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x8865;&#x5145;&#x8BF4;&#x660E;"><b></b>&#x8865;&#x5145;&#x8BF4;&#x660E;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;"><b></b>&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;</a></li><ul><li><span class="title-icon "></span><a href="#urlconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;"><b></b>URLconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;"><b></b>&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;</a></li><li><span class="title-icon "></span><a href="#&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;"><b></b>&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;</a></li><li><span class="title-icon "></span><a href="#include&#x5176;&#x4ED6;&#x7684;urlconfs"><b></b>include&#x5176;&#x4ED6;&#x7684;URLconfs</a></li><li><span class="title-icon "></span><a href="#&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><b></b>&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</a></li></ul><li><span class="title-icon "></span><a href="#&#x547D;&#x540D;url&#x548C;url&#x53CD;&#x5411;&#x89E3;&#x6790;"><b></b>&#x547D;&#x540D;URL&#x548C;URL&#x53CD;&#x5411;&#x89E3;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;"><b></b>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;</a></li></ul></ul></div><a href="#django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;"><a name="django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>Django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;</h1>
+<p>Django 1.11&#x7248;&#x672C; URLConf&#x5B98;&#x65B9;&#x6587;&#x6863;</p>
+<p>URL&#x914D;&#x7F6E;(URLconf)&#x5C31;&#x50CF;Django &#x6240;&#x652F;&#x6491;&#x7F51;&#x7AD9;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x5B83;&#x7684;&#x672C;&#x8D28;&#x662F;URL&#x4E0E;&#x8981;&#x4E3A;&#x8BE5;URL&#x8C03;&#x7528;&#x7684;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x7684;<code>&#x6620;&#x5C04;&#x8868;</code>.</p>
+<p>&#x4F60;&#x5C31;&#x662F;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x544A;&#x8BC9;Django&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;URL&#x8C03;&#x7528;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x5BF9;&#x4E8E;&#x90A3;&#x4E2A;URL&#x8C03;&#x7528;&#x90A3;&#x6BB5;&#x4EE3;&#x7801;&#x3002;</p>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;"><b></b>Django&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;</a></li><ul><li><span class="title-icon "></span><a href="#urlconf&#x914D;&#x7F6E;"><b></b>URLconf&#x914D;&#x7F6E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;"><b></b>&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;"><b></b>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;"><b></b>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;</a></li><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x914D;&#x7F6E;"><b></b>&#x57FA;&#x672C;&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x8865;&#x5145;&#x8BF4;&#x660E;"><b></b>&#x8865;&#x5145;&#x8BF4;&#x660E;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;"><b></b>&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;</a></li><ul><li><span class="title-icon "></span><a href="#urlconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;"><b></b>URLconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;"><b></b>&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;</a></li><li><span class="title-icon "></span><a href="#&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;"><b></b>&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;</a></li><li><span class="title-icon "></span><a href="#include&#x5176;&#x4ED6;&#x7684;urlconfs"><b></b>include&#x5176;&#x4ED6;&#x7684;URLconfs</a></li><li><span class="title-icon "></span><a href="#&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><b></b>&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</a></li></ul><li><span class="title-icon "></span><a href="#&#x547D;&#x540D;url&#x548C;url&#x53CD;&#x5411;&#x89E3;&#x6790;"><b></b>&#x547D;&#x540D;URL&#x548C;URL&#x53CD;&#x5411;&#x89E3;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;"><b></b>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;</a></li></ul></ul></div>
+
+<h2 id="urlconf&#x914D;&#x7F6E;"><a name="urlconf&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#urlconf&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>URLconf&#x914D;&#x7F6E;</h2>
+<h3 id="&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;"><a name="&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF1A;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+
+urlpatterns = [
+     url(&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;, views&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#xFF0C;&#x522B;&#x540D;),
+]
+</code></pre>
+<p><code>&#x6CE8;&#x610F;&#xFF1A;</code></p>
+<p>Django 2.0&#x7248;&#x672C;&#x4E2D;&#x7684;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x66FF;&#x6362;&#x6210;&#x4E0B;&#x9762;&#x7684;&#x5199;&#x6CD5;&#xFF08;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+
+urlpatterns = [
+    path(<span class="hljs-string">&apos;articles/2003/&apos;</span>, views.special_case_2003),
+    path(<span class="hljs-string">&apos;articles/&lt;int:year&gt;/&apos;</span>, views.year_archive),
+    path(<span class="hljs-string">&apos;articles/&lt;int:year&gt;/&lt;int:month&gt;/&apos;</span>, views.month_archive),
+    path(<span class="hljs-string">&apos;articles/&lt;int:year&gt;/&lt;int:month&gt;/&lt;slug:slug&gt;/&apos;</span>, views.article_detail),
+]
+</code></pre>
+<h3 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;"><a name="&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</h3>
+<p>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;
+views&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF1A;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x6216;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x8DEF;&#x5F84;&#x7684;&#x5B57;&#x7B26;&#x4E32;
+&#x53C2;&#x6570;&#xFF1A;&#x53EF;&#x9009;&#x7684;&#x8981;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#xFF08;&#x5B57;&#x5178;&#x5F62;&#x5F0F;&#xFF09;
+&#x522B;&#x540D;&#xFF1A;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;name&#x53C2;&#x6570;</p>
+<h2 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;"><a name="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BE6;&#x89E3;</h2>
+<h3 id="&#x57FA;&#x672C;&#x914D;&#x7F6E;"><a name="&#x57FA;&#x672C;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^articles/2003/$&apos;</span>, views.special_case_2003),
+    url(<span class="hljs-string">r&apos;^articles/([0-9]{4})/$&apos;</span>, views.year_archive),
+    url(<span class="hljs-string">r&apos;^articles/([0-9]{4})/([0-9]{2})/$&apos;</span>, views.month_archive),
+    url(<span class="hljs-string">r&apos;^articles/([0-9]{4})/([0-9]{2})/([0-9]+)/$&apos;</span>, views.article_detail),
+]
+</code></pre>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<pre><code>urlpatterns&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x6309;&#x7167;&#x4E66;&#x5199;&#x987A;&#x5E8F;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x9010;&#x4E00;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E00;&#x65E6;&#x5339;&#x914D;&#x6210;&#x529F;&#x5219;&#x4E0D;&#x518D;&#x7EE7;&#x7EED;&#x3002;
+
+&#x82E5;&#x8981;&#x4ECE;URL&#x4E2D;&#x6355;&#x83B7;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5B83;&#x5468;&#x56F4;&#x653E;&#x7F6E;&#x4E00;&#x5BF9;&#x5706;&#x62EC;&#x53F7;&#xFF08;&#x5206;&#x7EC4;&#x5339;&#x914D;&#xFF09;&#x3002;
+
+&#x4E0D;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x524D;&#x5BFC;&#x7684;&#x53CD;&#x659C;&#x6760;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;URL &#x90FD;&#x6709;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;^articles &#x800C;&#x4E0D;&#x662F; ^/articles&#x3002;
+
+&#x6BCF;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x524D;&#x9762;&#x7684;&apos;r&apos; &#x662F;&#x53EF;&#x9009;&#x7684;&#x4F46;&#x662F;&#x5EFA;&#x8BAE;&#x52A0;&#x4E0A;&#x3002;
+</code></pre><h3 id="&#x8865;&#x5145;&#x8BF4;&#x660E;"><a name="&#x8865;&#x5145;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x8865;&#x5145;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8865;&#x5145;&#x8BF4;&#x660E;</h3>
+<pre><code># &#x662F;&#x5426;&#x5F00;&#x542F;URL&#x8BBF;&#x95EE;&#x5730;&#x5740;&#x540E;&#x9762;&#x4E0D;&#x4E3A;/&#x8DF3;&#x8F6C;&#x81F3;&#x5E26;&#x6709;/&#x7684;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x9879;
+APPEND_SLASH=True
+</code></pre><p>Django settings.py&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x9ED8;&#x8BA4;&#x6CA1;&#x6709; APPEND_SLASH &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4F46; Django &#x9ED8;&#x8BA4;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x4E3A; APPEND_SLASH = True&#x3002; &#x5176;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x81EA;&#x52A8;&#x5728;&#x7F51;&#x5740;&#x7ED3;&#x5C3E;&#x52A0;&apos;/&apos;&#x3002;</p>
+<p>&#x5176;&#x6548;&#x679C;&#x5C31;&#x662F;&#xFF1A;</p>
+<p>&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;urls.py&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+<span class="hljs-keyword">from</span> app01 <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+        url(<span class="hljs-string">r&apos;^blog/$&apos;</span>, views.blog),
+]
+</code></pre>
+<p>&#x8BBF;&#x95EE; <a href="http://www.example.com/blog" target="_blank">http://www.example.com/blog</a> &#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C06;&#x7F51;&#x5740;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A; <a href="http://www.example/com/blog/" target="_blank">http://www.example/com/blog/</a> &#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;settings.py&#x4E2D;&#x8BBE;&#x7F6E;&#x4E86; APPEND_SLASH=False&#xFF0C;&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x518D;&#x8BF7;&#x6C42; <a href="http://www.example.com/blog" target="_blank">http://www.example.com/blog</a> &#x65F6;&#x5C31;&#x4F1A;&#x63D0;&#x793A;&#x627E;&#x4E0D;&#x5230;&#x9875;&#x9762;&#x3002;</p>
+<h2 id="&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;"><a name="&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;</strong></h2>
+<p>&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5206;&#x7EC4;&#x5339;&#x914D;&#xFF08;&#x901A;&#x8FC7;&#x5706;&#x62EC;&#x53F7;&#xFF09;&#x6765;&#x6355;&#x83B7;URL&#x4E2D;&#x7684;&#x503C;&#x5E76;&#x4EE5;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x5F62;&#x5F0F;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#x3002;</p>
+<p>&#x5728;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x7528;&#x6CD5;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7EC4;&#x6765;&#x6355;&#x83B7;URL&#x4E2D;&#x7684;&#x503C;&#x5E76;&#x4EE5;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x5F62;&#x5F0F;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#x3002;</p>
+<p>&#x5728;Python&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#xFF0C;&#x5206;&#x7EC4;&#x547D;&#x540D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7EC4;&#x7684;&#x8BED;&#x6CD5;&#x662F;<code>(?P&lt;name&gt;pattern)</code>&#xFF0C;&#x5176;&#x4E2D;<code>name</code>&#x662F;&#x7EC4;&#x7684;&#x540D;&#x79F0;&#xFF0C;<code>pattern</code>&#x662F;&#x8981;&#x5339;&#x914D;&#x7684;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE5;&#x4E0A;URLconf &#x4F7F;&#x7528;&#x547D;&#x540D;&#x7EC4;&#x7684;&#x91CD;&#x5199;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^articles/2003/$&apos;</span>, views.special_case_2003),
+    url(<span class="hljs-string">r&apos;^articles/(?P&lt;year&gt;[0-9]{4})/$&apos;</span>, views.year_archive),
+    url(<span class="hljs-string">r&apos;^articles/(?P&lt;year&gt;[0-9]{4})/(?P&lt;month&gt;[0-9]{2})/$&apos;</span>, views.month_archive),
+    url(<span class="hljs-string">r&apos;^articles/(?P&lt;year&gt;[0-9]{4})/(?P&lt;month&gt;[0-9]{2})/(?P&lt;day&gt;[0-9]{2})/$&apos;</span>, views.article_detail),
+]
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x5B9E;&#x73B0;&#x4E0E;&#x524D;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EC6;&#x5FAE;&#x7684;&#x5DEE;&#x522B;&#xFF1A;&#x6355;&#x83B7;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x800C;&#x4E0D;&#x662F;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x9488;&#x5BF9;<code>url /articles/2017/12/</code>&#x76F8;&#x5F53;&#x4E8E;&#x6309;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>views.month_archive(request, year=&quot;2017&quot;, month=&quot;12&quot;)
+</code></pre><p>&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x547D;&#x540D;&#x5339;&#x914D;&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;URLconf &#x66F4;&#x52A0;&#x660E;&#x6670;&#x4E14;&#x4E0D;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x53C2;&#x6570;&#x987A;&#x5E8F;&#x95EE;&#x9898;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5219;&#x8BA4;&#x4E3A;&#x5206;&#x7EC4;&#x547D;&#x540D;&#x7EC4;&#x8BED;&#x6CD5;&#x592A;&#x4E11;&#x964B;&#x3001;&#x7E41;&#x7410;&#x3002;</p>
+<p>&#x81F3;&#x4E8E;&#x7A76;&#x7ADF;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x54EA;&#x4E00;&#x79CD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x559C;&#x597D;&#x6765;&#x51B3;&#x5B9A;&#x3002;</p>
+<h3 id="urlconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;"><a name="urlconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#urlconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>URLconf&#x5339;&#x914D;&#x7684;&#x4F4D;&#x7F6E;</h3>
+<p>URLconf &#x5728;&#x8BF7;&#x6C42;&#x7684;URL &#x4E0A;&#x67E5;&#x627E;&#xFF0C;&#x5C06;&#x5B83;&#x5F53;&#x505A;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;Python &#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4E0D;&#x5305;&#x62EC;GET&#x548C;POST&#x53C2;&#x6570;&#x4EE5;&#x53CA;&#x57DF;&#x540D;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;<a href="http://www.example.com/myapp/" target="_blank">http://www.example.com/myapp/</a> &#x8BF7;&#x6C42;&#x4E2D;&#xFF0C;URLconf &#x5C06;&#x67E5;&#x627E;<code>myapp/</code>&#x3002;</p>
+<p>&#x5728;<a href="http://www.example.com/myapp/?page=3" target="_blank">http://www.example.com/myapp/?page=3</a> &#x8BF7;&#x6C42;&#x4E2D;&#xFF0C;URLconf &#x4ECD;&#x5C06;&#x67E5;&#x627E;<code>myapp/</code>&#x3002;</p>
+<p>URLconf &#x4E0D;&#x68C0;&#x67E5;&#x8BF7;&#x6C42;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BB2;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5; &#x2014;&#x2014; &#x540C;&#x4E00;&#x4E2A;URL&#x7684;<code>POST</code>&#x3001;<code>GET</code>&#x3001;<code>HEAD</code>&#x7B49;&#x7B49; &#x2014;&#x2014; &#x90FD;&#x5C06;&#x8DEF;&#x7531;&#x5230;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;"><a name="&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;" class="anchor-navigation-ex-anchor" href="#&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x6BCF;&#x4E2A;&#x5728;URLconf&#x4E2D;&#x6355;&#x83B7;&#x7684;&#x53C2;&#x6570;&#x90FD;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;Python&#x5B57;&#x7B26;&#x4E32;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#xFF0C;&#x65E0;&#x8BBA;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x5339;&#x914D;&#x65B9;&#x5F0F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x9762;&#x8FD9;&#x884C;URLconf &#x4E2D;&#xFF1A;</p>
+<pre><code>url(r&apos;^articles/(?P&lt;year&gt;[0-9]{4})/$&apos;, views.year_archive),
+</code></pre><p>&#x4F20;&#x9012;&#x5230;&#x89C6;&#x56FE;&#x51FD;&#x6570;<code>views.year_archive()</code> &#x4E2D;&#x7684;<code>year</code> &#x53C2;&#x6570;&#x6C38;&#x8FDC;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;"><a name="&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># urls.py&#x4E2D;</span>
+<span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^blog/$&apos;</span>, views.page),
+    url(<span class="hljs-string">r&apos;^blog/page(?P&lt;num&gt;[0-9]+)/$&apos;</span>, views.page),
+]
+
+<span class="hljs-comment"># views.py&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;num&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">page</span><span class="hljs-params">(request, num=<span class="hljs-string">&quot;1&quot;</span>)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x4E24;&#x4E2A;URL&#x6A21;&#x5F0F;&#x6307;&#x5411;&#x76F8;&#x540C;&#x7684;view - views.page - &#x4F46;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x5E76;&#x6CA1;&#x6709;&#x4ECE;URL&#x4E2D;&#x6355;&#x83B7;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x4E0A;&#x4E86;&#xFF0C;page()&#x51FD;&#x6570;&#x5C06;&#x4F7F;&#x7528;&#x5176;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;num=&#x201C;1&#x201D;,&#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#xFF0C;page()&#x5C06;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6355;&#x83B7;&#x5230;&#x7684;num&#x503C;&#x3002;</p>
+<h3 id="include&#x5176;&#x4ED6;&#x7684;urlconfs"><a name="include&#x5176;&#x4ED6;&#x7684;urlconfs" class="anchor-navigation-ex-anchor" href="#include&#x5176;&#x4ED6;&#x7684;urlconfs"><i class="fa fa-link" aria-hidden="true"></i></a>include&#x5176;&#x4ED6;&#x7684;URLconfs</h3>
+<pre><code class="lang-python"><span class="hljs-comment">#At any point, your urlpatterns can &#x201C;include&#x201D; other URLconf modules. This</span>
+&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x7684;URLconf&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x201C;&#x5305;&#x62EC;&#x201D;&#x5176;&#x4ED6;&#x7684;URLconf&#x6A21;&#x5757;&#x3002;
+
+<span class="hljs-comment">#essentially &#x201C;roots&#x201D; a set of URLs below other ones.</span>
+&#x57FA;&#x672C;&#x4E0A;&#x201C;root&#x201D;&#x4E00;&#x7EC4;&#x5339;&#x914D;&#x7684;URLS&#x4F4E;&#x4E8E;&#x5176;&#x4ED6;&#x3002;
+
+<span class="hljs-comment">#For example, here&#x2019;s an excerpt of the URLconf for the Django website itself.</span>
+&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;Django&#x7F51;&#x7AD9;&#x7684;&#x7F51;&#x5740;&#x6458;&#x8981;&#x3002;
+
+<span class="hljs-comment">#It includes a number of other URLconfs:</span>
+&#x5B83;&#x5305;&#x62EC;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x7F51;&#x5740;
+
+<span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> include, url
+
+urlpatterns = [
+   url(<span class="hljs-string">r&apos;^admin/&apos;</span>, admin.site.urls),
+   url(<span class="hljs-string">r&apos;^blog/&apos;</span>, include(<span class="hljs-string">&apos;blog.urls&apos;</span>)),  <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x7684;URLconfs&#x6587;&#x4EF6;</span>
+]
+</code></pre>
+<h3 id="&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><a name="&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F20;&#x9012;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;</h3>
+<p>URLconfs &#x5177;&#x6709;&#x4E00;&#x4E2A;&#x94A9;&#x5B50;&#xFF0C;&#x8BA9;&#x4F60;&#x4F20;&#x9012;&#x4E00;&#x4E2A;Python &#x5B57;&#x5178;&#x4F5C;&#x4E3A;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x3002;</p>
+<p><code>django.conf.urls.url()</code> &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#xFF0C;&#x8868;&#x793A;&#x60F3;&#x8981;&#x4F20;&#x9012;&#x7ED9;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x7684;&#x989D;&#x5916;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^blog/(?P&lt;year&gt;[0-9]{4})/$&apos;</span>, views.year_archive, {<span class="hljs-string">&apos;foo&apos;</span>: <span class="hljs-string">&apos;bar&apos;</span>}),
+]
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;/blog/2005/&#x8BF7;&#x6C42;&#xFF0C;Django &#x5C06;&#x8C03;&#x7528;views.year_archive(request, year=&apos;2005&apos;, foo=&apos;bar&apos;)&#x3002;
+&#x8FD9;&#x4E2A;&#x6280;&#x672F;&#x5728;Syndication &#x6846;&#x67B6;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x6765;&#x4F20;&#x9012;&#x5143;&#x6570;&#x636E;&#x548C;&#x9009;&#x9879;&#x7ED9;&#x89C6;&#x56FE;&#x3002;</p>
+<h2 id="&#x547D;&#x540D;url&#x548C;url&#x53CD;&#x5411;&#x89E3;&#x6790;"><a name="&#x547D;&#x540D;url&#x548C;url&#x53CD;&#x5411;&#x89E3;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x547D;&#x540D;url&#x548C;url&#x53CD;&#x5411;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x547D;&#x540D;URL&#x548C;URL&#x53CD;&#x5411;&#x89E3;&#x6790;</strong></h2>
+<p>&#x5728;&#x4F7F;&#x7528;Django &#x9879;&#x76EE;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x9700;&#x6C42;&#x662F;&#x83B7;&#x5F97;URL&#x7684;&#x6700;&#x7EC8;&#x5F62;&#x5F0F;&#xFF0C;&#x4EE5;&#x7528;&#x4E8E;&#x5D4C;&#x5165;&#x5230;&#x751F;&#x6210;&#x7684;&#x5185;&#x5BB9;&#x4E2D;&#xFF08;&#x89C6;&#x56FE;&#x4E2D;&#x548C;&#x663E;&#x793A;&#x7ED9;&#x7528;&#x6237;&#x7684;URL&#x7B49;&#xFF09;&#x6216;&#x8005;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x5BFC;&#x822A;&#xFF08;&#x91CD;&#x5B9A;&#x5411;&#x7B49;&#xFF09;&#x3002;
+&#x4EBA;&#x4EEC;&#x5F3A;&#x70C8;&#x5E0C;&#x671B;&#x4E0D;&#x8981;&#x786C;&#x7F16;&#x7801;&#x8FD9;&#x4E9B;URL&#xFF08;&#x8D39;&#x529B;&#x3001;&#x4E0D;&#x53EF;&#x6269;&#x5C55;&#x4E14;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF09;&#x6216;&#x8005;&#x8BBE;&#x8BA1;&#x4E00;&#x79CD;&#x4E0E;URLconf &#x6BEB;&#x4E0D;&#x76F8;&#x5173;&#x7684;&#x4E13;&#x95E8;&#x7684;URL &#x751F;&#x6210;&#x673A;&#x5236;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x5BB9;&#x6613;&#x5BFC;&#x81F4;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x4EA7;&#x751F;&#x8FC7;&#x671F;&#x7684;URL&#x3002;
+&#x6362;&#x53E5;&#x8BDD;&#x8BB2;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x662F;&#x4E00;&#x4E2A;DRY &#x673A;&#x5236;&#x3002;&#x9664;&#x4E86;&#x5176;&#x5B83;&#x6709;&#x70B9;&#xFF0C;&#x5B83;&#x8FD8;&#x5141;&#x8BB8;&#x8BBE;&#x8BA1;&#x7684;URL &#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x800C;&#x4E0D;&#x7528;&#x904D;&#x5386;&#x9879;&#x76EE;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x6765;&#x641C;&#x7D22;&#x5E76;&#x66FF;&#x6362;&#x8FC7;&#x671F;&#x7684;URL&#x3002;
+&#x83B7;&#x53D6;&#x4E00;&#x4E2A;URL &#x6700;&#x5F00;&#x59CB;&#x60F3;&#x5230;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x5904;&#x7406;&#x5B83;&#x89C6;&#x56FE;&#x7684;&#x6807;&#x8BC6;&#xFF08;&#x4F8B;&#x5982;&#x540D;&#x5B57;&#xFF09;&#xFF0C;&#x67E5;&#x627E;&#x6B63;&#x786E;&#x7684;URL &#x7684;&#x5176;&#x5B83;&#x5FC5;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x6709;&#x89C6;&#x56FE;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x3001;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#xFF09;&#x548C;&#x503C;&#x3002;
+Django &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x529E;&#x6CD5;&#x662F;&#x8BA9;URL &#x6620;&#x5C04;&#x662F;URL &#x8BBE;&#x8BA1;&#x552F;&#x4E00;&#x7684;&#x5730;&#x65B9;&#x3002;&#x4F60;&#x586B;&#x5145;&#x4F60;&#x7684;URLconf&#xFF0C;&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x53CC;&#x5411;&#x4F7F;&#x7528;&#x5B83;&#xFF1A;</p>
+<p>&#x6839;&#x636E;&#x7528;&#x6237;/&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8D77;&#x7684;URL &#x8BF7;&#x6C42;&#xFF0C;&#x5B83;&#x8C03;&#x7528;&#x6B63;&#x786E;&#x7684;Django &#x89C6;&#x56FE;&#xFF0C;&#x5E76;&#x4ECE;URL &#x4E2D;&#x63D0;&#x53D6;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x9700;&#x8981;&#x7684;&#x503C;&#x3002;
+&#x6839;&#x636E;Django &#x89C6;&#x56FE;&#x7684;&#x6807;&#x8BC6;&#x548C;&#x5C06;&#x8981;&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x83B7;&#x53D6;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;URL&#x3002;
+&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x524D;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x4E00;&#x76F4;&#x8BA8;&#x8BBA;&#x7684;&#x7528;&#x6CD5;&#x3002;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#x53EB;&#x505A;&#x53CD;&#x5411;&#x89E3;&#x6790;URL&#x3001;&#x53CD;&#x5411;URL &#x5339;&#x914D;&#x3001;&#x53CD;&#x5411;URL &#x67E5;&#x8BE2;&#x6216;&#x8005;&#x7B80;&#x5355;&#x7684;URL &#x53CD;&#x67E5;&#x3002;
+&#x5728;&#x9700;&#x8981;URL &#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x5C42;&#x7EA7;&#xFF0C;Django &#x63D0;&#x4F9B;&#x4E0D;&#x540C;&#x7684;&#x5DE5;&#x5177;&#x7528;&#x4E8E;URL &#x53CD;&#x67E5;&#xFF1A;</p>
+<p>&#x5728;&#x6A21;&#x677F;&#x4E2D;&#xFF1A;&#x4F7F;&#x7528;url&#x6A21;&#x677F;&#x6807;&#x7B7E;&#x3002;
+&#x5728;Python &#x4EE3;&#x7801;&#x4E2D;&#xFF1A;&#x4F7F;&#x7528;django.core.urlresolvers.reverse() &#x51FD;&#x6570;&#x3002;
+&#x5728;&#x66F4;&#x9AD8;&#x5C42;&#x7684;&#x4E0E;&#x5904;&#x7406;Django &#x6A21;&#x578B;&#x5B9E;&#x4F8B;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF1A;&#x4F7F;&#x7528;get_absolute_url() &#x65B9;&#x6CD5;&#x3002;
+&#x4E0A;&#x9762;&#x8BF4;&#x4E86;&#x4E00;&#x5927;&#x5806;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5E76;&#x6CA1;&#x6709;&#x770B;&#x61C2;&#x3002;&#xFF08;&#x90A3;&#x662F;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x751F;&#x786C;&#x7FFB;&#x8BD1;&#xFF09;&#x3002;</p>
+<p>&#x54B1;&#x4EEC;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x7ED9;&#x6211;&#x4EEC;&#x7684;URL&#x5339;&#x914D;&#x89C4;&#x5219;&#x8D77;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x4E00;&#x4E2A;URL&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x8D77;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x4EE5;&#x540E;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x6B7B;URL&#x4EE3;&#x7801;&#x4E86;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x540D;&#x5B57;&#x6765;&#x8C03;&#x7528;&#x5F53;&#x524D;&#x7684;URL&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-python">url(<span class="hljs-string">r&apos;^home&apos;</span>, views.home, name=<span class="hljs-string">&apos;home&apos;</span>),  <span class="hljs-comment"># &#x7ED9;&#x6211;&#x7684;url&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x8D77;&#x540D;&#x4E3A; home</span>
+url(<span class="hljs-string">r&apos;^index/(\d*)&apos;</span>, views.index, name=<span class="hljs-string">&apos;index&apos;</span>),  <span class="hljs-comment"># &#x7ED9;&#x6211;&#x7684;url&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x8D77;&#x540D;&#x4E3A;index</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#xFF1A;</p>
+<p>&#x5728;&#x6A21;&#x677F;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5F15;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-html">{% url &apos;home&apos; %}
+</code></pre>
+<p>&#x5728;views&#x51FD;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5F15;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> reverse
+
+reverse(<span class="hljs-string">&quot;index&quot;</span>, args=(<span class="hljs-string">&quot;2018&quot;</span>, ))
+</code></pre>
+<p>&#x4F8B;&#x5B50;&#xFF1A;
+&#x8003;&#x8651;&#x4E0B;&#x9762;&#x7684;URLconf&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    <span class="hljs-comment"># ...</span>
+    url(<span class="hljs-string">r&apos;^articles/([0-9]{4})/$&apos;</span>, views.year_archive, name=<span class="hljs-string">&apos;news-year-archive&apos;</span>),
+    <span class="hljs-comment"># ...</span>
+]
+</code></pre>
+<p>&#x6839;&#x636E;&#x8FD9;&#x91CC;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x67D0;&#x4E00;&#x5E74;nnnn&#x5BF9;&#x5E94;&#x7684;&#x5F52;&#x6863;&#x7684;URL&#x662F;<code>/articles/nnnn/</code>&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x83B7;&#x5F97;&#x5B83;&#x4EEC;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{% url &apos;news-year-archive&apos; 2012 %}&quot;</span>&gt;</span>2012 Archive<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+{% for yearvar in year_list %}
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{% url &apos;news-year-archive&apos; yearvar %}&quot;</span>&gt;</span>{{ yearvar }} Archive<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+{% endfor %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>&#x5728;Python &#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> reverse
+<span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> redirect
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">redirect_to_year</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-comment"># ...</span>
+    year = <span class="hljs-number">2006</span>
+    <span class="hljs-comment"># ...</span>
+    <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">&apos;news-year-archive&apos;</span>, args=(year,)))
+</code></pre>
+<p>&#x5982;&#x679C;&#x51FA;&#x4E8E;&#x67D0;&#x79CD;&#x539F;&#x56E0;&#x51B3;&#x5B9A;&#x6309;&#x5E74;&#x5F52;&#x6863;&#x6587;&#x7AE0;&#x53D1;&#x5E03;&#x7684;URL&#x5E94;&#x8BE5;&#x8C03;&#x6574;&#x4E00;&#x4E0B;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C06;&#x53EA;&#x9700;&#x8981;&#x4FEE;&#x6539;URLconf &#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x662F;&#x901A;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;URL &#x548C;&#x89C6;&#x56FE;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x591A;&#x5BF9;&#x4E00;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#xFF0C;&#x5F53;&#x53CD;&#x67E5;URL &#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x89C6;&#x56FE;&#x7684;&#x540D;&#x5B57;&#x8FD8;&#x4E0D;&#x591F;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x4E3A;&#x4E86;&#x5B8C;&#x6210;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;URL &#x53CD;&#x67E5;&#xFF0C;&#x4F60;&#x5C06;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x547D;&#x540D;&#x7684;URL &#x6A21;&#x5F0F;&#x3002;URL &#x7684;&#x540D;&#x79F0;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x4F60;&#x559C;&#x6B22;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x4E0D;&#x53EA;&#x9650;&#x5236;&#x5728;&#x5408;&#x6CD5;&#x7684;Python &#x540D;&#x79F0;&#x3002;</p>
+<p>&#x5F53;&#x547D;&#x540D;&#x4F60;&#x7684;URL &#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x4F7F;&#x7528;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x4F1A;&#x4E0E;&#x5176;&#x5B83;&#x5E94;&#x7528;&#x4E2D;&#x540D;&#x79F0;&#x51B2;&#x7A81;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;URL &#x6A21;&#x5F0F;&#x53EB;&#x505A;<code>comment</code>&#xFF0C;&#x800C;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#x4E5F;&#x6709;&#x4E00;&#x4E2A;&#x540C;&#x6837;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5F53;&#x4F60;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x540D;&#x79F0;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x5C06;&#x63D2;&#x5165;&#x54EA;&#x4E2A;URL&#x3002;</p>
+<p>&#x5728;URL &#x540D;&#x79F0;&#x4E2D;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x524D;&#x7F00;&#xFF0C;&#x6BD4;&#x5982;&#x5E94;&#x7528;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5C06;&#x51CF;&#x5C11;&#x51B2;&#x7A81;&#x7684;&#x53EF;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>myapp-comment</code> &#x800C;&#x4E0D;&#x662F;<code>comment</code>&#x3002;</p>
+<h2 id="&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;"><a name="&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;</h2>
+<p>&#x5373;&#x4F7F;&#x4E0D;&#x540C;&#x7684;APP&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;URL&#x540D;&#x79F0;&#xFF0C;URL&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6A21;&#x5F0F;&#x4E5F;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x552F;&#x4E00;&#x53CD;&#x8F6C;&#x547D;&#x540D;&#x7684;URL&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>project&#x4E2D;&#x7684;urls.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url, include
+
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^app01/&apos;</span>, include(<span class="hljs-string">&apos;app01.urls&apos;</span>, namespace=<span class="hljs-string">&apos;app01&apos;</span>)),
+    url(<span class="hljs-string">r&apos;^app02/&apos;</span>, include(<span class="hljs-string">&apos;app02.urls&apos;</span>, namespace=<span class="hljs-string">&apos;app02&apos;</span>)),
+]
+</code></pre>
+<p>app01&#x4E2D;&#x7684;urls.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+<span class="hljs-keyword">from</span> app01 <span class="hljs-keyword">import</span> views
+
+app_name = <span class="hljs-string">&apos;app01&apos;</span>
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^(?P&lt;pk&gt;\d+)/$&apos;</span>, views.detail, name=<span class="hljs-string">&apos;detail&apos;</span>)
+]
+</code></pre>
+<p>app02&#x4E2D;&#x7684;urls.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
+<span class="hljs-keyword">from</span> app02 <span class="hljs-keyword">import</span> views
+
+app_name = <span class="hljs-string">&apos;app02&apos;</span>
+urlpatterns = [
+    url(<span class="hljs-string">r&apos;^(?P&lt;pk&gt;\d+)/$&apos;</span>, views.detail, name=<span class="hljs-string">&apos;detail&apos;</span>)
+]
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x7684;&#x4E24;&#x4E2A;app&#x4E2D; url&#x540D;&#x79F0;&#x91CD;&#x590D;&#x4E86;&#xFF0C;&#x6211;&#x53CD;&#x8F6C;URL&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x540D;&#x79F0;&#x5F97;&#x5230;&#x6211;&#x5F53;&#x524D;&#x7684;URL&#x3002;</p>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<p><code>&apos;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x540D;&#x79F0;:URL&#x540D;&#x79F0;&apos;</code></p>
+<p>&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-html">{% url &apos;app01:detail&apos; pk=12 pp=99 %}
+</code></pre>
+<p>views&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-html">v = reverse(&apos;app01:detail&apos;, kwargs={&apos;pk&apos;:11})
+</code></pre>
+<p> &#x8FD9;&#x6837;&#x5373;&#x4F7F;app&#x4E2D;URL&#x7684;&#x547D;&#x540D;&#x76F8;&#x540C;&#xFF0C;&#x6211;&#x4E5F;&#x53EF;&#x4EE5;&#x53CD;&#x8F6C;&#x5F97;&#x5230;&#x6B63;&#x786E;&#x7684;URL&#x4E86;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05.Django的视图.html" class="navigation navigation-prev " aria-label="Previous page: Django的视图">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07.Django模板系统.html" class="navigation navigation-next " aria-label="Next page: Django模板系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Django的路由系统","level":"1.4.6","depth":2,"next":{"title":"Django模板系统","level":"1.4.7","depth":2,"path":"python/Django/07.Django模板系统.md","ref":"python/Django/07.Django模板系统.md","articles":[]},"previous":{"title":"Django的视图","level":"1.4.5","depth":2,"path":"python/Django/05.Django的视图.md","ref":"python/Django/05.Django的视图.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"python/Django/06.Django的路由系统.md","mtime":"2018-06-12T01:20:57.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

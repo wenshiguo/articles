@@ -1,0 +1,1572 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Django模型ORM · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="09.Django路由系统.html" />
+    
+    
+    <link rel="prev" href="07.Django模板系统.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../MySQL学习/">
+            
+                <a href="../../MySQL学习/">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../MySQL学习/01-初识数据库.html">
+            
+                <a href="../../MySQL学习/01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../MySQL学习/02-MySQL库操作.html">
+            
+                <a href="../../MySQL学习/02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../MySQL学习/03-MySQL表操作/">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../MySQL学习/04-MySQL数据操作/">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../MySQL学习/Python3连接MySQL.html">
+            
+                <a href="../../MySQL学习/Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01.Django初识.html">
+            
+                <a href="01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="02.Web框架本质及第一个Django实例.html">
+            
+                <a href="02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="03.HTTP协议.html">
+            
+                <a href="03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="04.Django框架简介.html">
+            
+                <a href="04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="05.Django的视图.html">
+            
+                <a href="05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="06.Django的路由系统.html">
+            
+                <a href="06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="07.Django模板系统.html">
+            
+                <a href="07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.8" data-path="08.Django模型ORM.html">
+            
+                <a href="08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="09.Django路由系统.html">
+            
+                <a href="09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10.ORM相关操作.html">
+            
+                <a href="10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="111.ORM版学员管理系统.html">
+            
+                <a href="111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="11.Form组件.html">
+            
+                <a href="11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="博客项目点赞与灭操作.html">
+            
+                <a href="博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="博客项目评论.html">
+            
+                <a href="博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../lufei-payment/luffy结算中心.html">
+            
+                <a href="../lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Django模型ORM</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#object-relational-mappingorm"><b></b>Object Relational Mapping(ORM)</a></li><ul><li><span class="title-icon "></span><a href="#orm&#x4ECB;&#x7ECD;"><b></b>ORM&#x4ECB;&#x7ECD;</a></li><ul><li><span class="title-icon "></span><a href="#orm&#x6982;&#x5FF5;"><b></b>ORM&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#orm&#x7531;&#x6765;"><b></b>ORM&#x7531;&#x6765;</a></li><li><span class="title-icon "></span><a href="#orm&#x7684;&#x4F18;&#x52BF;"><b></b>ORM&#x7684;&#x4F18;&#x52BF;</a></li><li><span class="title-icon "></span><a href="#orm&#x7684;&#x52A3;&#x52BF;"><b></b>ORM&#x7684;&#x52A3;&#x52BF;</a></li><li><span class="title-icon "></span><a href="#orm&#x603B;&#x7ED3;"><b></b>ORM&#x603B;&#x7ED3;</a></li></ul><li><span class="title-icon "></span><a href="#django&#x4E2D;&#x7684;orm"><b></b>Django&#x4E2D;&#x7684;ORM</a></li><ul><li><span class="title-icon "></span><a href="#django&#x9879;&#x76EE;&#x4F7F;&#x7528;mysql&#x6570;&#x636E;&#x5E93;"><b></b>Django&#x9879;&#x76EE;&#x4F7F;&#x7528;MySQL&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#model"><b></b>Model</a></li><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><b></b>&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x6BB5;"><b></b>&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x6BB5;&#x53C2;&#x6570;"><b></b>&#x5B57;&#x6BB5;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x5143;&#x4FE1;&#x606F;"><b></b>&#x5143;&#x4FE1;&#x606F;</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;"><b></b>&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#orm&#x64CD;&#x4F5C;"><b></b>ORM&#x64CD;&#x4F5C;</a></li></ul></ul></ul></div><a href="#object-relational-mappingorm" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="object-relational-mappingorm"><a name="object-relational-mappingorm" class="anchor-navigation-ex-anchor" href="#object-relational-mappingorm"><i class="fa fa-link" aria-hidden="true"></i></a><strong>Object Relational Mapping(ORM)</strong></h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#object-relational-mappingorm"><b></b>Object Relational Mapping(ORM)</a></li><ul><li><span class="title-icon "></span><a href="#orm&#x4ECB;&#x7ECD;"><b></b>ORM&#x4ECB;&#x7ECD;</a></li><ul><li><span class="title-icon "></span><a href="#orm&#x6982;&#x5FF5;"><b></b>ORM&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#orm&#x7531;&#x6765;"><b></b>ORM&#x7531;&#x6765;</a></li><li><span class="title-icon "></span><a href="#orm&#x7684;&#x4F18;&#x52BF;"><b></b>ORM&#x7684;&#x4F18;&#x52BF;</a></li><li><span class="title-icon "></span><a href="#orm&#x7684;&#x52A3;&#x52BF;"><b></b>ORM&#x7684;&#x52A3;&#x52BF;</a></li><li><span class="title-icon "></span><a href="#orm&#x603B;&#x7ED3;"><b></b>ORM&#x603B;&#x7ED3;</a></li></ul><li><span class="title-icon "></span><a href="#django&#x4E2D;&#x7684;orm"><b></b>Django&#x4E2D;&#x7684;ORM</a></li><ul><li><span class="title-icon "></span><a href="#django&#x9879;&#x76EE;&#x4F7F;&#x7528;mysql&#x6570;&#x636E;&#x5E93;"><b></b>Django&#x9879;&#x76EE;&#x4F7F;&#x7528;MySQL&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#model"><b></b>Model</a></li><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><b></b>&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x6BB5;"><b></b>&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x6BB5;&#x53C2;&#x6570;"><b></b>&#x5B57;&#x6BB5;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x5143;&#x4FE1;&#x606F;"><b></b>&#x5143;&#x4FE1;&#x606F;</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;"><b></b>&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#orm&#x64CD;&#x4F5C;"><b></b>ORM&#x64CD;&#x4F5C;</a></li></ul></ul></ul></div>
+
+<h2 id="orm&#x4ECB;&#x7ECD;"><a name="orm&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#orm&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x4ECB;&#x7ECD;</h2>
+<h3 id="orm&#x6982;&#x5FF5;"><a name="orm&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#orm&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>ORM&#x6982;&#x5FF5;</strong></h3>
+<p>&#x5BF9;&#x8C61;&#x5173;&#x7CFB;&#x6620;&#x5C04;&#xFF08;Object Relational Mapping&#xFF0C;&#x7B80;&#x79F0;ORM&#xFF09;&#x6A21;&#x5F0F;&#x662F;&#x4E00;&#x79CD;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x4E0E;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5B58;&#x5728;&#x7684;&#x4E92;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x73B0;&#x8C61;&#x7684;&#x6280;&#x672F;&#x3002;</p>
+<p>&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;ORM&#x662F;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x63CF;&#x8FF0;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x95F4;&#x6620;&#x5C04;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x5C06;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x6301;&#x4E45;&#x5316;&#x5230;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
+<p>ORM&#x5728;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5C42;&#x548C;&#x6570;&#x636E;&#x5E93;&#x5C42;&#x4E4B;&#x95F4;&#x5145;&#x5F53;&#x4E86;&#x6865;&#x6881;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<h3 id="orm&#x7531;&#x6765;"><a name="orm&#x7531;&#x6765;" class="anchor-navigation-ex-anchor" href="#orm&#x7531;&#x6765;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x7531;&#x6765;</h3>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;O/R&#x5F00;&#x59CB;&#x3002;&#x5B57;&#x6BCD;O&#x8D77;&#x6E90;&#x4E8E;&quot;&#x5BF9;&#x8C61;&quot;(Object),&#x800C;R&#x5219;&#x6765;&#x81EA;&#x4E8E;&quot;&#x5173;&#x7CFB;&quot;(Relational)&#x3002;</p>
+<p>&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x90FD;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x5BF9;&#x8C61;&#x548C;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x3002;&#x5728;&#x7528;&#x6237;&#x5C42;&#x9762;&#x548C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5C42;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x3002;&#x5F53;&#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x606F;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x628A;&#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x606F;&#x4FDD;&#x5B58;&#x5728;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
+<p>&#x6309;&#x7167;&#x4E4B;&#x524D;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x7A0B;&#x5E8F;&#x5458;&#x4F1A;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x4E2D;&#x5939;&#x6742;&#x5F88;&#x591A;SQL&#x8BED;&#x53E5;&#x7528;&#x6765;&#x589E;&#x52A0;&#x3001;&#x8BFB;&#x53D6;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x76F8;&#x5173;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x91CD;&#x590D;&#x7684;&#x3002;</p>
+<h3 id="orm&#x7684;&#x4F18;&#x52BF;"><a name="orm&#x7684;&#x4F18;&#x52BF;" class="anchor-navigation-ex-anchor" href="#orm&#x7684;&#x4F18;&#x52BF;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x7684;&#x4F18;&#x52BF;</h3>
+<p>ORM&#x89E3;&#x51B3;&#x7684;&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x662F;&#x5BF9;&#x8C61;&#x548C;&#x5173;&#x7CFB;&#x7684;&#x6620;&#x5C04;&#x3002;&#x5B83;&#x901A;&#x5E38;&#x628A;&#x4E00;&#x4E2A;&#x7C7B;&#x548C;&#x4E00;&#x4E2A;&#x8868;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#xFF0C;&#x7C7B;&#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x5E94;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7C7B;&#x7684;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x3002; </p>
+<p>ORM&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x4E0D;&#x7528;&#x76F4;&#x63A5;&#x7F16;&#x5199;SQL&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x9700;&#x50CF;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x8BA9;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E13;&#x6CE8;&#x4E8E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x3002;</p>
+<h3 id="orm&#x7684;&#x52A3;&#x52BF;"><a name="orm&#x7684;&#x52A3;&#x52BF;" class="anchor-navigation-ex-anchor" href="#orm&#x7684;&#x52A3;&#x52BF;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x7684;&#x52A3;&#x52BF;</h3>
+<p>ORM&#x7684;&#x7F3A;&#x70B9;&#x662F;&#x4F1A;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x727A;&#x7272;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;&#x3002;</p>
+<p>ORM&#x7528;&#x591A;&#x4E86;SQL&#x8BED;&#x53E5;&#x5C31;&#x4E0D;&#x4F1A;&#x5199;&#x4E86;&#xFF0C;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x6280;&#x80FD;&#x9000;&#x5316;...</p>
+<h3 id="orm&#x603B;&#x7ED3;"><a name="orm&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#orm&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>ORM&#x603B;&#x7ED3;</strong></h3>
+<p>ORM&#x53EA;&#x662F;&#x4E00;&#x79CD;&#x5DE5;&#x5177;&#xFF0C;&#x5DE5;&#x5177;&#x786E;&#x5B9E;&#x80FD;&#x89E3;&#x51B3;&#x4E00;&#x4E9B;&#x91CD;&#x590D;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x52B3;&#x52A8;&#x3002;&#x8FD9;&#x662F;&#x4E0D;&#x53EF;&#x5426;&#x8BA4;&#x7684;&#x3002;</p>
+<p>&#x4F46;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x6307;&#x671B;&#x67D0;&#x4E2A;&#x5DE5;&#x5177;&#x80FD;&#x4E00;&#x52B3;&#x6C38;&#x9038;&#x5730;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x95EE;&#x9898;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x7684;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5728;&#x6574;&#x4E2A;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x7684;&#x60C5;&#x51B5;&#x5E94;&#x8BE5;&#x90FD;&#x662F;&#x5F88;&#x5C11;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x6240;&#x8C13;&#x7684;&#x5DE5;&#x5177;&#x4E5F;&#x5C31;&#x5931;&#x53BB;&#x4E86;&#x5B83;&#x5B58;&#x5728;&#x7684;&#x610F;&#x4E49;&#x3002;</p>
+<h2 id="django&#x4E2D;&#x7684;orm"><a name="django&#x4E2D;&#x7684;orm" class="anchor-navigation-ex-anchor" href="#django&#x4E2D;&#x7684;orm"><i class="fa fa-link" aria-hidden="true"></i></a><strong>Django&#x4E2D;&#x7684;ORM</strong></h2>
+<h3 id="django&#x9879;&#x76EE;&#x4F7F;&#x7528;mysql&#x6570;&#x636E;&#x5E93;"><a name="django&#x9879;&#x76EE;&#x4F7F;&#x7528;mysql&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#django&#x9879;&#x76EE;&#x4F7F;&#x7528;mysql&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>Django&#x9879;&#x76EE;&#x4F7F;&#x7528;MySQL&#x6570;&#x636E;&#x5E93;</h3>
+<p>1.&#x5728;Django&#x9879;&#x76EE;&#x7684;settings.py&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-python">DATABASES = {
+    <span class="hljs-string">&quot;default&quot;</span>: {
+        <span class="hljs-string">&quot;ENGINE&quot;</span>: <span class="hljs-string">&quot;django.db.backends.mysql&quot;</span>,
+        <span class="hljs-string">&quot;NAME&quot;</span>: <span class="hljs-string">&quot;&#x4F60;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&quot;</span>,  <span class="hljs-comment"># &#x9700;&#x8981;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</span>
+        <span class="hljs-string">&quot;USER&quot;</span>: <span class="hljs-string">&quot;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;&quot;</span>,
+        <span class="hljs-string">&quot;PASSWORD&quot;</span>: <span class="hljs-string">&quot;&#x6570;&#x636E;&#x5E93;&#x5BC6;&#x7801;&quot;</span>,
+        <span class="hljs-string">&quot;HOST&quot;</span>: <span class="hljs-string">&quot;&#x6570;&#x636E;&#x5E93;IP&quot;</span>,
+        <span class="hljs-string">&quot;POST&quot;</span>: <span class="hljs-number">3306</span>
+    }
+}
+</code></pre>
+<p>2.&#x5728;Django&#x9879;&#x76EE;&#x7684;<strong>init</strong>.py&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x544A;&#x8BC9;Django&#x4F7F;&#x7528;pymysql&#x6A21;&#x5757;&#x8FDE;&#x63A5;MySQL&#x6570;&#x636E;&#x5E93;:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pymysql
+
+pymysql.install_as_MySQLdb()
+</code></pre>
+<h3 id="model"><a name="model" class="anchor-navigation-ex-anchor" href="#model"><i class="fa fa-link" aria-hidden="true"></i></a>Model</h3>
+<p>&#x5728;Django&#x4E2D;model&#x662F;&#x4F60;&#x6570;&#x636E;&#x7684;&#x5355;&#x4E00;&#x3001;&#x660E;&#x786E;&#x7684;&#x4FE1;&#x606F;&#x6765;&#x6E90;&#x3002;&#x5B83;&#x5305;&#x542B;&#x4E86;&#x4F60;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x7684;&#x91CD;&#x8981;&#x5B57;&#x6BB5;&#x548C;&#x884C;&#x4E3A;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#xFF08;model&#xFF09;&#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8868;&#xFF0C;</p>
+<p>&#x57FA;&#x672C;&#x60C5;&#x51B5;&#xFF1A;</p>
+<p>&#x6BCF;&#x4E2A;&#x6A21;&#x578B;&#x90FD;&#x662F;&#x4E00;&#x4E2A;Python&#x7C7B;&#xFF0C;&#x5B83;&#x662F;django.db.models.Model&#x7684;&#x5B50;&#x7C7B;&#x3002;
+&#x6A21;&#x578B;&#x7684;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x3002;
+&#x7EFC;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;Django&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8BBF;&#x95EE;API&#xFF0C;&#x8BE6;&#x8BE2;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x94FE;&#x63A5;&#x3002;</p>
+<p><img src="img1" alt="img1"></p>
+<h3 id="&#x5FEB;&#x901F;&#x5165;&#x95E8;"><a name="&#x5FEB;&#x901F;&#x5165;&#x95E8;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x5FEB;&#x901F;&#x5165;&#x95E8;</strong></h3>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; <strong>Person</strong> &#x6A21;&#x578B;&#xFF0C;&#x5305;&#x542B;<strong>first_name</strong> &#x548C; <strong>last_name</strong>&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span><span class="hljs-params">(models.Model)</span>:</span>
+    first_name = models.CharField(max_length=<span class="hljs-number">30</span>)
+    last_name = models.CharField(max_length=<span class="hljs-number">30</span>)
+</code></pre>
+<p><strong>first_name</strong> &#x548C; <strong>last_name</strong> &#x662F;&#x6A21;&#x578B;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x88AB;&#x6307;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x5C5E;&#x6027;&#xFF0C;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5217;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684; <strong>Person</strong> &#x6A21;&#x578B;&#x5C06;&#x4F1A;&#x50CF;&#x8FD9;&#x6837;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8868;&#xFF1A;</p>
+<pre><code class="lang-python">CREATE TABLE myapp_person (
+    <span class="hljs-string">&quot;id&quot;</span> serial NOT NULL PRIMARY KEY,
+    <span class="hljs-string">&quot;first_name&quot;</span> varchar(<span class="hljs-number">30</span>) NOT NULL,
+    <span class="hljs-string">&quot;last_name&quot;</span> varchar(<span class="hljs-number">30</span>) NOT NULL
+);
+</code></pre>
+<p>&#x4E00;&#x4E9B;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>&#x8868;myapp_person&#x7684;&#x540D;&#x79F0;&#x662F;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x8868;&#x540D;&#xFF0C;&#x9700;&#x8981;&#x5728;model&#x7684;Meta&#x7C7B;&#x4E2D;&#x6307;&#x5B9A; <code>db_table</code> &#x53C2;&#x6570;&#xFF0C;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x8868;&#x540D;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4F7F;&#x7528;MySQL&#x4F5C;&#x4E3A;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x65F6;&#x3002;</p>
+<p>id&#x5B57;&#x6BB5;&#x662F;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x6307;&#x5B9A;&#x81EA;&#x5B9A;&#x4E49;&#x4E3B;&#x952E;&#xFF0C;&#x53EA;&#x9700;&#x5728;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x4E2D;&#x6307;&#x5B9A; primary_key=True &#x5373;&#x53EF;&#x3002;&#x5982;&#x679C;Django&#x53D1;&#x73B0;&#x4F60;&#x5DF2;&#x7ECF;&#x660E;&#x786E;&#x5730;&#x8BBE;&#x7F6E;&#x4E86;<code>Field.primary_key</code>&#xFF0C;&#x5B83;&#x5C06;&#x4E0D;&#x4F1A;&#x6DFB;&#x52A0;&#x81EA;&#x52A8;ID&#x5217;&#x3002;</p>
+<p>&#x672C;&#x793A;&#x4F8B;&#x4E2D;&#x7684;CREATE TABLE SQL&#x4F7F;&#x7528;PostgreSQL&#x8BED;&#x6CD5;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x4F46;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;Django&#x4F1A;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540E;&#x7AEF;&#x7C7B;&#x578B;&#x6765;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;SQL&#x8BED;&#x53E5;&#x3002;</p>
+<p>Django&#x652F;&#x6301;MySQL5.5&#x53CA;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002;</p>
+<h3 id="&#x5B57;&#x6BB5;"><a name="&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x6BB5;</h3>
+<pre><code>    AutoField(Field)
+        - int&#x81EA;&#x589E;&#x5217;&#xFF0C;&#x5FC5;&#x987B;&#x586B;&#x5165;&#x53C2;&#x6570; primary_key=True
+
+    BigAutoField(AutoField)
+        - bigint&#x81EA;&#x589E;&#x5217;&#xFF0C;&#x5FC5;&#x987B;&#x586B;&#x5165;&#x53C2;&#x6570; primary_key=True
+
+        &#x6CE8;&#xFF1A;&#x5F53;model&#x4E2D;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x81EA;&#x589E;&#x5217;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5217;&#x540D;&#x4E3A;id&#x7684;&#x5217;
+        from django.db import models
+
+        class UserInfo(models.Model):
+            # &#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5217;&#x540D;&#x4E3A;id&#x7684;&#x4E14;&#x4E3A;&#x81EA;&#x589E;&#x7684;&#x6574;&#x6570;&#x5217;
+            username = models.CharField(max_length=32)
+
+        class Group(models.Model):
+            # &#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x589E;&#x5217;
+            nid = models.AutoField(primary_key=True)
+            name = models.CharField(max_length=32)
+
+    SmallIntegerField(IntegerField):
+        - &#x5C0F;&#x6574;&#x6570; -32768 &#xFF5E; 32767
+
+    PositiveSmallIntegerField(PositiveIntegerRelDbTypeMixin, IntegerField)
+        - &#x6B63;&#x5C0F;&#x6574;&#x6570; 0 &#xFF5E; 32767
+    IntegerField(Field)
+        - &#x6574;&#x6570;&#x5217;(&#x6709;&#x7B26;&#x53F7;&#x7684;) -2147483648 &#xFF5E; 2147483647
+
+    PositiveIntegerField(PositiveIntegerRelDbTypeMixin, IntegerField)
+        - &#x6B63;&#x6574;&#x6570; 0 &#xFF5E; 2147483647
+
+    BigIntegerField(IntegerField):
+        - &#x957F;&#x6574;&#x578B;(&#x6709;&#x7B26;&#x53F7;&#x7684;) -9223372036854775808 &#xFF5E; 9223372036854775807
+
+    BooleanField(Field)
+        - &#x5E03;&#x5C14;&#x503C;&#x7C7B;&#x578B;
+
+    NullBooleanField(Field):
+        - &#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x7684;&#x5E03;&#x5C14;&#x503C;
+
+    CharField(Field)
+        - &#x5B57;&#x7B26;&#x7C7B;&#x578B;
+        - &#x5FC5;&#x987B;&#x63D0;&#x4F9B;max_length&#x53C2;&#x6570;&#xFF0C; max_length&#x8868;&#x793A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;
+
+    TextField(Field)
+        - &#x6587;&#x672C;&#x7C7B;&#x578B;
+
+    EmailField(CharField)&#xFF1A;
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1;&#x673A;&#x5236;
+
+    IPAddressField(Field)
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1; IPV4 &#x673A;&#x5236;
+
+    GenericIPAddressField(Field)
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1; Ipv4&#x548C;Ipv6
+        - &#x53C2;&#x6570;&#xFF1A;
+            protocol&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;Ipv4&#x6216;Ipv6&#xFF0C; &apos;both&apos;,&quot;ipv4&quot;,&quot;ipv6&quot;
+            unpack_ipv4&#xFF0C; &#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E3A;True&#xFF0C;&#x5219;&#x8F93;&#x5165;::ffff:192.0.2.1&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x89E3;&#x6790;&#x4E3A;192.0.2.1&#xFF0C;&#x5F00;&#x542F;&#x6B64;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981;protocol=&quot;both&quot;
+
+    URLField(CharField)
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1; URL
+
+    SlugField(CharField)
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1;&#x652F;&#x6301; &#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x3001;&#x4E0B;&#x5212;&#x7EBF;&#x3001;&#x8FDE;&#x63A5;&#x7B26;&#xFF08;&#x51CF;&#x53F7;&#xFF09;
+
+    CommaSeparatedIntegerField(CharField)
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x683C;&#x5F0F;&#x5FC5;&#x987B;&#x4E3A;&#x9017;&#x53F7;&#x5206;&#x5272;&#x7684;&#x6570;&#x5B57;
+
+    UUIDField(Field)
+        - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x5BF9;UUID&#x683C;&#x5F0F;&#x7684;&#x9A8C;&#x8BC1;
+
+    FilePathField(Field)
+        - &#x5B57;&#x7B26;&#x4E32;&#xFF0C;Django Admin&#x4EE5;&#x53CA;ModelForm&#x4E2D;&#x63D0;&#x4F9B;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x6587;&#x4EF6;&#x7684;&#x529F;&#x80FD;
+        - &#x53C2;&#x6570;&#xFF1A;
+                path,                      &#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;
+                match=None,                &#x6B63;&#x5219;&#x5339;&#x914D;
+                recursive=False,           &#x9012;&#x5F52;&#x4E0B;&#x9762;&#x7684;&#x6587;&#x4EF6;&#x5939;
+                allow_files=True,          &#x5141;&#x8BB8;&#x6587;&#x4EF6;
+                allow_folders=False,       &#x5141;&#x8BB8;&#x6587;&#x4EF6;&#x5939;
+
+    FileField(Field)
+        - &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8DEF;&#x5F84;&#x4FDD;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;
+        - &#x53C2;&#x6570;&#xFF1A;
+            upload_to = &quot;&quot;      &#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x4FDD;&#x5B58;&#x8DEF;&#x5F84;
+            storage = None      &#x5B58;&#x50A8;&#x7EC4;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;django.core.files.storage.FileSystemStorage
+
+    ImageField(FileField)
+        - &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8DEF;&#x5F84;&#x4FDD;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;
+        - &#x53C2;&#x6570;&#xFF1A;
+            upload_to = &quot;&quot;      &#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x4FDD;&#x5B58;&#x8DEF;&#x5F84;
+            storage = None      &#x5B58;&#x50A8;&#x7EC4;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;django.core.files.storage.FileSystemStorage
+            width_field=None,   &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x7684;&#x9AD8;&#x5EA6;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x540D;&#xFF08;&#x5B57;&#x7B26;&#x4E32;&#xFF09;
+            height_field=None   &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x5EA6;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5B57;&#x6BB5;&#x540D;&#xFF08;&#x5B57;&#x7B26;&#x4E32;&#xFF09;
+
+    DateTimeField(DateField)
+        - &#x65E5;&#x671F;+&#x65F6;&#x95F4;&#x683C;&#x5F0F; YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]
+
+    DateField(DateTimeCheckMixin, Field)
+        - &#x65E5;&#x671F;&#x683C;&#x5F0F;      YYYY-MM-DD
+
+    TimeField(DateTimeCheckMixin, Field)
+        - &#x65F6;&#x95F4;&#x683C;&#x5F0F;      HH:MM[:ss[.uuuuuu]]
+
+    DurationField(Field)
+        - &#x957F;&#x6574;&#x6570;&#xFF0C;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6309;&#x7167;bigint&#x5B58;&#x50A8;&#xFF0C;ORM&#x4E2D;&#x83B7;&#x53D6;&#x7684;&#x503C;&#x4E3A;datetime.timedelta&#x7C7B;&#x578B;
+
+    FloatField(Field)
+        - &#x6D6E;&#x70B9;&#x578B;
+
+    DecimalField(Field)
+        - 10&#x8FDB;&#x5236;&#x5C0F;&#x6570;
+        - &#x53C2;&#x6570;&#xFF1A;
+            max_digits&#xFF0C;&#x5C0F;&#x6570;&#x603B;&#x957F;&#x5EA6;
+            decimal_places&#xFF0C;&#x5C0F;&#x6570;&#x4F4D;&#x957F;&#x5EA6;
+
+    BinaryField(Field)
+        - &#x4E8C;&#x8FDB;&#x5236;&#x7C7B;&#x578B;
+</code></pre><p>&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnsignedIntegerField</span><span class="hljs-params">(models.IntegerField)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db_type</span><span class="hljs-params">(self, connection)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;integer UNSIGNED&apos;</span>
+
+PS: &#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x5B57;&#x6BB5;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;Django&#x5B57;&#x6BB5;&#x9ED8;&#x8BA4;&#x7684;&#x503C;&#x4E3A;&#xFF1A;
+    <span class="hljs-string">&apos;AutoField&apos;</span>: <span class="hljs-string">&apos;integer AUTO_INCREMENT&apos;</span>,
+    <span class="hljs-string">&apos;BigAutoField&apos;</span>: <span class="hljs-string">&apos;bigint AUTO_INCREMENT&apos;</span>,
+    <span class="hljs-string">&apos;BinaryField&apos;</span>: <span class="hljs-string">&apos;longblob&apos;</span>,
+    <span class="hljs-string">&apos;BooleanField&apos;</span>: <span class="hljs-string">&apos;bool&apos;</span>,
+    <span class="hljs-string">&apos;CharField&apos;</span>: <span class="hljs-string">&apos;varchar(%(max_length)s)&apos;</span>,
+    <span class="hljs-string">&apos;CommaSeparatedIntegerField&apos;</span>: <span class="hljs-string">&apos;varchar(%(max_length)s)&apos;</span>,
+    <span class="hljs-string">&apos;DateField&apos;</span>: <span class="hljs-string">&apos;date&apos;</span>,
+    <span class="hljs-string">&apos;DateTimeField&apos;</span>: <span class="hljs-string">&apos;datetime&apos;</span>,
+    <span class="hljs-string">&apos;DecimalField&apos;</span>: <span class="hljs-string">&apos;numeric(%(max_digits)s, %(decimal_places)s)&apos;</span>,
+    <span class="hljs-string">&apos;DurationField&apos;</span>: <span class="hljs-string">&apos;bigint&apos;</span>,
+    <span class="hljs-string">&apos;FileField&apos;</span>: <span class="hljs-string">&apos;varchar(%(max_length)s)&apos;</span>,
+    <span class="hljs-string">&apos;FilePathField&apos;</span>: <span class="hljs-string">&apos;varchar(%(max_length)s)&apos;</span>,
+    <span class="hljs-string">&apos;FloatField&apos;</span>: <span class="hljs-string">&apos;double precision&apos;</span>,
+    <span class="hljs-string">&apos;IntegerField&apos;</span>: <span class="hljs-string">&apos;integer&apos;</span>,
+    <span class="hljs-string">&apos;BigIntegerField&apos;</span>: <span class="hljs-string">&apos;bigint&apos;</span>,
+    <span class="hljs-string">&apos;IPAddressField&apos;</span>: <span class="hljs-string">&apos;char(15)&apos;</span>,
+    <span class="hljs-string">&apos;GenericIPAddressField&apos;</span>: <span class="hljs-string">&apos;char(39)&apos;</span>,
+    <span class="hljs-string">&apos;NullBooleanField&apos;</span>: <span class="hljs-string">&apos;bool&apos;</span>,
+    <span class="hljs-string">&apos;OneToOneField&apos;</span>: <span class="hljs-string">&apos;integer&apos;</span>,
+    <span class="hljs-string">&apos;PositiveIntegerField&apos;</span>: <span class="hljs-string">&apos;integer UNSIGNED&apos;</span>,
+    <span class="hljs-string">&apos;PositiveSmallIntegerField&apos;</span>: <span class="hljs-string">&apos;smallint UNSIGNED&apos;</span>,
+    <span class="hljs-string">&apos;SlugField&apos;</span>: <span class="hljs-string">&apos;varchar(%(max_length)s)&apos;</span>,
+    <span class="hljs-string">&apos;SmallIntegerField&apos;</span>: <span class="hljs-string">&apos;smallint&apos;</span>,
+    <span class="hljs-string">&apos;TextField&apos;</span>: <span class="hljs-string">&apos;longtext&apos;</span>,
+    <span class="hljs-string">&apos;TimeField&apos;</span>: <span class="hljs-string">&apos;time&apos;</span>,
+    <span class="hljs-string">&apos;UUIDField&apos;</span>: <span class="hljs-string">&apos;char(32)&apos;</span>,
+</code></pre>
+<p>&#x81EA;&#x5B9A;&#x4E49;char&#x7C7B;&#x578B;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FixedCharField</span><span class="hljs-params">(models.Field)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x81EA;&#x5B9A;&#x4E49;&#x7684;char&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x6BB5;&#x7C7B;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, max_length, *args, **kwargs)</span>:</span>
+        self.max_length = max_length
+        super(FixedCharField, self).__init__(max_length=max_length, *args, **kwargs)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db_type</span><span class="hljs-params">(self, connection)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x9650;&#x5B9A;&#x751F;&#x6210;&#x6570;&#x636E;&#x5E93;&#x8868;&#x7684;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4E3A;char&#xFF0C;&#x957F;&#x5EA6;&#x4E3A;max_length&#x6307;&#x5B9A;&#x7684;&#x503C;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;char(%s)&apos;</span> % self.max_length
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Class</span><span class="hljs-params">(models.Model)</span>:</span>
+    id = models.AutoField(primary_key=<span class="hljs-keyword">True</span>)
+    title = models.CharField(max_length=<span class="hljs-number">25</span>)
+    <span class="hljs-comment"># &#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;char&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x6BB5;</span>
+    cname = FixedCharField(max_length=<span class="hljs-number">25</span>)
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x7684;&#x8868;&#x7ED3;&#x6784;&#xFF1A;</p>
+<p>`mysql&gt; desc app01_class;</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+<th>Default</th>
+<th>Extra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(11)</td>
+<td>NO</td>
+<td>PRI</td>
+<td>NULL</td>
+<td>auto_increment</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(25)</td>
+<td>NO</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>cname</td>
+<td>char(25)</td>
+<td>NO</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</strong></h3>
+<pre><code>    1.&#x89E6;&#x53D1;Model&#x4E2D;&#x7684;&#x9A8C;&#x8BC1;&#x548C;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;
+        a. Django Admin&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4F1A;&#x4F18;&#x5148;&#x6839;&#x636E;Admiin&#x5185;&#x90E8;&#x7684;ModelForm&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x63D0;&#x793A;&#xFF0C;&#x5982;&#x679C;&#x90FD;&#x6210;&#x529F;&#xFF0C;&#x624D;&#x6765;&#x68C0;&#x67E5;Model&#x7684;&#x5B57;&#x6BB5;&#x5E76;&#x663E;&#x793A;&#x6307;&#x5B9A;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
+        b. &#x4F7F;&#x7528;ModelForm
+        c. &#x8C03;&#x7528;Model&#x5BF9;&#x8C61;&#x7684; clean_fields &#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#xFF1A;
+            # models.py
+            class UserInfo(models.Model):
+                nid = models.AutoField(primary_key=True)
+                username = models.CharField(max_length=32)
+
+                email = models.EmailField(error_messages={&apos;invalid&apos;: &apos;&#x683C;&#x5F0F;&#x9519;&#x4E86;.&apos;})
+
+            # views.py
+            def index(request):
+                obj = models.UserInfo(username=&apos;11234&apos;, email=&apos;uu&apos;)
+                try:
+                    print(obj.clean_fields())
+                except Exception as e:
+                    print(e)
+                return HttpResponse(&apos;ok&apos;)
+
+           # Model&#x7684;clean&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x94A9;&#x5B50;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5B9A;&#x5236;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#xFF1A;&#x4E0A;&#x8FF0;&#x7684;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x3002;
+
+    2.Admin&#x4E2D;&#x4FEE;&#x6539;&#x9519;&#x8BEF;&#x63D0;&#x793A;
+        # admin.py
+        from django.contrib import admin
+        from model_club import models
+        from django import forms
+
+
+        class UserInfoForm(forms.ModelForm):
+            age = forms.IntegerField(initial=1, error_messages={&apos;required&apos;: &apos;&#x8BF7;&#x8F93;&#x5165;&#x6570;&#x503C;.&apos;, &apos;invalid&apos;: &apos;&#x5E74;&#x9F84;&#x5FC5;&#x987B;&#x4E3A;&#x6570;&#x503C;.&apos;})
+
+            class Meta:
+                model = models.UserInfo
+                # fields = (&apos;username&apos;,)
+                fields = &quot;__all__&quot;
+                exclude = [&apos;title&apos;]
+                labels = { &apos;name&apos;:&apos;Writer&apos;, }
+                help_texts = {&apos;name&apos;:&apos;some useful help text.&apos;,}
+                error_messages={ &apos;name&apos;:{&apos;max_length&apos;:&quot;this writer name is too long&quot;} }
+                widgets={&apos;name&apos;:Textarea(attrs={&apos;cols&apos;:80,&apos;rows&apos;:20})}
+
+        class UserInfoAdmin(admin.ModelAdmin):
+            form = UserInfoForm
+
+        admin.site.register(models.UserInfo, UserInfoAdmin)
+</code></pre><h3 id="&#x5B57;&#x6BB5;&#x53C2;&#x6570;"><a name="&#x5B57;&#x6BB5;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x6BB5;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x6BB5;&#x53C2;&#x6570;</h3>
+<pre><code>    null                &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;
+    db_column           &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x7684;&#x5217;&#x540D;
+    default             &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x7684;&#x9ED8;&#x8BA4;&#x503C;
+    primary_key         &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x4E3A;&#x4E3B;&#x952E;
+    db_index            &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;
+    unique              &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x552F;&#x4E00;&#x7D22;&#x5F15;
+    unique_for_date     &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x3010;&#x65E5;&#x671F;&#x3011;&#x90E8;&#x5206;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x552F;&#x4E00;&#x7D22;&#x5F15;
+    unique_for_month    &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x3010;&#x6708;&#x3011;&#x90E8;&#x5206;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x552F;&#x4E00;&#x7D22;&#x5F15;
+    unique_for_year     &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5B57;&#x6BB5;&#x3010;&#x5E74;&#x3011;&#x90E8;&#x5206;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x552F;&#x4E00;&#x7D22;&#x5F15;
+
+    verbose_name        Admin&#x4E2D;&#x663E;&#x793A;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;
+    blank               Admin&#x4E2D;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4E3A;&#x7A7A;
+    editable            Admin&#x4E2D;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;
+    help_text           Admin&#x4E2D;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x63D0;&#x793A;&#x4FE1;&#x606F;
+    choices             Admin&#x4E2D;&#x663E;&#x793A;&#x9009;&#x62E9;&#x6846;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7528;&#x4E0D;&#x53D8;&#x52A8;&#x7684;&#x6570;&#x636E;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x8DE8;&#x8868;&#x64CD;&#x4F5C;
+                        &#x5982;&#xFF1A;gf = models.IntegerField(choices=[(0, &apos;&#x4F55;&#x7A57;&apos;),(1, &apos;&#x5927;&#x8868;&#x59D0;&apos;),],default=1)
+
+    error_messages      &#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF08;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x4ECE;&#x800C;&#x5B9A;&#x5236;&#x60F3;&#x8981;&#x663E;&#x793A;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1B;
+                        &#x5B57;&#x5178;&#x5065;&#xFF1A;null, blank, invalid, invalid_choice, unique, and unique_for_date
+                        &#x5982;&#xFF1A;{&apos;null&apos;: &quot;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;.&quot;, &apos;invalid&apos;: &apos;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&apos;}
+
+    validators          &#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x9A8C;&#x8BC1;&#xFF08;&#x5217;&#x8868;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x4ECE;&#x800C;&#x5B9A;&#x5236;&#x60F3;&#x8981;&#x7684;&#x9A8C;&#x8BC1;&#x89C4;&#x5219;
+                        from django.core.validators import RegexValidator
+                        from django.core.validators import EmailValidator,URLValidator,DecimalValidator,\
+                        MaxLengthValidator,MinLengthValidator,MaxValueValidator,MinValueValidator
+                        &#x5982;&#xFF1A;
+                            test = models.CharField(
+                                max_length=32,
+                                error_messages={
+                                    &apos;c1&apos;: &apos;&#x4F18;&#x5148;&#x9519;&#x4FE1;&#x606F;1&apos;,
+                                    &apos;c2&apos;: &apos;&#x4F18;&#x5148;&#x9519;&#x4FE1;&#x606F;2&apos;,
+                                    &apos;c3&apos;: &apos;&#x4F18;&#x5148;&#x9519;&#x4FE1;&#x606F;3&apos;,
+                                },
+                                validators=[
+                                    RegexValidator(regex=&apos;root_\d+&apos;, message=&apos;&#x9519;&#x8BEF;&#x4E86;&apos;, code=&apos;c1&apos;),
+                                    RegexValidator(regex=&apos;root_112233\d+&apos;, message=&apos;&#x53C8;&#x9519;&#x8BEF;&#x4E86;&apos;, code=&apos;c2&apos;),
+                                    EmailValidator(message=&apos;&#x53C8;&#x9519;&#x8BEF;&#x4E86;&apos;, code=&apos;c3&apos;), ]
+                            )
+</code></pre><h3 id="&#x5143;&#x4FE1;&#x606F;"><a name="&#x5143;&#x4FE1;&#x606F;" class="anchor-navigation-ex-anchor" href="#&#x5143;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5143;&#x4FE1;&#x606F;</h3>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserInfo</span><span class="hljs-params">(models.Model)</span>:</span>
+        nid = models.AutoField(primary_key=<span class="hljs-keyword">True</span>)
+        username = models.CharField(max_length=<span class="hljs-number">32</span>)
+        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+            <span class="hljs-comment"># &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x751F;&#x6210;&#x7684;&#x8868;&#x540D;&#x79F0; &#x9ED8;&#x8BA4; app&#x540D;&#x79F0; + &#x4E0B;&#x5212;&#x7EBF; + &#x7C7B;&#x540D;</span>
+            db_table = <span class="hljs-string">&quot;table_name&quot;</span>
+
+            <span class="hljs-comment"># &#x8054;&#x5408;&#x7D22;&#x5F15;</span>
+            index_together = [
+                (<span class="hljs-string">&quot;pub_date&quot;</span>, <span class="hljs-string">&quot;deadline&quot;</span>),
+            ]
+
+            <span class="hljs-comment"># &#x8054;&#x5408;&#x552F;&#x4E00;&#x7D22;&#x5F15;</span>
+            unique_together = ((<span class="hljs-string">&quot;driver&quot;</span>, <span class="hljs-string">&quot;restaurant&quot;</span>),)
+
+            <span class="hljs-comment"># admin&#x4E2D;&#x663E;&#x793A;&#x7684;&#x8868;&#x540D;&#x79F0;</span>
+            verbose_name
+
+            <span class="hljs-comment"># verbose_name&#x52A0;s</span>
+            verbose_name_plural
+</code></pre>
+<h3 id="&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;"><a name="&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x591A;&#x8868;&#x5173;&#x7CFB;&#x548C;&#x53C2;&#x6570;</strong></h3>
+<pre><code>ForeignKey(ForeignObject) # ForeignObject(RelatedField)
+        to,                         # &#x8981;&#x8FDB;&#x884C;&#x5173;&#x8054;&#x7684;&#x8868;&#x540D;
+        to_field=None,              # &#x8981;&#x5173;&#x8054;&#x7684;&#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;
+        on_delete=None,             # &#x5F53;&#x5220;&#x9664;&#x5173;&#x8054;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x8868;&#x4E0E;&#x5176;&#x5173;&#x8054;&#x7684;&#x884C;&#x7684;&#x884C;&#x4E3A;
+                                        - models.CASCADE&#xFF0C;&#x5220;&#x9664;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF0C;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x4E5F;&#x5220;&#x9664;
+                                        - models.DO_NOTHING&#xFF0C;&#x5220;&#x9664;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF0C;&#x5F15;&#x53D1;&#x9519;&#x8BEF;IntegrityError
+                                        - models.PROTECT&#xFF0C;&#x5220;&#x9664;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF0C;&#x5F15;&#x53D1;&#x9519;&#x8BEF;ProtectedError
+                                        - models.SET_NULL&#xFF0C;&#x5220;&#x9664;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF0C;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;null&#xFF08;&#x524D;&#x63D0;FK&#x5B57;&#x6BB5;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EF;&#x7A7A;&#xFF09;
+                                        - models.SET_DEFAULT&#xFF0C;&#x5220;&#x9664;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF0C;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#xFF08;&#x524D;&#x63D0;FK&#x5B57;&#x6BB5;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;
+                                        - models.SET&#xFF0C;&#x5220;&#x9664;&#x5173;&#x8054;&#x6570;&#x636E;&#xFF0C;
+                                                      a. &#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x6307;&#x5B9A;&#x503C;&#xFF0C;&#x8BBE;&#x7F6E;&#xFF1A;models.SET(&#x503C;)
+                                                      b. &#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x5BF9;&#x8C61;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8BBE;&#x7F6E;&#xFF1A;models.SET(&#x53EF;&#x6267;&#x884C;&#x5BF9;&#x8C61;)
+
+                                                        def func():
+                                                            return 10
+
+                                                        class MyModel(models.Model):
+                                                            user = models.ForeignKey(
+                                                                to=&quot;User&quot;,
+                                                                to_field=&quot;id&quot;
+                                                                on_delete=models.SET(func),)
+        related_name=None,          # &#x53CD;&#x5411;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x7528;&#x4E8E;&#x4EE3;&#x66FF; &#x3010;&#x8868;&#x540D;_set&#x3011; &#x5982;&#xFF1A; obj.&#x8868;&#x540D;_set.all()
+        related_query_name=None,    # &#x53CD;&#x5411;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x8FDE;&#x63A5;&#x524D;&#x7F00;&#xFF0C;&#x7528;&#x4E8E;&#x66FF;&#x6362;&#x3010;&#x8868;&#x540D;&#x3011;     &#x5982;&#xFF1A; models.UserGroup.objects.filter(&#x8868;&#x540D;__&#x5B57;&#x6BB5;&#x540D;=1).values(&apos;&#x8868;&#x540D;__&#x5B57;&#x6BB5;&#x540D;&apos;)
+        limit_choices_to=None,      # &#x5728;Admin&#x6216;ModelForm&#x4E2D;&#x663E;&#x793A;&#x5173;&#x8054;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;&#x6761;&#x4EF6;&#xFF1A;
+                                    # &#x5982;&#xFF1A;
+                                            - limit_choices_to={&apos;nid__gt&apos;: 5}
+                                            - limit_choices_to=lambda : {&apos;nid__gt&apos;: 5}
+
+                                            from django.db.models import Q
+                                            - limit_choices_to=Q(nid__gt=10)
+                                            - limit_choices_to=Q(nid=8) | Q(nid__gt=10)
+                                            - limit_choices_to=lambda : Q(Q(nid=8) | Q(nid__gt=10)) &amp; Q(caption=&apos;root&apos;)
+        db_constraint=True          # &#x662F;&#x5426;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x5916;&#x952E;&#x7EA6;&#x675F;
+        parent_link=False           # &#x5728;Admin&#x4E2D;&#x662F;&#x5426;&#x663E;&#x793A;&#x5173;&#x8054;&#x6570;&#x636E;
+
+
+    OneToOneField(ForeignKey)
+        to,                         # &#x8981;&#x8FDB;&#x884C;&#x5173;&#x8054;&#x7684;&#x8868;&#x540D;
+        to_field=None               # &#x8981;&#x5173;&#x8054;&#x7684;&#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;
+        on_delete=None,             # &#x5F53;&#x5220;&#x9664;&#x5173;&#x8054;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x8868;&#x4E0E;&#x5176;&#x5173;&#x8054;&#x7684;&#x884C;&#x7684;&#x884C;&#x4E3A;
+
+                                    ###### &#x5BF9;&#x4E8E;&#x4E00;&#x5BF9;&#x4E00; ######
+                                    # 1. &#x4E00;&#x5BF9;&#x4E00;&#x5176;&#x5B9E;&#x5C31;&#x662F; &#x4E00;&#x5BF9;&#x591A; + &#x552F;&#x4E00;&#x7D22;&#x5F15;
+                                    # 2.&#x5F53;&#x4E24;&#x4E2A;&#x7C7B;&#x4E4B;&#x95F4;&#x6709;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E00;&#x5BF9;&#x4E00;&#x5B57;&#x6BB5;
+                                    # &#x5982;&#x4E0B;&#x4F1A;&#x5728;A&#x8868;&#x4E2D;&#x989D;&#x5916;&#x589E;&#x52A0;&#x4E00;&#x4E2A;c_ptr_id&#x5217;&#x4E14;&#x552F;&#x4E00;&#xFF1A;
+                                            class C(models.Model):
+                                                nid = models.AutoField(primary_key=True)
+                                                part = models.CharField(max_length=12)
+
+                                            class A(C):
+                                                id = models.AutoField(primary_key=True)
+                                                code = models.CharField(max_length=1)
+
+    ManyToManyField(RelatedField)
+        to,                         # &#x8981;&#x8FDB;&#x884C;&#x5173;&#x8054;&#x7684;&#x8868;&#x540D;
+        related_name=None,          # &#x53CD;&#x5411;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x7528;&#x4E8E;&#x4EE3;&#x66FF; &#x3010;&#x8868;&#x540D;_set&#x3011; &#x5982;&#xFF1A; obj.&#x8868;&#x540D;_set.all()
+        related_query_name=None,    # &#x53CD;&#x5411;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x8FDE;&#x63A5;&#x524D;&#x7F00;&#xFF0C;&#x7528;&#x4E8E;&#x66FF;&#x6362;&#x3010;&#x8868;&#x540D;&#x3011;     &#x5982;&#xFF1A; models.UserGroup.objects.filter(&#x8868;&#x540D;__&#x5B57;&#x6BB5;&#x540D;=1).values(&apos;&#x8868;&#x540D;__&#x5B57;&#x6BB5;&#x540D;&apos;)
+        limit_choices_to=None,      # &#x5728;Admin&#x6216;ModelForm&#x4E2D;&#x663E;&#x793A;&#x5173;&#x8054;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;&#x6761;&#x4EF6;&#xFF1A;
+                                    # &#x5982;&#xFF1A;
+                                            - limit_choices_to={&apos;nid__gt&apos;: 5}
+                                            - limit_choices_to=lambda : {&apos;nid__gt&apos;: 5}
+
+                                            from django.db.models import Q
+                                            - limit_choices_to=Q(nid__gt=10)
+                                            - limit_choices_to=Q(nid=8) | Q(nid__gt=10)
+                                            - limit_choices_to=lambda : Q(Q(nid=8) | Q(nid__gt=10)) &amp; Q(caption=&apos;root&apos;)
+        symmetrical=None,           # &#x4EC5;&#x7528;&#x4E8E;&#x591A;&#x5BF9;&#x591A;&#x81EA;&#x5173;&#x8054;&#x65F6;&#xFF0C;symmetrical&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5185;&#x90E8;&#x662F;&#x5426;&#x521B;&#x5EFA;&#x53CD;&#x5411;&#x64CD;&#x4F5C;&#x7684;&#x5B57;&#x6BB5;
+                                    # &#x505A;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4E0D;&#x540C;&#x7684;symmetrical&#x4F1A;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53EF;&#x9009;&#x5B57;&#x6BB5;
+                                        models.BB.objects.filter(...)
+
+                                        # &#x53EF;&#x9009;&#x5B57;&#x6BB5;&#x6709;&#xFF1A;code, id, m1
+                                            class BB(models.Model):
+
+                                            code = models.CharField(max_length=12)
+                                            m1 = models.ManyToManyField(&apos;self&apos;,symmetrical=True)
+
+                                        # &#x53EF;&#x9009;&#x5B57;&#x6BB5;&#x6709;: bb, code, id, m1
+                                            class BB(models.Model):
+
+                                            code = models.CharField(max_length=12)
+                                            m1 = models.ManyToManyField(&apos;self&apos;,symmetrical=False)
+
+        through=None,               # &#x81EA;&#x5B9A;&#x4E49;&#x7B2C;&#x4E09;&#x5F20;&#x8868;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x5B57;&#x6BB5;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5173;&#x7CFB;&#x8868;
+        through_fields=None,        # &#x81EA;&#x5B9A;&#x4E49;&#x7B2C;&#x4E09;&#x5F20;&#x8868;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x5B57;&#x6BB5;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5173;&#x7CFB;&#x8868;&#x4E2D;&#x90A3;&#x4E9B;&#x5B57;&#x6BB5;&#x505A;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x8868;
+                                        from django.db import models
+
+                                        class Person(models.Model):
+                                            name = models.CharField(max_length=50)
+
+                                        class Group(models.Model):
+                                            name = models.CharField(max_length=128)
+                                            members = models.ManyToManyField(
+                                                Person,
+                                                through=&apos;Membership&apos;,
+                                                through_fields=(&apos;group&apos;, &apos;person&apos;),
+                                            )
+
+                                        class Membership(models.Model):
+                                            group = models.ForeignKey(Group, on_delete=models.CASCADE)
+                                            person = models.ForeignKey(Person, on_delete=models.CASCADE)
+                                            inviter = models.ForeignKey(
+                                                Person,
+                                                on_delete=models.CASCADE,
+                                                related_name=&quot;membership_invites&quot;,
+                                            )
+                                            invite_reason = models.CharField(max_length=64)
+        db_constraint=True,         # &#x662F;&#x5426;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x5916;&#x952E;&#x7EA6;&#x675F;
+        db_table=None,              # &#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7B2C;&#x4E09;&#x5F20;&#x8868;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x8868;&#x7684;&#x540D;&#x79F0;
+</code></pre><h3 id="orm&#x64CD;&#x4F5C;"><a name="orm&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#orm&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x64CD;&#x4F5C;</h3>
+<p>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</p>
+<pre><code># &#x589E;
+models.Tb1.objects.create(c1=&apos;xx&apos;, c2=&apos;oo&apos;)   # &#x589E;&#x52A0;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x6570;&#x636E; **kwargs
+obj = models.Tb1(c1=&apos;xx&apos;, c2=&apos;oo&apos;)
+obj.save()
+
+
+# &#x67E5;
+models.Tb1.objects.get(id=123)  # &#x83B7;&#x53D6;&#x5355;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x62A5;&#x9519;&#xFF08;&#x4E0D;&#x5EFA;&#x8BAE;&#xFF09;
+models.Tb1.objects.all()  # &#x83B7;&#x53D6;&#x5168;&#x90E8;
+models.Tb1.objects.filter(name=&apos;seven&apos;)  # &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;
+models.Tb1.objects.exclude(name=&apos;seven&apos;)  # &#x53BB;&#x9664;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;
+
+
+# &#x5220;
+# models.Tb1.objects.filter(name=&apos;seven&apos;).delete()  # &#x5220;&#x9664;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;
+
+
+# &#x6539;
+models.Tb1.objects.filter(name=&apos;seven&apos;).update(gender=&apos;0&apos;)   # &#x5C06;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x5747;&#x652F;&#x6301; **kwargs
+obj = models.Tb1.objects.get(id=1)
+obj.c1 = &apos;111&apos;
+obj.save()   # &#x4FEE;&#x6539;&#x5355;&#x6761;&#x6570;&#x636E;
+</code></pre><p>&#x8FDB;&#x9636;&#x64CD;&#x4F5C;</p>
+<pre><code>        # &#x83B7;&#x53D6;&#x4E2A;&#x6570;
+        #
+        # models.Tb1.objects.filter(name=&apos;seven&apos;).count()
+
+        # &#x5927;&#x4E8E;&#xFF0C;&#x5C0F;&#x4E8E;
+        #
+        # models.Tb1.objects.filter(id__gt=1)              # &#x83B7;&#x53D6;id&#x5927;&#x4E8E;1&#x7684;&#x503C;
+        # models.Tb1.objects.filter(id__gte=1)              # &#x83B7;&#x53D6;id&#x5927;&#x4E8E;&#x7B49;&#x4E8E;1&#x7684;&#x503C;
+        # models.Tb1.objects.filter(id__lt=10)             # &#x83B7;&#x53D6;id&#x5C0F;&#x4E8E;10&#x7684;&#x503C;
+        # models.Tb1.objects.filter(id__lte=10)             # &#x83B7;&#x53D6;id&#x5C0F;&#x4E8E;10&#x7684;&#x503C;
+        # models.Tb1.objects.filter(id__lt=10, id__gt=1)   # &#x83B7;&#x53D6;id&#x5927;&#x4E8E;1 &#x4E14; &#x5C0F;&#x4E8E;10&#x7684;&#x503C;
+
+        # in
+        #
+        # models.Tb1.objects.filter(id__in=[11, 22, 33])   # &#x83B7;&#x53D6;id&#x7B49;&#x4E8E;11&#x3001;22&#x3001;33&#x7684;&#x6570;&#x636E;
+        # models.Tb1.objects.exclude(id__in=[11, 22, 33])  # not in
+
+        # isnull
+        # Entry.objects.filter(pub_date__isnull=True)
+
+        # contains
+        #
+        # models.Tb1.objects.filter(name__contains=&quot;ven&quot;)
+        # models.Tb1.objects.filter(name__icontains=&quot;ven&quot;) # icontains&#x5927;&#x5C0F;&#x5199;&#x4E0D;&#x654F;&#x611F;
+        # models.Tb1.objects.exclude(name__icontains=&quot;ven&quot;)
+
+        # range
+        #
+        # models.Tb1.objects.filter(id__range=[1, 2])   # &#x8303;&#x56F4;bettwen and
+
+        # &#x5176;&#x4ED6;&#x7C7B;&#x4F3C;
+        #
+        # startswith&#xFF0C;istartswith, endswith, iendswith,
+
+        # order by
+        #
+        # models.Tb1.objects.filter(name=&apos;seven&apos;).order_by(&apos;id&apos;)    # asc
+        # models.Tb1.objects.filter(name=&apos;seven&apos;).order_by(&apos;-id&apos;)   # desc
+
+        # group by
+        #
+        # from django.db.models import Count, Min, Max, Sum
+        # models.Tb1.objects.filter(c1=1).values(&apos;id&apos;).annotate(c=Count(&apos;num&apos;))
+        # SELECT &quot;app01_tb1&quot;.&quot;id&quot;, COUNT(&quot;app01_tb1&quot;.&quot;num&quot;) AS &quot;c&quot; FROM &quot;app01_tb1&quot; WHERE &quot;app01_tb1&quot;.&quot;c1&quot; = 1 GROUP BY &quot;app01_tb1&quot;.&quot;id&quot;
+
+        # limit &#x3001;offset
+        #
+        # models.Tb1.objects.all()[10:20]
+
+        # regex&#x6B63;&#x5219;&#x5339;&#x914D;&#xFF0C;iregex &#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;
+        #
+        # Entry.objects.get(title__regex=r&apos;^(An?|The) +&apos;)
+        # Entry.objects.get(title__iregex=r&apos;^(an?|the) +&apos;)
+
+        # date
+        #
+        # Entry.objects.filter(pub_date__date=datetime.date(2005, 1, 1))
+        # Entry.objects.filter(pub_date__date__gt=datetime.date(2005, 1, 1))
+
+        # year
+        #
+        # Entry.objects.filter(pub_date__year=2005)
+        # Entry.objects.filter(pub_date__year__gte=2005)
+
+        # month
+        #
+        # Entry.objects.filter(pub_date__month=12)
+        # Entry.objects.filter(pub_date__month__gte=6)
+
+        # day
+        #
+        # Entry.objects.filter(pub_date__day=3)
+        # Entry.objects.filter(pub_date__day__gte=3)
+
+        # week_day
+        #
+        # Entry.objects.filter(pub_date__week_day=2)
+        # Entry.objects.filter(pub_date__week_day__gte=2)
+
+        # hour
+        #
+        # Event.objects.filter(timestamp__hour=23)
+        # Event.objects.filter(time__hour=5)
+        # Event.objects.filter(timestamp__hour__gte=12)
+
+        # minute
+        #
+        # Event.objects.filter(timestamp__minute=29)
+        # Event.objects.filter(time__minute=46)
+        # Event.objects.filter(timestamp__minute__gte=29)
+
+        # second
+        #
+        # Event.objects.filter(timestamp__second=31)
+        # Event.objects.filter(time__second=2)
+        # Event.objects.filter(timestamp__second__gte=31)
+</code></pre><p>&#x9AD8;&#x7EA7;&#x64CD;&#x4F5C;</p>
+<pre><code># extra
+# &#x5728;QuerySet&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5B50;&#x8BED;&#x53E5;
+# extra(self, select=None, where=None, params=None, tables=None, order_by=None, select_params=None)
+
+# select&#x548C;select_params&#x662F;&#x4E00;&#x7EC4;&#xFF0C;where&#x548C;params&#x662F;&#x4E00;&#x7EC4;&#xFF0C;tables&#x7528;&#x6765;&#x8BBE;&#x7F6E;from&#x54EA;&#x4E2A;&#x8868;
+# Entry.objects.extra(select={&apos;new_id&apos;: &quot;select col from sometable where othercol &gt; %s&quot;}, select_params=(1,))
+# Entry.objects.extra(where=[&apos;headline=%s&apos;], params=[&apos;Lennon&apos;])
+# Entry.objects.extra(where=[&quot;foo=&apos;a&apos; OR bar = &apos;a&apos;&quot;, &quot;baz = &apos;a&apos;&quot;])
+# Entry.objects.extra(select={&apos;new_id&apos;: &quot;select id from tb where id &gt; %s&quot;}, select_params=(1,), order_by=[&apos;-nid&apos;])
+
+&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;
+models.UserInfo.objects.extra(
+                    select={&apos;newid&apos;:&apos;select count(1) from app01_usertype where id&gt;%s&apos;},
+                    select_params=[1,],
+                    where = [&apos;age&gt;%s&apos;],
+                    params=[18,],
+                    order_by=[&apos;-age&apos;],
+                    tables=[&apos;app01_usertype&apos;]
+                )
+                &quot;&quot;&quot;
+                select 
+                    app01_userinfo.id,
+                    (select count(1) from app01_usertype where id&gt;1) as newid
+                from app01_userinfo,app01_usertype
+                where 
+                    app01_userinfo.age &gt; 18
+                order by 
+                    app01_userinfo.age desc
+                &quot;&quot;&quot;
+
+
+# &#x6267;&#x884C;&#x539F;&#x751F;SQL
+# &#x66F4;&#x9AD8;&#x7075;&#x6D3B;&#x5EA6;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;&#x539F;&#x751F;SQL&#x8BED;&#x53E5;
+# from django.db import connection, connections
+# cursor = connection.cursor()  # cursor = connections[&apos;default&apos;].cursor()
+# cursor.execute(&quot;&quot;&quot;SELECT * from auth_user where id = %s&quot;&quot;&quot;, [1])
+# row = cursor.fetchone()
+</code></pre><p>QuerySet&#x76F8;&#x5173;&#x65B9;&#x6CD5;</p>
+<pre><code>##################################################################
+# PUBLIC METHODS THAT ALTER ATTRIBUTES AND RETURN A NEW QUERYSET #
+##################################################################
+
+def all(self)
+    # &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;
+
+def filter(self, *args, **kwargs)
+    # &#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+    # &#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;&#x53C2;&#x6570;&#xFF0C;&#x5B57;&#x5178;&#xFF0C;Q
+
+def exclude(self, *args, **kwargs)
+    # &#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+    # &#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;&#x53C2;&#x6570;&#xFF0C;&#x5B57;&#x5178;&#xFF0C;Q
+
+def select_related(self, *fields)
+    &#x6027;&#x80FD;&#x76F8;&#x5173;&#xFF1A;&#x8868;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;join&#x8FDE;&#x8868;&#x64CD;&#x4F5C;&#xFF0C;&#x4E00;&#x6B21;&#x6027;&#x83B7;&#x53D6;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;&#x3002;
+
+    &#x603B;&#x7ED3;&#xFF1A;
+    1. select_related&#x4E3B;&#x8981;&#x9488;&#x4E00;&#x5BF9;&#x4E00;&#x548C;&#x591A;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;
+    2. select_related&#x4F7F;&#x7528;SQL&#x7684;JOIN&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF0C;&#x901A;&#x8FC7;&#x51CF;&#x5C11;SQL&#x67E5;&#x8BE2;&#x7684;&#x6B21;&#x6570;&#x6765;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3001;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;
+
+def prefetch_related(self, *lookups)
+    &#x6027;&#x80FD;&#x76F8;&#x5173;&#xFF1A;&#x591A;&#x8868;&#x8FDE;&#x8868;&#x64CD;&#x4F5C;&#x65F6;&#x901F;&#x5EA6;&#x4F1A;&#x6162;&#xFF0C;&#x4F7F;&#x7528;&#x5176;&#x6267;&#x884C;&#x591A;&#x6B21;SQL&#x67E5;&#x8BE2;&#x5728;Python&#x4EE3;&#x7801;&#x4E2D;&#x5B9E;&#x73B0;&#x8FDE;&#x8868;&#x64CD;&#x4F5C;&#x3002;
+
+    &#x603B;&#x7ED3;&#xFF1A;
+    1. &#x5BF9;&#x4E8E;&#x591A;&#x5BF9;&#x591A;&#x5B57;&#x6BB5;&#xFF08;ManyToManyField&#xFF09;&#x548C;&#x4E00;&#x5BF9;&#x591A;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;prefetch_related()&#x6765;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;
+    2. prefetch_related()&#x7684;&#x4F18;&#x5316;&#x65B9;&#x5F0F;&#x662F;&#x5206;&#x522B;&#x67E5;&#x8BE2;&#x6BCF;&#x4E2A;&#x8868;&#xFF0C;&#x7136;&#x540E;&#x7528;Python&#x5904;&#x7406;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;
+
+def annotate(self, *args, **kwargs)
+    # &#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x805A;&#x5408;group by&#x67E5;&#x8BE2;
+
+    from django.db.models import Count, Avg, Max, Min, Sum
+
+    v = models.UserInfo.objects.values(&apos;u_id&apos;).annotate(uid=Count(&apos;u_id&apos;))
+    # SELECT u_id, COUNT(ui) AS `uid` FROM UserInfo GROUP BY u_id
+
+    v = models.UserInfo.objects.values(&apos;u_id&apos;).annotate(uid=Count(&apos;u_id&apos;)).filter(uid__gt=1)
+    # SELECT u_id, COUNT(ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) &gt; 1
+
+    v = models.UserInfo.objects.values(&apos;u_id&apos;).annotate(uid=Count(&apos;u_id&apos;,distinct=True)).filter(uid__gt=1)
+    # SELECT u_id, COUNT( DISTINCT ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) &gt; 1
+
+def distinct(self, *field_names)
+    # &#x7528;&#x4E8E;distinct&#x53BB;&#x91CD;
+    models.UserInfo.objects.values(&apos;nid&apos;).distinct()
+    # select distinct nid from userinfo
+
+    &#x6CE8;&#xFF1A;&#x53EA;&#x6709;&#x5728;PostgreSQL&#x4E2D;&#x624D;&#x80FD;&#x4F7F;&#x7528;distinct&#x8FDB;&#x884C;&#x53BB;&#x91CD;
+
+def order_by(self, *field_names)
+    # &#x7528;&#x4E8E;&#x6392;&#x5E8F;
+    models.UserInfo.objects.all().order_by(&apos;-id&apos;,&apos;age&apos;)
+
+def extra(self, select=None, where=None, params=None, tables=None, order_by=None, select_params=None)
+    # &#x6784;&#x9020;&#x989D;&#x5916;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x6216;&#x8005;&#x6620;&#x5C04;&#xFF0C;&#x5982;&#xFF1A;&#x5B50;&#x67E5;&#x8BE2;
+
+    Entry.objects.extra(select={&apos;new_id&apos;: &quot;select col from sometable where othercol &gt; %s&quot;}, select_params=(1,))
+    Entry.objects.extra(where=[&apos;headline=%s&apos;], params=[&apos;Lennon&apos;])
+    Entry.objects.extra(where=[&quot;foo=&apos;a&apos; OR bar = &apos;a&apos;&quot;, &quot;baz = &apos;a&apos;&quot;])
+    Entry.objects.extra(select={&apos;new_id&apos;: &quot;select id from tb where id &gt; %s&quot;}, select_params=(1,), order_by=[&apos;-nid&apos;])
+
+ def reverse(self):
+    # &#x5012;&#x5E8F;
+    models.UserInfo.objects.all().order_by(&apos;-nid&apos;).reverse()
+    # &#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x5B58;&#x5728;order_by&#xFF0C;reverse&#x5219;&#x662F;&#x5012;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x4E2A;&#x6392;&#x5E8F;&#x5219;&#x4E00;&#x4E00;&#x5012;&#x5E8F;
+
+
+ def defer(self, *fields):
+    models.UserInfo.objects.defer(&apos;username&apos;,&apos;id&apos;)
+    &#x6216;
+    models.UserInfo.objects.filter(...).defer(&apos;username&apos;,&apos;id&apos;)
+    #&#x6620;&#x5C04;&#x4E2D;&#x6392;&#x9664;&#x67D0;&#x5217;&#x6570;&#x636E;
+
+ def only(self, *fields):
+    #&#x4EC5;&#x53D6;&#x67D0;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;
+     models.UserInfo.objects.only(&apos;username&apos;,&apos;id&apos;)
+     &#x6216;
+     models.UserInfo.objects.filter(...).only(&apos;username&apos;,&apos;id&apos;)
+
+ def using(self, alias):
+     &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;&#x522B;&#x540D;&#xFF08;setting&#x4E2D;&#x7684;&#x8BBE;&#x7F6E;&#xFF09;
+
+
+##################################################
+# PUBLIC METHODS THAT RETURN A QUERYSET SUBCLASS #
+##################################################
+
+def raw(self, raw_query, params=None, translations=None, using=None):
+    # &#x6267;&#x884C;&#x539F;&#x751F;SQL
+    models.UserInfo.objects.raw(&apos;select * from userinfo&apos;)
+
+    # &#x5982;&#x679C;SQL&#x662F;&#x5176;&#x4ED6;&#x8868;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5C06;&#x540D;&#x5B57;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;UserInfo&#x5BF9;&#x8C61;&#x7684;&#x4E3B;&#x952E;&#x5217;&#x540D;
+    models.UserInfo.objects.raw(&apos;select id as nid from &#x5176;&#x4ED6;&#x8868;&apos;)
+
+    # &#x4E3A;&#x539F;&#x751F;SQL&#x8BBE;&#x7F6E;&#x53C2;&#x6570;
+    models.UserInfo.objects.raw(&apos;select id as nid from userinfo where nid&gt;%s&apos;, params=[12,])
+
+    # &#x5C06;&#x83B7;&#x53D6;&#x7684;&#x5230;&#x5217;&#x540D;&#x8F6C;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x5217;&#x540D;
+    name_map = {&apos;first&apos;: &apos;first_name&apos;, &apos;last&apos;: &apos;last_name&apos;, &apos;bd&apos;: &apos;birth_date&apos;, &apos;pk&apos;: &apos;id&apos;}
+    Person.objects.raw(&apos;SELECT * FROM some_other_table&apos;, translations=name_map)
+
+    # &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;
+    models.UserInfo.objects.raw(&apos;select * from userinfo&apos;, using=&quot;default&quot;)
+
+    ################### &#x539F;&#x751F;SQL ###################
+    from django.db import connection, connections
+    cursor = connection.cursor()  # cursor = connections[&apos;default&apos;].cursor()
+    cursor.execute(&quot;&quot;&quot;SELECT * from auth_user where id = %s&quot;&quot;&quot;, [1])
+    row = cursor.fetchone() # fetchall()/fetchmany(..)
+
+
+def values(self, *fields):
+    # &#x83B7;&#x53D6;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x4E3A;&#x5B57;&#x5178;&#x683C;&#x5F0F;
+
+def values_list(self, *fields, **kwargs):
+    # &#x83B7;&#x53D6;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x4E3A;&#x5143;&#x7956;
+
+def dates(self, field_name, kind, order=&apos;ASC&apos;):
+    # &#x6839;&#x636E;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x67D0;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x67E5;&#x627E;&#x5E76;&#x622A;&#x53D6;&#x6307;&#x5B9A;&#x5185;&#x5BB9;
+    # kind&#x53EA;&#x80FD;&#x662F;&#xFF1A;&quot;year&quot;&#xFF08;&#x5E74;&#xFF09;, &quot;month&quot;&#xFF08;&#x5E74;-&#x6708;&#xFF09;, &quot;day&quot;&#xFF08;&#x5E74;-&#x6708;-&#x65E5;&#xFF09;
+    # order&#x53EA;&#x80FD;&#x662F;&#xFF1A;&quot;ASC&quot;  &quot;DESC&quot;
+    # &#x5E76;&#x83B7;&#x53D6;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x65F6;&#x95F4;
+        - year : &#x5E74;-01-01
+        - month: &#x5E74;-&#x6708;-01
+        - day  : &#x5E74;-&#x6708;-&#x65E5;
+
+    models.DatePlus.objects.dates(&apos;ctime&apos;,&apos;day&apos;,&apos;DESC&apos;)
+
+def datetimes(self, field_name, kind, order=&apos;ASC&apos;, tzinfo=None):
+    # &#x6839;&#x636E;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x67D0;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x67E5;&#x627E;&#x5E76;&#x622A;&#x53D6;&#x6307;&#x5B9A;&#x5185;&#x5BB9;&#xFF0C;&#x5C06;&#x65F6;&#x95F4;&#x8F6C;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x65F6;&#x533A;&#x65F6;&#x95F4;
+    # kind&#x53EA;&#x80FD;&#x662F; &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;, &quot;minute&quot;, &quot;second&quot;
+    # order&#x53EA;&#x80FD;&#x662F;&#xFF1A;&quot;ASC&quot;  &quot;DESC&quot;
+    # tzinfo&#x65F6;&#x533A;&#x5BF9;&#x8C61;
+    models.DDD.objects.datetimes(&apos;ctime&apos;,&apos;hour&apos;,tzinfo=pytz.UTC)
+    models.DDD.objects.datetimes(&apos;ctime&apos;,&apos;hour&apos;,tzinfo=pytz.timezone(&apos;Asia/Shanghai&apos;))
+
+    &quot;&quot;&quot;
+    pip3 install pytz
+    import pytz
+    pytz.all_timezones
+    pytz.timezone(&#x2018;Asia/Shanghai&#x2019;)
+    &quot;&quot;&quot;
+
+def none(self):
+    # &#x7A7A;QuerySet&#x5BF9;&#x8C61;
+
+
+####################################
+# METHODS THAT DO DATABASE QUERIES #
+####################################
+
+def aggregate(self, *args, **kwargs):
+   # &#x805A;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x83B7;&#x53D6;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x805A;&#x5408;&#x7ED3;&#x679C;
+   from django.db.models import Count, Avg, Max, Min, Sum
+   result = models.UserInfo.objects.aggregate(k=Count(&apos;u_id&apos;, distinct=True), n=Count(&apos;nid&apos;))
+   ===&gt; {&apos;k&apos;: 3, &apos;n&apos;: 4}
+
+def count(self):
+   # &#x83B7;&#x53D6;&#x4E2A;&#x6570;
+
+def get(self, *args, **kwargs):
+   # &#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;
+
+def create(self, **kwargs):
+   # &#x521B;&#x5EFA;&#x5BF9;&#x8C61;
+
+def bulk_create(self, objs, batch_size=None):
+    # &#x6279;&#x91CF;&#x63D2;&#x5165;
+    # batch_size&#x8868;&#x793A;&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x7684;&#x4E2A;&#x6570;
+    objs = [
+        models.DDD(name=&apos;r11&apos;),
+        models.DDD(name=&apos;r22&apos;)
+    ]
+    models.DDD.objects.bulk_create(objs, 10)
+
+def get_or_create(self, defaults=None, **kwargs):
+    # &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x521B;&#x5EFA;
+    # defaults &#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x7684;&#x503C;
+    obj, created = models.UserInfo.objects.get_or_create(username=&apos;root1&apos;, defaults={&apos;email&apos;: &apos;1111111&apos;,&apos;u_id&apos;: 2, &apos;t_id&apos;: 2})
+
+def update_or_create(self, defaults=None, **kwargs):
+    # &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x66F4;&#x65B0;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x521B;&#x5EFA;
+    # defaults &#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x65F6;&#x6216;&#x66F4;&#x65B0;&#x65F6;&#x7684;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;
+    obj, created = models.UserInfo.objects.update_or_create(username=&apos;root1&apos;, defaults={&apos;email&apos;: &apos;1111111&apos;,&apos;u_id&apos;: 2, &apos;t_id&apos;: 1})
+
+def first(self):
+   # &#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;
+
+def last(self):
+   # &#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;
+
+def in_bulk(self, id_list=None):
+   # &#x6839;&#x636E;&#x4E3B;&#x952E;ID&#x8FDB;&#x884C;&#x67E5;&#x627E;
+   id_list = [11,21,31]
+   models.DDD.objects.in_bulk(id_list)
+
+def delete(self):
+   # &#x5220;&#x9664;
+
+def update(self, **kwargs):
+    # &#x66F4;&#x65B0;
+
+def exists(self):
+   # &#x662F;&#x5426;&#x6709;&#x7ED3;&#x679C;
+
+&#x5176;&#x4ED6;&#x64CD;&#x4F5C;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07.Django模板系统.html" class="navigation navigation-prev " aria-label="Previous page: Django模板系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="09.Django路由系统.html" class="navigation navigation-next " aria-label="Next page: Django路由系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Django模型ORM","level":"1.4.8","depth":2,"next":{"title":"Django路由系统","level":"1.4.9","depth":2,"path":"python/Django/09.Django路由系统.md","ref":"python/Django/09.Django路由系统.md","articles":[]},"previous":{"title":"Django模板系统","level":"1.4.7","depth":2,"path":"python/Django/07.Django模板系统.md","ref":"python/Django/07.Django模板系统.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"python/Django/08.Django模型ORM.md","mtime":"2018-06-12T01:20:57.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

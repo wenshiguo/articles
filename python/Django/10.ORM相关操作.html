@@ -1,0 +1,1258 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ORM相关操作 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="111.ORM版学员管理系统.html" />
+    
+    
+    <link rel="prev" href="09.Django路由系统.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../MySQL学习/">
+            
+                <a href="../../MySQL学习/">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../MySQL学习/01-初识数据库.html">
+            
+                <a href="../../MySQL学习/01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../MySQL学习/02-MySQL库操作.html">
+            
+                <a href="../../MySQL学习/02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../MySQL学习/03-MySQL表操作/">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../MySQL学习/04-MySQL数据操作/">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../MySQL学习/Python3连接MySQL.html">
+            
+                <a href="../../MySQL学习/Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01.Django初识.html">
+            
+                <a href="01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="02.Web框架本质及第一个Django实例.html">
+            
+                <a href="02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="03.HTTP协议.html">
+            
+                <a href="03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="04.Django框架简介.html">
+            
+                <a href="04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="05.Django的视图.html">
+            
+                <a href="05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="06.Django的路由系统.html">
+            
+                <a href="06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="07.Django模板系统.html">
+            
+                <a href="07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="08.Django模型ORM.html">
+            
+                <a href="08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="09.Django路由系统.html">
+            
+                <a href="09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.10" data-path="10.ORM相关操作.html">
+            
+                <a href="10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="111.ORM版学员管理系统.html">
+            
+                <a href="111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="11.Form组件.html">
+            
+                <a href="11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="博客项目点赞与灭操作.html">
+            
+                <a href="博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="博客项目评论.html">
+            
+                <a href="博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../lufei-payment/luffy结算中心.html">
+            
+                <a href="../lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >ORM相关操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#django-orm&#x76F8;&#x5173;&#x64CD;&#x4F5C;"><b></b>Django ORM&#x76F8;&#x5173;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x822C;&#x64CD;&#x4F5C;"><b></b>&#x4E00;&#x822C;&#x64CD;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#foreignkey&#x64CD;&#x4F5C;"><b></b>ForeignKey&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6B63;&#x5411;&#x67E5;&#x627E;"><b></b>&#x6B63;&#x5411;&#x67E5;&#x627E;</a></li><li><span class="title-icon "></span><a href="#&#x53CD;&#x5411;&#x64CD;&#x4F5C;"><b></b>&#x53CD;&#x5411;&#x64CD;&#x4F5C;</a></li></ul><li><span class="title-icon "></span><a href="#manytomanyfield"><b></b>ManyToManyField</a></li><ul><li><span class="title-icon "></span><a href="#class-relatedmanager"><b></b>class RelatedManager</a></li></ul><li><span class="title-icon "></span><a href="#&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;"><b></b>&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x805A;&#x5408;"><b></b>&#x805A;&#x5408;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x7EC4;"><b></b>&#x5206;&#x7EC4;</a></li></ul><li><span class="title-icon "></span><a href="#f&#x67E5;&#x8BE2;&#x548C;q&#x67E5;&#x8BE2;"><b></b>F&#x67E5;&#x8BE2;&#x548C;Q&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#f&#x67E5;&#x8BE2;"><b></b>F&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#q&#x67E5;&#x8BE2;"><b></b>Q&#x67E5;&#x8BE2;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E8B;&#x52A1;"><b></b>&#x4E8B;&#x52A1;</a></li><li><span class="title-icon "></span><a href="#django-orm&#x6267;&#x884C;&#x539F;&#x751F;sql"><b></b>Django ORM&#x6267;&#x884C;&#x539F;&#x751F;SQL</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;sql&#x8BED;&#x53E5;"><b></b>&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;SQL&#x8BED;&#x53E5;</a></li><li><span class="title-icon "></span><a href="#queryset&#x65B9;&#x6CD5;&#x5927;&#x5168;"><b></b>QuerySet&#x65B9;&#x6CD5;&#x5927;&#x5168;</a></li></ul><li><span class="title-icon "></span><a href="#django&#x7EC8;&#x7AEF;&#x6253;&#x5370;sql&#x8BED;&#x53E5;"><b></b>Django&#x7EC8;&#x7AEF;&#x6253;&#x5370;SQL&#x8BED;&#x53E5;</a></li><li><span class="title-icon "></span><a href="#&#x5728;python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;django&#x73AF;&#x5883;"><b></b>&#x5728;Python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;Django&#x73AF;&#x5883;</a></li></ul></ul></div><a href="#django-orm&#x76F8;&#x5173;&#x64CD;&#x4F5C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="django-orm&#x76F8;&#x5173;&#x64CD;&#x4F5C;"><a name="django-orm&#x76F8;&#x5173;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#django-orm&#x76F8;&#x5173;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>Django ORM&#x76F8;&#x5173;&#x64CD;&#x4F5C;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#django-orm&#x76F8;&#x5173;&#x64CD;&#x4F5C;"><b></b>Django ORM&#x76F8;&#x5173;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x822C;&#x64CD;&#x4F5C;"><b></b>&#x4E00;&#x822C;&#x64CD;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#foreignkey&#x64CD;&#x4F5C;"><b></b>ForeignKey&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6B63;&#x5411;&#x67E5;&#x627E;"><b></b>&#x6B63;&#x5411;&#x67E5;&#x627E;</a></li><li><span class="title-icon "></span><a href="#&#x53CD;&#x5411;&#x64CD;&#x4F5C;"><b></b>&#x53CD;&#x5411;&#x64CD;&#x4F5C;</a></li></ul><li><span class="title-icon "></span><a href="#manytomanyfield"><b></b>ManyToManyField</a></li><ul><li><span class="title-icon "></span><a href="#class-relatedmanager"><b></b>class RelatedManager</a></li></ul><li><span class="title-icon "></span><a href="#&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;"><b></b>&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x805A;&#x5408;"><b></b>&#x805A;&#x5408;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x7EC4;"><b></b>&#x5206;&#x7EC4;</a></li></ul><li><span class="title-icon "></span><a href="#f&#x67E5;&#x8BE2;&#x548C;q&#x67E5;&#x8BE2;"><b></b>F&#x67E5;&#x8BE2;&#x548C;Q&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#f&#x67E5;&#x8BE2;"><b></b>F&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#q&#x67E5;&#x8BE2;"><b></b>Q&#x67E5;&#x8BE2;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E8B;&#x52A1;"><b></b>&#x4E8B;&#x52A1;</a></li><li><span class="title-icon "></span><a href="#django-orm&#x6267;&#x884C;&#x539F;&#x751F;sql"><b></b>Django ORM&#x6267;&#x884C;&#x539F;&#x751F;SQL</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;sql&#x8BED;&#x53E5;"><b></b>&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;SQL&#x8BED;&#x53E5;</a></li><li><span class="title-icon "></span><a href="#queryset&#x65B9;&#x6CD5;&#x5927;&#x5168;"><b></b>QuerySet&#x65B9;&#x6CD5;&#x5927;&#x5168;</a></li></ul><li><span class="title-icon "></span><a href="#django&#x7EC8;&#x7AEF;&#x6253;&#x5370;sql&#x8BED;&#x53E5;"><b></b>Django&#x7EC8;&#x7AEF;&#x6253;&#x5370;SQL&#x8BED;&#x53E5;</a></li><li><span class="title-icon "></span><a href="#&#x5728;python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;django&#x73AF;&#x5883;"><b></b>&#x5728;Python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;Django&#x73AF;&#x5883;</a></li></ul></ul></div>
+
+<h2 id="&#x4E00;&#x822C;&#x64CD;&#x4F5C;"><a name="&#x4E00;&#x822C;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x822C;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x822C;&#x64CD;&#x4F5C;</h2>
+<p><a href="https://docs.djangoproject.com/en/1.11/ref/models/querysets/" target="_blank">&#x5B98;&#x7F51;&#x5730;&#x5740;</a></p>
+<h4 id="orm&#x5FC5;&#x77E5;&#x5FC5;&#x4F1A;13&#x6761;"><a name="orm&#x5FC5;&#x77E5;&#x5FC5;&#x4F1A;13&#x6761;" class="anchor-navigation-ex-anchor" href="#orm&#x5FC5;&#x77E5;&#x5FC5;&#x4F1A;13&#x6761;"><i class="fa fa-link" aria-hidden="true"></i></a>ORM&#x5FC5;&#x77E5;&#x5FC5;&#x4F1A;13&#x6761;</h4>
+<ol>
+<li><p>all():                 &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7ED3;&#x679C;</p>
+</li>
+<li><p>filter(**kwargs):      &#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x6240;&#x7ED9;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x76F8;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>get(**kwargs):         &#x8FD4;&#x56DE;&#x4E0E;&#x6240;&#x7ED9;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x76F8;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6709;&#x4E14;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x5408;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x90FD;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p>exclude(**kwargs):     &#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x6240;&#x7ED9;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>values(*field):        &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;ValueQuerySet&#x2014;&#x2014;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;QuerySet&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x5F97;&#x5230;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x7CFB;&#x5217;model&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x7684;&#x5B57;&#x5178;&#x5E8F;&#x5217;</p>
+</li>
+<li><p>values_list(*field):   &#x5B83;&#x4E0E;values()&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x5E8F;&#x5217;&#xFF0C;values&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x5E8F;&#x5217;</p>
+</li>
+<li><p>order_by(*field):      &#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x6392;&#x5E8F;</p>
+</li>
+<li><p>reverse():             &#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x53CD;&#x5411;&#x6392;&#x5E8F;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;reverse()&#x901A;&#x5E38;&#x53EA;&#x80FD;&#x5728;&#x5177;&#x6709;&#x5DF2;&#x5B9A;&#x4E49;&#x987A;&#x5E8F;&#x7684;QuerySet&#x4E0A;&#x8C03;&#x7528;(&#x5728;model&#x7C7B;&#x7684;Meta&#x4E2D;&#x6307;&#x5B9A;ordering&#x6216;&#x8C03;&#x7528;order_by()&#x65B9;&#x6CD5;)&#x3002;</p>
+</li>
+<li><p>distinct():            &#x4ECE;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E2D;&#x5254;&#x9664;&#x91CD;&#x590D;&#x7EAA;&#x5F55;(&#x5982;&#x679C;&#x4F60;&#x67E5;&#x8BE2;&#x8DE8;&#x8D8A;&#x591A;&#x4E2A;&#x8868;&#xFF0C;&#x53EF;&#x80FD;&#x5728;&#x8BA1;&#x7B97;QuerySet&#x65F6;&#x5F97;&#x5230;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;distinct()&#xFF0C;&#x6CE8;&#x610F;&#x53EA;&#x6709;&#x5728;PostgreSQL&#x4E2D;&#x652F;&#x6301;&#x6309;&#x5B57;&#x6BB5;&#x53BB;&#x91CD;&#x3002;)</p>
+</li>
+<li><p>count():              &#x8FD4;&#x56DE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5339;&#x914D;&#x67E5;&#x8BE2;(QuerySet)&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x3002;</p>
+</li>
+<li><p>first():              &#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</p>
+</li>
+<li><p>last():               &#x8FD4;&#x56DE;&#x6700;&#x540E;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</p>
+</li>
+<li><p>exists():             &#x5982;&#x679C;QuerySet&#x5305;&#x542B;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;True&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;False</p>
+</li>
+</ol>
+<h4 id="&#x8FD4;&#x56DE;queryset&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x6709;"><a name="&#x8FD4;&#x56DE;queryset&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x6709;" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;queryset&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x6709;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;QuerySet&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x6709;</h4>
+<pre><code>all()
+
+filter()
+
+exelude()
+
+order_by()
+
+reverse()
+
+distinct()
+</code></pre><h4 id="&#x7279;&#x6B8A;&#x7684;queryset"><a name="&#x7279;&#x6B8A;&#x7684;queryset" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6B8A;&#x7684;queryset"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x6B8A;&#x7684;QuerySet</h4>
+<pre><code>values()       &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x7684;&#x5B57;&#x5178;&#x5E8F;&#x5217;
+
+values_list() &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x7684;&#x5143;&#x7956;&#x5E8F;&#x5217;
+</code></pre><h4 id="&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x5BF9;&#x8C61;&#x7684;"><a name="&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x5BF9;&#x8C61;&#x7684;" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x5BF9;&#x8C61;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x5BF9;&#x8C61;&#x7684;</h4>
+<pre><code>get()
+
+first()
+
+last()
+</code></pre><h4 id="&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;"><a name="&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;</h4>
+<p>exists()</p>
+<h4 id="&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x7684;&#x65B9;&#x6CD5;&#x6709;"><a name="&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x7684;&#x65B9;&#x6CD5;&#x6709;" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x7684;&#x65B9;&#x6CD5;&#x6709;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x7684;&#x65B9;&#x6CD5;&#x6709;</h4>
+<p>count()</p>
+<h4 id="&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;"><a name="&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;" class="anchor-navigation-ex-anchor" href="#&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x795E;&#x5947;&#x7684;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;</h4>
+<ol>
+<li><p>models.Tb1.objects.filter(id<strong>lt=10, id</strong>gt=1)   # &#x83B7;&#x53D6;id&#x5927;&#x4E8E;1 &#x4E14; &#x5C0F;&#x4E8E;10&#x7684;&#x503C;</p>
+</li>
+<li><p>models.Tb1.objects.filter(id__in=[11, 22, 33])   # &#x83B7;&#x53D6;id&#x7B49;&#x4E8E;11&#x3001;22&#x3001;33&#x7684;&#x6570;&#x636E;</p>
+</li>
+<li><p>models.Tb1.objects.exclude(id__in=[11, 22, 33])  # not in</p>
+</li>
+<li><p>models.Tb1.objects.filter(name__contains=&quot;ven&quot;)  # &#x83B7;&#x53D6;name&#x5B57;&#x6BB5;&#x5305;&#x542B;&quot;ven&quot;&#x7684;</p>
+</li>
+<li><p>models.Tb1.objects.filter(name__icontains=&quot;ven&quot;) # icontains&#x5927;&#x5C0F;&#x5199;&#x4E0D;&#x654F;&#x611F;</p>
+</li>
+<li><p>models.Tb1.objects.filter(id__range=[1, 3])      # id&#x8303;&#x56F4;&#x662F;1&#x5230;3&#x7684;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;SQL&#x7684;bettwen and</p>
+</li>
+</ol>
+<p>&#x7C7B;&#x4F3C;&#x7684;&#x8FD8;&#x6709;&#xFF1A;startswith&#xFF0C;istartswith, endswith, iendswith&#x3000;</p>
+<p>date&#x5B57;&#x6BB5;&#x8FD8;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<pre><code>models.Class.objects.filter(first_day__year=2017)
+</code></pre><h2 id="foreignkey&#x64CD;&#x4F5C;"><a name="foreignkey&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#foreignkey&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>ForeignKey&#x64CD;&#x4F5C;</h2>
+<h3 id="&#x6B63;&#x5411;&#x67E5;&#x627E;"><a name="&#x6B63;&#x5411;&#x67E5;&#x627E;" class="anchor-navigation-ex-anchor" href="#&#x6B63;&#x5411;&#x67E5;&#x627E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B63;&#x5411;&#x67E5;&#x627E;</h3>
+<h4 id="&#x5BF9;&#x8C61;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;"><a name="&#x5BF9;&#x8C61;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;</h4>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<p><strong>&#x5BF9;&#x8C61;.&#x5173;&#x8054;&#x5B57;&#x6BB5;.&#x5B57;&#x6BB5;</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>book_obj = models.Book.objects.first()  # &#x7B2C;&#x4E00;&#x672C;&#x4E66;&#x5BF9;&#x8C61;
+print(book_obj.publisher)  # &#x5F97;&#x5230;&#x8FD9;&#x672C;&#x4E66;&#x5173;&#x8054;&#x7684;&#x51FA;&#x7248;&#x793E;&#x5BF9;&#x8C61;
+print(book_obj.publisher.name)  # &#x5F97;&#x5230;&#x51FA;&#x7248;&#x793E;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x79F0;
+</code></pre><h4 id="&#x5B57;&#x6BB5;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;"><a name="&#x5B57;&#x6BB5;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x6BB5;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x6BB5;&#x67E5;&#x627E;&#xFF08;&#x8DE8;&#x8868;&#xFF09;</h4>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<p><strong>&#x5173;&#x8054;&#x5B57;&#x6BB5;__&#x5B57;&#x6BB5;</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<p><code>print(models.Book.objects.values_list(&quot;publisher__name&quot;)</code>
+)</p>
+<h3 id="&#x53CD;&#x5411;&#x64CD;&#x4F5C;"><a name="&#x53CD;&#x5411;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x53CD;&#x5411;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CD;&#x5411;&#x64CD;&#x4F5C;</h3>
+<h4 id="&#x5BF9;&#x8C61;&#x67E5;&#x627E;"><a name="&#x5BF9;&#x8C61;&#x67E5;&#x627E;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x67E5;&#x627E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x67E5;&#x627E;</h4>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<p><strong>obj.&#x8868;&#x540D;_set</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>publisher_obj = models.Publisher.objects.first()  # &#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x51FA;&#x7248;&#x793E;&#x5BF9;&#x8C61;
+books = publisher_obj.book_set.all()  # &#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x51FA;&#x7248;&#x793E;&#x51FA;&#x7248;&#x7684;&#x6240;&#x6709;&#x4E66;
+titles = books.values_list(&quot;title&quot;)  # &#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x51FA;&#x7248;&#x793E;&#x51FA;&#x7248;&#x7684;&#x6240;&#x6709;&#x4E66;&#x7684;&#x4E66;&#x540D;
+</code></pre><h4 id="&#x5B57;&#x6BB5;&#x67E5;&#x627E;"><a name="&#x5B57;&#x6BB5;&#x67E5;&#x627E;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x6BB5;&#x67E5;&#x627E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x6BB5;&#x67E5;&#x627E;</h4>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<p><strong>&#x8868;&#x540D;__&#x5B57;&#x6BB5;</strong></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<p><code>titles = models.Publisher.objects.values_list(&quot;book__title&quot;)</code></p>
+<h2 id="manytomanyfield"><a name="manytomanyfield" class="anchor-navigation-ex-anchor" href="#manytomanyfield"><i class="fa fa-link" aria-hidden="true"></i></a>ManyToManyField</h2>
+<h3 id="class-relatedmanager"><a name="class-relatedmanager" class="anchor-navigation-ex-anchor" href="#class-relatedmanager"><i class="fa fa-link" aria-hidden="true"></i></a>class RelatedManager</h3>
+<p>&quot;&#x5173;&#x8054;&#x7BA1;&#x7406;&#x5668;&quot;&#x662F;&#x5728;&#x4E00;&#x5BF9;&#x591A;&#x6216;&#x8005;&#x591A;&#x5BF9;&#x591A;&#x7684;&#x5173;&#x8054;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x7BA1;&#x7406;&#x5668;&#x3002;</p>
+<p>&#x5B83;&#x5B58;&#x5728;&#x4E8E;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li>&#x5916;&#x952E;&#x5173;&#x7CFB;&#x7684;&#x53CD;&#x5411;&#x67E5;&#x8BE2;</li>
+<li>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;&#x5173;&#x7CFB;</li>
+</ol>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x5F53; &#x70B9;&#x540E;&#x9762;&#x7684;&#x5BF9;&#x8C61; &#x53EF;&#x80FD;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="&#x65B9;&#x6CD5;"><a name="&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;</h4>
+<p><strong>create()</strong></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x6DFB;&#x52A0;&#x5230;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x96C6;&#x4E4B;&#x4E2D;&#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><code>import datetime</code></p>
+<p><code>models.Author.objects.first().book_set.create(title=&quot;&#x756A;&#x8304;&#x7269;&#x8BED;&quot;, publish_date=datetime.date.today())</code></p>
+<h5 id="add"><a name="add" class="anchor-navigation-ex-anchor" href="#add"><i class="fa fa-link" aria-hidden="true"></i></a><strong>add()</strong></h5>
+<p>&#x628A;&#x6307;&#x5B9A;&#x7684;model&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x96C6;&#x4E2D;&#x3002;</p>
+<p> &#x6DFB;&#x52A0;&#x5BF9;&#x8C61;</p>
+<pre><code>author_objs = models.Author.objects.filter(id__lt=3)
+
+models.Book.objects.first().authors.add(*author_objs)
+</code></pre><p>&#x6DFB;&#x52A0;id</p>
+<p><code>models.Book.objects.first().authors.add(*[1, 2])</code></p>
+<h5 id="set"><a name="set" class="anchor-navigation-ex-anchor" href="#set"><i class="fa fa-link" aria-hidden="true"></i></a><strong>set()</strong></h5>
+<p>&#x66F4;&#x65B0;model&#x5BF9;&#x8C61;&#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><code>book_obj = models.Book.objects.first()</code></p>
+<p><code>book_obj.authors.set([2, 3])</code></p>
+<h5 id="remove"><a name="remove" class="anchor-navigation-ex-anchor" href="#remove"><i class="fa fa-link" aria-hidden="true"></i></a>remove()</h5>
+<p>&#x4ECE;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x96C6;&#x4E2D;&#x79FB;&#x9664;&#x6267;&#x884C;&#x7684;model&#x5BF9;&#x8C61;</p>
+<pre><code>book_obj = models.Book.objects.first()
+
+book_obj.authors.remove(3)
+</code></pre><h5 id="clear"><a name="clear" class="anchor-navigation-ex-anchor" href="#clear"><i class="fa fa-link" aria-hidden="true"></i></a>clear()</h5>
+<p>&#x4ECE;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x96C6;&#x4E2D;&#x79FB;&#x9664;&#x4E00;&#x5207;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code> book_obj = models.Book.objects.first()
+
+ book_obj.authors.clear()
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<p>&#x5BF9;&#x4E8E;ForeignKey&#x5BF9;&#x8C61;&#xFF0C;clear()&#x548C;remove()&#x65B9;&#x6CD5;&#x4EC5;&#x5728;null=True&#x65F6;&#x5B58;&#x5728;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>ForeignKey&#x5B57;&#x6BB5;&#x6CA1;&#x8BBE;&#x7F6E;null=True&#x65F6;&#xFF0C;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book</span><span class="hljs-params">(models.Model)</span>:</span>
+    title = models.CharField(max_length=<span class="hljs-number">32</span>)
+    publisher = models.ForeignKey(to=Publisher)
+</code></pre>
+<p>&#x6CA1;&#x6709;clear()&#x548C;remove()&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Publisher.objects.first().book_set.clear()
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;input&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+AttributeError: <span class="hljs-string">&apos;RelatedManager&apos;</span> object has no attribute <span class="hljs-string">&apos;clear&apos;</span>
+</code></pre>
+<p>&#x5F53;ForeignKey&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;null=True&#x65F6;&#xFF0C;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book</span><span class="hljs-params">(models.Model)</span>:</span>
+    name = models.CharField(max_length=<span class="hljs-number">32</span>)
+    publisher = models.ForeignKey(to=Class, null=<span class="hljs-keyword">True</span>)
+`
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x5C31;&#x6709;clear()&#x548C;remove()&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p><code>&gt;&gt;&gt; models.Publisher.objects.first().book_set.clear()</code></p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<pre><code>&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x5173;&#x8054;&#x5B57;&#x6BB5;&#xFF0C;add()&#x3001;create()&#x3001;remove()&#x548C;clear(),set()&#x90FD;&#x4F1A;&#x9A6C;&#x4E0A;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5728;&#x5173;&#x8054;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x7AEF;&#xFF0C;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x8C03;&#x7528;save()&#x65B9;&#x6CD5;&#x3002;
+</code></pre><h2 id="&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;"><a name="&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x805A;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;</h2>
+<h3 id="&#x805A;&#x5408;"><a name="&#x805A;&#x5408;" class="anchor-navigation-ex-anchor" href="#&#x805A;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x805A;&#x5408;</h3>
+<p>aggregate()&#x662F;QuerySet &#x7684;&#x4E00;&#x4E2A;&#x7EC8;&#x6B62;&#x5B50;&#x53E5;&#xFF0C;&#x610F;&#x601D;&#x662F;&#x8BF4;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5B57;&#x5178;&#x3002;</p>
+<p>&#x952E;&#x7684;&#x540D;&#x79F0;&#x662F;&#x805A;&#x5408;&#x503C;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x503C;&#x662F;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x805A;&#x5408;&#x503C;&#x3002;&#x952E;&#x7684;&#x540D;&#x79F0;&#x662F;&#x6309;&#x7167;&#x5B57;&#x6BB5;&#x548C;&#x805A;&#x5408;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x51FA;&#x6765;&#x7684;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; models.Book.objects.all().aggregate(Avg(&quot;price&quot;))
+{&apos;price__avg&apos;: 13.233333}
+</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x4E3A;&#x805A;&#x5408;&#x503C;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x4EE5;&#x5411;&#x805A;&#x5408;&#x5B50;&#x53E5;&#x63D0;&#x4F9B;&#x5B83;&#x3002;</p>
+<pre><code>&gt;&gt;&gt; models.Book.objects.aggregate(average_price=Avg(&apos;price&apos;))
+{&apos;average_price&apos;: 13.233333}
+</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x751F;&#x6210;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x805A;&#x5408;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5411;aggregate()&#x5B50;&#x53E5;&#x4E2D;&#x6DFB;&#x52A0;&#x53E6;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E5F;&#x60F3;&#x77E5;&#x9053;&#x6240;&#x6709;&#x56FE;&#x4E66;&#x4EF7;&#x683C;&#x7684;&#x6700;&#x5927;&#x503C;&#x548C;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; models.Book.objects.all().aggregate(Avg(&quot;price&quot;), Max(&quot;price&quot;), Min(&quot;price&quot;))
+{&apos;price__avg&apos;: 13.233333, &apos;price__max&apos;: Decimal(&apos;19.90&apos;), &apos;price__min&apos;: Decimal(&apos;9.90&apos;)}
+</code></pre><h3 id="&#x5206;&#x7EC4;"><a name="&#x5206;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x7EC4;</h3>
+<p>&#x4E3A;&#x8C03;&#x7528;&#x7684;QuerySet&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7EDF;&#x8BA1;&#x503C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;1&#xFF1A;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E00;&#x672C;&#x4E66;&#x7684;&#x4F5C;&#x8005;&#x4E2A;&#x6570;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>book_list = models.Book.objects.all().annotate(author_num=Count(<span class="hljs-string">&quot;author&quot;</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> obj <span class="hljs-keyword">in</span> book_list:
+<span class="hljs-meta">... </span>    print(obj.author_num)
+...
+<span class="hljs-number">2</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">1</span>
+</code></pre>
+<p>&#x793A;&#x4F8B;2&#xFF1A;&#x7EDF;&#x8BA1;&#x51FA;&#x6BCF;&#x4E2A;&#x51FA;&#x7248;&#x793E;&#x4E70;&#x7684;&#x6700;&#x4FBF;&#x5B9C;&#x7684;&#x4E66;&#x7684;&#x4EF7;&#x683C;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>publisher_list = models.Publisher.objects.annotate(min_price=Min(<span class="hljs-string">&quot;book__price&quot;</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> obj <span class="hljs-keyword">in</span> publisher_list:
+<span class="hljs-meta">... </span>    print(obj.min_price)
+<span class="hljs-meta">... </span>    
+<span class="hljs-number">9.90</span>
+<span class="hljs-number">19.90</span>
+</code></pre>
+<p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Book.objects.values(<span class="hljs-string">&quot;publisher__name&quot;</span>).annotate(min_price=Min(<span class="hljs-string">&quot;price&quot;</span>))
+&lt;QuerySet [{<span class="hljs-string">&apos;publisher__name&apos;</span>: <span class="hljs-string">&apos;&#x6C99;&#x6CB3;&#x51FA;&#x7248;&#x793E;&apos;</span>, <span class="hljs-string">&apos;min_price&apos;</span>: Decimal(<span class="hljs-string">&apos;9.90&apos;</span>)}, {<span class="hljs-string">&apos;publisher__name&apos;</span>: <span class="hljs-string">&apos;&#x4EBA;&#x6C11;&#x51FA;&#x7248;&#x793E;&apos;</span>, <span class="hljs-string">&apos;min_price&apos;</span>: Decimal(<span class="hljs-string">&apos;19.90&apos;</span>)}]&gt;
+</code></pre>
+<p>&#x793A;&#x4F8B;3&#xFF1A;&#x7EDF;&#x8BA1;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x4F5C;&#x8005;&#x7684;&#x56FE;&#x4E66;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Book.objects.annotate(author_num=Count(<span class="hljs-string">&quot;author&quot;</span>)).filter(author_num__gt=<span class="hljs-number">1</span>)
+&lt;QuerySet [&lt;Book: &#x756A;&#x8304;&#x7269;&#x8BED;&gt;]&gt;
+</code></pre>
+<p>&#x793A;&#x4F8B;4&#xFF1A;&#x6839;&#x636E;&#x4E00;&#x672C;&#x56FE;&#x4E66;&#x4F5C;&#x8005;&#x6570;&#x91CF;&#x7684;&#x591A;&#x5C11;&#x5BF9;&#x67E5;&#x8BE2;&#x96C6; QuerySet&#x8FDB;&#x884C;&#x6392;&#x5E8F;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Book.objects.annotate(author_num=Count(<span class="hljs-string">&quot;author&quot;</span>)).order_by(<span class="hljs-string">&quot;author_num&quot;</span>)
+&lt;QuerySet [&lt;Book: &#x9999;&#x8549;&#x7269;&#x8BED;&gt;, &lt;Book: &#x6A58;&#x5B50;&#x7269;&#x8BED;&gt;, &lt;Book: &#x756A;&#x8304;&#x7269;&#x8BED;&gt;]&gt;
+</code></pre>
+<p>&#x793A;&#x4F8B;5&#xFF1A;&#x67E5;&#x8BE2;&#x5404;&#x4E2A;&#x4F5C;&#x8005;&#x51FA;&#x7684;&#x4E66;&#x7684;&#x603B;&#x4EF7;&#x683C;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Author.objects.annotate(sum_price=Sum(<span class="hljs-string">&quot;book__price&quot;</span>)).values(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;sum_price&quot;</span>)
+&lt;QuerySet [{<span class="hljs-string">&apos;name&apos;</span>: <span class="hljs-string">&apos;&#x5C0F;&#x7CBE;&#x7075;&apos;</span>, <span class="hljs-string">&apos;sum_price&apos;</span>: Decimal(<span class="hljs-string">&apos;9.90&apos;</span>)}, {<span class="hljs-string">&apos;name&apos;</span>: <span class="hljs-string">&apos;&#x5C0F;&#x4ED9;&#x5973;&apos;</span>, <span class="hljs-string">&apos;sum_price&apos;</span>: Decimal(<span class="hljs-string">&apos;29.80&apos;</span>)}, {<span class="hljs-string">&apos;name&apos;</span>: <span class="hljs-string">&apos;&#x5C0F;&#x9B54;&#x5973;&apos;</span>, <span class="hljs-string">&apos;sum_price&apos;</span>: Decimal(<span class="hljs-string">&apos;9.90&apos;</span>)}]&gt;
+</code></pre>
+<h2 id="f&#x67E5;&#x8BE2;&#x548C;q&#x67E5;&#x8BE2;"><a name="f&#x67E5;&#x8BE2;&#x548C;q&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#f&#x67E5;&#x8BE2;&#x548C;q&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>F&#x67E5;&#x8BE2;&#x548C;Q&#x67E5;&#x8BE2;</h2>
+<h3 id="f&#x67E5;&#x8BE2;"><a name="f&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#f&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>F&#x67E5;&#x8BE2;</h3>
+<p>&#x5728;&#x4E0A;&#x9762;&#x6240;&#x6709;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6784;&#x9020;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x90FD;&#x53EA;&#x662F;&#x5C06;&#x5B57;&#x6BB5;&#x503C;&#x4E0E;&#x67D0;&#x4E2A;&#x5E38;&#x91CF;&#x505A;&#x6BD4;&#x8F83;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x5BF9;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x505A;&#x6BD4;&#x8F83;&#xFF0C;&#x90A3;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#x5462;&#xFF1F;</p>
+<p>Django &#x63D0;&#x4F9B; F() &#x6765;&#x505A;&#x8FD9;&#x6837;&#x7684;&#x6BD4;&#x8F83;&#x3002;F() &#x7684;&#x5B9E;&#x4F8B;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x4E2D;&#x5F15;&#x7528;&#x5B57;&#x6BB5;&#xFF0C;&#x6765;&#x6BD4;&#x8F83;&#x540C;&#x4E00;&#x4E2A; model &#x5B9E;&#x4F8B;&#x4E2D;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;1&#xFF1A;</p>
+<p>&#x67E5;&#x8BE2;&#x8BC4;&#x8BBA;&#x6570;&#x5927;&#x4E8E;&#x6536;&#x85CF;&#x6570;&#x7684;&#x4E66;&#x7C4D;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.db.models <span class="hljs-keyword">import</span> F
+models.Book.objects.filter(commnet_num__lt=F(<span class="hljs-string">&apos;keep_num&apos;</span>))
+</code></pre>
+<p>Django &#x652F;&#x6301; F() &#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x4EE5;&#x53CA; F() &#x5BF9;&#x8C61;&#x548C;&#x5E38;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x52A0;&#x51CF;&#x4E58;&#x9664;&#x548C;&#x53D6;&#x6A21;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><code>models.Book.objects.filter(commnet_num__lt=F(&apos;keep_num&apos;)*2)</code></p>
+<p>&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;F&#x51FD;&#x6570;,&#x6BD4;&#x5982;&#x5C06;&#x6BCF;&#x4E00;&#x672C;&#x4E66;&#x7684;&#x4EF7;&#x683C;&#x63D0;&#x9AD8;30&#x5143;</p>
+<p><code>models.Book.objects.all().update(price=F(&quot;price&quot;)+30)</code>
+&#x5F15;&#x7533;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x4FEE;&#x6539;char&#x5B57;&#x6BB5;&#x548B;&#x529E;&#xFF1F;</p>
+<p>&#x5982;&#xFF1A;&#x628A;&#x6240;&#x6709;&#x4E66;&#x540D;&#x540E;&#x9762;&#x52A0;&#x4E0A;(&#x7B2C;&#x4E00;&#x7248;)</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> django.db.models.functions <span class="hljs-keyword">import</span> Concat
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> django.db.models <span class="hljs-keyword">import</span> Value
+<span class="hljs-meta">&gt;&gt;&gt; </span>models.Book.objects.all().update(title=Concat(F(<span class="hljs-string">&quot;title&quot;</span>), Value(<span class="hljs-string">&quot;(&quot;</span>), Value(<span class="hljs-string">&quot;&#x7B2C;&#x4E00;&#x7248;&quot;</span>), Value(<span class="hljs-string">&quot;)&quot;</span>)))
+</code></pre>
+<h3 id="q&#x67E5;&#x8BE2;"><a name="q&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#q&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>Q&#x67E5;&#x8BE2;</h3>
+<p>filter() &#x7B49;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x67E5;&#x8BE2;&#x90FD;&#x662F;&#x4E00;&#x8D77;&#x8FDB;&#x884C;&#x201C;AND&#x201D; &#x7684;&#x3002; &#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x6267;&#x884C;&#x66F4;&#x590D;&#x6742;&#x7684;&#x67E5;&#x8BE2;&#xFF08;&#x4F8B;&#x5982;OR&#x8BED;&#x53E5;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Q&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x793A;&#x4F8B;1&#xFF1A;</p>
+<p>&#x67E5;&#x8BE2;&#x4F5C;&#x8005;&#x540D;&#x662F;&#x5C0F;&#x4ED9;&#x5973;&#x6216;&#x5C0F;&#x9B54;&#x5973;&#x7684;</p>
+<p><code>models.Book.objects.filter(Q(authors__name=&quot;&#x5C0F;&#x4ED9;&#x5973;&quot;)|Q(authors__name=&quot;&#x5C0F;&#x9B54;&#x5973;&quot;))</code></p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&amp; &#x548C;|  &#x64CD;&#x4F5C;&#x7B26;&#x4EE5;&#x53CA;&#x4F7F;&#x7528;&#x62EC;&#x53F7;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x6765;&#x7F16;&#x5199;&#x4EFB;&#x610F;&#x590D;&#x6742;&#x7684;Q &#x5BF9;&#x8C61;&#x3002;&#x540C;&#x65F6;&#xFF0C;Q &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;~ &#x64CD;&#x4F5C;&#x7B26;&#x53D6;&#x53CD;&#xFF0C;&#x8FD9;&#x5141;&#x8BB8;&#x7EC4;&#x5408;&#x6B63;&#x5E38;&#x7684;&#x67E5;&#x8BE2;&#x548C;&#x53D6;&#x53CD;(NOT) &#x67E5;&#x8BE2;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;&#x67E5;&#x8BE2;&#x4F5C;&#x8005;&#x540D;&#x5B57;&#x662F;&#x5C0F;&#x4ED9;&#x5973;&#x5E76;&#x4E14;&#x4E0D;&#x662F;2018&#x5E74;&#x51FA;&#x7248;&#x7684;&#x4E66;&#x7684;&#x4E66;&#x540D;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Book.objects.filter(Q(author__name=<span class="hljs-string">&quot;&#x5C0F;&#x4ED9;&#x5973;&quot;</span>) &amp; ~Q(publish_date__year=<span class="hljs-number">2018</span>)).values_list(<span class="hljs-string">&quot;title&quot;</span>)
+&lt;QuerySet [(<span class="hljs-string">&apos;&#x756A;&#x8304;&#x7269;&#x8BED;&apos;</span>,)]&gt;
+</code></pre>
+<p>&#x67E5;&#x8BE2;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x6DF7;&#x5408;&#x4F7F;&#x7528;Q &#x5BF9;&#x8C61;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x3002;&#x6240;&#x6709;&#x63D0;&#x4F9B;&#x7ED9;&#x67E5;&#x8BE2;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#xFF08;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x6216;Q &#x5BF9;&#x8C61;&#xFF09;&#x90FD;&#x5C06;&quot;AND&#x201D;&#x5728;&#x4E00;&#x8D77;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;Q &#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x4F4D;&#x4E8E;&#x6240;&#x6709;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x524D;&#x9762;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;&#x67E5;&#x8BE2;&#x51FA;&#x7248;&#x5E74;&#x4EFD;&#x662F;2017&#x6216;2018&#xFF0C;&#x4E66;&#x540D;&#x4E2D;&#x5E26;&#x7269;&#x8BED;&#x7684;&#x6240;&#x6709;&#x4E66;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>models.Book.objects.filter(Q(publish_date__year=<span class="hljs-number">2018</span>) | Q(publish_date__year=<span class="hljs-number">2017</span>), title__contains=<span class="hljs-string">&quot;&#x7269;&#x8BED;&quot;</span>)
+&lt;QuerySet [&lt;Book: &#x756A;&#x8304;&#x7269;&#x8BED;&gt;, &lt;Book: &#x9999;&#x8549;&#x7269;&#x8BED;&gt;, &lt;Book: &#x6A58;&#x5B50;&#x7269;&#x8BED;&gt;]&gt;
+</code></pre>
+<h2 id="&#x4E8B;&#x52A1;"><a name="&#x4E8B;&#x52A1;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x52A1;</h2>
+<p>&#x5BFC;&#x5165; <code>from django.db import transaction</code></p>
+<p>&#x4F7F;&#x7528; <code>with transaction.atomic():</code>  &#x4EE3;&#x7801;&#x5757;&#x5305;&#x88F9;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    os.environ.setdefault(<span class="hljs-string">&quot;DJANGO_SETTINGS_MODULE&quot;</span>, <span class="hljs-string">&quot;BMS.settings&quot;</span>)
+    <span class="hljs-keyword">import</span> django
+    django.setup()
+
+    <span class="hljs-keyword">import</span> datetime
+    <span class="hljs-keyword">from</span> app01 <span class="hljs-keyword">import</span> models
+
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> transaction
+        <span class="hljs-keyword">with</span> transaction.atomic():
+            new_publisher = models.Publisher.objects.create(name=<span class="hljs-string">&quot;&#x706B;&#x661F;&#x51FA;&#x7248;&#x793E;&quot;</span>)
+            models.Book.objects.create(title=<span class="hljs-string">&quot;&#x6A58;&#x5B50;&#x7269;&#x8BED;&quot;</span>, publish_date=datetime.date.today(), publisher_id=<span class="hljs-number">10</span>)  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x51FA;&#x7248;&#x793E;id</span>
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        print(str(e))
+</code></pre>
+<h2 id="django-orm&#x6267;&#x884C;&#x539F;&#x751F;sql"><a name="django-orm&#x6267;&#x884C;&#x539F;&#x751F;sql" class="anchor-navigation-ex-anchor" href="#django-orm&#x6267;&#x884C;&#x539F;&#x751F;sql"><i class="fa fa-link" aria-hidden="true"></i></a>Django ORM&#x6267;&#x884C;&#x539F;&#x751F;SQL</h2>
+<h3 id="&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;sql&#x8BED;&#x53E5;"><a name="&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;sql&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;sql&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;extra&#x5199;&#x5165;&#x539F;&#x751F;SQL&#x8BED;&#x53E5;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># extra</span>
+<span class="hljs-comment"># &#x5728;QuerySet&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5B50;&#x8BED;&#x53E5;</span>
+<span class="hljs-comment"># extra(self, select=None, where=None, params=None, tables=None, order_by=None, select_params=None)</span>
+
+<span class="hljs-comment"># select&#x548C;select_params&#x662F;&#x4E00;&#x7EC4;&#xFF0C;where&#x548C;params&#x662F;&#x4E00;&#x7EC4;&#xFF0C;tables&#x7528;&#x6765;&#x8BBE;&#x7F6E;from&#x54EA;&#x4E2A;&#x8868;</span>
+<span class="hljs-comment"># Entry.objects.extra(select={&apos;new_id&apos;: &quot;select col from sometable where othercol &gt; %s&quot;}, select_params=(1,))</span>
+<span class="hljs-comment"># Entry.objects.extra(where=[&apos;headline=%s&apos;], params=[&apos;Lennon&apos;])</span>
+<span class="hljs-comment"># Entry.objects.extra(where=[&quot;foo=&apos;a&apos; OR bar = &apos;a&apos;&quot;, &quot;baz = &apos;a&apos;&quot;])</span>
+<span class="hljs-comment"># Entry.objects.extra(select={&apos;new_id&apos;: &quot;select id from tb where id &gt; %s&quot;}, select_params=(1,), order_by=[&apos;-nid&apos;])</span>
+
+&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;
+models.UserInfo.objects.extra(
+                    select={<span class="hljs-string">&apos;newid&apos;</span>:<span class="hljs-string">&apos;select count(1) from app01_usertype where id&gt;%s&apos;</span>},
+                    select_params=[<span class="hljs-number">1</span>,],
+                    where = [<span class="hljs-string">&apos;age&gt;%s&apos;</span>],
+                    params=[<span class="hljs-number">18</span>,],
+                    order_by=[<span class="hljs-string">&apos;-age&apos;</span>],
+                    tables=[<span class="hljs-string">&apos;app01_usertype&apos;</span>]
+                )
+                <span class="hljs-string">&quot;&quot;&quot;
+                select 
+                    app01_userinfo.id,
+                    (select count(1) from app01_usertype where id&gt;1) as newid
+                from app01_userinfo,app01_usertype
+                where 
+                    app01_userinfo.age &gt; 18
+                order by 
+                    app01_userinfo.age desc
+                &quot;&quot;&quot;</span>
+
+
+<span class="hljs-comment"># &#x6267;&#x884C;&#x539F;&#x751F;SQL</span>
+<span class="hljs-comment"># &#x66F4;&#x9AD8;&#x7075;&#x6D3B;&#x5EA6;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;&#x539F;&#x751F;SQL&#x8BED;&#x53E5;</span>
+<span class="hljs-comment"># from django.db import connection, connections</span>
+<span class="hljs-comment"># cursor = connection.cursor()  # cursor = connections[&apos;default&apos;].cursor()</span>
+<span class="hljs-comment"># cursor.execute(&quot;&quot;&quot;SELECT * from auth_user where id = %s&quot;&quot;&quot;, [1])</span>
+<span class="hljs-comment"># row = cursor.fetchone()</span>
+</code></pre>
+<h3 id="queryset&#x65B9;&#x6CD5;&#x5927;&#x5168;"><a name="queryset&#x65B9;&#x6CD5;&#x5927;&#x5168;" class="anchor-navigation-ex-anchor" href="#queryset&#x65B9;&#x6CD5;&#x5927;&#x5168;"><i class="fa fa-link" aria-hidden="true"></i></a>QuerySet&#x65B9;&#x6CD5;&#x5927;&#x5168;</h3>
+<pre><code class="lang-python">##################################################################
+# PUBLIC METHODS THAT ALTER ATTRIBUTES AND RETURN A NEW QUERYSET #
+##################################################################
+
+def all(self)
+    # &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;
+
+def filter(self, *args, **kwargs)
+    # &#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+    # &#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;&#x53C2;&#x6570;&#xFF0C;&#x5B57;&#x5178;&#xFF0C;Q
+
+def exclude(self, *args, **kwargs)
+    # &#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+    # &#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;&#x53C2;&#x6570;&#xFF0C;&#x5B57;&#x5178;&#xFF0C;Q
+
+def select_related(self, *fields)
+
+    &#x6027;`&#x80FD;` &#x673A;&#x5173;&#xFF1A;&#x8868;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;join&#x8FDE;&#x8868;&#x64CD;&#x4F5C;&#xFF0C;&#x4E00;&#x6B21;&#x6027;&#x83B7;&#x53D6;&#x5173;&#x8054;&#x7684;&#x6570;&#x636E;&#x3002;
+
+    `&#x603B;&#x7ED3;&#xFF1A;
+    1. select_related&#x4E3B;&#x8981;&#x9488;&#x4E00;&#x5BF9;&#x4E00;&#x548C;&#x591A;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;
+    2. select_related&#x4F7F;&#x7528;SQL&#x7684;JOIN&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF0C;&#x901A;&#x8FC7;&#x51CF;&#x5C11;SQL&#x67E5;&#x8BE2;&#x7684;&#x6B21;&#x6570;&#x6765;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3001;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;`
+
+def prefetch_related(self, *lookups)
+    `&#x6027;&#x80FD;&#x76F8;&#x5173;&#xFF1A;&#x591A;&#x8868;&#x8FDE;&#x8868;&#x64CD;&#x4F5C;&#x65F6;&#x901F;&#x5EA6;&#x4F1A;&#x6162;&#xFF0C;&#x4F7F;&#x7528;&#x5176;&#x6267;&#x884C;&#x591A;&#x6B21;SQL&#x67E5;&#x8BE2;&#x5728;Python&#x4EE3;&#x7801;&#x4E2D;&#x5B9E;&#x73B0;&#x8FDE;&#x8868;&#x64CD;&#x4F5C;&#x3002;`
+
+    `&#x603B;&#x7ED3;&#xFF1A;
+    1. &#x5BF9;&#x4E8E;&#x591A;&#x5BF9;&#x591A;&#x5B57;&#x6BB5;&#xFF08;ManyToManyField&#xFF09;&#x548C;&#x4E00;&#x5BF9;&#x591A;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;prefetch_related()&#x6765;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002; 
+    2. prefetch_related()&#x7684;&#x4F18;&#x5316;&#x65B9;&#x5F0F;&#x662F;&#x5206;&#x522B;&#x67E5;&#x8BE2;&#x6BCF;&#x4E2A;&#x8868;&#xFF0C;&#x7136;&#x540E;&#x7528;Python&#x5904;&#x7406;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;
+
+def annotate(self, *args, **kwargs)
+    # &#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x805A;&#x5408;group by&#x67E5;&#x8BE2;
+
+    from django.db.models import Count, Avg, Max, Min, Sum
+
+    v = models.UserInfo.objects.values(&apos;u_id&apos;).annotate(uid=Count(&apos;u_id&apos;))
+    # SELECT u_id, COUNT(ui) AS `uid` FROM UserInfo GROUP BY u_id
+
+    v = models.UserInfo.objects.values(&apos;u_id&apos;).annotate(uid=Count(&apos;u_id&apos;)).filter(uid__gt=1)
+    # SELECT u_id, COUNT(ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) &gt; 1
+
+    v = models.UserInfo.objects.values(&apos;u_id&apos;).annotate(uid=Count(&apos;u_id&apos;,distinct=True)).filter(uid__gt=1)
+    # SELECT u_id, COUNT( DISTINCT ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) &gt; 1
+
+def distinct(self, *field_names)
+    # &#x7528;&#x4E8E;distinct&#x53BB;&#x91CD;
+    models.UserInfo.objects.values(&apos;nid&apos;).distinct()
+    # select distinct nid from userinfo
+
+    &#x6CE8;&#xFF1A;&#x53EA;&#x6709;&#x5728;PostgreSQL&#x4E2D;&#x624D;&#x80FD;&#x4F7F;&#x7528;distinct&#x8FDB;&#x884C;&#x53BB;&#x91CD;
+
+def order_by(self, *field_names)
+    # &#x7528;&#x4E8E;&#x6392;&#x5E8F;
+    models.UserInfo.objects.all().order_by(&apos;-id&apos;,&apos;age&apos;)
+
+def extra(self, select=None, where=None, params=None, tables=None, order_by=None, select_params=None)
+    # &#x6784;&#x9020;&#x989D;&#x5916;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x6216;&#x8005;&#x6620;&#x5C04;&#xFF0C;&#x5982;&#xFF1A;&#x5B50;&#x67E5;&#x8BE2;
+
+    Entry.objects.extra(select={&apos;new_id&apos;: &quot;select col from sometable where othercol &gt; %s&quot;}, select_params=(1,))
+    Entry.objects.extra(where=[&apos;headline=%s&apos;], params=[&apos;Lennon&apos;])
+    Entry.objects.extra(where=[&quot;foo=&apos;a&apos; OR bar = &apos;a&apos;&quot;, &quot;baz = &apos;a&apos;&quot;])
+    Entry.objects.extra(select={&apos;new_id&apos;: &quot;select id from tb where id &gt; %s&quot;}, select_params=(1,), order_by=[&apos;-nid&apos;])
+
+ def reverse(self):
+    # &#x5012;&#x5E8F;
+    models.UserInfo.objects.all().order_by(&apos;-nid&apos;).reverse()
+    # &#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x5B58;&#x5728;order_by&#xFF0C;reverse&#x5219;&#x662F;&#x5012;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x4E2A;&#x6392;&#x5E8F;&#x5219;&#x4E00;&#x4E00;&#x5012;&#x5E8F;
+
+
+ def defer(self, *fields):
+    models.UserInfo.objects.defer(&apos;username&apos;,&apos;id&apos;)
+    &#x6216;
+    models.UserInfo.objects.filter(...).defer(&apos;username&apos;,&apos;id&apos;)
+    #&#x6620;&#x5C04;&#x4E2D;&#x6392;&#x9664;&#x67D0;&#x5217;&#x6570;&#x636E;
+
+ def only(self, *fields):
+    #&#x4EC5;&#x53D6;&#x67D0;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;
+     models.UserInfo.objects.only(&apos;username&apos;,&apos;id&apos;)
+     &#x6216;
+     models.UserInfo.objects.filter(...).only(&apos;username&apos;,&apos;id&apos;)
+
+ def using(self, alias):
+     &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;&#x522B;&#x540D;&#xFF08;setting&#x4E2D;&#x7684;&#x8BBE;&#x7F6E;&#xFF09;
+
+
+##################################################
+# PUBLIC METHODS THAT RETURN A QUERYSET SUBCLASS #
+##################################################
+
+def raw(self, raw_query, params=None, translations=None, using=None):
+    # &#x6267;&#x884C;&#x539F;&#x751F;SQL
+    models.UserInfo.objects.raw(&apos;select * from userinfo&apos;)
+
+    # &#x5982;&#x679C;SQL&#x662F;&#x5176;&#x4ED6;&#x8868;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5C06;&#x540D;&#x5B57;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;UserInfo&#x5BF9;&#x8C61;&#x7684;&#x4E3B;&#x952E;&#x5217;&#x540D;
+    models.UserInfo.objects.raw(&apos;select id as nid from &#x5176;&#x4ED6;&#x8868;&apos;)
+
+    # &#x4E3A;&#x539F;&#x751F;SQL&#x8BBE;&#x7F6E;&#x53C2;&#x6570;
+    models.UserInfo.objects.raw(&apos;select id as nid from userinfo where nid&gt;%s&apos;, params=[12,])
+
+    # &#x5C06;&#x83B7;&#x53D6;&#x7684;&#x5230;&#x5217;&#x540D;&#x8F6C;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x5217;&#x540D;
+    name_map = {&apos;first&apos;: &apos;first_name&apos;, &apos;last&apos;: &apos;last_name&apos;, &apos;bd&apos;: &apos;birth_date&apos;, &apos;pk&apos;: &apos;id&apos;}
+    Person.objects.raw(&apos;SELECT * FROM some_other_table&apos;, translations=name_map)
+
+    # &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;
+    models.UserInfo.objects.raw(&apos;select * from userinfo&apos;, using=&quot;default&quot;)
+
+    ################### &#x539F;&#x751F;SQL ###################
+    from django.db import connection, connections
+    cursor = connection.cursor()  # cursor = connections[&apos;default&apos;].cursor()
+    cursor.execute(&quot;&quot;&quot;SELECT * from auth_user where id = %s&quot;&quot;&quot;, [1])
+    row = cursor.fetchone() # fetchall()/fetchmany(..)
+
+
+def values(self, *fields):
+    # &#x83B7;&#x53D6;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x4E3A;&#x5B57;&#x5178;&#x683C;&#x5F0F;
+
+def values_list(self, *fields, **kwargs):
+    # &#x83B7;&#x53D6;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x4E3A;&#x5143;&#x7956;
+
+def dates(self, field_name, kind, order=&apos;ASC&apos;):
+    # &#x6839;&#x636E;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x67D0;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x67E5;&#x627E;&#x5E76;&#x622A;&#x53D6;&#x6307;&#x5B9A;&#x5185;&#x5BB9;
+    # kind&#x53EA;&#x80FD;&#x662F;&#xFF1A;&quot;year&quot;&#xFF08;&#x5E74;&#xFF09;, &quot;month&quot;&#xFF08;&#x5E74;-&#x6708;&#xFF09;, &quot;day&quot;&#xFF08;&#x5E74;-&#x6708;-&#x65E5;&#xFF09;
+    # order&#x53EA;&#x80FD;&#x662F;&#xFF1A;&quot;ASC&quot;  &quot;DESC&quot;
+    # &#x5E76;&#x83B7;&#x53D6;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x65F6;&#x95F4;
+        - year : &#x5E74;-01-01
+        - month: &#x5E74;-&#x6708;-01
+        - day  : &#x5E74;-&#x6708;-&#x65E5;
+
+    models.DatePlus.objects.dates(&apos;ctime&apos;,&apos;day&apos;,&apos;DESC&apos;)
+
+def datetimes(self, field_name, kind, order=&apos;ASC&apos;, tzinfo=None):
+    # &#x6839;&#x636E;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x67D0;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x67E5;&#x627E;&#x5E76;&#x622A;&#x53D6;&#x6307;&#x5B9A;&#x5185;&#x5BB9;&#xFF0C;&#x5C06;&#x65F6;&#x95F4;&#x8F6C;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x65F6;&#x533A;&#x65F6;&#x95F4;
+    # kind&#x53EA;&#x80FD;&#x662F; &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;, &quot;minute&quot;, &quot;second&quot;
+    # order&#x53EA;&#x80FD;&#x662F;&#xFF1A;&quot;ASC&quot;  &quot;DESC&quot;
+    # tzinfo&#x65F6;&#x533A;&#x5BF9;&#x8C61;
+    models.DDD.objects.datetimes(&apos;ctime&apos;,&apos;hour&apos;,tzinfo=pytz.UTC)
+    models.DDD.objects.datetimes(&apos;ctime&apos;,&apos;hour&apos;,tzinfo=pytz.timezone(&apos;Asia/Shanghai&apos;))
+
+    &quot;&quot;&quot;
+    pip3 install pytz
+    import pytz
+    pytz.all_timezones
+    pytz.timezone(&#x2018;Asia/Shanghai&#x2019;)
+    &quot;&quot;&quot;
+
+def none(self):
+    # &#x7A7A;QuerySet&#x5BF9;&#x8C61;
+
+
+####################################
+# METHODS THAT DO DATABASE QUERIES #
+####################################
+
+def aggregate(self, *args, **kwargs):
+   # &#x805A;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x83B7;&#x53D6;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x805A;&#x5408;&#x7ED3;&#x679C;
+   from django.db.models import Count, Avg, Max, Min, Sum
+   result = models.UserInfo.objects.aggregate(k=Count(&apos;u_id&apos;, distinct=True), n=Count(&apos;nid&apos;))
+   ===&gt; {&apos;k&apos;: 3, &apos;n&apos;: 4}
+
+def count(self):
+   # &#x83B7;&#x53D6;&#x4E2A;&#x6570;
+
+def get(self, *args, **kwargs):
+   # &#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;
+
+def create(self, **kwargs):
+   # &#x521B;&#x5EFA;&#x5BF9;&#x8C61;
+
+def bulk_create(self, objs, batch_size=None):
+    # &#x6279;&#x91CF;&#x63D2;&#x5165;
+    # batch_size&#x8868;&#x793A;&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x7684;&#x4E2A;&#x6570;
+    objs = [
+        models.DDD(name=&apos;r11&apos;),
+        models.DDD(name=&apos;r22&apos;)
+    ]
+    models.DDD.objects.bulk_create(objs, 10)
+
+def get_or_create(self, defaults=None, **kwargs):
+    # &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x521B;&#x5EFA;
+    # defaults &#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x7684;&#x503C;
+    obj, created = models.UserInfo.objects.get_or_create(username=&apos;root1&apos;, defaults={&apos;email&apos;: &apos;1111111&apos;,&apos;u_id&apos;: 2, &apos;t_id&apos;: 2})
+
+def update_or_create(self, defaults=None, **kwargs):
+    # &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x66F4;&#x65B0;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x521B;&#x5EFA;
+    # defaults &#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x65F6;&#x6216;&#x66F4;&#x65B0;&#x65F6;&#x7684;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;
+    obj, created = models.UserInfo.objects.update_or_create(username=&apos;root1&apos;, defaults={&apos;email&apos;: &apos;1111111&apos;,&apos;u_id&apos;: 2, &apos;t_id&apos;: 1})
+
+def first(self):
+   # &#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;
+
+def last(self):
+   # &#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;
+
+def in_bulk(self, id_list=None):
+   # &#x6839;&#x636E;&#x4E3B;&#x952E;ID&#x8FDB;&#x884C;&#x67E5;&#x627E;
+   id_list = [11,21,31]
+   models.DDD.objects.in_bulk(id_list)
+
+def delete(self):
+   # &#x5220;&#x9664;
+
+def update(self, **kwargs):
+    # &#x66F4;&#x65B0;
+
+def exists(self):
+   # &#x662F;&#x5426;&#x6709;&#x7ED3;&#x679C;
+</code></pre>
+<h2 id="django&#x7EC8;&#x7AEF;&#x6253;&#x5370;sql&#x8BED;&#x53E5;"><a name="django&#x7EC8;&#x7AEF;&#x6253;&#x5370;sql&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#django&#x7EC8;&#x7AEF;&#x6253;&#x5370;sql&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>Django&#x7EC8;&#x7AEF;&#x6253;&#x5370;SQL&#x8BED;&#x53E5;</h2>
+<p>&#x5728;Django&#x9879;&#x76EE;&#x7684;settings.py&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x590D;&#x5236;&#x7C98;&#x8D34;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python">LOGGING = {
+    <span class="hljs-string">&apos;version&apos;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&apos;disable_existing_loggers&apos;</span>: <span class="hljs-keyword">False</span>,
+    <span class="hljs-string">&apos;handlers&apos;</span>: {
+        <span class="hljs-string">&apos;console&apos;</span>:{
+            <span class="hljs-string">&apos;level&apos;</span>:<span class="hljs-string">&apos;DEBUG&apos;</span>,
+            <span class="hljs-string">&apos;class&apos;</span>:<span class="hljs-string">&apos;logging.StreamHandler&apos;</span>,
+        },
+    },
+    <span class="hljs-string">&apos;loggers&apos;</span>: {
+        <span class="hljs-string">&apos;django.db.backends&apos;</span>: {
+            <span class="hljs-string">&apos;handlers&apos;</span>: [<span class="hljs-string">&apos;console&apos;</span>],
+            <span class="hljs-string">&apos;propagate&apos;</span>: <span class="hljs-keyword">True</span>,
+            <span class="hljs-string">&apos;level&apos;</span>:<span class="hljs-string">&apos;DEBUG&apos;</span>,
+        },
+    }
+}
+</code></pre>
+<p>&#x5373;&#x4E3A;&#x4F60;&#x7684;Django&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x4E0A;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;django.db.backends&#x7684;logger&#x5B9E;&#x4F8B;&#x5373;&#x53EF;&#x67E5;&#x770B;&#x7FFB;&#x8BD1;&#x540E;&#x7684;SQL&#x8BED;&#x53E5;&#x3002; </p>
+<h2 id="&#x5728;python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;django&#x73AF;&#x5883;"><a name="&#x5728;python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;django&#x73AF;&#x5883;" class="anchor-navigation-ex-anchor" href="#&#x5728;python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;django&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;Python&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;Django&#x73AF;&#x5883;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    os.environ.setdefault(<span class="hljs-string">&quot;DJANGO_SETTINGS_MODULE&quot;</span>, <span class="hljs-string">&quot;BMS.settings&quot;</span>)
+    <span class="hljs-keyword">import</span> django
+    django.setup()
+
+    <span class="hljs-keyword">from</span> app01 <span class="hljs-keyword">import</span> models
+
+    books = models.Book.objects.all()
+    print(books)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="09.Django路由系统.html" class="navigation navigation-prev " aria-label="Previous page: Django路由系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="111.ORM版学员管理系统.html" class="navigation navigation-next " aria-label="Next page: ORM版学员管理系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ORM相关操作","level":"1.4.10","depth":2,"next":{"title":"ORM版学员管理系统","level":"1.4.11","depth":2,"path":"python/Django/111.ORM版学员管理系统.md","ref":"python/Django/111.ORM版学员管理系统.md","articles":[]},"previous":{"title":"Django路由系统","level":"1.4.9","depth":2,"path":"python/Django/09.Django路由系统.md","ref":"python/Django/09.Django路由系统.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"python/Django/10.ORM相关操作.md","mtime":"2018-06-12T01:20:57.028Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

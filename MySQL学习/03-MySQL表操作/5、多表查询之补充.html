@@ -1,0 +1,1241 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5、多表查询之补充 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../04-MySQL数据操作/" />
+    
+    
+    <link rel="prev" href="4、完整性约束.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-初识数据库.html">
+            
+                <a href="../01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-MySQL库操作.html">
+            
+                <a href="../02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="1、MySQL表操作.html">
+            
+                <a href="1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="2、MySQL存储引擎.html">
+            
+                <a href="2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="3、MySQLl数据类型.html">
+            
+                <a href="3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="4、完整性约束.html">
+            
+                <a href="4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.5" data-path="5、多表查询之补充.html">
+            
+                <a href="5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../04-MySQL数据操作/">
+            
+                <a href="../04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Python3连接MySQL.html">
+            
+                <a href="../Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../python/">
+            
+                <a href="../../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../python/Django/01.Django初识.html">
+            
+                <a href="../../python/Django/01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                <a href="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../python/Django/03.HTTP协议.html">
+            
+                <a href="../../python/Django/03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../python/Django/04.Django框架简介.html">
+            
+                <a href="../../python/Django/04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../python/Django/05.Django的视图.html">
+            
+                <a href="../../python/Django/05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../python/Django/06.Django的路由系统.html">
+            
+                <a href="../../python/Django/06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../python/Django/07.Django模板系统.html">
+            
+                <a href="../../python/Django/07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../python/Django/08.Django模型ORM.html">
+            
+                <a href="../../python/Django/08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../python/Django/09.Django路由系统.html">
+            
+                <a href="../../python/Django/09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../python/Django/10.ORM相关操作.html">
+            
+                <a href="../../python/Django/10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../python/Django/111.ORM版学员管理系统.html">
+            
+                <a href="../../python/Django/111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../python/Django/11.Form组件.html">
+            
+                <a href="../../python/Django/11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../python/Django/博客项目点赞与灭操作.html">
+            
+                <a href="../../python/Django/博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../python/Django/博客项目评论.html">
+            
+                <a href="../../python/Django/博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../python/lufei-payment/luffy结算中心.html">
+            
+                <a href="../../python/lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >5、多表查询之补充</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#mysql-&#x4E4B;-&#x591A;&#x8868;&#x67E5;&#x8BE2;"><b></b>MySQL &#x4E4B; &#x591A;&#x8868;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;"><b></b>&#x4E00;.&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><b></b>&#x4E8C; &#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;"><b></b>&#x4E09; &#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-&#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;"><b></b>&#x56DB; &#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-&#x5176;&#x4ED6;&#x67E5;&#x8BE2;"><b></b>&#x4E94; &#x5176;&#x4ED6;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x516D;--sql&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x91CD;&#x70B9;"><b></b>&#x516D;  SQL&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;(&#x91CD;&#x70B9;*)</a></li><li><span class="title-icon "></span><a href="#&#x4E03;-&#x5916;&#x952E;&#x7EA6;&#x675F;"><b></b>&#x4E03; &#x5916;&#x952E;&#x7EA6;&#x675F;</a></li><li><span class="title-icon "></span><a href="#&#x516B;-&#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;"><b></b>&#x516B; &#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x4E5D;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x4E5D;.&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;"><b></b>&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;:</a></li></ul></ul></div><a href="#mysql-&#x4E4B;-&#x591A;&#x8868;&#x67E5;&#x8BE2;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mysql-&#x4E4B;-&#x591A;&#x8868;&#x67E5;&#x8BE2;"><a name="mysql-&#x4E4B;-&#x591A;&#x8868;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#mysql-&#x4E4B;-&#x591A;&#x8868;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>MySQL &#x4E4B; &#x591A;&#x8868;&#x67E5;&#x8BE2;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#mysql-&#x4E4B;-&#x591A;&#x8868;&#x67E5;&#x8BE2;"><b></b>MySQL &#x4E4B; &#x591A;&#x8868;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;"><b></b>&#x4E00;.&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><b></b>&#x4E8C; &#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;"><b></b>&#x4E09; &#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-&#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;"><b></b>&#x56DB; &#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-&#x5176;&#x4ED6;&#x67E5;&#x8BE2;"><b></b>&#x4E94; &#x5176;&#x4ED6;&#x67E5;&#x8BE2;</a></li><li><span class="title-icon "></span><a href="#&#x516D;--sql&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x91CD;&#x70B9;"><b></b>&#x516D;  SQL&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;(&#x91CD;&#x70B9;*)</a></li><li><span class="title-icon "></span><a href="#&#x4E03;-&#x5916;&#x952E;&#x7EA6;&#x675F;"><b></b>&#x4E03; &#x5916;&#x952E;&#x7EA6;&#x675F;</a></li><li><span class="title-icon "></span><a href="#&#x516B;-&#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;"><b></b>&#x516B; &#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x4E5D;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x4E5D;.&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;"><b></b>&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;:</a></li></ul></ul></div>
+
+<h2 id="&#x4E00;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;"><a name="&#x4E00;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;.&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-sql">#&#x521B;&#x5EFA;&#x90E8;&#x95E8;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> dept (
+    did <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> auto_increment PRIMARY <span class="hljs-keyword">KEY</span>,
+    dname <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&apos;&#x90E8;&#x95E8;&#x540D;&#x79F0;&apos;</span>
+)<span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">INNODB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">charset</span> utf8;
+
+
+#&#x6DFB;&#x52A0;&#x90E8;&#x95E8;&#x6570;&#x636E;
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`dept`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-string">&apos;&#x6559;&#x5B66;&#x90E8;&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`dept`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-string">&apos;&#x9500;&#x552E;&#x90E8;&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`dept`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;3&apos;</span>, <span class="hljs-string">&apos;&#x5E02;&#x573A;&#x90E8;&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`dept`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;4&apos;</span>, <span class="hljs-string">&apos;&#x4EBA;&#x4E8B;&#x90E8;&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`dept`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-string">&apos;&#x9F13;&#x52B1;&#x90E8;&apos;</span>);
+
+<span class="hljs-comment">-- &#x521B;&#x5EFA;&#x4EBA;&#x5458;</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`person`</span>;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`person`</span> (
+  <span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+  <span class="hljs-string">`name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`age`</span> tinyint(<span class="hljs-number">4</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;0&apos;</span>,
+  <span class="hljs-string">`sex`</span> enum(<span class="hljs-string">&apos;&#x7537;&apos;</span>,<span class="hljs-string">&apos;&#x5973;&apos;</span>,<span class="hljs-string">&apos;&#x4EBA;&#x5996;&apos;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x4EBA;&#x5996;&apos;</span>,
+  <span class="hljs-string">`salary`</span> <span class="hljs-built_in">decimal</span>(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;250.00&apos;</span>,
+  <span class="hljs-string">`hire_date`</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`dept_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>,
+  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>)
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> AUTO_INCREMENT=<span class="hljs-number">13</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8;
+
+<span class="hljs-comment">-- &#x6DFB;&#x52A0;&#x4EBA;&#x5458;&#x6570;&#x636E;</span>
+
+<span class="hljs-comment">-- &#x6559;&#x5B66;&#x90E8;</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-string">&apos;alex&apos;</span>, <span class="hljs-string">&apos;28&apos;</span>, <span class="hljs-string">&apos;&#x4EBA;&#x5996;&apos;</span>, <span class="hljs-string">&apos;53000.00&apos;</span>, <span class="hljs-string">&apos;2010-06-21&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-string">&apos;wupeiqi&apos;</span>, <span class="hljs-string">&apos;23&apos;</span>, <span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;8000.00&apos;</span>, <span class="hljs-string">&apos;2011-02-21&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;3&apos;</span>, <span class="hljs-string">&apos;egon&apos;</span>, <span class="hljs-string">&apos;30&apos;</span>, <span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-string">&apos;6500.00&apos;</span>, <span class="hljs-string">&apos;2015-06-21&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;4&apos;</span>, <span class="hljs-string">&apos;jingnvshen&apos;</span>, <span class="hljs-string">&apos;18&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;6680.00&apos;</span>, <span class="hljs-string">&apos;2014-06-21&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>);
+
+<span class="hljs-comment">-- &#x9500;&#x552E;&#x90E8;</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-string">&apos;&#x6B6A;&#x6B6A;&apos;</span>, <span class="hljs-string">&apos;20&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;3000.00&apos;</span>, <span class="hljs-string">&apos;2015-02-21&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;6&apos;</span>, <span class="hljs-string">&apos;&#x661F;&#x661F;&apos;</span>, <span class="hljs-string">&apos;20&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;2000.00&apos;</span>, <span class="hljs-string">&apos;2018-01-30&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;7&apos;</span>, <span class="hljs-string">&apos;&#x683C;&#x683C;&apos;</span>, <span class="hljs-string">&apos;20&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;2000.00&apos;</span>, <span class="hljs-string">&apos;2018-02-27&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;8&apos;</span>, <span class="hljs-string">&apos;&#x5468;&#x5468;&apos;</span>, <span class="hljs-string">&apos;20&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;2000.00&apos;</span>, <span class="hljs-string">&apos;2015-06-21&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>);
+
+<span class="hljs-comment">-- &#x5E02;&#x573A;&#x90E8;</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;9&apos;</span>, <span class="hljs-string">&apos;&#x6708;&#x6708;&apos;</span>, <span class="hljs-string">&apos;21&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;4000.00&apos;</span>, <span class="hljs-string">&apos;2014-07-21&apos;</span>, <span class="hljs-string">&apos;3&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;10&apos;</span>, <span class="hljs-string">&apos;&#x5B89;&#x742A;&apos;</span>, <span class="hljs-string">&apos;22&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;4000.00&apos;</span>, <span class="hljs-string">&apos;2015-07-15&apos;</span>, <span class="hljs-string">&apos;3&apos;</span>);
+
+<span class="hljs-comment">-- &#x4EBA;&#x4E8B;&#x90E8;</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;11&apos;</span>, <span class="hljs-string">&apos;&#x5468;&#x660E;&#x6708;&apos;</span>, <span class="hljs-string">&apos;17&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;5000.00&apos;</span>, <span class="hljs-string">&apos;2014-06-21&apos;</span>, <span class="hljs-string">&apos;4&apos;</span>);
+
+<span class="hljs-comment">-- &#x9F13;&#x52B1;&#x90E8;</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`person`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;12&apos;</span>, <span class="hljs-string">&apos;&#x82CD;&#x8001;&#x5E08;&apos;</span>, <span class="hljs-string">&apos;33&apos;</span>, <span class="hljs-string">&apos;&#x5973;&apos;</span>, <span class="hljs-string">&apos;1000000.00&apos;</span>, <span class="hljs-string">&apos;2018-02-21&apos;</span>, <span class="hljs-literal">null</span>);
+</code></pre>
+<pre><code>#&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;
+select  &#x5B57;&#x6BB5;1,&#x5B57;&#x6BB5;2... from &#x8868;1,&#x8868;2... [where &#x6761;&#x4EF6;]
+</code></pre><p><strong>&#x6CE8;&#x610F;: &#x5982;&#x679C;&#x4E0D;&#x52A0;&#x6761;&#x4EF6;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;,&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x6548;&#x679C;,&#x8FD9;&#x79CD;&#x7ED3;&#x679C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A; &#x7B1B;&#x5361;&#x5C14;&#x4E58;&#x79EF;</strong></p>
+<pre><code>#&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x548C;&#x90E8;&#x95E8;&#x6240;&#x6709;&#x4FE1;&#x606F;
+select * from person,dept
+</code></pre><p><strong>&#x7B1B;&#x5361;&#x5C14;&#x4E58;&#x79EF;&#x516C;&#x5F0F; : A&#x8868;&#x4E2D;&#x6570;&#x636E;&#x6761;&#x6570;   *  B&#x8868;&#x4E2D;&#x6570;&#x636E;&#x6761;&#x6570;  = &#x7B1B;&#x5361;&#x5C14;&#x4E58;&#x79EF;.</strong></p>
+<pre><code>mysql&gt; select * from person ,dept;
++----+----------+-----+-----+--------+------+-----+--------+
+| id | name     | age | sex | salary | did  | did | dname  |
++----+----------+-----+-----+--------+------+-----+--------+
+|  1 | alex     |  28 | &#x5973;  |  53000 |    1 |   1 | python |
+|  1 | alex     |  28 | &#x5973;  |  53000 |    1 |   2 | linux  |
+|  1 | alex     |  28 | &#x5973;  |  53000 |    1 |   3 | &#x660E;&#x6559;   |
+|  2 | wupeiqi  |  23 | &#x5973;  |  29000 |    1 |   1 | python |
+|  2 | wupeiqi  |  23 | &#x5973;  |  29000 |    1 |   2 | linux  |
+|  2 | wupeiqi  |  23 | &#x5973;  |  29000 |    1 |   3 | &#x660E;&#x6559;   |
+|  3 | egon     |  30 | &#x7537;  |  27000 |    1 |   1 | python |
+|  3 | egon     |  30 | &#x7537;  |  27000 |    1 |   2 | linux  |
+|  3 | egon     |  30 | &#x7537;  |  27000 |    1 |   3 | &#x660E;&#x6559;   |
+|  4 | oldboy   |  22 | &#x7537;  |      1 |    2 |   1 | python |
+|  4 | oldboy   |  22 | &#x7537;  |      1 |    2 |   2 | linux  |
+|  4 | oldboy   |  22 | &#x7537;  |      1 |    2 |   3 | &#x660E;&#x6559;   |
+|  5 | jinxin   |  33 | &#x5973;  |  28888 |    1 |   1 | python |
+|  5 | jinxin   |  33 | &#x5973;  |  28888 |    1 |   2 | linux  |
+|  5 | jinxin   |  33 | &#x5973;  |  28888 |    1 |   3 | &#x660E;&#x6559;   |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;   |  20 | &#x7537;  |   8000 |    3 |   1 | python |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;   |  20 | &#x7537;  |   8000 |    3 |   2 | linux  |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;   |  20 | &#x7537;  |   8000 |    3 |   3 | &#x660E;&#x6559;   |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;   |  22 | &#x7537;  |   6500 | NULL |   1 | python |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;   |  22 | &#x7537;  |   6500 | NULL |   2 | linux  |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;   |  22 | &#x7537;  |   6500 | NULL |   3 | &#x660E;&#x6559;   |
+|  8 | &#x4E1C;&#x65B9;&#x4E0D;&#x8D25; |  23 | &#x5973;  |  18000 | NULL |   1 | python |
+|  8 | &#x4E1C;&#x65B9;&#x4E0D;&#x8D25; |  23 | &#x5973;  |  18000 | NULL |   2 | linux  |
+|  8 | &#x4E1C;&#x65B9;&#x4E0D;&#x8D25; |  23 | &#x5973;  |  18000 | NULL |   3 | &#x660E;&#x6559;   |
++----+----------+-----+-----+--------+------+-----+--------+
+
+&#x7B1B;&#x5361;&#x5C14;&#x4E58;&#x79EF;&#x793A;&#x4F8B;
+</code></pre><pre><code class="lang-sql">#&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x548C;&#x90E8;&#x95E8;&#x6240;&#x6709;&#x4FE1;&#x606F;
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> person,dept <span class="hljs-keyword">where</span> person.did = dept.did;
+
+#&#x6CE8;&#x610F;: &#x591A;&#x8868;&#x67E5;&#x8BE2;&#x65F6;,&#x4E00;&#x5B9A;&#x8981;&#x627E;&#x5230;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#x76F8;&#x4E92;&#x5173;&#x8054;&#x7684;&#x5B57;&#x6BB5;,&#x5E76;&#x4E14;&#x4F5C;&#x4E3A;&#x6761;&#x4EF6;&#x4F7F;&#x7528;
+</code></pre>
+<pre><code class="lang-sql">mysql&gt; select * from person,dept where person.did = dept.did;
++----+---------+-----+-----+--------+-----+-----+--------+
+| id | name    | age | sex | salary | did | did | dname  |
++----+---------+-----+-----+--------+-----+-----+--------+
+|  1 | alex    |  28 | &#x5973;  |  53000 |   1 |   1 | python |
+|  2 | wupeiqi |  23 | &#x5973;  |  29000 |   1 |   1 | python |
+|  3 | egon    |  30 | &#x7537;  |  27000 |   1 |   1 | python |
+|  4 | oldboy  |  22 | &#x7537;  |      1 |   2 |   2 | linux  |
+|  5 | jinxin  |  33 | &#x5973;  |  28888 |   1 |   1 | python |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;  |  20 | &#x7537;  |   8000 |   3 |   3 | &#x660E;&#x6559;   |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;  |  22 | &#x7537;  |   6500 |   2 |   2 | linux  |
++----+---------+-----+-----+--------+-----+-----+--------+
+rows in set
+</code></pre>
+<p><img src="img1" alt="img1"></p>
+<h2 id="&#x4E8C;-&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><a name="&#x4E8C;-&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C; &#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-sql">#&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;(&#x91CD;&#x70B9;)
+<span class="hljs-keyword">SELECT</span> &#x5B57;&#x6BB5;&#x5217;&#x8868;
+    <span class="hljs-keyword">FROM</span> &#x8868;<span class="hljs-number">1</span>  <span class="hljs-keyword">INNER</span>|<span class="hljs-keyword">LEFT</span>|<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span>  &#x8868;<span class="hljs-number">2</span>
+<span class="hljs-keyword">ON</span> &#x8868;<span class="hljs-number">1.</span>&#x5B57;&#x6BB5; = &#x8868;<span class="hljs-number">2.</span>&#x5B57;&#x6BB5;;
+</code></pre>
+<h4 id="1-&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x53EA;&#x663E;&#x793A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;"><a name="1-&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x53EA;&#x663E;&#x793A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#1-&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x53EA;&#x663E;&#x793A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1 &#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2; (&#x53EA;&#x663E;&#x793A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;)</h4>
+<pre><code>#&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x548C;&#x90E8;&#x95E8;&#x6240;&#x6709;&#x4FE1;&#x606F;
+select * from person inner join dept  on person.did =dept.did;
+</code></pre><p>&#x6548;&#x679C;: &#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;, &#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x4E0E;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;.
+<img src="img2" alt="img2"></p>
+<pre><code class="lang-sql">mysql&gt; select * from person inner join  dept  on  person.did =dept.did;
++----+---------+-----+-----+--------+-----+-----+--------+
+| id | name    | age | sex | salary | did | did | dname  |
++----+---------+-----+-----+--------+-----+-----+--------+
+|  1 | alex    |  28 | &#x5973;  |  53000 |   1 |   1 | python |
+|  2 | wupeiqi |  23 | &#x5973;  |  29000 |   1 |   1 | python |
+|  3 | egon    |  30 | &#x7537;  |  27000 |   1 |   1 | python |
+|  4 | oldboy  |  22 | &#x7537;  |      1 |   2 |   2 | linux  |
+|  5 | jinxin  |  33 | &#x5973;  |  28888 |   1 |   1 | python |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;  |  20 | &#x7537;  |   8000 |   3 |   3 | &#x660E;&#x6559;   |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;  |  22 | &#x7537;  |   6500 |   2 |   2 | linux  |
++----+---------+-----+-----+--------+-----+-----+--------+
+rows in set
+</code></pre>
+<h4 id="2-&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x5DE6;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;"><a name="2-&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x5DE6;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;" class="anchor-navigation-ex-anchor" href="#2-&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x5DE6;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>2 &#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2; (&#x5DE6;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;)</h4>
+<pre><code>#&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x548C;&#x90E8;&#x95E8;&#x6240;&#x6709;&#x4FE1;&#x606F;
+select * from person left join  dept  on  person.did =dept.did;
+</code></pre><p>&#x6548;&#x679C;:&#x4EBA;&#x5458;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5168;&#x90E8;&#x90FD;&#x663E;&#x793A;,&#x800C; &#x90E8;&#x95E8;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x624D;&#x4F1A;&#x663E;&#x793A;,&#x4E0D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x4F1A;&#x4EE5; null &#x8FDB;&#x884C;&#x586B;&#x5145;.
+<img src="img3" alt="img3"></p>
+<pre><code class="lang-sql">mysql&gt; select * from person left join  dept  on  person.did =dept.did;
++----+----------+-----+-----+--------+------+------+--------+
+| id | name     | age | sex | salary | did  | did  | dname  |
++----+----------+-----+-----+--------+------+------+--------+
+|  1 | alex     |  28 | &#x5973;  |  53000 |    1 |    1 | python |
+|  2 | wupeiqi  |  23 | &#x5973;  |  29000 |    1 |    1 | python |
+|  3 | egon     |  30 | &#x7537;  |  27000 |    1 |    1 | python |
+|  5 | jinxin   |  33 | &#x5973;  |  28888 |    1 |    1 | python |
+|  4 | oldboy   |  22 | &#x7537;  |      1 |    2 |    2 | linux  |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;   |  22 | &#x7537;  |   6500 |    2 |    2 | linux  |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;   |  20 | &#x7537;  |   8000 |    3 |    3 | &#x660E;&#x6559;   |
+|  8 | &#x4E1C;&#x65B9;&#x4E0D;&#x8D25; |  23 | &#x5973;  |  18000 | NULL | NULL | NULL   |
++----+----------+-----+-----+--------+------+------+--------+
+rows in set
+</code></pre>
+<h4 id="3-&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x53F3;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;"><a name="3-&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x53F3;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;" class="anchor-navigation-ex-anchor" href="#3-&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;-&#x53F3;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>3 &#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2; (&#x53F3;&#x8FB9;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F18;&#x5148;&#x5168;&#x90E8;&#x663E;&#x793A;)</h4>
+<pre><code>#&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x548C;&#x90E8;&#x95E8;&#x6240;&#x6709;&#x4FE1;&#x606F;
+select * from person right join  dept  on  person.did =dept.did;
+</code></pre><p>&#x6548;&#x679C;:&#x6B63;&#x597D;&#x4E0E;[&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x76F8;&#x53CD;]</p>
+<pre><code>mysql&gt; select * from person right join  dept  on  person.did =dept.did;
++----+---------+-----+-----+--------+-----+-----+--------+
+| id | name    | age | sex | salary | did | did | dname  |
++----+---------+-----+-----+--------+-----+-----+--------+
+|  1 | alex    |  28 | &#x5973;  |  53000 |   1 |   1 | python |
+|  2 | wupeiqi |  23 | &#x5973;  |  29000 |   1 |   1 | python |
+|  3 | egon    |  30 | &#x7537;  |  27000 |   1 |   1 | python |
+|  4 | oldboy  |  22 | &#x7537;  |      1 |   2 |   2 | linux  |
+|  5 | jinxin  |  33 | &#x5973;  |  28888 |   1 |   1 | python |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;  |  20 | &#x7537;  |   8000 |   3 |   3 | &#x660E;&#x6559;   |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;  |  22 | &#x7537;  |   6500 |   2 |   2 | linux  |
++----+---------+-----+-----+--------+-----+-----+--------+
+rows in set
+</code></pre><h4 id="4-&#x5168;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x8868;&#x4E2D;&#x5168;&#x90E8;&#x6570;&#x636E;"><a name="4-&#x5168;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x8868;&#x4E2D;&#x5168;&#x90E8;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#4-&#x5168;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x8868;&#x4E2D;&#x5168;&#x90E8;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>4 &#x5168;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;(&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x8868;&#x4E2D;&#x5168;&#x90E8;&#x6570;&#x636E;)</h4>
+<p><code>&#x5168;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#xFF1A;&#x662F;&#x5728;&#x5185;&#x8FDE;&#x63A5;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x589E;&#x52A0; &#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x6CA1;&#x6709;&#x663E;&#x793A;&#x7684;&#x6570;&#x636E;</code></p>
+<p>&#x3000;&#x3000;<code>&#x6CE8;&#x610F;: mysql&#x5E76;&#x4E0D;&#x652F;&#x6301;&#x5168;&#x8FDE;&#x63A5; full JOIN &#x5173;&#x952E;&#x5B57;</code></p>
+<p>&#x3000;&#x3000;<code>&#x6CE8;&#x610F;: &#x4F46;&#x662F;mysql &#x63D0;&#x4F9B;&#x4E86; UNION &#x5173;&#x952E;&#x5B57;.&#x4F7F;&#x7528; UNION &#x53EF;&#x4EE5;&#x95F4;&#x63A5;&#x5B9E;&#x73B0; full JOIN &#x529F;&#x80FD;</code></p>
+<p><code>#&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x548C;&#x90E8;&#x95E8;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;</code></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> person <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> dept <span class="hljs-keyword">ON</span> person.did = dept.did
+<span class="hljs-keyword">UNION</span>
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> person <span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> dept <span class="hljs-keyword">ON</span> person.did = dept.did;
+</code></pre>
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM person LEFT JOIN dept ON person.did = dept.did
+                UNION 
+            SELECT * FROM person RIGHT JOIN dept ON person.did = dept.did;
++------+----------+------+------+--------+------+------+--------+
+| id   | name     | age  | sex  | salary | did  | did  | dname  |
++------+----------+------+------+--------+------+------+--------+
+|    1 | alex     |   28 | &#x5973;   |  53000 |    1 |    1 | python |
+|    2 | wupeiqi  |   23 | &#x5973;   |  29000 |    1 |    1 | python |
+|    3 | egon     |   30 | &#x7537;   |  27000 |    1 |    1 | python |
+|    5 | jinxin   |   33 | &#x5973;   |  28888 |    1 |    1 | python |
+|    4 | oldboy   |   22 | &#x7537;   |      1 |    2 |    2 | linux  |
+|    7 | &#x4EE4;&#x72D0;&#x51B2;   |   22 | &#x7537;   |   6500 |    2 |    2 | linux  |
+|    6 | &#x5F20;&#x65E0;&#x5FCC;   |   20 | &#x7537;   |   8000 |    3 |    3 | &#x660E;&#x6559;   |
+|    8 | &#x4E1C;&#x65B9;&#x4E0D;&#x8D25; |   23 | &#x5973;   |  18000 | NULL | NULL | NULL   |
+| NULL | NULL     | NULL | NULL | NULL   | NULL |    4 | &#x57FA;&#x7763;&#x6559; |
++------+----------+------+------+--------+------+------+--------+
+rows in set
+
+&#x6CE8;&#x610F;: UNION &#x548C; UNION ALL &#x7684;&#x533A;&#x522B;:UNION &#x4F1A;&#x53BB;&#x6389;&#x91CD;&#x590D;&#x7684;&#x6570;&#x636E;,&#x800C; UNION ALL &#x5219;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x7ED3;&#x679C;
+</code></pre>
+<p><img src="img4" alt="img4"></p>
+<h2 id="&#x4E09;-&#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;"><a name="&#x4E09;-&#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x4E09;-&#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09; &#x590D;&#x6742;&#x6761;&#x4EF6;&#x591A;&#x8868;&#x67E5;&#x8BE2;</h2>
+<p><code>1. &#x67E5;&#x8BE2;&#x51FA; &#x6559;&#x5B66;&#x90E8; &#x5E74;&#x9F84;&#x5927;&#x4E8E;20&#x5C81;,&#x5E76;&#x4E14;&#x5DE5;&#x8D44;&#x5C0F;&#x4E8E;40000&#x7684;&#x5458;&#x5DE5;,&#x6309;&#x5DE5;&#x8D44;&#x5012;&#x5E8F;&#x6392;&#x5217;.(&#x8981;&#x6C42;:&#x5206;&#x522B;&#x4F7F;&#x7528;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#x548C;&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;)</code></p>
+<pre><code class="lang-sql">#1.&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#x65B9;&#x5F0F;:
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> person p1,dept d2 <span class="hljs-keyword">where</span> p1.did = d2.did  
+    <span class="hljs-keyword">and</span> d2.dname=<span class="hljs-string">&apos;python&apos;</span> 
+    <span class="hljs-keyword">and</span>  age&gt;<span class="hljs-number">20</span> 
+    <span class="hljs-keyword">and</span> salary &lt;<span class="hljs-number">40000</span> 
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> salary <span class="hljs-keyword">DESC</span>;
+
+#2.&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x65B9;&#x5F0F;:
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> person p1 <span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> dept d2 <span class="hljs-keyword">ON</span> p1.did= d2.did 
+    <span class="hljs-keyword">and</span> d2.dname=<span class="hljs-string">&apos;python&apos;</span> 
+    <span class="hljs-keyword">and</span>  age&gt;<span class="hljs-number">20</span> 
+    <span class="hljs-keyword">and</span> salary &lt;<span class="hljs-number">40000</span> 
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> salary <span class="hljs-keyword">DESC</span>;
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">MAX</span>(salary),<span class="hljs-keyword">MIN</span>(salary),dept.dname <span class="hljs-keyword">from</span> 
+        person <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> dept
+            <span class="hljs-keyword">ON</span> person.did = dept.did
+ <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> person.did;
+</code></pre>
+<h2 id="&#x56DB;-&#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;"><a name="&#x56DB;-&#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;" class="anchor-navigation-ex-anchor" href="#&#x56DB;-&#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB; &#x5B50;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x3000;</h2>
+<p><code>&#x5B50;&#x67E5;&#x8BE2;(&#x5D4C;&#x5957;&#x67E5;&#x8BE2;): &#x67E5;&#x591A;&#x6B21;, &#x591A;&#x4E2A;select</code></p>
+<p><code>&#x6CE8;&#x610F;: &#x7B2C;&#x4E00;&#x6B21;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x6B21;&#x7684;&#x67E5;&#x8BE2;&#x7684; &#x6761;&#x4EF6; &#x6216;&#x8005; &#x8868;&#x540D; &#x4F7F;&#x7528;.</code></p>
+<p><code>&#x5B50;&#x67E5;&#x8BE2;&#x4E2D;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#xFF1A;IN&#x3001;NOT IN&#x3001;ANY&#x3001;ALL&#x3001;EXISTS &#x548C; NOT EXISTS&#x7B49;&#x5173;&#x952E;&#x5B57;. &#x8FD8;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;= &#x3001; !=&#x3001;&gt; &#x3001;&lt;&#x7B49;.</code></p>
+<h4 id="1&#x4F5C;&#x4E3A;&#x8868;&#x540D;&#x4F7F;&#x7528;"><a name="1&#x4F5C;&#x4E3A;&#x8868;&#x540D;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#1&#x4F5C;&#x4E3A;&#x8868;&#x540D;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x4F5C;&#x4E3A;&#x8868;&#x540D;&#x4F7F;&#x7528;</h4>
+<pre><code class="lang-sql">select * from (select * from person) as &#x8868;&#x540D;;
+
+ps:&#x5927;&#x5BB6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;: &#x4E00;&#x6761;&#x8BED;&#x53E5;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x5B50;&#x67E5;&#x8BE2;,&#x5728;&#x6267;&#x884C;&#x65F6;,&#x6700;&#x91CC;&#x5C42;&#x62EC;&#x53F7;(sql&#x8BED;&#x53E5;) &#x5177;&#x6709;&#x4F18;&#x5148;&#x6267;&#x884C;&#x6743;.&lt;br&gt;&#x6CE8;&#x610F;: as &#x540E;&#x9762;&#x7684;&#x8868;&#x540D;&#x79F0;&#x4E0D;&#x80FD;&#x52A0;&#x5F15;&#x53F7;(&apos;&apos;)
+</code></pre>
+<h4 id="2&#x6C42;&#x6700;&#x5927;&#x5DE5;&#x8D44;&#x90A3;&#x4E2A;&#x4EBA;&#x7684;&#x59D3;&#x540D;&#x548C;&#x85AA;&#x6C34;"><a name="2&#x6C42;&#x6700;&#x5927;&#x5DE5;&#x8D44;&#x90A3;&#x4E2A;&#x4EBA;&#x7684;&#x59D3;&#x540D;&#x548C;&#x85AA;&#x6C34;" class="anchor-navigation-ex-anchor" href="#2&#x6C42;&#x6700;&#x5927;&#x5DE5;&#x8D44;&#x90A3;&#x4E2A;&#x4EBA;&#x7684;&#x59D3;&#x540D;&#x548C;&#x85AA;&#x6C34;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x6C42;&#x6700;&#x5927;&#x5DE5;&#x8D44;&#x90A3;&#x4E2A;&#x4EBA;&#x7684;&#x59D3;&#x540D;&#x548C;&#x85AA;&#x6C34;</h4>
+<pre><code class="lang-sql">1.&#x6C42;&#x6700;&#x5927;&#x5DE5;&#x8D44;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(salary) <span class="hljs-keyword">from</span> person;
+2.&#x6C42;&#x6700;&#x5927;&#x5DE5;&#x8D44;&#x90A3;&#x4E2A;&#x4EBA;&#x53EB;&#x4EC0;&#x4E48;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">from</span> person <span class="hljs-keyword">where</span> salary=<span class="hljs-number">53000</span>;
+
+&#x5408;&#x5E76;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">from</span> person <span class="hljs-keyword">where</span> salary=(<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(salary) <span class="hljs-keyword">from</span> person);
+</code></pre>
+<h4 id="3-&#x6C42;&#x5DE5;&#x8D44;&#x9AD8;&#x4E8E;&#x6240;&#x6709;&#x4EBA;&#x5458;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;"><a name="3-&#x6C42;&#x5DE5;&#x8D44;&#x9AD8;&#x4E8E;&#x6240;&#x6709;&#x4EBA;&#x5458;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;" class="anchor-navigation-ex-anchor" href="#3-&#x6C42;&#x5DE5;&#x8D44;&#x9AD8;&#x4E8E;&#x6240;&#x6709;&#x4EBA;&#x5458;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x6C42;&#x5DE5;&#x8D44;&#x9AD8;&#x4E8E;&#x6240;&#x6709;&#x4EBA;&#x5458;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;</h4>
+<pre><code class="lang-sql">1.&#x6C42;&#x5E73;&#x5747;&#x5DE5;&#x8D44;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">avg</span>(salary) <span class="hljs-keyword">from</span> person;
+
+2.&#x5DE5;&#x8D44;&#x5927;&#x4E8E;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684; &#x4EBA;&#x7684;&#x59D3;&#x540D;&#x3001;&#x5DE5;&#x8D44;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">from</span> person <span class="hljs-keyword">where</span> salary &gt; <span class="hljs-number">21298.625</span>;
+
+&#x5408;&#x5E76;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>,salary <span class="hljs-keyword">from</span> person <span class="hljs-keyword">where</span> salary &gt;(<span class="hljs-keyword">select</span> <span class="hljs-keyword">avg</span>(salary) <span class="hljs-keyword">from</span> person);
+</code></pre>
+<h4 id="4&#x7EC3;&#x4E60;"><a name="4&#x7EC3;&#x4E60;" class="anchor-navigation-ex-anchor" href="#4&#x7EC3;&#x4E60;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x7EC3;&#x4E60;</h4>
+<p><code>1.&#x67E5;&#x8BE2;&#x5E73;&#x5747;&#x5E74;&#x9F84;&#x5728;20&#x5C81;&#x4EE5;&#x4E0A;&#x7684;&#x90E8;&#x95E8;&#x540D;</code></p>
+<p><code>2.&#x67E5;&#x8BE2;&#x6559;&#x5B66;&#x90E8; &#x4E0B;&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;</code></p>
+<p><code>3.&#x67E5;&#x8BE2;&#x5927;&#x4E8E;&#x6240;&#x6709;&#x4EBA;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;&#x7684;&#x59D3;&#x540D;&#x4E0E;&#x5E74;&#x9F84;</code></p>
+<pre><code class="lang-sql">#1.&#x67E5;&#x8BE2;&#x5E73;&#x5747;&#x5E74;&#x9F84;&#x5728;20&#x5C81;&#x4EE5;&#x4E0A;&#x7684;&#x90E8;&#x95E8;&#x540D;
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">from</span> dept <span class="hljs-keyword">where</span> dept.did <span class="hljs-keyword">in</span> (
+    <span class="hljs-keyword">select</span> dept_id <span class="hljs-keyword">from</span> person <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> dept_id <span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">avg</span>(person.age) &gt; <span class="hljs-number">20</span>
+);
+
+#2.&#x67E5;&#x8BE2;&#x6559;&#x5B66;&#x90E8; &#x4E0B;&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> person <span class="hljs-keyword">where</span> dept_id = (<span class="hljs-keyword">select</span> did <span class="hljs-keyword">from</span> dept <span class="hljs-keyword">where</span> dname =<span class="hljs-string">&apos;&#x6559;&#x5B66;&#x90E8;&apos;</span>);
+
+#3.&#x67E5;&#x8BE2;&#x5927;&#x4E8E;&#x6240;&#x6709;&#x4EBA;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;&#x7684;&#x59D3;&#x540D;&#x4E0E;&#x5E74;&#x9F84;
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> person <span class="hljs-keyword">where</span> salary &gt; (<span class="hljs-keyword">select</span> <span class="hljs-keyword">avg</span>(salary) <span class="hljs-keyword">from</span> person);
+</code></pre>
+<h4 id="5&#x5173;&#x952E;&#x5B57;"><a name="5&#x5173;&#x952E;&#x5B57;" class="anchor-navigation-ex-anchor" href="#5&#x5173;&#x952E;&#x5B57;"><i class="fa fa-link" aria-hidden="true"></i></a>5.&#x5173;&#x952E;&#x5B57;</h4>
+<p><code>ANY&#x5173;&#x952E;&#x5B57;</code></p>
+<pre><code>
+&#x5047;&#x8BBE;any&#x5185;&#x90E8;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x4E2A;&#x6570;&#x662F;&#x4E09;&#x4E2A;&#xFF0C;&#x5982;:result1,result2,result3,&#x90A3;&#x4E48;&#xFF0C;
+
+select ...from ... where a &gt; any(...);
+-&gt;
+select ...from ... where a &gt; result1 or a &gt; result2 or a &gt; result3;
+</code></pre><p><code>ALL&#x5173;&#x952E;&#x5B57;</code></p>
+<pre><code class="lang-sql">ALL&#x5173;&#x952E;&#x5B57;&#x4E0E;any&#x5173;&#x952E;&#x5B57;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x4E0A;&#x9762;&#x7684;or&#x6539;&#x6210;and&#x3002;&#x5373;:
+
+select ...from ... where a &gt; all(...);
+-&gt;
+select ...from ... where a &gt; result1 and a &gt; result2 and a &gt; result3;
+</code></pre>
+<p><code>SOME&#x5173;&#x952E;&#x5B57;</code></p>
+<pre><code>some&#x5173;&#x952E;&#x5B57;&#x548C;any&#x5173;&#x952E;&#x5B57;&#x662F;&#x4E00;&#x6837;&#x7684;&#x529F;&#x80FD;&#x3002;&#x6240;&#x4EE5;:
+
+select ...from ... where a &gt; some(...);
+-&gt;
+select ...from ... where a &gt; result1 or a &gt; result2 or a &gt; result3;
+</code></pre><p><code>EXISTS &#x5173;&#x952E;&#x5B57;</code></p>
+<pre><code>EXISTS &#x548C; NOT EXISTS &#x5B50;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;
+
+&#x3000;&#x3000;SELECT ... FROM table WHERE  EXISTS (subquery)
+&#x8BE5;&#x8BED;&#x6CD5;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;&#x4E3B;&#x67E5;&#x8BE2;(&#x5916;&#x90E8;&#x67E5;&#x8BE2;)&#x4F1A;&#x6839;&#x636E;&#x5B50;&#x67E5;&#x8BE2;&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;&#xFF08;TRUE &#x6216; FALSE&#xFF09;&#x6765;&#x51B3;&#x5B9A;&#x4E3B;&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x5F97;&#x4EE5;&#x6267;&#x884C;&#x3002;
+
+mysql&gt; SELECT * FROM person
+    -&gt; WHERE EXISTS
+    -&gt; (SELECT * FROM dept WHERE did=5);
+Empty set (0.00 sec)
+&#x6B64;&#x5904;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#x5E76;&#x6CA1;&#x6709;&#x67E5;&#x8BE2;&#x5230;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x6B64;&#x8FD4;&#x56DE;false&#xFF0C;&#x5916;&#x5C42;&#x67E5;&#x8BE2;&#x4E0D;&#x6267;&#x884C;&#x3002;
+
+NOT EXISTS&#x521A;&#x597D;&#x4E0E;&#x4E4B;&#x76F8;&#x53CD;
+
+mysql&gt; SELECT * FROM person 
+    -&gt; WHERE NOT EXISTS 
+    -&gt; (SELECT * FROM dept WHERE did=5);
++----+----------+-----+-----+--------+------+
+| id | name     | age | sex | salary | did  |
++----+----------+-----+-----+--------+------+
+|  1 | alex     |  28 | &#x5973;  |  53000 |    1 |
+|  2 | wupeiqi  |  23 | &#x5973;  |  29000 |    1 |
+|  3 | egon     |  30 | &#x7537;  |  27000 |    1 |
+|  4 | oldboy   |  22 | &#x7537;  |      1 |    2 |
+|  5 | jinxin   |  33 | &#x5973;  |  28888 |    1 |
+|  6 | &#x5F20;&#x65E0;&#x5FCC;   |  20 | &#x7537;  |   8000 |    3 |
+|  7 | &#x4EE4;&#x72D0;&#x51B2;   |  22 | &#x7537;  |   6500 |    2 |
+|  8 | &#x4E1C;&#x65B9;&#x4E0D;&#x8D25; |  23 | &#x5973;  |  18000 | NULL |
++----+----------+-----+-----+--------+------+
+rows in set
+
+&#x5F53;&#x7136;&#xFF0C;EXISTS&#x5173;&#x952E;&#x5B57;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x4E0E;EXISTS&#x5173;&#x952E;&#x5B57;&#x4E4B;&#x95F4;&#x7528;AND&#x6216;&#x8005;OR&#x6765;&#x8FDE;&#x63A5;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;
+
+mysql&gt; SELECT * FROM person 
+    -&gt; WHERE AGE &gt;23 AND NOT EXISTS 
+    -&gt; (SELECT * FROM dept WHERE did=5);
+&#x63D0;&#x793A;&#xFF1A;
+&#x2022;EXISTS (subquery) &#x53EA;&#x8FD4;&#x56DE; TRUE &#x6216; FALSE&#xFF0C;&#x56E0;&#x6B64;&#x5B50;&#x67E5;&#x8BE2;&#x4E2D;&#x7684; SELECT * &#x4E5F;&#x53EF;&#x4EE5;&#x662F; SELECT 1 &#x6216;&#x5176;&#x4ED6;&#xFF0C;&#x5B98;&#x65B9;&#x8BF4;&#x6CD5;&#x662F;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x4F1A;&#x5FFD;&#x7565; SELECT &#x6E05;&#x5355;&#xFF0C;&#x56E0;&#x6B64;&#x6CA1;&#x6709;&#x533A;&#x522B;&#x3002;
+</code></pre><h2 id="&#x4E94;-&#x5176;&#x4ED6;&#x67E5;&#x8BE2;"><a name="&#x4E94;-&#x5176;&#x4ED6;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x4E94;-&#x5176;&#x4ED6;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94; &#x5176;&#x4ED6;&#x67E5;&#x8BE2;</h2>
+<h4 id="1&#x4E34;&#x65F6;&#x8868;&#x67E5;&#x8BE2;"><a name="1&#x4E34;&#x65F6;&#x8868;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#1&#x4E34;&#x65F6;&#x8868;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x4E34;&#x65F6;&#x8868;&#x67E5;&#x8BE2;</h4>
+<p>   <code>&#x9700;&#x6C42;:  &#x67E5;&#x8BE2;&#x9AD8;&#x4E8E;&#x672C;&#x90E8;&#x95E8;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;&#x5458;</code></p>
+<p><img src="img5" alt="img5"></p>
+<p>   &#x89E3;&#x6790;&#x601D;&#x8DEF;: 1.&#x5148;&#x67E5;&#x8BE2;&#x672C;&#x90E8;&#x95E8;&#x4EBA;&#x5458;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x662F;&#x591A;&#x5C11;.</p>
+<p>&#x3000;&#x3000;&#x3000;&#x3000;     2.&#x518D;&#x4F7F;&#x7528;&#x4EBA;&#x5458;&#x7684;&#x5DE5;&#x8D44;&#x4E0E;&#x90E8;&#x95E8;&#x7684;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;</p>
+<pre><code class="lang-sql">#1.&#x5148;&#x67E5;&#x8BE2;&#x90E8;&#x95E8;&#x4EBA;&#x5458;&#x7684;&#x5E73;&#x5747;&#x5DE5;&#x8D44;
+<span class="hljs-keyword">SELECT</span> dept_id,<span class="hljs-keyword">AVG</span>(salary)<span class="hljs-keyword">as</span> sal <span class="hljs-keyword">from</span> person <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> dept_id;
+
+#2.&#x518D;&#x7528;&#x4EBA;&#x5458;&#x7684;&#x5DE5;&#x8D44;&#x4E0E;&#x90E8;&#x95E8;&#x7684;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> person <span class="hljs-keyword">as</span> p1,
+    (<span class="hljs-keyword">SELECT</span> dept_id,<span class="hljs-keyword">AVG</span>(salary)<span class="hljs-keyword">as</span> <span class="hljs-string">&apos;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&apos;</span> <span class="hljs-keyword">from</span> person <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> dept_id) <span class="hljs-keyword">as</span> p2
+<span class="hljs-keyword">where</span> p1.dept_id = p2.dept_id <span class="hljs-keyword">AND</span> p1.salary &gt;p2.<span class="hljs-string">`&#x5E73;&#x5747;&#x5DE5;&#x8D44;`</span>;
+
+ps:&#x5728;&#x5F53;&#x524D;&#x8BED;&#x53E5;&#x4E2D;,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5F53;&#x524D;&#x505A;&#x4E00;&#x5F20;&#x8868;&#x6765;&#x4F7F;&#x7528;.&#x56E0;&#x4E3A;p2&#x8868;&#x4E0D;&#x662F;&#x771F;&#x662F;&#x5B58;&#x5728;&#x7684;,&#x6240;&#x4EE5;:&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A; &#x4E34;&#x65F6;&#x8868;&#x3000;&#x3000;
+   &#x4E34;&#x65F6;&#x8868;:&#x4E0D;&#x5C40;&#x9650;&#x4E8E;&#x81EA;&#x8EAB;&#x8868;,&#x4EFB;&#x4F55;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x90FD;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x8868;.
+</code></pre>
+<h4 id="2-&#x5224;&#x65AD;&#x67E5;&#x8BE2;&#x3000;if&#x5173;&#x952E;&#x5B57;"><a name="2-&#x5224;&#x65AD;&#x67E5;&#x8BE2;&#x3000;if&#x5173;&#x952E;&#x5B57;" class="anchor-navigation-ex-anchor" href="#2-&#x5224;&#x65AD;&#x67E5;&#x8BE2;&#x3000;if&#x5173;&#x952E;&#x5B57;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>2. &#x5224;&#x65AD;&#x67E5;&#x8BE2;</strong>&#x3000;IF&#x5173;&#x952E;&#x5B57;</h4>
+<p><code>&#x9700;&#x6C42;1 :&#x6839;&#x636E;&#x5DE5;&#x8D44;&#x9AD8;&#x4F4E;,&#x5C06;&#x4EBA;&#x5458;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x7EA7;&#x522B;,&#x5206;&#x522B;&#x4E3A; &#x9AD8;&#x7AEF;&#x4EBA;&#x7FA4;&#x548C;&#x4F4E;&#x7AEF;&#x4EBA;&#x7FA4;&#x3002;&#x663E;&#x793A;&#x6548;&#x679C;:&#x59D3;&#x540D;,&#x5E74;&#x9F84;,&#x6027;&#x522B;,&#x5DE5;&#x8D44;,&#x7EA7;&#x522B;</code></p>
+<p><img src="img6" alt="img6"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> p1.*, 
+
+    <span class="hljs-keyword">IF</span>(p1.salary &gt;<span class="hljs-number">10000</span>,<span class="hljs-string">&apos;&#x9AD8;&#x7AEF;&#x4EBA;&#x7FA4;&apos;</span>,<span class="hljs-string">&apos;&#x4F4E;&#x7AEF;&#x4EBA;&#x7FA4;&apos;</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">&apos;&#x7EA7;&#x522B;&apos;</span>
+
+<span class="hljs-keyword">from</span> person p1;
+
+#ps: &#x8BED;&#x6CD5;: IF(&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;,&quot;&#x7ED3;&#x679C;&#x4E3A;true&quot;,&apos;&#x7ED3;&#x679C;&#x4E3A;false&apos;);
+</code></pre>
+<p><code>&#x9700;&#x6C42;2: &#x6839;&#x636E;&#x5DE5;&#x8D44;&#x9AD8;&#x4F4E;,&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x4EBA;&#x5458;&#x6536;&#x5165;&#x60C5;&#x51B5;,&#x5212;&#x5206;&#x4E3A; &#x5BCC;&#x4EBA;,&#x5C0F;&#x8D44;,&#x5E73;&#x6C11;,&#x540A;&#x4E1D; &#x56DB;&#x4E2A;&#x7EA7;&#x522B;, &#x8981;&#x6C42;&#x7EDF;&#x8BA1;&#x56DB;&#x4E2A;&#x7EA7;&#x522B;&#x5206;&#x522B;&#x6709;&#x591A;&#x5C11;&#x4EBA;</code></p>
+<p><img src="img7" alt="img7"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> dname <span class="hljs-string">&apos;&#x90E8;&#x95E8;&apos;</span>,
+             <span class="hljs-keyword">sum</span>(<span class="hljs-keyword">case</span> <span class="hljs-keyword">WHEN</span> salary &gt;<span class="hljs-number">50000</span> <span class="hljs-keyword">THEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">ELSE</span> <span class="hljs-number">0</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">&apos;&#x5BCC;&#x4EBA;&apos;</span>,
+             <span class="hljs-keyword">sum</span>(<span class="hljs-keyword">case</span> <span class="hljs-keyword">WHEN</span> salary <span class="hljs-keyword">between</span> <span class="hljs-number">29000</span> <span class="hljs-keyword">and</span> <span class="hljs-number">50000</span> <span class="hljs-keyword">THEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">ELSE</span> <span class="hljs-number">0</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">&apos;&#x5C0F;&#x8D44;&apos;</span>,
+             <span class="hljs-keyword">sum</span>(<span class="hljs-keyword">case</span> <span class="hljs-keyword">WHEN</span> salary <span class="hljs-keyword">between</span> <span class="hljs-number">10000</span> <span class="hljs-keyword">and</span> <span class="hljs-number">29000</span> <span class="hljs-keyword">THEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">ELSE</span> <span class="hljs-number">0</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">&apos;&#x5E73;&#x6C11;&apos;</span>,
+             <span class="hljs-keyword">sum</span>(<span class="hljs-keyword">case</span> <span class="hljs-keyword">WHEN</span> salary &lt;<span class="hljs-number">10000</span> <span class="hljs-keyword">THEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">ELSE</span> <span class="hljs-number">0</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">&apos;&#x540A;&#x4E1D;&apos;</span>
+<span class="hljs-keyword">FROM</span> person,dept <span class="hljs-keyword">where</span> person.dept_id = dept.did <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> dept_id
+</code></pre>
+<h2 id="&#x516D;--sql&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x91CD;&#x70B9;"><a name="&#x516D;--sql&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x91CD;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x516D;--sql&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x91CD;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516D;  SQL&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x987A;&#x5E8F;(&#x91CD;&#x70B9;<em>*</em>)</h2>
+<p>&#x5148;&#x6765;&#x4E00;&#x6BB5;&#x4F2A;&#x4EE3;&#x7801;&#xFF0C;&#x9996;&#x5148;&#x4F60;&#x80FD;&#x770B;&#x61C2;&#x4E48;&#xFF1F;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> &lt;select_list&gt;
+<span class="hljs-keyword">FROM</span> &lt;left_table&gt;
+&lt;join_type&gt; <span class="hljs-keyword">JOIN</span> &lt;right_table&gt;
+<span class="hljs-keyword">ON</span> &lt;join_condition&gt;
+<span class="hljs-keyword">WHERE</span> &lt;where_condition&gt;
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> &lt;group_by_list&gt;
+<span class="hljs-keyword">HAVING</span> &lt;having_condition&gt;
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> &lt;order_by_condition&gt;
+<span class="hljs-keyword">LIMIT</span> &lt;limit_number&gt;
+</code></pre>
+<p>&#x91CD;&#x70B9;:</p>
+<p>&#x3000;&#x3000;&#x5728;&#x8FD9;&#x4E9B;SQL&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x8868;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x5B58;SQL&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF08;&#x8FD9;&#x662F;&#x91CD;&#x70B9;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x6765;&#x8DDF;&#x8E2A;&#x8FD9;&#x4E2A;&#x865A;&#x62DF;&#x8868;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x6765;&#x5206;&#x6790;&#x6574;&#x4E2A;SQL&#x903B;&#x8F91;&#x67E5;&#x8BE2;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x548C;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p><code>1.&#x6267;&#x884C;FROM&#x8BED;&#x53E5;</code></p>
+<p><code>2.&#x6267;&#x884C;ON&#x8FC7;&#x6EE4;</code></p>
+<p><code>3.&#x6DFB;&#x52A0;&#x5916;&#x90E8;&#x884C;</code></p>
+<p><code>4.&#x6267;&#x884C;WHERE&#x8FC7;&#x6EE4;</code></p>
+<p><code>5.&#x6267;&#x884C;GROUP BY&#x5206;&#x7EC4;</code></p>
+<p><code>6.&#x6267;&#x884C;HAVING&#x8FC7;&#x6EE4;</code></p>
+<p><code>7.SELECT&#x5217;&#x8868;</code></p>
+<p><code>8.&#x6267;&#x884C;DISTINCT&#x5B50;&#x53E5;</code></p>
+<p><code>9.&#x6267;&#x884C;ORDER BY&#x5B50;&#x53E5;</code></p>
+<p><code>10.&#x6267;&#x884C;LIMIT&#x5B50;&#x53E5;</code></p>
+<h2 id="&#x4E03;-&#x5916;&#x952E;&#x7EA6;&#x675F;"><a name="&#x4E03;-&#x5916;&#x952E;&#x7EA6;&#x675F;" class="anchor-navigation-ex-anchor" href="#&#x4E03;-&#x5916;&#x952E;&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E03; &#x5916;&#x952E;&#x7EA6;&#x675F;</h2>
+<p>1.&#x95EE;&#x9898;?</p>
+<p>&#x3000;&#x3000;&#x4EC0;&#x4E48;&#x662F;&#x7EA6;&#x675F;:&#x7EA6;&#x675F;&#x662F;&#x4E00;&#x79CD;&#x9650;&#x5236;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x5BF9;&#x8868;&#x7684;&#x884C;&#x6216;&#x5217;&#x7684;&#x6570;&#x636E;&#x505A;&#x51FA;&#x9650;&#x5236;&#xFF0C;&#x6765;&#x786E;&#x4FDD;&#x8868;&#x7684;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x3001;&#x552F;&#x4E00;&#x6027;</p>
+<p>2.&#x95EE;&#x9898;?</p>
+<p>&#x3000;&#x3000;&#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x8868; person&#x548C;dept&#x4E2D;, &#x65B0;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x6CA1;&#x6709;&#x90E8;&#x95E8;&#x5417;?</p>
+<p>3.&#x95EE;&#x9898;?</p>
+<p>&#x3000;&#x3000;&#x65B0;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x90E8;&#x95E8;&#x5417;?</p>
+<p>4.&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x4EE5;&#x4E0A;&#x95EE;&#x9898;&#x5462;?</p>
+<p>&#x3000;&#x3000;&#x7B80;&#x5355;&#x7684;&#x8BF4;,&#x5C31;&#x662F;&#x5BF9;&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x7EA6;&#x675F; (&#x5373;: froegin key). </p>
+<p>&#x3000;&#x3000;foreign key &#x5B9A;&#x4E49;:&#x5C31;&#x662F;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x67D0;&#x79CD;&#x7EA6;&#x5B9A;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x7531;&#x4E8E;&#x8FD9;&#x79CD;&#x5173;&#x7CFB;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x80FD;&#x591F;&#x8BA9;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x66F4;&#x52A0;&#x7684;&#x5B8C;&#x6574;&#xFF0C;&#x5173;&#x8FDE;&#x6027;&#x66F4;&#x5F3A;&#x3002;</p>
+<p>5.&#x5177;&#x4F53;&#x64CD;&#x4F5C;</p>
+<pre><code>5.1&#x521B;&#x5EFA;&#x8868;&#x65F6;,&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x5916;&#x952E;&#x7EA6;&#x675F;
+</code></pre><pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> dept (
+    did <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> auto_increment PRIMARY <span class="hljs-keyword">KEY</span>,
+    dname <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&apos;&#x90E8;&#x95E8;&#x540D;&#x79F0;&apos;</span>
+)<span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">INNODB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">charset</span> utf8;
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> person(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> auto_increment PRIMARY <span class="hljs-keyword">KEY</span>,
+    <span class="hljs-keyword">name</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    age TINYINT(<span class="hljs-number">4</span>) <span class="hljs-literal">null</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>,
+    sex enum(<span class="hljs-string">&apos;&#x7537;&apos;</span>,<span class="hljs-string">&apos;&#x5973;&apos;</span>,<span class="hljs-string">&apos;&#x4EBA;&#x5996;&apos;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;&#x4EBA;&#x5996;&apos;</span>,
+    salary <span class="hljs-built_in">decimal</span>(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;250.00&apos;</span>,
+    hire_date <span class="hljs-built_in">date</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    dept_id <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>,
+&#x3000;  <span class="hljs-keyword">CONSTRAINT</span> fk_did FOREIGN <span class="hljs-keyword">KEY</span>(dept_id) <span class="hljs-keyword">REFERENCES</span> dept(did) <span class="hljs-comment">-- &#x6DFB;&#x52A0;&#x5916;&#x952E;&#x7EA6;&#x675F;</span>
+)<span class="hljs-keyword">ENGINE</span> = <span class="hljs-keyword">INNODB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">charset</span> utf8;
+</code></pre>
+<p> <code>5.2 &#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x8868;&#x540E;,&#x8FFD;&#x52A0;&#x5916;&#x952E;&#x7EA6;&#x675F;</code></p>
+<pre><code class="lang-sql">#&#x6DFB;&#x52A0;&#x5916;&#x952E;&#x7EA6;&#x675F;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">table</span> person <span class="hljs-keyword">add</span> <span class="hljs-keyword">constraint</span> fk_did FOREIGN <span class="hljs-keyword">key</span>(dept_id) <span class="hljs-keyword">REFERENCES</span> dept(did);
+
+#&#x5220;&#x9664;&#x5916;&#x952E;&#x7EA6;&#x675F;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> person <span class="hljs-keyword">drop</span> FOREIGN <span class="hljs-keyword">key</span> fk_did;
+</code></pre>
+<p><strong>&#x5B9A;&#x4E49;&#x5916;&#x952E;&#x7684;&#x6761;&#x4EF6;&#xFF1A;</strong></p>
+<p>&#xFF08;1&#xFF09;&#x5916;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;,&#x4E14;&#x88AB;&#x5173;&#x8054;&#x7684;&#x5B57;&#x6BB5;(&#x5373;references&#x6307;&#x5B9A;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8868;&#x7684;&#x5B57;&#x6BB5;)&#xFF0C;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x552F;&#x4E00;</p>
+<p>&#xFF08;2&#xFF09;&#x6240;&#x6709;tables&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x5FC5;&#x987B;&#x662F;InnoDB&#x7C7B;&#x578B;.</p>
+<p>&#xFF08;3&#xFF09;&#x5916;&#x952E;&#x7684;&#x7EA6;&#x675F;4&#x79CD;&#x7C7B;&#x578B;: 1.RESTRICT 2. NO ACTION 3.CASCADE 4.SET NULL</p>
+<pre><code>&#x7EA6;&#x675F;&#x7C7B;&#x578B;&#x8BE6;&#x89E3;
+RESTRICT
+&#x540C;no action, &#x90FD;&#x662F;&#x7ACB;&#x5373;&#x68C0;&#x67E5;&#x5916;&#x952E;&#x7EA6;&#x675F;
+
+NO ACTION
+&#x5982;&#x679C;&#x5B50;&#x8868;&#x4E2D;&#x6709;&#x5339;&#x914D;&#x7684;&#x8BB0;&#x5F55;,&#x5219;&#x4E0D;&#x5141;&#x8BB8;&#x5BF9;&#x7236;&#x8868;&#x5BF9;&#x5E94;&#x5019;&#x9009;&#x952E;&#x8FDB;&#x884C;update/delete&#x64CD;&#x4F5C;  
+
+CASCADE
+&#x5728;&#x7236;&#x8868;&#x4E0A;update/delete&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x540C;&#x6B65;update/delete&#x6389;&#x5B50;&#x8868;&#x7684;&#x5339;&#x914D;&#x8BB0;&#x5F55; 
+
+SET NULL
+&#x5728;&#x7236;&#x8868;&#x4E0A;update/delete&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x5C06;&#x5B50;&#x8868;&#x4E0A;&#x5339;&#x914D;&#x8BB0;&#x5F55;&#x7684;&#x5217;&#x8BBE;&#x4E3A;null (&#x8981;&#x6CE8;&#x610F;&#x5B50;&#x8868;&#x7684;&#x5916;&#x952E;&#x5217;&#x4E0D;&#x80FD;&#x4E3A;not null)
+</code></pre><p>&#xFF08;4&#xFF09;&#x5EFA;&#x8BAE;:1.&#x5982;&#x679C;&#x9700;&#x8981;&#x5916;&#x952E;&#x7EA6;&#x675F;,&#x6700;&#x597D;&#x521B;&#x5EFA;&#x8868;&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x5916;&#x952E;&#x7EA6;&#x675F;.</p>
+<p>&#x3000;&#x3000;&#x3000;&#x3000;   2.&#x5982;&#x679C;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x7EA7;&#x8054;&#x5173;&#x7CFB;,&#x5220;&#x9664;&#x65F6;&#x6700;&#x597D;&#x8BBE;&#x7F6E;&#x4E3A; SET NULL.</p>
+<p><strong>&#x6CE8;&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5148;&#x63D2;&#x5165;&#x4E3B;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x63D2;&#x5165;&#x4ECE;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</strong></p>
+<p><strong>&#x5220;&#x9664;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5148;&#x5220;&#x9664;&#x4ECE;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x5220;&#x9664;&#x4E3B;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</strong></p>
+<h2 id="&#x516B;-&#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;"><a name="&#x516B;-&#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x516B;-&#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516B; &#x5176;&#x4ED6;&#x7EA6;&#x675F;&#x7C7B;&#x578B;</h2>
+<p><code>1.&#x975E;&#x7A7A;&#x7EA6;&#x675F;</code></p>
+<p> &#x5173;&#x952E;&#x5B57;: NOT NULL ,&#x8868;&#x793A; &#x4E0D;&#x53EF;&#x7A7A;. &#x7528;&#x6765;&#x7EA6;&#x675F;&#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x5217;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t1(
+       <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> primary <span class="hljs-keyword">key</span>,
+       <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-literal">null</span>
+ );
+</code></pre>
+<p><code>2.&#x4E3B;&#x952E;&#x7EA6;&#x675F;</code></p>
+<p> &#x7528;&#x4E8E;&#x7EA6;&#x675F;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x884C;&#xFF0C;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E00;&#x884C;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x5728;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x901A;&#x8FC7;&#x4E3B;&#x952E;&#x5C31;&#x80FD;&#x51C6;&#x786E;&#x5B9A;&#x4F4D;&#x5230;&#x4E00;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x4E3B;&#x952E;&#x5341;&#x5206;&#x91CD;&#x8981;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t2(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> primary <span class="hljs-keyword">key</span>
+);
+</code></pre>
+<p>&#x6CE8;&#x610F;: &#x4E3B;&#x952E;&#x8FD9;&#x4E00;&#x884C;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x4E14;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x4E3B;&#x952E;&#x2014;&#x2014;&#x590D;&#x5408;&#x4E3B;&#x952E;&#x3002;&#x4E3B;&#x952E;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x662F;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x5217;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7531;&#x8868;&#x4E2D;&#x7684;&#x4E24;&#x5217;&#x6216;&#x591A;&#x5217;&#x6765;&#x5171;&#x540C;&#x6807;&#x8BC6;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t3(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">100</span>) ,
+    primary <span class="hljs-keyword">key</span>(<span class="hljs-keyword">id</span>,<span class="hljs-keyword">name</span>)
+);
+</code></pre>
+<p><code>3.&#x552F;&#x4E00;&#x7EA6;&#x675F;</code></p>
+<p> &#x5173;&#x952E;&#x5B57;: UNIQUE, &#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x5B83;&#x89C4;&#x5B9A;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x5217;&#x7684;&#x503C;&#x5FC5;&#x987B;&#x4E0D;&#x80FD;&#x6709;&#x91CD;&#x590D;&#x503C;&#xFF0C;&#x5373;&#x8FD9;&#x4E00;&#x5217;&#x6BCF;&#x4E2A;&#x503C;&#x90FD;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t4(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) ,
+    <span class="hljs-keyword">unique</span> id_name(<span class="hljs-keyword">id</span>,<span class="hljs-keyword">name</span>)
+);
+//&#x6DFB;&#x52A0;&#x552F;&#x4E00;&#x7EA6;&#x675F;
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> t4 <span class="hljs-keyword">add</span> <span class="hljs-keyword">unique</span> id_name(<span class="hljs-keyword">id</span>,<span class="hljs-keyword">name</span>);
+//&#x5220;&#x9664;&#x552F;&#x4E00;&#x7EA6;&#x675F;
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> t4 <span class="hljs-keyword">drop</span> <span class="hljs-keyword">index</span> id_name;
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;: &#x5F53;INSERT&#x8BED;&#x53E5;&#x65B0;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;&#x548C;&#x5DF2;&#x6709;&#x6570;&#x636E;&#x91CD;&#x590D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x6709;UNIQUE&#x7EA6;&#x675F;&#xFF0C;&#x5219;INSERT&#x5931;&#x8D25;.</strong>&#x3000;</p>
+<p><code>4.&#x9ED8;&#x8BA4;&#x503C;&#x7EA6;&#x675F;</code> </p>
+<p>&#x5173;&#x952E;&#x5B57;: DEFAULT</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> t5(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> primary <span class="hljs-keyword">key</span>,
+    <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">default</span> <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>   
+);
+#&#x63D2;&#x5165;&#x6570;&#x636E;
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">into</span> t5(<span class="hljs-keyword">id</span>) <span class="hljs-keyword">VALUES</span>(<span class="hljs-number">1</span>),(<span class="hljs-number">2</span>);
+</code></pre>
+<p><code>&#x6CE8;&#x610F;: INSERT&#x8BED;&#x53E5;&#x6267;&#x884C;&#x65F6;.&#xFF0C;&#x5982;&#x679C;&#x88AB;DEFAULT&#x7EA6;&#x675F;&#x7684;&#x4F4D;&#x7F6E;&#x6CA1;&#x6709;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x5C06;&#x4F1A;&#x88AB;DEFAULT&#x7684;&#x503C;&#x586B;&#x5145;</code></p>
+<h2 id="&#x4E5D;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><a name="&#x4E5D;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#&#x4E5D;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E5D;.&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h2>
+<h4 id="1&#x8868;&#x5173;&#x7CFB;&#x5206;&#x7C7B;"><a name="1&#x8868;&#x5173;&#x7CFB;&#x5206;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#1&#x8868;&#x5173;&#x7CFB;&#x5206;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x8868;&#x5173;&#x7CFB;&#x5206;&#x7C7B;:</h4>
+<p>&#x603B;&#x4F53;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E09;&#x7C7B;: &#x4E00;&#x5BF9;&#x4E00; &#x3001;&#x4E00;&#x5BF9;&#x591A;(&#x591A;&#x5BF9;&#x4E00;) &#x3001;&#x591A;&#x5BF9;&#x591A;</p>
+<h4 id="2&#x5982;&#x4F55;&#x533A;&#x5206;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x662F;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;"><a name="2&#x5982;&#x4F55;&#x533A;&#x5206;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x662F;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#2&#x5982;&#x4F55;&#x533A;&#x5206;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x662F;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x5982;&#x4F55;&#x533A;&#x5206;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x662F;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;?</h4>
+<pre><code>#&#x5206;&#x6790;&#x6B65;&#x9AA4;:
+#&#x591A;&#x5BF9;&#x4E00; /&#x4E00;&#x5BF9;&#x591A;
+#1.&#x7AD9;&#x5728;&#x5DE6;&#x8868;&#x7684;&#x89D2;&#x5EA6;&#x53BB;&#x770B;&#x53F3;&#x8868;(&#x60C5;&#x51B5;&#x4E00;)
+&#x5982;&#x679C;&#x5DE6;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;,&#x5BF9;&#x5E94;&#x53F3;&#x8868;&#x4E2D;&#x591A;&#x6761;&#x8BB0;&#x5F55;.&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x7684;&#x5173;&#x7CFB;&#x5219;&#x4E3A; &#x4E00;&#x5BF9;&#x591A; &#x5173;&#x7CFB;.&#x7EA6;&#x675F;&#x5173;&#x7CFB;&#x4E3A;:&#x5DE6;&#x8868;&#x666E;&#x901A;&#x5B57;&#x6BB5;, &#x5BF9;&#x5E94;&#x53F3;&#x8868;foreign key &#x5B57;&#x6BB5;.
+
+&#x6CE8;&#x610F;:&#x5982;&#x679C;&#x5DE6;&#x8868;&#x4E0E;&#x53F3;&#x8868;&#x7684;&#x60C5;&#x51B5;&#x53CD;&#x4E4B;.&#x5219;&#x5173;&#x7CFB;&#x4E3A; &#x591A;&#x5BF9;&#x4E00; &#x5173;&#x7CFB;.&#x7EA6;&#x675F;&#x5173;&#x7CFB;&#x4E3A;:&#x5DE6;&#x8868;foreign key &#x5B57;&#x6BB5;, &#x5BF9;&#x5E94;&#x53F3;&#x8868;&#x666E;&#x901A;&#x5B57;&#x6BB5;.
+
+#&#x4E00;&#x5BF9;&#x4E00;
+#2.&#x7AD9;&#x5728;&#x5DE6;&#x8868;&#x7684;&#x89D2;&#x5EA6;&#x53BB;&#x770B;&#x53F3;&#x8868;(&#x60C5;&#x51B5;&#x4E8C;)
+&#x5982;&#x679C;&#x5DE6;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55; &#x5BF9;&#x5E94; &#x53F3;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;. &#x5219;&#x5173;&#x7CFB;&#x4E3A; &#x4E00;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;.
+&#x7EA6;&#x675F;&#x5173;&#x7CFB;&#x4E3A;:&#x5DE6;&#x8868;foreign key&#x5B57;&#x6BB5;&#x4E0A; &#x6DFB;&#x52A0;&#x552F;&#x4E00;(unique)&#x7EA6;&#x675F;, &#x5BF9;&#x5E94;&#x53F3;&#x8868; &#x5173;&#x8054;&#x5B57;&#x6BB5;.
+&#x6216;&#x8005;:&#x53F3;&#x8868;foreign key&#x5B57;&#x6BB5;&#x4E0A; &#x6DFB;&#x52A0;&#x552F;&#x4E00;(unique)&#x7EA6;&#x675F;, &#x5BF9;&#x5E94;&#x53F3;&#x8868; &#x5173;&#x8054;&#x5B57;&#x6BB5;.
+
+#&#x591A;&#x5BF9;&#x591A;
+#3.&#x7AD9;&#x5728;&#x5DE6;&#x8868;&#x548C;&#x53F3;&#x8868;&#x540C;&#x65F6;&#x53BB;&#x770B;(&#x60C5;&#x51B5;&#x4E09;)
+&#x5982;&#x679C;&#x5DE6;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55; &#x5BF9;&#x5E94; &#x53F3;&#x8868;&#x4E2D;&#x7684;&#x591A;&#x6761;&#x8BB0;&#x5F55;,&#x5E76;&#x4E14;&#x53F3;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x540C;&#x65F6;&#x4E5F;&#x5BF9;&#x5E94;&#x5DE6;&#x8868;&#x7684;&#x591A;&#x6761;&#x8BB0;&#x5F55;. &#x90A3;&#x4E48;&#x8FD9;&#x79CD;&#x5173;&#x7CFB; &#x5219; &#x591A;&#x5BF9;&#x591A; &#x5173;&#x7CFB;. 
+&#x8FD9;&#x79CD;&#x5173;&#x7CFB;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8FD9;&#x4E24;&#x5F20;&#x8868;&#x7684;[&#x5173;&#x7CFB;&#x8868;]&#x6765;&#x4E13;&#x95E8;&#x5B58;&#x653E;&#x4E8C;&#x8005;&#x7684;&#x5173;&#x7CFB;
+</code></pre><h4 id="3&#x5EFA;&#x7ACB;&#x8868;&#x5173;&#x7CFB;"><a name="3&#x5EFA;&#x7ACB;&#x8868;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#3&#x5EFA;&#x7ACB;&#x8868;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x5EFA;&#x7ACB;&#x8868;&#x5173;&#x7CFB;</h4>
+<p>1.&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</p>
+<p>&#x3000;&#x4F8B;&#x5982;:&#x4E00;&#x4E2A;&#x4EBA;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x591A;&#x8F86;&#x6C7D;&#x8F66;&#xFF0C;&#x8981;&#x6C42;&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x4EBA;&#x62E5;&#x6709;&#x7684;&#x6240;&#x6709;&#x8F66;&#x8F86;&#x3002; 
+&#x3000;&#x5206;&#x6790;&#xFF1A;&#x4EBA;&#x548C;&#x8F66;&#x8F86;&#x5206;&#x522B;&#x5355;&#x72EC;&#x5EFA;&#x8868;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5C06;&#x4E24;&#x4E2A;&#x8868;&#x5173;&#x8054;&#x5462;&#xFF1F;&#x6709;&#x4E2A;&#x5DE7;&#x5999;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x8F66;&#x8F86;&#x7684;&#x8868;&#x4E2D;&#x52A0;&#x4E2A;&#x5916;&#x952E;&#x5B57;&#x6BB5;(&#x4EBA;&#x7684;&#x7F16;&#x53F7;)&#x5373;&#x53EF;&#x3002; 
+&#x3000;<em> (&#x601D;&#x8DEF;&#x5C0F;&#x7ED3;&#xFF1A;&#x2019;&#x5EFA;&#x4E24;&#x4E2A;&#x8868;&#xFF0C;&#x4E00;&#x2019;&#x65B9;&#x4E0D;&#x52A8;&#xFF0C;&#x2019;&#x591A;&#x2019;&#x65B9;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5916;&#x952E;&#x5B57;&#x6BB5;)</em></p>
+<p><img src="img8" alt="img8"></p>
+<p> 2.&#x4E00;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;</p>
+<p> &#x4F8B;&#x5982;&#xFF1A;&#x4E00;&#x4E2A;&#x4E2D;&#x56FD;&#x516C;&#x6C11;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x8EAB;&#x4EFD;&#x8BC1;&#x4FE1;&#x606F;</p>
+<p> &#x5206;&#x6790;: &#x4E00;&#x5BF9;&#x4E00;&#x7684;&#x8868;&#x5173;&#x7CFB;&#x5B9E;&#x9645;&#x4E0A;&#x662F; &#x53D8;&#x5F02;&#x4E86;&#x7684; &#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;. &#x901A;&#x8FC7;&#x5728;&#x4ECE;&#x8868;&#x7684;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#x4E0A;&#x6DFB;&#x52A0;&#x552F;&#x4E00;&#x7EA6;&#x675F;(unique)&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x5BF9;&#x4E00;&#x8868;&#x5173;&#x7CFB;.</p>
+<p><img src="img9" alt="img9"></p>
+<p>3.&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;</p>
+<p>&#x3000;&#x4F8B;&#x5982;&#xFF1A;&#x5B66;&#x751F;&#x9009;&#x8BFE;&#xFF0C;&#x4E00;&#x4E2A;&#x5B66;&#x751F;&#x53EF;&#x4EE5;&#x9009;&#x4FEE;&#x591A;&#x95E8;&#x8BFE;&#x7A0B;&#xFF0C;&#x6BCF;&#x95E8;&#x8BFE;&#x7A0B;&#x53EF;&#x4F9B;&#x591A;&#x4E2A;&#x5B66;&#x751F;&#x9009;&#x62E9;&#x3002; 
+&#x3000;&#x5206;&#x6790;&#xFF1A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x7C7B;&#x4F3C;&#x4E00;&#x5BF9;&#x591A;&#x65B9;&#x5F0F;&#x5EFA;&#x8868;&#xFF0C;&#x4F46;&#x5197;&#x4F59;&#x4FE1;&#x606F;&#x592A;&#x591A;&#xFF0C;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5B9E;&#x4F53;&#x548C;&#x5173;&#x7CFB;&#x5206;&#x79BB;&#x5E76;&#x5355;&#x72EC;&#x5EFA;&#x8868;&#xFF0C;&#x5B9E;&#x4F53;&#x8868;&#x4E3A;&#x5B66;&#x751F;&#x8868;&#x548C;&#x8BFE;&#x7A0B;&#x8868;&#xFF0C;&#x5173;&#x7CFB;&#x8868;&#x4E3A;&#x9009;&#x4FEE;&#x8868;&#xFF0C;
+&#x5176;&#x4E2D;&#x5173;&#x7CFB;&#x8868;&#x91C7;&#x7528;&#x8054;&#x5408;&#x4E3B;&#x952E;&#x7684;&#x65B9;&#x5F0F;(&#x7531;&#x5B66;&#x751F;&#x8868;&#x4E3B;&#x952E;&#x548C;&#x8BFE;&#x7A0B;&#x8868;&#x4E3B;&#x952E;&#x7EC4;&#x6210;)&#x5EFA;&#x8868;&#x3002;</p>
+<p><img src="img10" alt="img10"></p>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;"><a name="&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E09;&#x8303;&#x5F0F;:</h2>
+<p><code>1&#xFF0E;&#x7B2C;&#x4E00;&#x8303;&#x5F0F;(&#x786E;&#x4FDD;&#x6BCF;&#x5217;&#x4FDD;&#x6301;&#x539F;&#x5B50;&#x6027;)</code></p>
+<p><code>2&#xFF0E;&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;(&#x786E;&#x4FDD;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x5217;&#x90FD;&#x548C;&#x4E3B;&#x952E;&#x76F8;&#x5173;)</code></p>
+<p><code>3&#xFF0E;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;(&#x786E;&#x4FDD;&#x6BCF;&#x5217;&#x90FD;&#x548C;&#x4E3B;&#x952E;&#x5217;&#x76F4;&#x63A5;&#x76F8;&#x5173;,&#x800C;&#x4E0D;&#x662F;&#x95F4;&#x63A5;&#x76F8;&#x5173;)</code></p>
+<pre><code>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;
+
+1.&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#x4E0E;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x7684;&#x672C;&#x8D28;&#x533A;&#x522B;&#xFF1A;&#x5728;&#x4E8E;&#x6709;&#x6CA1;&#x6709;&#x5206;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x3002;
+
+&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#x662F;&#x8BF4;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x5B9E;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x8981;&#x5206;&#x6210;&#x591A;&#x5F20;&#x8868;&#xFF0C;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x662F;&#x8981;&#x6C42;&#x5DF2;&#x7ECF;&#x5206;&#x597D;&#x4E86;&#x591A;&#x5F20;&#x8868;&#x7684;&#x8BDD;&#xFF0C;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x53E6;&#x4E00;&#x5F20;&#x6807;&#x7684;ID&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x6709;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#xFF0C;&#xFF08;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#xFF0C;&#x4E00;&#x5F8B;&#x7528;&#x4E3B;&#x952E;&#x5728;&#x53E6;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x67E5;&#x8BE2;&#xFF09;&#x3002;
+
+2.&#x5FC5;&#x987B;&#x5148;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E00;&#x8303;&#x5F0F;&#x624D;&#x80FD;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#xFF0C;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E00;&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#x624D;&#x80FD;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x3002;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4、完整性约束.html" class="navigation navigation-prev " aria-label="Previous page: 4、完整性约束">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../04-MySQL数据操作/" class="navigation navigation-next " aria-label="Next page: MySQL数据操作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5、多表查询之补充","level":"1.3.3.5","depth":3,"next":{"title":"MySQL数据操作","level":"1.3.4","depth":2,"path":"MySQL学习/04-MySQL数据操作/README.md","ref":"MySQL学习/04-MySQL数据操作/README.md","articles":[{"title":"1、MySQL数据操作","level":"1.3.4.1","depth":3,"path":"MySQL学习/04-MySQL数据操作/1、MySQL数据操作.md","ref":"MySQL学习/04-MySQL数据操作/1、MySQL数据操作.md","articles":[]},{"title":"2、单表查询","level":"1.3.4.2","depth":3,"path":"MySQL学习/04-MySQL数据操作/2、单表查询.md","ref":"MySQL学习/04-MySQL数据操作/2、单表查询.md","articles":[]},{"title":"3、多表查询","level":"1.3.4.3","depth":3,"path":"MySQL学习/04-MySQL数据操作/3、多表查询.md","ref":"MySQL学习/04-MySQL数据操作/3、多表查询.md","articles":[]},{"title":"4、MySQL逻辑查询语句执行顺序","level":"1.3.4.4","depth":3,"path":"MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.md","ref":"MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.md","articles":[]},{"title":"5、多表查询解析","level":"1.3.4.5","depth":3,"path":"MySQL学习/04-MySQL数据操作/5、多表查询解析.md","ref":"MySQL学习/04-MySQL数据操作/5、多表查询解析.md","articles":[]}]},"previous":{"title":"4、完整性约束","level":"1.3.3.4","depth":3,"path":"MySQL学习/03-MySQL表操作/4、完整性约束.md","ref":"MySQL学习/03-MySQL表操作/4、完整性约束.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"MySQL学习/03-MySQL表操作/5、多表查询之补充.md","mtime":"2018-06-12T01:20:56.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

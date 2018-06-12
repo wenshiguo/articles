@@ -1,0 +1,1262 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Web框架本质及第一个Django实例 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03.HTTP协议.html" />
+    
+    
+    <link rel="prev" href="01.Django初识.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../MySQL学习/">
+            
+                <a href="../../MySQL学习/">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../MySQL学习/01-初识数据库.html">
+            
+                <a href="../../MySQL学习/01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../MySQL学习/02-MySQL库操作.html">
+            
+                <a href="../../MySQL学习/02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../MySQL学习/03-MySQL表操作/">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                <a href="../../MySQL学习/03-MySQL表操作/5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../MySQL学习/04-MySQL数据操作/">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../../MySQL学习/04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../MySQL学习/Python3连接MySQL.html">
+            
+                <a href="../../MySQL学习/Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01.Django初识.html">
+            
+                <a href="01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="02.Web框架本质及第一个Django实例.html">
+            
+                <a href="02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="03.HTTP协议.html">
+            
+                <a href="03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="04.Django框架简介.html">
+            
+                <a href="04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="05.Django的视图.html">
+            
+                <a href="05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="06.Django的路由系统.html">
+            
+                <a href="06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="07.Django模板系统.html">
+            
+                <a href="07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="08.Django模型ORM.html">
+            
+                <a href="08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="09.Django路由系统.html">
+            
+                <a href="09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10.ORM相关操作.html">
+            
+                <a href="10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="111.ORM版学员管理系统.html">
+            
+                <a href="111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="11.Form组件.html">
+            
+                <a href="11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="博客项目点赞与灭操作.html">
+            
+                <a href="博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="博客项目评论.html">
+            
+                <a href="博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../lufei-payment/luffy结算中心.html">
+            
+                <a href="../lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Web框架本质及第一个Django实例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;django&#x5B9E;&#x4F8B;"><b></b>Web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;Django&#x5B9E;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;"><b></b>Web&#x6846;&#x67B6;&#x672C;&#x8D28;</a></li><ul><li><span class="title-icon "></span><a href="#&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><b></b>&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;</a></li><li><span class="title-icon "></span><a href="#http-get&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><b></b>HTTP GET&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#http&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><b></b>HTTP&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><b></b>&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;</a></li><li><span class="title-icon "></span><a href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;"><b></b>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;</a></li><li><span class="title-icon "></span><a href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;"><b></b>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;</a></li><li><span class="title-icon "></span><a href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;"><b></b>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;</a></li><li><span class="title-icon "></span><a href="#&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;html&#x6587;&#x4EF6;"><b></b>&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;HTML&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;"><b></b>&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;</a></li></ul><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><b></b>&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</a></li><ul><li><span class="title-icon "></span><a href="#wsgiref"><b></b>wsgiref</a></li><li><span class="title-icon "></span><a href="#jinja2"><b></b>jinja2</a></li></ul><li><span class="title-icon "></span><a href="#django"><b></b>Django</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;lts&#x7248;&#xFF09;&#xFF1A;"><b></b>&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;LTS&#x7248;&#xFF09;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;"><b></b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;"><b></b>&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x8FD0;&#x884C;django&#x9879;&#x76EE;&#xFF1A;"><b></b>&#x8FD0;&#x884C;Django&#x9879;&#x76EE;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><b></b>&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><b></b>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;</a></li></ul><li><span class="title-icon "></span><a href="#django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;"><b></b>Django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;</a></li><ul><li><span class="title-icon "></span><a href="#httpresponse"><b></b>HttpResponse</a></li><li><span class="title-icon "></span><a href="#render"><b></b>render</a></li><li><span class="title-icon "></span><a href="#redirect"><b></b>redirect</a></li></ul><li><span class="title-icon "></span><a href="#&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;"><b></b>&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;django&#x62A5;&#x9519;&#xFF1A;"><b></b>&#x542F;&#x52A8;Django&#x62A5;&#x9519;&#xFF1A;</a></li></ul></ul></div><a href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;django&#x5B9E;&#x4F8B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;django&#x5B9E;&#x4F8B;"><a name="web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;django&#x5B9E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;django&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>Web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;Django&#x5B9E;&#x4F8B;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;django&#x5B9E;&#x4F8B;"><b></b>Web&#x6846;&#x67B6;&#x672C;&#x8D28;&#x53CA;&#x7B2C;&#x4E00;&#x4E2A;Django&#x5B9E;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;"><b></b>Web&#x6846;&#x67B6;&#x672C;&#x8D28;</a></li><ul><li><span class="title-icon "></span><a href="#&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><b></b>&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;</a></li><li><span class="title-icon "></span><a href="#http-get&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><b></b>HTTP GET&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#http&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><b></b>HTTP&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><b></b>&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;</a></li><li><span class="title-icon "></span><a href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;"><b></b>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;</a></li><li><span class="title-icon "></span><a href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;"><b></b>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;</a></li><li><span class="title-icon "></span><a href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;"><b></b>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;</a></li><li><span class="title-icon "></span><a href="#&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;html&#x6587;&#x4EF6;"><b></b>&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;HTML&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;"><b></b>&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;</a></li></ul><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><b></b>&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</a></li><ul><li><span class="title-icon "></span><a href="#wsgiref"><b></b>wsgiref</a></li><li><span class="title-icon "></span><a href="#jinja2"><b></b>jinja2</a></li></ul><li><span class="title-icon "></span><a href="#django"><b></b>Django</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;lts&#x7248;&#xFF09;&#xFF1A;"><b></b>&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;LTS&#x7248;&#xFF09;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;"><b></b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;"><b></b>&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x8FD0;&#x884C;django&#x9879;&#x76EE;&#xFF1A;"><b></b>&#x8FD0;&#x884C;Django&#x9879;&#x76EE;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><b></b>&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><b></b>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;</a></li></ul><li><span class="title-icon "></span><a href="#django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;"><b></b>Django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;</a></li><ul><li><span class="title-icon "></span><a href="#httpresponse"><b></b>HttpResponse</a></li><li><span class="title-icon "></span><a href="#render"><b></b>render</a></li><li><span class="title-icon "></span><a href="#redirect"><b></b>redirect</a></li></ul><li><span class="title-icon "></span><a href="#&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;"><b></b>&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;django&#x62A5;&#x9519;&#xFF1A;"><b></b>&#x542F;&#x52A8;Django&#x62A5;&#x9519;&#xFF1A;</a></li></ul></ul></div>
+
+<h2 id="web&#x6846;&#x67B6;&#x672C;&#x8D28;"><a name="web&#x6846;&#x67B6;&#x672C;&#x8D28;" class="anchor-navigation-ex-anchor" href="#web&#x6846;&#x67B6;&#x672C;&#x8D28;"><i class="fa fa-link" aria-hidden="true"></i></a>Web&#x6846;&#x67B6;&#x672C;&#x8D28;</h2>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#xFF1A;&#x6240;&#x6709;&#x7684;Web&#x5E94;&#x7528;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;socket&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x800C;&#x7528;&#x6237;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x662F;&#x4E00;&#x4E2A;socket&#x5BA2;&#x6237;&#x7AEF;&#x3002; &#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;Web&#x6846;&#x67B6;&#x4E86;&#x3002;</p>
+<h3 id="&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><a name="&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;" class="anchor-navigation-ex-anchor" href="#&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x534A;&#x6210;&#x54C1;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">80</span>))
+sk.listen()
+
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    conn, addr = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)
+    conn.send(<span class="hljs-string">b&quot;OK&quot;</span>)
+    conn.close()
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x8BF4;Web&#x670D;&#x52A1;&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F;&#x5728;&#x8FD9;&#x5341;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x51FA;&#x6765;&#x7684;&#x3002;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x5B83;&#x4EEC;&#x7684;&#x7956;&#x5B97;&#x3002;</p>
+<p>&#x7528;&#x6237;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E00;&#x8F93;&#x5165;&#x7F51;&#x5740;&#xFF0C;&#x4F1A;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x53D1;&#x9001;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#xFF1F;&#x600E;&#x4E48;&#x53D1;&#xFF1F;&#x8FD9;&#x4E2A;&#x8C01;&#x6765;&#x5B9A;&#xFF1F; &#x4F60;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#x662F;&#x8FD9;&#x4E2A;&#x89C4;&#x5B9A;&#xFF0C;&#x4ED6;&#x90A3;&#x4E2A;&#x7F51;&#x7AD9;&#x6309;&#x7167;&#x4ED6;&#x90A3;&#x4E2A;&#x89C4;&#x5B9A;&#xFF0C;&#x8FD9;&#x4E92;&#x8054;&#x7F51;&#x8FD8;&#x80FD;&#x73A9;&#x4E48;&#xFF1F;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x8BA9;&#x5927;&#x5BB6;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3001;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E2A;&#x683C;&#x5F0F;&#x4F9D;&#x636E;&#xFF0C;&#x4E0D;&#x80FD;&#x968F;&#x4FBF;&#x5199;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x5C31;&#x662F;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x4EE5;&#x540E;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x4FE1;&#x606F;&#x4E5F;&#x597D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x590D;&#x54CD;&#x5E94;&#x4FE1;&#x606F;&#x4E5F;&#x7F62;&#xFF0C;&#x90FD;&#x8981;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x6765;&#x3002;</p>
+<p>HTTP&#x534F;&#x8BAE;&#x4E3B;&#x8981;&#x89C4;&#x5B9A;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x683C;&#x5F0F;&#xFF0C;&#x90A3;HTTP&#x534F;&#x8BAE;&#x662F;&#x600E;&#x4E48;&#x89C4;&#x5B9A;&#x6D88;&#x606F;&#x683C;&#x5F0F;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x6253;&#x5370;&#x4E0B;&#x6211;&#x4EEC;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6D88;&#x606F;&#x662F;&#x4EC0;&#x4E48;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">80</span>))
+sk.listen()
+
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    conn, addr = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)
+    print(data)  <span class="hljs-comment"># &#x5C06;&#x6D4F;&#x89C8;&#x5668;FA&#x6765;&#x7684;&#x6D88;&#x606F;&#x6253;&#x5370;&#x51FA;&#x6765;</span>
+    conn.send(<span class="hljs-string">b&quot;OK&quot;</span>)
+    conn.close()
+</code></pre>
+<p><code>&#x8F93;&#x51FA;:</code></p>
+<pre><code>b&apos;GET / HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\nDNT: 1\r\nAccept-Encoding: gzip, deflate, br\r\nAccept-Language: zh-CN,zh;q=0.9\r\nCookie: csrftoken=RKBXh1d3M97iz03Rpbojx1bR6mhHudhyX5PszUxxG3bOEwh1lxFpGOgWN93ZH3zv\r\n\r\n&apos;
+</code></pre><p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x535A;&#x5BA2;&#x56ED;&#x5B98;&#x7F51;&#x65F6;&#x6D4F;&#x89C8;&#x5668;&#x6536;&#x5230;&#x7684;&#x54CD;&#x5E94;&#x4FE1;&#x606F;&#x662F;&#x4EC0;&#x4E48;&#x3002;</p>
+<p>&#x54CD;&#x5E94;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x8C03;&#x8BD5;&#x7A97;&#x53E3;&#x7684;network&#x6807;&#x7B7E;&#x9875;&#x4E2D;&#x770B;&#x5230;&#x3002;</p>
+<p><img src="img1" alt="img1"></p>
+<p>&#x70B9;&#x51FB;<code>view source</code>&#x4E4B;&#x540E;&#x663E;&#x793A;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="img2" alt="img2"></p>
+<p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6536;&#x53D1;&#x7684;&#x6D88;&#x606F;&#x9700;&#x8981;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x7684;&#x683C;&#x5F0F;&#x6765;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;HTTP&#x534F;&#x8BAE;&#x4E86;&#x3002;</p>
+<p><a href="HTTP&#x534F;&#x8BAE;&#x4ECB;&#x7ECD;">HTTP&#x534F;&#x8BAE;&#x4ECB;&#x7ECD;</a>HTTP&#x534F;&#x8BAE;&#x4ECB;&#x7ECD;</p>
+<p>HTTP&#x534F;&#x8BAE;&#x5BF9;&#x6536;&#x53D1;&#x6D88;&#x606F;&#x7684;&#x683C;&#x5F0F;&#x8981;&#x6C42;</p>
+<p>&#x6BCF;&#x4E2A;HTTP&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x90FD;&#x9075;&#x5FAA;&#x76F8;&#x540C;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x4E00;&#x4E2A;HTTP&#x5305;&#x542B;Header&#x548C;Body&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x4E2D;Body&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002; HTTP&#x54CD;&#x5E94;&#x7684;Header&#x4E2D;&#x6709;&#x4E00;&#x4E2A; <code>Content-Type</code>&#x8868;&#x660E;&#x54CD;&#x5E94;&#x7684;&#x5185;&#x5BB9;&#x683C;&#x5F0F;&#x3002;&#x5982; <code>text/html</code>&#x8868;&#x793A;HTML&#x7F51;&#x9875;&#x3002;</p>
+<h3 id="http-get&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><a name="http-get&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#http-get&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP GET&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</h3>
+<p><img src="img3" alt="img3"></p>
+<h3 id="http&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><a name="http&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#http&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP&#x54CD;&#x5E94;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</h3>
+<p><img src="img4" alt="img4"></p>
+<h3 id="&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><a name="&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;" class="anchor-navigation-ex-anchor" href="#&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5904;&#x5973;&#x7248;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;</h3>
+<p>&#x7ECF;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x8865;&#x5145;&#x5B66;&#x4E60;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E86;&#x8981;&#x60F3;&#x8BA9;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5199;&#x7684;web server&#x7AEF;&#x6B63;&#x7ECF;&#x8D77;&#x6765;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x8BA9;&#x6211;&#x4EEC;&#x7684;Web server&#x5728;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x56DE;&#x590D;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#x6309;&#x7167;HTTP&#x534F;&#x8BAE;&#x7684;&#x89C4;&#x5219;&#x52A0;&#x4E0A;&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6B63;&#x7ECF;&#x7684;Web&#x6846;&#x67B6;&#x4E86;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.bind((<span class="hljs-string">&apos;127.0.0.1&apos;</span>, <span class="hljs-number">8000</span>))
+sock.listen()
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    conn, addr = sock.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)
+    <span class="hljs-comment"># &#x7ED9;&#x56DE;&#x590D;&#x7684;&#x6D88;&#x606F;&#x52A0;&#x4E0A;&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x884C;</span>
+    conn.send(<span class="hljs-string">b&quot;HTTP/1.1 200 OK\r\n\r\n&quot;</span>)
+    conn.send(<span class="hljs-string">b&quot;OK&quot;</span>)
+    conn.close()
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x5341;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x7B80;&#x5355;&#x5730;&#x6F14;&#x793A;&#x4E86;web &#x6846;&#x67B6;&#x7684;&#x672C;&#x8D28;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x8BA9;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5B8C;&#x5584;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;web&#x6846;&#x67B6;&#x5427;&#xFF01;</p>
+<h3 id="&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;"><a name="&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;" class="anchor-navigation-ex-anchor" href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;</h3>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x5417;&#xFF1F; &#x5982;&#x4F55;&#x8BA9;&#x6211;&#x4EEC;&#x7684;Web&#x670D;&#x52A1;&#x6839;&#x636E;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x7684;URL&#x4E0D;&#x540C;&#x800C;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x5462;&#xFF1F;</p>
+<p>&#x5C0F;&#x4E8B;&#x4E00;&#x6869;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x8BF7;&#x6C42;&#x76F8;&#x5173;&#x6570;&#x636E;&#x91CC;&#x9762;&#x62FF;&#x5230;&#x8BF7;&#x6C42;URL&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x7136;&#x540E;&#x62FF;&#x8DEF;&#x5F84;&#x505A;&#x4E00;&#x4E2A;&#x5224;&#x65AD;...</p>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;
+&#x6839;&#x636E;URL&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">import</span> socket
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8080</span>))  <span class="hljs-comment"># &#x7ED1;&#x5B9A;IP&#x548C;&#x7AEF;&#x53E3;</span>
+sk.listen()  <span class="hljs-comment"># &#x76D1;&#x542C;</span>
+
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
+    <span class="hljs-comment"># &#x7B49;&#x5F85;&#x8FDE;&#x63A5;</span>
+    conn, add = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)  <span class="hljs-comment"># &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;</span>
+    <span class="hljs-comment"># &#x4ECE;data&#x4E2D;&#x53D6;&#x5230;&#x8DEF;&#x5F84;</span>
+    data = str(data, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)  <span class="hljs-comment"># &#x628A;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-comment"># &#x6309;\r\n&#x5206;&#x5272;</span>
+    data1 = data.split(<span class="hljs-string">&quot;\r\n&quot;</span>)[<span class="hljs-number">0</span>]
+    url = data1.split()[<span class="hljs-number">1</span>]  <span class="hljs-comment"># url&#x662F;&#x6211;&#x4EEC;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;</span>
+    conn.send(<span class="hljs-string">b&apos;HTTP/1.1 200 OK\r\n\r\n&apos;</span>)  <span class="hljs-comment"># &#x56E0;&#x4E3A;&#x8981;&#x9075;&#x5FAA;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x4EE5;&#x56DE;&#x590D;&#x7684;&#x6D88;&#x606F;&#x4E5F;&#x8981;&#x52A0;&#x72B6;&#x6001;&#x884C;</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;</span>
+    <span class="hljs-keyword">if</span> url == <span class="hljs-string">&quot;/index/&quot;</span>:
+        response = <span class="hljs-string">b&quot;index&quot;</span>
+    <span class="hljs-keyword">elif</span> url == <span class="hljs-string">&quot;/home/&quot;</span>:
+        response = <span class="hljs-string">b&quot;home&quot;</span>
+    <span class="hljs-keyword">else</span>:
+        response = <span class="hljs-string">b&quot;404 not found!&quot;</span>
+
+    conn.send(response)
+    conn.close()
+</code></pre>
+<h3 id="&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;"><a name="&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;" class="anchor-navigation-ex-anchor" href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;</h3>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x89E3;&#x51B3;&#x4E86;&#x4E0D;&#x540C;URL&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x95EE;&#x9898;&#x53C8;&#x6765;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5F88;&#x591A;&#x5F88;&#x591A;&#x8DEF;&#x5F84;&#x8981;&#x5224;&#x65AD;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x96BE;&#x9053;&#x8981;&#x6328;&#x4E2A;&#x5199;if&#x5224;&#x65AD;&#xFF1F; &#x5F53;&#x7136;&#x4E0D;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x66F4;&#x806A;&#x660E;&#x7684;&#x529E;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;
+&#x6839;&#x636E;URL&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x7248;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">import</span> socket
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8080</span>))  <span class="hljs-comment"># &#x7ED1;&#x5B9A;IP&#x548C;&#x7AEF;&#x53E3;</span>
+sk.listen()  <span class="hljs-comment"># &#x76D1;&#x542C;</span>
+
+
+<span class="hljs-comment"># &#x5C06;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(url)</span>:</span>
+    s = <span class="hljs-string">&quot;&#x8FD9;&#x662F;{}&#x9875;&#x9762;&#xFF01;&quot;</span>.format(url)
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(url)</span>:</span>
+    s = <span class="hljs-string">&quot;&#x8FD9;&#x662F;{}&#x9875;&#x9762;&#xFF01;&quot;</span>.format(url)
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
+    <span class="hljs-comment"># &#x7B49;&#x5F85;&#x8FDE;&#x63A5;</span>
+    conn, add = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)  <span class="hljs-comment"># &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;</span>
+    <span class="hljs-comment"># &#x4ECE;data&#x4E2D;&#x53D6;&#x5230;&#x8DEF;&#x5F84;</span>
+    data = str(data, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)  <span class="hljs-comment"># &#x628A;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-comment"># &#x6309;\r\n&#x5206;&#x5272;</span>
+    data1 = data.split(<span class="hljs-string">&quot;\r\n&quot;</span>)[<span class="hljs-number">0</span>]
+    url = data1.split()[<span class="hljs-number">1</span>]  <span class="hljs-comment"># url&#x662F;&#x6211;&#x4EEC;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;</span>
+    conn.send(<span class="hljs-string">b&apos;HTTP/1.1 200 OK\r\n\r\n&apos;</span>)  <span class="hljs-comment"># &#x56E0;&#x4E3A;&#x8981;&#x9075;&#x5FAA;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x4EE5;&#x56DE;&#x590D;&#x7684;&#x6D88;&#x606F;&#x4E5F;&#x8981;&#x52A0;&#x72B6;&#x6001;&#x884C;</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;&#xFF0C;response&#x662F;&#x5177;&#x4F53;&#x7684;&#x54CD;&#x5E94;&#x4F53;</span>
+    <span class="hljs-keyword">if</span> url == <span class="hljs-string">&quot;/index/&quot;</span>:
+        response = index(url)
+    <span class="hljs-keyword">elif</span> url == <span class="hljs-string">&quot;/home/&quot;</span>:
+        response = home(url)
+    <span class="hljs-keyword">else</span>:
+        response = <span class="hljs-string">b&quot;404 not found!&quot;</span>
+
+    conn.send(response)
+    conn.close()
+</code></pre>
+<h3 id="&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;"><a name="&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;" class="anchor-navigation-ex-anchor" href="#&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;</h3>
+<p>&#x770B;&#x8D77;&#x6765;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8FD8;&#x662F;&#x8981;&#x6328;&#x4E2A;&#x5199;if&#x5224;&#x65AD;&#xFF0C;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x6709;&#x529E;&#x6CD5;&#xFF01;&#xFF08;&#x53EA;&#x8981;&#x601D;&#x60F3;&#x4E0D;&#x6ED1;&#x5761;&#xFF0C;&#x65B9;&#x6CD5;&#x603B;&#x6BD4;&#x95EE;&#x9898;&#x591A;&#xFF01;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;
+&#x6839;&#x636E;URL&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">import</span> socket
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8080</span>))  <span class="hljs-comment"># &#x7ED1;&#x5B9A;IP&#x548C;&#x7AEF;&#x53E3;</span>
+sk.listen()  <span class="hljs-comment"># &#x76D1;&#x542C;</span>
+
+
+<span class="hljs-comment"># &#x5C06;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(url)</span>:</span>
+    s = <span class="hljs-string">&quot;&#x8FD9;&#x662F;{}&#x9875;&#x9762;&#xFF01;&quot;</span>.format(url)
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(url)</span>:</span>
+    s = <span class="hljs-string">&quot;&#x8FD9;&#x662F;{}&#x9875;&#x9762;&#xFF01;&quot;</span>.format(url)
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;url&#x548C;&#x5B9E;&#x9645;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</span>
+list1 = [
+    (<span class="hljs-string">&quot;/index/&quot;</span>, index),
+    (<span class="hljs-string">&quot;/home/&quot;</span>, home),
+]
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
+    <span class="hljs-comment"># &#x7B49;&#x5F85;&#x8FDE;&#x63A5;</span>
+    conn, add = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)  <span class="hljs-comment"># &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;</span>
+    <span class="hljs-comment"># &#x4ECE;data&#x4E2D;&#x53D6;&#x5230;&#x8DEF;&#x5F84;</span>
+    data = str(data, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)  <span class="hljs-comment"># &#x628A;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-comment"># &#x6309;\r\n&#x5206;&#x5272;</span>
+    data1 = data.split(<span class="hljs-string">&quot;\r\n&quot;</span>)[<span class="hljs-number">0</span>]
+    url = data1.split()[<span class="hljs-number">1</span>]  <span class="hljs-comment"># url&#x662F;&#x6211;&#x4EEC;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;</span>
+    conn.send(<span class="hljs-string">b&apos;HTTP/1.1 200 OK\r\n\r\n&apos;</span>)  <span class="hljs-comment"># &#x56E0;&#x4E3A;&#x8981;&#x9075;&#x5FAA;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x4EE5;&#x56DE;&#x590D;&#x7684;&#x6D88;&#x606F;&#x4E5F;&#x8981;&#x52A0;&#x72B6;&#x6001;&#x884C;</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;</span>
+    func = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x540D;&#x7684;&#x53D8;&#x91CF;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> list1:
+        <span class="hljs-keyword">if</span> i[<span class="hljs-number">0</span>] == url:
+            func = i[<span class="hljs-number">1</span>]
+            <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">if</span> func:
+        response = func(url)
+    <span class="hljs-keyword">else</span>:
+        response = <span class="hljs-string">b&quot;404 not found!&quot;</span>
+
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;&#x54CD;&#x5E94;&#x6D88;&#x606F;</span>
+    conn.send(response)
+    conn.close()
+</code></pre>
+<h3 id="&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;html&#x6587;&#x4EF6;"><a name="&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;html&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;html&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;HTML&#x6587;&#x4EF6;</h3>
+<p>&#x5B8C;&#x7F8E;&#x89E3;&#x51B3;&#x4E86;&#x4E0D;&#x540C;URL&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;&#x7684;&#x95EE;&#x9898;&#x3002; &#x4F46;&#x662F;&#x6211;&#x4E0D;&#x60F3;&#x4EC5;&#x4EC5;&#x8FD4;&#x56DE;&#x51E0;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6211;&#x60F3;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x8FD4;&#x56DE;&#x5B8C;&#x6574;&#x7684;HTML&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x53C8;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#x5462;&#xFF1F;</p>
+<p>&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x4EC0;&#x4E48;&#x5185;&#x5BB9;&#xFF0C;&#x6700;&#x540E;&#x90FD;&#x662F;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x8282;&#x6570;&#x636E;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x7684;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6253;&#x5F00;HTML&#x6587;&#x4EF6;&#xFF0C;&#x8BFB;&#x53D6;&#x51FA;&#x5B83;&#x5185;&#x90E8;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x53D1;&#x9001;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;
+&#x6839;&#x636E;URL&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;
+&#x8FD4;&#x56DE;&#x72EC;&#x7ACB;&#x7684;HTML&#x9875;&#x9762;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">import</span> socket
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8080</span>))  <span class="hljs-comment"># &#x7ED1;&#x5B9A;IP&#x548C;&#x7AEF;&#x53E3;</span>
+sk.listen()  <span class="hljs-comment"># &#x76D1;&#x542C;</span>
+
+
+<span class="hljs-comment"># &#x5C06;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-comment"># &#x8BFB;&#x53D6;index.html&#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;index.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>) <span class="hljs-keyword">as</span> f:
+        s = f.read()
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x5B57;&#x8282;&#x6570;&#x636E;</span>
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;home.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>) <span class="hljs-keyword">as</span> f:
+        s = f.read()
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;url&#x548C;&#x5B9E;&#x9645;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</span>
+list1 = [
+    (<span class="hljs-string">&quot;/index/&quot;</span>, index),
+    (<span class="hljs-string">&quot;/home/&quot;</span>, home),
+]
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
+    <span class="hljs-comment"># &#x7B49;&#x5F85;&#x8FDE;&#x63A5;</span>
+    conn, add = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)  <span class="hljs-comment"># &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;</span>
+    <span class="hljs-comment"># &#x4ECE;data&#x4E2D;&#x53D6;&#x5230;&#x8DEF;&#x5F84;</span>
+    data = str(data, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)  <span class="hljs-comment"># &#x628A;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-comment"># &#x6309;\r\n&#x5206;&#x5272;</span>
+    data1 = data.split(<span class="hljs-string">&quot;\r\n&quot;</span>)[<span class="hljs-number">0</span>]
+    url = data1.split()[<span class="hljs-number">1</span>]  <span class="hljs-comment"># url&#x662F;&#x6211;&#x4EEC;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;</span>
+    conn.send(<span class="hljs-string">b&apos;HTTP/1.1 200 OK\r\n\r\n&apos;</span>)  <span class="hljs-comment"># &#x56E0;&#x4E3A;&#x8981;&#x9075;&#x5FAA;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x4EE5;&#x56DE;&#x590D;&#x7684;&#x6D88;&#x606F;&#x4E5F;&#x8981;&#x52A0;&#x72B6;&#x6001;&#x884C;</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;</span>
+    func = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x540D;&#x7684;&#x53D8;&#x91CF;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> list1:
+        <span class="hljs-keyword">if</span> i[<span class="hljs-number">0</span>] == url:
+            func = i[<span class="hljs-number">1</span>]
+            <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">if</span> func:
+        response = func(url)
+    <span class="hljs-keyword">else</span>:
+        response = <span class="hljs-string">b&quot;404 not found!&quot;</span>
+
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;&#x54CD;&#x5E94;&#x6D88;&#x606F;</span>
+    conn.send(response)
+    conn.close()
+</code></pre>
+<h3 id="&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;"><a name="&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;" class="anchor-navigation-ex-anchor" href="#&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;</h3>
+<p>&#x8FD9;&#x7F51;&#x9875;&#x80FD;&#x591F;&#x663E;&#x793A;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x90FD;&#x662F;&#x9759;&#x6001;&#x7684;&#x554A;&#x3002;&#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x90FD;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x6211;&#x60F3;&#x8981;&#x7684;&#x662F;&#x52A8;&#x6001;&#x7F51;&#x7AD9;&#x3002;</p>
+<p>&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4E5F;&#x6709;&#x529E;&#x6CD5;&#x89E3;&#x51B3;&#x3002;&#x6211;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x9700;&#x6C42;&#x3002;&#xFF08;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x65F6;&#x95F4;&#x6233;&#x6765;&#x6A21;&#x62DF;&#x52A8;&#x6001;&#x7684;&#x6570;&#x636E;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;
+&#x6839;&#x636E;URL&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;
+&#x8FD4;&#x56DE;HTML&#x9875;&#x9762;
+&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">import</span> socket
+<span class="hljs-keyword">import</span> time
+
+sk = socket.socket()
+sk.bind((<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8080</span>))  <span class="hljs-comment"># &#x7ED1;&#x5B9A;IP&#x548C;&#x7AEF;&#x53E3;</span>
+sk.listen()  <span class="hljs-comment"># &#x76D1;&#x542C;</span>
+
+
+<span class="hljs-comment"># &#x5C06;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;index.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>) <span class="hljs-keyword">as</span> f:
+        s = f.read()
+        now = str(time.time())
+        s = s.replace(<span class="hljs-string">&quot;@@oo@@&quot;</span>, now)  <span class="hljs-comment"># &#x5728;&#x7F51;&#x9875;&#x4E2D;&#x5B9A;&#x4E49;&#x597D;&#x7279;&#x6B8A;&#x7B26;&#x53F7;&#xFF0C;&#x7528;&#x52A8;&#x6001;&#x7684;&#x6570;&#x636E;&#x53BB;&#x66FF;&#x6362;&#x63D0;&#x524D;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x7279;&#x6B8A;&#x7B26;&#x53F7;</span>
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;home.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>) <span class="hljs-keyword">as</span> f:
+        s = f.read()
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;url&#x548C;&#x5B9E;&#x9645;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</span>
+list1 = [
+    (<span class="hljs-string">&quot;/index/&quot;</span>, index),
+    (<span class="hljs-string">&quot;/home/&quot;</span>, home),
+]
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
+    <span class="hljs-comment"># &#x7B49;&#x5F85;&#x8FDE;&#x63A5;</span>
+    conn, add = sk.accept()
+    data = conn.recv(<span class="hljs-number">8096</span>)  <span class="hljs-comment"># &#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;</span>
+    <span class="hljs-comment"># &#x4ECE;data&#x4E2D;&#x53D6;&#x5230;&#x8DEF;&#x5F84;</span>
+    data = str(data, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)  <span class="hljs-comment"># &#x628A;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-comment"># &#x6309;\r\n&#x5206;&#x5272;</span>
+    data1 = data.split(<span class="hljs-string">&quot;\r\n&quot;</span>)[<span class="hljs-number">0</span>]
+    url = data1.split()[<span class="hljs-number">1</span>]  <span class="hljs-comment"># url&#x662F;&#x6211;&#x4EEC;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;</span>
+    conn.send(<span class="hljs-string">b&apos;HTTP/1.1 200 OK\r\n\r\n&apos;</span>)  <span class="hljs-comment"># &#x56E0;&#x4E3A;&#x8981;&#x9075;&#x5FAA;HTTP&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x4EE5;&#x56DE;&#x590D;&#x7684;&#x6D88;&#x606F;&#x4E5F;&#x8981;&#x52A0;&#x72B6;&#x6001;&#x884C;</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x5185;&#x5BB9;</span>
+    func = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x540D;&#x7684;&#x53D8;&#x91CF;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> list1:
+        <span class="hljs-keyword">if</span> i[<span class="hljs-number">0</span>] == url:
+            func = i[<span class="hljs-number">1</span>]
+            <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">if</span> func:
+        response = func(url)
+    <span class="hljs-keyword">else</span>:
+        response = <span class="hljs-string">b&quot;404 not found!&quot;</span>
+
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;&#x54CD;&#x5E94;&#x6D88;&#x606F;</span>
+    conn.send(response)
+    conn.close()
+</code></pre>
+<h2 id="&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><a name="&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h2>
+<p>&#x5BF9;&#x4E8E;&#x771F;&#x5B9E;&#x5F00;&#x53D1;&#x4E2D;&#x7684;python web&#x7A0B;&#x5E8F;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x8D1F;&#x8D23;&#x5BF9;socket&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x5E76;&#x5728;&#x8BF7;&#x6C42;&#x5230;&#x6765;&#x65F6;&#xFF0C;&#x5BF9;&#x8BF7;&#x6C42;&#x7684;&#x5404;&#x79CD;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6574;&#x7406;&#x3002;</p>
+<p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5219;&#x8D1F;&#x8D23;&#x5177;&#x4F53;&#x7684;&#x903B;&#x8F91;&#x5904;&#x7406;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x4F17;&#x591A;&#x7684;Web&#x6846;&#x67B6;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;Django&#x3001;Flask&#x3001;web.py &#x7B49;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x6846;&#x67B6;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#xFF0C;&#x5F00;&#x53D1;&#x51FA;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90FD;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x914D;&#x5408;&#xFF0C;&#x624D;&#x80FD;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x5C31;&#x9700;&#x8981;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E0D;&#x540C;&#x7684;&#x652F;&#x6301;&#x3002;&#x8FD9;&#x6837;&#x6DF7;&#x4E71;&#x7684;&#x5C40;&#x9762;&#x65E0;&#x8BBA;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x8FD8;&#x662F;&#x6846;&#x67B6;&#xFF0C;&#x90FD;&#x662F;&#x4E0D;&#x597D;&#x7684;&#x3002;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x6765;&#x8BF4;&#xFF0C;&#x9700;&#x8981;&#x652F;&#x6301;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6846;&#x67B6;&#xFF0C;&#x5BF9;&#x6846;&#x67B6;&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x6709;&#x652F;&#x6301;&#x5B83;&#x7684;&#x670D;&#x52A1;&#x5668;&#x624D;&#x80FD;&#x88AB;&#x5F00;&#x53D1;&#x51FA;&#x7684;&#x5E94;&#x7528;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x6807;&#x51C6;&#x5316;&#x5C31;&#x53D8;&#x5F97;&#x5C24;&#x4E3A;&#x91CD;&#x8981;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7ACB;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#xFF0C;&#x53EA;&#x8981;&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x6807;&#x51C6;&#xFF0C;&#x6846;&#x67B6;&#x4E5F;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x6807;&#x51C6;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x914D;&#x5408;&#x4F7F;&#x7528;&#x3002;&#x4E00;&#x65E6;&#x6807;&#x51C6;&#x786E;&#x5B9A;&#xFF0C;&#x53CC;&#x65B9;&#x5404;&#x81EA;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x66F4;&#x591A;&#x652F;&#x6301;&#x6807;&#x51C6;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x6846;&#x67B6;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x652F;&#x6301;&#x6807;&#x51C6;&#x7684;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p>WSGI&#xFF08;Web Server Gateway Interface&#xFF09;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x89C4;&#x8303;&#xFF0C;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x4F7F;&#x7528;Python&#x7F16;&#x5199;&#x7684;web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;web&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x7684;&#x63A5;&#x53E3;&#x683C;&#x5F0F;&#xFF0C;&#x5B9E;&#x73B0;web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;web&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x95F4;&#x7684;&#x89E3;&#x8026;&#x3002;</p>
+<p>&#x5E38;&#x7528;&#x7684;WSGI&#x670D;&#x52A1;&#x5668;&#x6709;uwsgi&#x3001;Gunicorn&#x3002;&#x800C;Python&#x6807;&#x51C6;&#x5E93;&#x63D0;&#x4F9B;&#x7684;&#x72EC;&#x7ACB;WSGI&#x670D;&#x52A1;&#x5668;&#x53EB;wsgiref&#xFF0C;<code>Django&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7528;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x6765;&#x505A;&#x670D;&#x52A1;&#x5668;&#x3002;</code></p>
+<h3 id="wsgiref"><a name="wsgiref" class="anchor-navigation-ex-anchor" href="#wsgiref"><i class="fa fa-link" aria-hidden="true"></i></a>wsgiref</h3>
+<p>&#x6211;&#x4EEC;&#x5229;&#x7528;wsgiref&#x6A21;&#x5757;&#x6765;&#x66FF;&#x6362;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5199;&#x7684;web&#x6846;&#x67B6;&#x7684;socket server&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;
+&#x6839;&#x636E;URL&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;--&#x51FD;&#x6570;&#x8FDB;&#x9636;&#x7248;
+&#x8FD4;&#x56DE;HTML&#x9875;&#x9762;
+&#x8BA9;&#x7F51;&#x9875;&#x52A8;&#x6001;&#x8D77;&#x6765;
+wsgiref&#x6A21;&#x5757;&#x7248;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">from</span> wsgiref.simple_server <span class="hljs-keyword">import</span> make_server
+
+
+<span class="hljs-comment"># &#x5C06;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x6210;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;index.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>) <span class="hljs-keyword">as</span> f:
+        s = f.read()
+        now = str(time.time())
+        s = s.replace(<span class="hljs-string">&quot;@@oo@@&quot;</span>, now)
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;home.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>) <span class="hljs-keyword">as</span> f:
+        s = f.read()
+    <span class="hljs-keyword">return</span> bytes(s, encoding=<span class="hljs-string">&quot;utf8&quot;</span>)
+
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;url&#x548C;&#x5B9E;&#x9645;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</span>
+list1 = [
+    (<span class="hljs-string">&quot;/index/&quot;</span>, index),
+    (<span class="hljs-string">&quot;/home/&quot;</span>, home),
+]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run_server</span><span class="hljs-params">(environ, start_response)</span>:</span>
+    start_response(<span class="hljs-string">&apos;200 OK&apos;</span>, [(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;text/html;charset=utf8&apos;</span>), ])  <span class="hljs-comment"># &#x8BBE;&#x7F6E;HTTP&#x54CD;&#x5E94;&#x7684;&#x72B6;&#x6001;&#x7801;&#x548C;&#x5934;&#x4FE1;&#x606F;</span>
+    url = environ[<span class="hljs-string">&apos;PATH_INFO&apos;</span>]  <span class="hljs-comment"># &#x53D6;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;url</span>
+    func = <span class="hljs-keyword">None</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> list1:
+        <span class="hljs-keyword">if</span> i[<span class="hljs-number">0</span>] == url:
+            func = i[<span class="hljs-number">1</span>]
+            <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">if</span> func:
+        response = func(url)
+    <span class="hljs-keyword">else</span>:
+        response = <span class="hljs-string">b&quot;404 not found!&quot;</span>
+    <span class="hljs-keyword">return</span> [response, ]
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    httpd = make_server(<span class="hljs-string">&apos;127.0.0.1&apos;</span>, <span class="hljs-number">8090</span>, run_server)
+    print(<span class="hljs-string">&quot;&#x6211;&#x5728;8090&#x7B49;&#x4F60;&#x54E6;...&quot;</span>)
+    httpd.serve_forever()
+</code></pre>
+<h3 id="jinja2"><a name="jinja2" class="anchor-navigation-ex-anchor" href="#jinja2"><i class="fa fa-link" aria-hidden="true"></i></a>jinja2</h3>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x52A8;&#x6001;&#xFF0C;&#x6211;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x66FF;&#x6362;&#x6211;html&#x4E2D;&#x7684;&#x5BF9;&#x5E94;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x53D1;&#x9001;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x5B8C;&#x6210;&#x6E32;&#x67D3;&#x3002; &#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;HTML&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6570;&#x636E;&#x3002; &#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;HTML&#x5185;&#x5BB9;&#x4E2D;&#x5229;&#x7528;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x7B26;&#x53F7;&#x6765;&#x66FF;&#x6362;&#x8981;&#x5C55;&#x793A;&#x7684;&#x6570;&#x636E;&#x3002; &#x6211;&#x8FD9;&#x91CC;&#x7528;&#x7684;&#x7279;&#x6B8A;&#x7B26;&#x53F7;&#x662F;&#x6211;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x5176;&#x5B9E;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6709;&#x4E2A;&#x73B0;&#x6210;&#x7684;&#x5DE5;&#x5177;&#xFF1A; <code>jinja2</code></p>
+<p>&#x4E0B;&#x8F7D;jinja2:</p>
+<p><code>pip3 install jinja2</code> &#x7248;&#x672C;&#x53EF;&#x4EE5;&#x52A0;&#x5176;&#x5B83;&#x7684;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-CN&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;x-ua-compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#x59D3;&#x540D;&#xFF1A;{{name}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#x7231;&#x597D;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        {% for hobby in hobby_list %}
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{{hobby}}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        {% endfor %}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;jinja2&#x6E32;&#x67D3;index2.html&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> wsgiref.simple_server <span class="hljs-keyword">import</span> make_server
+<span class="hljs-keyword">from</span> jinja2 <span class="hljs-keyword">import</span> Template
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;index2.html&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> f:
+        data = f.read()
+    template = Template(data)  <span class="hljs-comment"># &#x751F;&#x6210;&#x6A21;&#x677F;&#x6587;&#x4EF6;</span>
+    ret = template.render({<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Alex&quot;</span>, <span class="hljs-string">&quot;hobby_list&quot;</span>: [<span class="hljs-string">&quot;&#x70EB;&#x5934;&quot;</span>, <span class="hljs-string">&quot;&#x6CE1;&#x5427;&quot;</span>]})  <span class="hljs-comment"># &#x628A;&#x6570;&#x636E;&#x586B;&#x5145;&#x5230;&#x6A21;&#x677F;&#x91CC;&#x9762;</span>
+    <span class="hljs-keyword">return</span> [bytes(ret, encoding=<span class="hljs-string">&quot;utf8&quot;</span>), ]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;home.html&quot;</span>, <span class="hljs-string">&quot;rb&quot;</span>) <span class="hljs-keyword">as</span> f:
+        data = f.read()
+    <span class="hljs-keyword">return</span> [data, ]
+
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;url&#x548C;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</span>
+URL_LIST = [
+    (<span class="hljs-string">&quot;/index/&quot;</span>, index),
+    (<span class="hljs-string">&quot;/home/&quot;</span>, home),
+]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run_server</span><span class="hljs-params">(environ, start_response)</span>:</span>
+    start_response(<span class="hljs-string">&apos;200 OK&apos;</span>, [(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;text/html;charset=utf8&apos;</span>), ])  <span class="hljs-comment"># &#x8BBE;&#x7F6E;HTTP&#x54CD;&#x5E94;&#x7684;&#x72B6;&#x6001;&#x7801;&#x548C;&#x5934;&#x4FE1;&#x606F;</span>
+    url = environ[<span class="hljs-string">&apos;PATH_INFO&apos;</span>]  <span class="hljs-comment"># &#x53D6;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;url</span>
+    func = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> URL_LIST:
+        <span class="hljs-keyword">if</span> i[<span class="hljs-number">0</span>] == url:
+            func = i[<span class="hljs-number">1</span>]  <span class="hljs-comment"># &#x53BB;&#x4E4B;&#x524D;&#x5B9A;&#x4E49;&#x597D;&#x7684;url&#x5217;&#x8868;&#x91CC;&#x627E;url&#x5E94;&#x8BE5;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span>
+            <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">if</span> func:  <span class="hljs-comment"># &#x5982;&#x679C;&#x80FD;&#x627E;&#x5230;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span>
+        <span class="hljs-keyword">return</span> func()  <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> [bytes(<span class="hljs-string">&quot;404&#x6CA1;&#x6709;&#x8BE5;&#x9875;&#x9762;&quot;</span>, encoding=<span class="hljs-string">&quot;utf8&quot;</span>), ]
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    httpd = make_server(<span class="hljs-string">&apos;&apos;</span>, <span class="hljs-number">8000</span>, run_server)
+    print(<span class="hljs-string">&quot;Serving HTTP on port 8000...&quot;</span>)
+    httpd.serve_forever()
+</code></pre>
+<p>&#x73B0;&#x5728;&#x7684;&#x6570;&#x636E;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x624B;&#x5199;&#x7684;&#xFF0C;&#x90A3;&#x53EF;&#x4E0D;&#x53EF;&#x4EE5;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#xFF0C;&#x6765;&#x586B;&#x5145;&#x9875;&#x9762;&#x5462;&#xFF1F;</p>
+<p>&#x4F7F;&#x7528;pymysql&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF1A;</p>
+<pre><code class="lang-python">conn = pymysql.connect(host=<span class="hljs-string">&quot;127.0.0.1&quot;</span>, port=<span class="hljs-number">3306</span>, user=<span class="hljs-string">&quot;root&quot;</span>, passwd=<span class="hljs-string">&quot;xxx&quot;</span>, db=<span class="hljs-string">&quot;xxx&quot;</span>, charset=<span class="hljs-string">&quot;utf8&quot;</span>)
+cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+cursor.execute(<span class="hljs-string">&quot;select name, age, department_id from userinfo&quot;</span>)
+user_list = cursor.fetchall()
+cursor.close()
+conn.close()
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7684;user&#x8868;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span>(
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> auto_increment PRIMARY <span class="hljs-keyword">KEY</span>,
+  <span class="hljs-keyword">name</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  hobby <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+)<span class="hljs-keyword">engine</span>=<span class="hljs-keyword">innodb</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">charset</span>=UTF8;
+</code></pre>
+<p><code>&#x6A21;&#x677F;&#x7684;&#x539F;&#x7406;&#x5C31;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5728;HTML&#x9875;&#x9762;&#x4E2D;&#x9075;&#x5FAA;jinja2&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x5199;&#x4E0A;&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x5C31;&#x4F1A;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x8BED;&#x6CD5;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x66FF;&#x6362;&#xFF0C;&#x4ECE;&#x800C;&#x8FBE;&#x5230;&#x52A8;&#x6001;&#x7684;&#x8FD4;&#x56DE;&#x5185;&#x5BB9;&#x3002;</code></p>
+<h2 id="django"><a name="django" class="anchor-navigation-ex-anchor" href="#django"><i class="fa fa-link" aria-hidden="true"></i></a>Django</h2>
+<h3 id="&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;lts&#x7248;&#xFF09;&#xFF1A;"><a name="&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;lts&#x7248;&#xFF09;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;lts&#x7248;&#xFF09;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;&#xFF08;&#x5B89;&#x88C5;&#x6700;&#x65B0;LTS&#x7248;&#xFF09;&#xFF1A;</h3>
+<p><code>pip3 install django==1.11.9</code></p>
+<h3 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;django&#x9879;&#x76EE;&#xFF1A;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;&quot;mysite&quot;&#x7684;Django &#x9879;&#x76EE;&#xFF1A;</p>
+<p><code>django-admin startproject mysite</code></p>
+<h3 id="&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;"><a name="&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;&#xFF1A;</h3>
+<pre><code>mysite/
+&#x251C;&#x2500;&#x2500; manage.py  # &#x7BA1;&#x7406;&#x6587;&#x4EF6;
+&#x2514;&#x2500;&#x2500; mysite  # &#x9879;&#x76EE;&#x76EE;&#x5F55;
+    &#x251C;&#x2500;&#x2500; __init__.py
+    &#x251C;&#x2500;&#x2500; settings.py  # &#x914D;&#x7F6E;
+    &#x251C;&#x2500;&#x2500; urls.py  # &#x8DEF;&#x7531; --&gt; URL&#x548C;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;
+    &#x2514;&#x2500;&#x2500; wsgi.py  # runserver&#x547D;&#x4EE4;&#x5C31;&#x4F7F;&#x7528;wsgiref&#x6A21;&#x5757;&#x505A;&#x7B80;&#x5355;&#x7684;web server
+</code></pre><h3 id="&#x8FD0;&#x884C;django&#x9879;&#x76EE;&#xFF1A;"><a name="&#x8FD0;&#x884C;django&#x9879;&#x76EE;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x884C;django&#x9879;&#x76EE;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x884C;Django&#x9879;&#x76EE;&#xFF1A;</h3>
+<p><code>python manage.py runserver 127.0.0.1:8000</code></p>
+<h3 id="&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><a name="&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;</h3>
+<pre><code class="lang-python">TEMPLATES = [
+    {
+        <span class="hljs-string">&apos;BACKEND&apos;</span>: <span class="hljs-string">&apos;django.template.backends.django.DjangoTemplates&apos;</span>,
+        <span class="hljs-string">&apos;DIRS&apos;</span>: [os.path.join(BASE_DIR, <span class="hljs-string">&quot;template&quot;</span>)],  <span class="hljs-comment"># template&#x6587;&#x4EF6;&#x5939;&#x4F4D;&#x7F6E;</span>
+        <span class="hljs-string">&apos;APP_DIRS&apos;</span>: <span class="hljs-keyword">True</span>,
+        <span class="hljs-string">&apos;OPTIONS&apos;</span>: {
+            <span class="hljs-string">&apos;context_processors&apos;</span>: [
+                <span class="hljs-string">&apos;django.template.context_processors.debug&apos;</span>,
+                <span class="hljs-string">&apos;django.template.context_processors.request&apos;</span>,
+                <span class="hljs-string">&apos;django.contrib.auth.context_processors.auth&apos;</span>,
+                <span class="hljs-string">&apos;django.contrib.messages.context_processors.messages&apos;</span>,
+            ],
+        },
+    },
+]
+</code></pre>
+<h3 id="&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><a name="&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#xFF1A;</h3>
+<pre><code class="lang-python">STATIC_URL = <span class="hljs-string">&apos;/static/&apos;</span>  <span class="hljs-comment"># HTML&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5939;&#x524D;&#x7F00;</span>
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, <span class="hljs-string">&quot;static&quot;</span>),  <span class="hljs-comment"># &#x9759;&#x6001;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</span>
+]
+</code></pre>
+<p>&#x770B;&#x4E0D;&#x660E;&#x767D;&#xFF1F;&#x6709;&#x56FE;&#x6709;&#x771F;&#x76F8;&#xFF1A;</p>
+<p><img src="img5" alt="img5"></p>
+<p><code>&#x521A;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x65F6;&#x53EF;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6682;&#x65F6;&#x7981;&#x7528;csrf&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x65B9;&#x4FBF;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x6D4B;&#x8BD5;&#x3002;</code></p>
+<pre><code class="lang-python">MIDDLEWARE = [
+    <span class="hljs-string">&apos;django.middleware.security.SecurityMiddleware&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.sessions.middleware.SessionMiddleware&apos;</span>,
+    <span class="hljs-string">&apos;django.middleware.common.CommonMiddleware&apos;</span>,
+    <span class="hljs-comment"># &apos;django.middleware.csrf.CsrfViewMiddleware&apos;,</span>
+    <span class="hljs-string">&apos;django.contrib.auth.middleware.AuthenticationMiddleware&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.messages.middleware.MessageMiddleware&apos;</span>,
+    <span class="hljs-string">&apos;django.middleware.clickjacking.XFrameOptionsMiddleware&apos;</span>,
+]
+</code></pre>
+<h2 id="django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;"><a name="django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>Django&#x57FA;&#x7840;&#x5FC5;&#x5907;&#x4E09;&#x4EF6;&#x5957;&#xFF1A;</h2>
+<p><code>from django.shortcuts import HttpResponse, render, redirect</code></p>
+<h3 id="httpresponse"><a name="httpresponse" class="anchor-navigation-ex-anchor" href="#httpresponse"><i class="fa fa-link" aria-hidden="true"></i></a>HttpResponse</h3>
+<p>&#x5185;&#x90E8;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>def index(request):
+    # &#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;
+    return HttpResponse(&quot;OK&quot;)
+</code></pre><h3 id="render"><a name="render" class="anchor-navigation-ex-anchor" href="#render"><i class="fa fa-link" aria-hidden="true"></i></a>render</h3>
+<p>&#x9664;request&#x53C2;&#x6570;&#x5916;&#x8FD8;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5F85;&#x6E32;&#x67D3;&#x7684;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x548C;&#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x5177;&#x4F53;&#x6570;&#x636E;&#x7684;&#x5B57;&#x5178;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5C06;&#x6570;&#x636E;&#x586B;&#x5145;&#x8FDB;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x540E;&#x628A;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x3002;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x7528;&#x5230;&#x7684;jinja2&#xFF09;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-comment"># &#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;</span>
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;index.html&quot;</span>, {<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;alex&quot;</span>, <span class="hljs-string">&quot;hobby&quot;</span>: [<span class="hljs-string">&quot;&#x70EB;&#x5934;&quot;</span>, <span class="hljs-string">&quot;&#x6CE1;&#x5427;&quot;</span>]})
+</code></pre>
+<h3 id="redirect"><a name="redirect" class="anchor-navigation-ex-anchor" href="#redirect"><i class="fa fa-link" aria-hidden="true"></i></a>redirect</h3>
+<p>&#x63A5;&#x53D7;&#x4E00;&#x4E2A;URL&#x53C2;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x7684;URL&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-comment"># &#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4EE3;&#x7801;</span>
+    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&quot;/home/&quot;</span>)
+</code></pre>
+<h2 id="&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;"><a name="&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#xFF1F;</h2>
+<p><img src="img6" alt="img6"></p>
+<h2 id="&#x542F;&#x52A8;django&#x62A5;&#x9519;&#xFF1A;"><a name="&#x542F;&#x52A8;django&#x62A5;&#x9519;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;django&#x62A5;&#x9519;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x542F;&#x52A8;Django&#x62A5;&#x9519;&#xFF1A;</h2>
+<p>Django &#x542F;&#x52A8;&#x65F6;&#x62A5;&#x9519; UnicodeEncodeError ...</p>
+<p>&#x62A5;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x901A;&#x5E38;&#x662F;&#x56E0;&#x4E3A;<code>&#x8BA1;&#x7B97;&#x673A;&#x540D;</code>&#x4E3A;&#x4E2D;&#x6587;&#xFF0C;&#x6539;&#x6210;&#x82F1;&#x6587;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x540D;&#x91CD;&#x542F;&#x4E0B;&#x7535;&#x8111;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01.Django初识.html" class="navigation navigation-prev " aria-label="Previous page: Django初识">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03.HTTP协议.html" class="navigation navigation-next " aria-label="Next page: HTTP协议">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Web框架本质及第一个Django实例","level":"1.4.2","depth":2,"next":{"title":"HTTP协议","level":"1.4.3","depth":2,"path":"python/Django/03.HTTP协议.md","ref":"python/Django/03.HTTP协议.md","articles":[]},"previous":{"title":"Django初识","level":"1.4.1","depth":2,"path":"python/Django/01.Django初识.md","ref":"python/Django/01.Django初识.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"python/Django/02.Web框架本质及第一个Django实例.md","mtime":"2018-06-12T01:20:57.012Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

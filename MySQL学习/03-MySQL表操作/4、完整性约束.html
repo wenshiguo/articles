@@ -1,0 +1,1544 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4、完整性约束 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5、多表查询之补充.html" />
+    
+    
+    <link rel="prev" href="3、MySQLl数据类型.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-初识数据库.html">
+            
+                <a href="../01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-MySQL库操作.html">
+            
+                <a href="../02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="1、MySQL表操作.html">
+            
+                <a href="1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="2、MySQL存储引擎.html">
+            
+                <a href="2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="3、MySQLl数据类型.html">
+            
+                <a href="3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.4" data-path="4、完整性约束.html">
+            
+                <a href="4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="5、多表查询之补充.html">
+            
+                <a href="5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../04-MySQL数据操作/">
+            
+                <a href="../04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Python3连接MySQL.html">
+            
+                <a href="../Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../python/">
+            
+                <a href="../../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../python/Django/01.Django初识.html">
+            
+                <a href="../../python/Django/01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                <a href="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../python/Django/03.HTTP协议.html">
+            
+                <a href="../../python/Django/03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../python/Django/04.Django框架简介.html">
+            
+                <a href="../../python/Django/04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../python/Django/05.Django的视图.html">
+            
+                <a href="../../python/Django/05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../python/Django/06.Django的路由系统.html">
+            
+                <a href="../../python/Django/06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../python/Django/07.Django模板系统.html">
+            
+                <a href="../../python/Django/07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../python/Django/08.Django模型ORM.html">
+            
+                <a href="../../python/Django/08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../python/Django/09.Django路由系统.html">
+            
+                <a href="../../python/Django/09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../python/Django/10.ORM相关操作.html">
+            
+                <a href="../../python/Django/10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../python/Django/111.ORM版学员管理系统.html">
+            
+                <a href="../../python/Django/111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../python/Django/11.Form组件.html">
+            
+                <a href="../../python/Django/11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../python/Django/博客项目点赞与灭操作.html">
+            
+                <a href="../../python/Django/博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../python/Django/博客项目评论.html">
+            
+                <a href="../../python/Django/博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../python/lufei-payment/luffy结算中心.html">
+            
+                <a href="../../python/lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >4、完整性约束</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;"><b></b>4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x4ECB;&#x7ECD;"><b></b>&#x4E00; &#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-not-null&#x4E0E;default"><b></b>&#x4E8C; not null&#x4E0E;default</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-unique"><b></b>&#x4E09; unique</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-primary-key"><b></b>&#x56DB; primary key</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-autoincrement"><b></b>&#x4E94; auto_increment</a></li><li><span class="title-icon "></span><a href="#&#x516D;-foreign-key"><b></b>&#x516D; foreign key</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x5FEB;&#x901F;&#x7406;&#x89E3;foreign-key"><b></b>&#x4E00; &#x5FEB;&#x901F;&#x7406;&#x89E3;foreign key</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x4E8C; &#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x4E09; &#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E03;-&#x4F5C;&#x4E1A;"><b></b>&#x4E03; &#x4F5C;&#x4E1A;</a></li></ul></ul></div><a href="#4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;"><a name="4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;" class="anchor-navigation-ex-anchor" href="#4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;"><b></b>4&#x3001;&#x5B8C;&#x6574;&#x6027;&#x7EA6;&#x675F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x4ECB;&#x7ECD;"><b></b>&#x4E00; &#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-not-null&#x4E0E;default"><b></b>&#x4E8C; not null&#x4E0E;default</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-unique"><b></b>&#x4E09; unique</a></li><li><span class="title-icon "></span><a href="#&#x56DB;-primary-key"><b></b>&#x56DB; primary key</a></li><li><span class="title-icon "></span><a href="#&#x4E94;-autoincrement"><b></b>&#x4E94; auto_increment</a></li><li><span class="title-icon "></span><a href="#&#x516D;-foreign-key"><b></b>&#x516D; foreign key</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x5FEB;&#x901F;&#x7406;&#x89E3;foreign-key"><b></b>&#x4E00; &#x5FEB;&#x901F;&#x7406;&#x89E3;foreign key</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-&#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x4E8C; &#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><b></b>&#x4E09; &#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E03;-&#x4F5C;&#x4E1A;"><b></b>&#x4E03; &#x4F5C;&#x4E1A;</a></li></ul></ul></div>
+
+<h2 id="&#x4E00;-&#x4ECB;&#x7ECD;"><a name="&#x4E00;-&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#&#x4E00;-&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00; &#x4ECB;&#x7ECD;</h2>
+<p>&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x4E0E;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x5BBD;&#x5EA6;&#x4E00;&#x6837;&#xFF0C;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x53C2;&#x6570;</p>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x7528;&#x4E8E;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x548C;&#x4E00;&#x81F4;&#x6027;
+&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-sql">PRIMARY KEY (PK)    &#x6807;&#x8BC6;&#x8BE5;&#x5B57;&#x6BB5;&#x4E3A;&#x8BE5;&#x8868;&#x7684;&#x4E3B;&#x952E;&#xFF0C;&#x53EF;&#x4EE5;&#x552F;&#x4E00;&#x7684;&#x6807;&#x8BC6;&#x8BB0;&#x5F55;
+FOREIGN KEY (FK)    &#x6807;&#x8BC6;&#x8BE5;&#x5B57;&#x6BB5;&#x4E3A;&#x8BE5;&#x8868;&#x7684;&#x5916;&#x952E;
+NOT NULL    &#x6807;&#x8BC6;&#x8BE5;&#x5B57;&#x6BB5;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;
+UNIQUE KEY (UK)    &#x6807;&#x8BC6;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#x552F;&#x4E00;&#x7684;
+AUTO_INCREMENT    &#x6807;&#x8BC6;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x81EA;&#x52A8;&#x589E;&#x957F;&#xFF08;&#x6574;&#x6570;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x4E14;&#x4E3A;&#x4E3B;&#x952E;&#xFF09;
+DEFAULT    &#x4E3A;&#x8BE5;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;
+
+UNSIGNED &#x65E0;&#x7B26;&#x53F7;
+ZEROFILL &#x4F7F;&#x7528;0&#x586B;&#x5145;
+</code></pre>
+<p><code>&#x8BF4;&#x660E;&#xFF1A;</code></p>
+<pre><code>1. &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A;&#xFF0C;&#x9ED8;&#x8BA4;NULL&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;NOT NULL&#xFF0C;&#x5B57;&#x6BB5;&#x4E0D;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A;&#xFF0C;&#x5FC5;&#x987B;&#x8D4B;&#x503C;
+2. &#x5B57;&#x6BB5;&#x662F;&#x5426;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x7F3A;&#x7701;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;NULL&#xFF0C;&#x5982;&#x679C;&#x63D2;&#x5165;&#x8BB0;&#x5F55;&#x65F6;&#x4E0D;&#x7ED9;&#x5B57;&#x6BB5;&#x8D4B;&#x503C;&#xFF0C;&#x6B64;&#x5B57;&#x6BB5;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;
+sex enum(&apos;male&apos;,&apos;female&apos;) not null default &apos;male&apos;
+age int unsigned NOT NULL default 20 &#x5FC5;&#x987B;&#x4E3A;&#x6B63;&#x503C;&#xFF08;&#x65E0;&#x7B26;&#x53F7;&#xFF09; &#x4E0D;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A; &#x9ED8;&#x8BA4;&#x662F;20
+3. &#x662F;&#x5426;&#x662F;key
+&#x4E3B;&#x952E; primary key
+&#x5916;&#x952E; foreign key
+&#x7D22;&#x5F15; (index,unique...)
+</code></pre><h2 id="&#x4E8C;-not-null&#x4E0E;default"><a name="&#x4E8C;-not-null&#x4E0E;default" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-not-null&#x4E0E;default"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C; not null&#x4E0E;default</h2>
+<p>&#x662F;&#x5426;&#x53EF;&#x7A7A;&#xFF0C;null&#x8868;&#x793A;&#x7A7A;&#xFF0C;&#x975E;&#x5B57;&#x7B26;&#x4E32;
+not null - &#x4E0D;&#x53EF;&#x7A7A;
+null - &#x53EF;&#x7A7A;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x521B;&#x5EFA;&#x5217;&#x65F6;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5F53;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x5982;&#x679C;&#x672A;&#x4E3B;&#x52A8;&#x8BBE;&#x7F6E;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x503C;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> tb1(
+nid <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> defalut <span class="hljs-number">2</span>,
+<span class="hljs-keyword">num</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>
+)
+</code></pre>
+<p><code>&#x9A8C;&#x8BC1;</code></p>
+<pre><code class="lang-sql">==================not null====================
+mysql&gt; create table t1(id int); -- id&#x5B57;&#x6BB5;&#x9ED8;&#x8BA4;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x7A7A;
+mysql&gt; desc t1;
+
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+mysql&gt; insert into t1 values(); -- &#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x7A7A;
+
+
+mysql&gt; create table t2(id int not null); #&#x8BBE;&#x7F6E;&#x5B57;&#x6BB5;id&#x4E0D;&#x4E3A;&#x7A7A;
+mysql&gt; desc t2;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | NO   |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+mysql&gt; insert into t2 values(); #&#x4E0D;&#x80FD;&#x63D2;&#x5165;&#x7A7A;
+ERROR 1364 (HY000): Field &apos;id&apos; doesn&apos;t have a default value
+
+
+
+==================default====================
+#&#x8BBE;&#x7F6E;id&#x5B57;&#x6BB5;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x540E;&#xFF0C;&#x5219;&#x65E0;&#x8BBA;id&#x5B57;&#x6BB5;&#x662F;null&#x8FD8;&#x662F;not null&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x7A7A;&#xFF0C;&#x63D2;&#x5165;&#x7A7A;&#x9ED8;&#x8BA4;&#x586B;&#x5165;default&#x6307;&#x5B9A;&#x7684;&#x9ED8;&#x8BA4;&#x503C;
+mysql&gt; create table t3(id int default 1);
+mysql&gt; alter table t3 modify id int not null default 1;
+
+
+
+==================&#x7EFC;&#x5408;&#x7EC3;&#x4E60;====================
+mysql&gt; create table student(
+    -&gt; name varchar(20) not null,
+    -&gt; age int(3) unsigned not null default 18,
+    -&gt; sex enum(&apos;male&apos;,&apos;female&apos;) default &apos;male&apos;,
+    -&gt; hobby set(&apos;play&apos;,&apos;study&apos;,&apos;read&apos;,&apos;music&apos;) default &apos;play,music&apos;
+    -&gt; );
+mysql&gt; desc student;
++-------+------------------------------------+------+-----+------------+-------+
+| Field | Type                               | Null | Key | Default    | Extra |
++-------+------------------------------------+------+-----+------------+-------+
+| name  | varchar(20)                        | NO   |     | NULL       |       |
+| age   | int(3) unsigned                    | NO   |     | 18         |       |
+| sex   | enum(&apos;male&apos;,&apos;female&apos;)              | YES  |     | male       |       |
+| hobby | set(&apos;play&apos;,&apos;study&apos;,&apos;read&apos;,&apos;music&apos;) | YES  |     | play,music |       |
++-------+------------------------------------+------+-----+------------+-------+
+mysql&gt; insert into student(name) values(&apos;egon&apos;);
+mysql&gt; select * from student;
++------+-----+------+------------+
+| name | age | sex  | hobby      |
++------+-----+------+------------+
+| egon |  18 | male | play,music |
++------+-----+------+------------+
+</code></pre>
+<h2 id="&#x4E09;-unique"><a name="&#x4E09;-unique" class="anchor-navigation-ex-anchor" href="#&#x4E09;-unique"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09; unique</h2>
+<pre><code class="lang-sql">============&#x8BBE;&#x7F6E;&#x552F;&#x4E00;&#x7EA6;&#x675F; UNIQUE===============
+&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;
+create table department1(
+id int,
+name varchar(20) unique,
+comment varchar(100)
+);
+
+
+&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;
+create table department2(
+id int,
+name varchar(20),
+comment varchar(100),
+constraint uk_name unique(name)
+);
+
+
+mysql&gt; insert into department1 values(1,&apos;IT&apos;,&apos;&#x6280;&#x672F;&apos;);
+Query OK, 1 row affected (0.00 sec)
+mysql&gt; insert into department1 values(1,&apos;IT&apos;,&apos;&#x6280;&#x672F;&apos;);
+ERROR 1062 (23000): Duplicate entry &apos;IT&apos; for key &apos;name&apos;
+</code></pre>
+<pre><code class="lang-sql">not null+unique&#x7684;&#x5316;&#x5B66;&#x53CD;&#x5E94;
+mysql&gt; create table t1(id int not null unique);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; desc t1;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | NO   | PRI | NULL    |       |
++-------+---------+------+-----+---------+-------+
+row in set (0.00 sec)
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> service(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+host <span class="hljs-built_in">varchar</span>(<span class="hljs-number">15</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+port <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+<span class="hljs-keyword">unique</span>(host,port) <span class="hljs-comment">--- &#x8054;&#x5408;&#x552F;&#x4E00;</span>
+);
+</code></pre>
+<pre><code class="lang-sql">mysql&gt; insert into service values
+    -&gt; (1,&apos;nginx&apos;,&apos;192.168.0.10&apos;,80),
+    -&gt; (2,&apos;haproxy&apos;,&apos;192.168.0.20&apos;,80),
+    -&gt; (3,&apos;mysql&apos;,&apos;192.168.0.30&apos;,3306)
+    -&gt; ;
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; insert into service(name,host,port) values(&apos;nginx&apos;,&apos;192.168.0.10&apos;,80);
+ERROR 1062 (23000): Duplicate entry &apos;192.168.0.10-80&apos; for key &apos;host&apos;
+</code></pre>
+<h2 id="&#x56DB;-primary-key"><a name="&#x56DB;-primary-key" class="anchor-navigation-ex-anchor" href="#&#x56DB;-primary-key"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB; primary key</h2>
+<p>&#x4ECE;&#x7EA6;&#x675F;&#x89D2;&#x5EA6;&#x770B;primary key&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E0D;&#x4E3A;&#x7A7A;&#x4E14;&#x552F;&#x4E00;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x4F7F;&#x7528;not null+unique&#x4E0D;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x5417;&#xFF0C;&#x8981;&#x5B83;&#x5E72;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>&#x4E3B;&#x952E;primary key&#x662F;innodb&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7EC4;&#x7EC7;&#x6570;&#x636E;&#x7684;&#x4F9D;&#x636E;&#xFF0C;innodb&#x79F0;&#x4E4B;&#x4E3A;&#x7D22;&#x5F15;&#x7EC4;&#x7EC7;&#x8868;&#xFF0C;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x5FC5;&#x987B;&#x6709;&#x4E14;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<p>&#x5355;&#x5217;&#x505A;&#x4E3B;&#x952E;
+&#x591A;&#x5217;&#x505A;&#x4E3B;&#x952E;&#xFF08;&#x590D;&#x5408;&#x4E3B;&#x952E;&#xFF09;</p>
+<pre><code class="lang-sql">============&#x5355;&#x5217;&#x505A;&#x4E3B;&#x952E;===============
+#&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;not null+unique
+create table department1(
+id int not null unique, #&#x4E3B;&#x952E;
+name varchar(20) not null unique,
+comment varchar(100)
+);
+
+mysql&gt; desc department1;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(20)  | NO   | UNI | NULL    |       |
+| comment | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+rows in set (0.01 sec)
+
+#&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x5728;&#x67D0;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x540E;&#x7528;primary key
+create table department2(
+id int primary key, #&#x4E3B;&#x952E;
+name varchar(20),
+comment varchar(100)
+);
+
+mysql&gt; desc department2;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(20)  | YES  |     | NULL    |       |
+| comment | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+rows in set (0.00 sec)
+
+#&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;&#x5728;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x540E;&#x5355;&#x72EC;&#x5B9A;&#x4E49;primary key
+create table department3(
+id int,
+name varchar(20),
+comment varchar(100),
+constraint pk_name primary key(id); #&#x521B;&#x5EFA;&#x4E3B;&#x952E;&#x5E76;&#x4E3A;&#x5176;&#x547D;&#x540D;pk_name
+
+mysql&gt; desc department3;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(20)  | YES  |     | NULL    |       |
+| comment | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+rows in set (0.01 sec)
+</code></pre>
+<pre><code class="lang-sql">==================&#x591A;&#x5217;&#x505A;&#x4E3B;&#x952E;================
+create table service(
+ip varchar(15),
+port char(5),
+service_name varchar(10) not null,
+primary key(ip,port)
+);
+
+
+mysql&gt; desc service;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| ip           | varchar(15) | NO   | PRI | NULL    |       |
+| port         | char(5)     | NO   | PRI | NULL    |       |
+| service_name | varchar(10) | NO   |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+rows in set (0.00 sec)
+
+mysql&gt; insert into service values
+    -&gt; (&apos;172.16.45.10&apos;,&apos;3306&apos;,&apos;mysqld&apos;),
+    -&gt; (&apos;172.16.45.11&apos;,&apos;3306&apos;,&apos;mariadb&apos;)
+    -&gt; ;
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql&gt; insert into service values (&apos;172.16.45.10&apos;,&apos;3306&apos;,&apos;nginx&apos;);
+ERROR 1062 (23000): Duplicate entry &apos;172.16.45.10-3306&apos; for key &apos;PRIMARY&apos;
+</code></pre>
+<h2 id="&#x4E94;-autoincrement"><a name="&#x4E94;-autoincrement" class="anchor-navigation-ex-anchor" href="#&#x4E94;-autoincrement"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94; auto_increment</h2>
+<p>&#x7EA6;&#x675F;&#x5B57;&#x6BB5;&#x4E3A;&#x81EA;&#x52A8;&#x589E;&#x957F;&#xFF0C;&#x88AB;&#x7EA6;&#x675F;&#x7684;&#x5B57;&#x6BB5;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x88AB;key&#x7EA6;&#x675F;</p>
+<pre><code class="lang-sql">#&#x4E0D;&#x6307;&#x5B9A;id&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x589E;&#x957F;
+create table student(
+id int primary key auto_increment,
+name varchar(20),
+sex enum(&apos;male&apos;,&apos;female&apos;) default &apos;male&apos;
+);
+
+mysql&gt; desc student;
++-------+-----------------------+------+-----+---------+----------------+
+| Field | Type                  | Null | Key | Default | Extra          |
++-------+-----------------------+------+-----+---------+----------------+
+| id    | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20)           | YES  |     | NULL    |                |
+| sex   | enum(&apos;male&apos;,&apos;female&apos;) | YES  |     | male    |                |
++-------+-----------------------+------+-----+---------+----------------+
+mysql&gt; insert into student(name) values
+    -&gt; (&apos;egon&apos;),
+    -&gt; (&apos;alex&apos;)
+    -&gt; ;
+
+mysql&gt; select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  1 | egon | male |
+|  2 | alex | male |
++----+------+------+
+
+
+#&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;id
+mysql&gt; insert into student values(4,&apos;asb&apos;,&apos;female&apos;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into student values(7,&apos;wsb&apos;,&apos;female&apos;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from student;
++----+------+--------+
+| id | name | sex    |
++----+------+--------+
+|  1 | egon | male   |
+|  2 | alex | male   |
+|  4 | asb  | female |
+|  7 | wsb  | female |
++----+------+--------+
+
+
+#&#x5BF9;&#x4E8E;&#x81EA;&#x589E;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5728;&#x7528;delete&#x5220;&#x9664;&#x540E;&#xFF0C;&#x518D;&#x63D2;&#x5165;&#x503C;&#xFF0C;&#x8BE5;&#x5B57;&#x6BB5;&#x4ECD;&#x6309;&#x7167;&#x5220;&#x9664;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#x7EE7;&#x7EED;&#x589E;&#x957F;
+mysql&gt; delete from student;
+Query OK, 4 rows affected (0.00 sec)
+
+mysql&gt; select * from student;
+Empty set (0.00 sec)
+
+mysql&gt; insert into student(name) values(&apos;ysb&apos;);
+mysql&gt; select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  8 | ysb  | male |
++----+------+------+
+
+#&#x5E94;&#x8BE5;&#x7528;truncate&#x6E05;&#x7A7A;&#x8868;&#xFF0C;&#x6BD4;&#x8D77;delete&#x4E00;&#x6761;&#x4E00;&#x6761;&#x5730;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#xFF0C;truncate&#x662F;&#x76F4;&#x63A5;&#x6E05;&#x7A7A;&#x8868;&#xFF0C;&#x5728;&#x5220;&#x9664;&#x5927;&#x8868;&#x65F6;&#x7528;&#x5B83;
+mysql&gt; truncate student;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; insert into student(name) values(&apos;egon&apos;);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  1 | egon | male |
++----+------+------+
+row in set (0.00 sec)
+</code></pre>
+<pre><code class="lang-sql">#&#x5728;&#x521B;&#x5EFA;&#x5B8C;&#x8868;&#x540E;&#xFF0C;&#x4FEE;&#x6539;&#x81EA;&#x589E;&#x5B57;&#x6BB5;&#x7684;&#x8D77;&#x59CB;&#x503C;
+mysql&gt; create table student(
+    -&gt; id int primary key auto_increment,
+    -&gt; name varchar(20),
+    -&gt; sex enum(&apos;male&apos;,&apos;female&apos;) default &apos;male&apos;
+    -&gt; );
+
+mysql&gt; alter table student auto_increment=3;
+
+mysql&gt; show create table student;
+.......
+ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
+
+mysql&gt; insert into student(name) values(&apos;egon&apos;);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from student;
++----+------+------+
+| id | name | sex  |
++----+------+------+
+|  3 | egon | male |
++----+------+------+
+row in set (0.00 sec)
+
+mysql&gt; show create table student;
+.......
+ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+#&#x4E5F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#x6307;&#x5B9A;auto_increment&#x7684;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x6CE8;&#x610F;&#x521D;&#x59CB;&#x503C;&#x7684;&#x8BBE;&#x7F6E;&#x4E3A;&#x8868;&#x9009;&#x9879;&#xFF0C;&#x5E94;&#x8BE5;&#x653E;&#x5230;&#x62EC;&#x53F7;&#x5916;
+create table student(
+id int primary key auto_increment,
+name varchar(20),
+sex enum(&apos;male&apos;,&apos;female&apos;) default &apos;male&apos;
+)auto_increment=3;
+
+
+
+
+#&#x8BBE;&#x7F6E;&#x6B65;&#x957F;
+sqlserver&#xFF1A;&#x81EA;&#x589E;&#x6B65;&#x957F;
+    &#x57FA;&#x4E8E;&#x8868;&#x7EA7;&#x522B;
+    create table t1&#xFF08;
+        id int&#x3002;&#x3002;&#x3002;
+    &#xFF09;engine=innodb,auto_increment=2 &#x6B65;&#x957F;=2 default charset=utf8
+
+mysql&#x81EA;&#x589E;&#x7684;&#x6B65;&#x957F;&#xFF1A;
+    show session variables like &apos;auto_inc%&apos;;
+
+    #&#x57FA;&#x4E8E;&#x4F1A;&#x8BDD;&#x7EA7;&#x522B;
+    set session auth_increment_increment=2 #&#x4FEE;&#x6539;&#x4F1A;&#x8BDD;&#x7EA7;&#x522B;&#x7684;&#x6B65;&#x957F;
+
+    #&#x57FA;&#x4E8E;&#x5168;&#x5C40;&#x7EA7;&#x522B;&#x7684;
+    set global auth_increment_increment=2 #&#x4FEE;&#x6539;&#x5168;&#x5C40;&#x7EA7;&#x522B;&#x7684;&#x6B65;&#x957F;&#xFF08;&#x6240;&#x6709;&#x4F1A;&#x8BDD;&#x90FD;&#x751F;&#x6548;&#xFF09;
+
+
+#&#xFF01;&#xFF01;&#xFF01;&#x6CE8;&#x610F;&#x4E86;&#x6CE8;&#x610F;&#x4E86;&#x6CE8;&#x610F;&#x4E86;&#xFF01;&#xFF01;&#xFF01;
+If the value of auto_increment_offset is greater than that of auto_increment_increment, the value of auto_increment_offset is ignored. 
+&#x7FFB;&#x8BD1;&#xFF1A;&#x5982;&#x679C;auto_increment_offset&#x7684;&#x503C;&#x5927;&#x4E8E;auto_increment_increment&#x7684;&#x503C;&#xFF0C;&#x5219;auto_increment_offset&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x5FFD;&#x7565; &#xFF0C;&#x8FD9;&#x76F8;&#x5F53;&#x4E8E;&#x7B2C;&#x4E00;&#x6B65;&#x6B65;&#x5B50;&#x5C31;&#x8FC8;&#x5927;&#x4E86;&#xFF0C;&#x626F;&#x7740;&#x4E86;&#x86CB;
+&#x6BD4;&#x5982;&#xFF1A;&#x8BBE;&#x7F6E;auto_increment_offset=3&#xFF0C;auto_increment_increment=2
+
+
+
+
+mysql&gt; set global auto_increment_increment=5;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; set global auto_increment_offset=3;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; show variables like &apos;auto_incre%&apos;; #&#x9700;&#x8981;&#x9000;&#x51FA;&#x91CD;&#x65B0;&#x767B;&#x5F55;
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| auto_increment_increment | 1     |
+| auto_increment_offset    | 1     |
++--------------------------+-------+
+
+
+
+create table student(
+id int primary key auto_increment,
+name varchar(20),
+sex enum(&apos;male&apos;,&apos;female&apos;) default &apos;male&apos;
+);
+
+mysql&gt; insert into student(name) values(&apos;egon1&apos;),(&apos;egon2&apos;),(&apos;egon3&apos;);
+mysql&gt; select * from student;
++----+-------+------+
+| id | name  | sex  |
++----+-------+------+
+|  3 | egon1 | male |
+|  8 | egon2 | male |
+| 13 | egon3 | male |
++----+-------+------+
+</code></pre>
+<h2 id="&#x516D;-foreign-key"><a name="&#x516D;-foreign-key" class="anchor-navigation-ex-anchor" href="#&#x516D;-foreign-key"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516D; foreign key</h2>
+<h3 id="&#x4E00;-&#x5FEB;&#x901F;&#x7406;&#x89E3;foreign-key"><a name="&#x4E00;-&#x5FEB;&#x901F;&#x7406;&#x89E3;foreign-key" class="anchor-navigation-ex-anchor" href="#&#x4E00;-&#x5FEB;&#x901F;&#x7406;&#x89E3;foreign-key"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00; &#x5FEB;&#x901F;&#x7406;&#x89E3;foreign key</h3>
+<p>&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x8868;&#x6709;&#x4E09;&#x4E2A;&#x5B57;&#x6BB5;&#xFF1A;&#x5DE5;&#x53F7;  &#x59D3;&#x540D;  &#x90E8;&#x95E8;</p>
+<p>&#x516C;&#x53F8;&#x6709;3&#x4E2A;&#x90E8;&#x95E8;&#xFF0C;&#x4F46;&#x662F;&#x6709;1&#x4E2A;&#x4EBF;&#x7684;&#x5458;&#x5DE5;&#xFF0C;&#x90A3;&#x610F;&#x5473;&#x7740;&#x90E8;&#x95E8;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x9700;&#x8981;&#x91CD;&#x590D;&#x5B58;&#x50A8;&#xFF0C;&#x90E8;&#x95E8;&#x540D;&#x5B57;&#x8D8A;&#x957F;&#xFF0C;&#x8D8A;&#x6D6A;&#x8D39;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x90E8;&#x95E8;&#x8868;</p>
+<p>&#x7136;&#x540E;&#x8BA9;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x8868;&#x5173;&#x8054;&#x8BE5;&#x8868;&#xFF0C;&#x5982;&#x4F55;&#x5173;&#x8054;&#xFF0C;&#x5373;foreign key</p>
+<pre><code class="lang-sql">#&#x8868;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;innodb&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x4E14;&#x88AB;&#x5173;&#x8054;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5373;references&#x6307;&#x5B9A;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8868;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x552F;&#x4E00;
+create table department(
+id int primary key,
+name varchar(20) not null
+)engine=innodb;
+
+#dpt_id&#x5916;&#x952E;&#xFF0C;&#x5173;&#x8054;&#x7236;&#x8868;&#xFF08;department&#x4E3B;&#x952E;id&#xFF09;&#xFF0C;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#xFF0C;&#x540C;&#x6B65;&#x5220;&#x9664;
+create table employee(
+id int primary key,
+name varchar(20) not null,
+dpt_id int,
+constraint fk_name foreign key(dpt_id)
+references department(id)
+on delete cascade
+on update cascade 
+)engine=innodb;
+
+
+#&#x5148;&#x5F80;&#x7236;&#x8868;department&#x4E2D;&#x63D2;&#x5165;&#x8BB0;&#x5F55;
+insert into department values
+(1,&apos;&#x6B27;&#x5FB7;&#x535A;&#x7231;&#x6280;&#x672F;&#x6709;&#x9650;&#x4E8B;&#x4E1A;&#x90E8;&apos;),
+(2,&apos;&#x827E;&#x5229;&#x514B;&#x65AF;&#x4EBA;&#x529B;&#x8D44;&#x6E90;&#x90E8;&apos;),
+(3,&apos;&#x9500;&#x552E;&#x90E8;&apos;);
+
+
+#&#x518D;&#x5F80;&#x5B50;&#x8868;employee&#x4E2D;&#x63D2;&#x5165;&#x8BB0;&#x5F55;
+insert into employee values
+(1,&apos;egon&apos;,1),
+(2,&apos;alex1&apos;,2),
+(3,&apos;alex2&apos;,2),
+(4,&apos;alex3&apos;,2),
+(5,&apos;&#x674E;&#x5766;&#x514B;&apos;,3),
+(6,&apos;&#x5218;&#x98DE;&#x673A;&apos;,3),
+(7,&apos;&#x5F20;&#x706B;&#x7BAD;&apos;,3),
+(8,&apos;&#x6797;&#x5B50;&#x5F39;&apos;,3),
+(9,&apos;&#x52A0;&#x7279;&#x6797;&apos;,3)
+;
+
+
+#&#x5220;&#x7236;&#x8868;department&#xFF0C;&#x5B50;&#x8868;employee&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x8BB0;&#x5F55;&#x8DDF;&#x7740;&#x5220;
+mysql&gt; delete from department where id=3;
+mysql&gt; select * from employee;
++----+-------+--------+
+| id | name  | dpt_id |
++----+-------+--------+
+|  1 | egon  |      1 |
+|  2 | alex1 |      2 |
+|  3 | alex2 |      2 |
+|  4 | alex3 |      2 |
++----+-------+--------+
+
+
+#&#x66F4;&#x65B0;&#x7236;&#x8868;department&#xFF0C;&#x5B50;&#x8868;employee&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x8BB0;&#x5F55;&#x8DDF;&#x7740;&#x6539;
+mysql&gt; update department set id=22222 where id=2;
+mysql&gt; select * from employee;
++----+-------+--------+
+| id | name  | dpt_id |
++----+-------+--------+
+|  1 | egon  |      1 |
+|  3 | alex2 |  22222 |
+|  4 | alex3 |  22222 |
+|  5 | alex1 |  22222 |
++----+-------+--------+
+</code></pre>
+<h3 id="&#x4E8C;-&#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><a name="&#x4E8C;-&#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-&#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C; &#x5982;&#x4F55;&#x627E;&#x51FA;&#x4E24;&#x5F20;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h3>
+<pre><code>&#x5206;&#x6790;&#x6B65;&#x9AA4;&#xFF1A;
+#1&#x3001;&#x5148;&#x7AD9;&#x5728;&#x5DE6;&#x8868;&#x7684;&#x89D2;&#x5EA6;&#x53BB;&#x627E;
+&#x662F;&#x5426;&#x5DE6;&#x8868;&#x7684;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x5BF9;&#x5E94;&#x53F3;&#x8868;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x8BC1;&#x660E;&#x5DE6;&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;foreign key &#x53F3;&#x8868;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#xFF08;&#x901A;&#x5E38;&#x662F;id&#xFF09;
+
+#2&#x3001;&#x518D;&#x7AD9;&#x5728;&#x53F3;&#x8868;&#x7684;&#x89D2;&#x5EA6;&#x53BB;&#x627E;
+&#x662F;&#x5426;&#x53F3;&#x8868;&#x7684;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x5BF9;&#x5E94;&#x5DE6;&#x8868;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x8BC1;&#x660E;&#x53F3;&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;foreign key &#x5DE6;&#x8868;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#xFF08;&#x901A;&#x5E38;&#x662F;id&#xFF09;
+
+#3&#x3001;&#x603B;&#x7ED3;&#xFF1A;
+#&#x591A;&#x5BF9;&#x4E00;&#xFF1A;
+&#x5982;&#x679C;&#x53EA;&#x6709;&#x6B65;&#x9AA4;1&#x6210;&#x7ACB;&#xFF0C;&#x5219;&#x662F;&#x5DE6;&#x8868;&#x591A;&#x5BF9;&#x4E00;&#x53F3;&#x8868;
+&#x5982;&#x679C;&#x53EA;&#x6709;&#x6B65;&#x9AA4;2&#x6210;&#x7ACB;&#xFF0C;&#x5219;&#x662F;&#x53F3;&#x8868;&#x591A;&#x5BF9;&#x4E00;&#x5DE6;&#x8868;
+
+#&#x591A;&#x5BF9;&#x591A;
+&#x5982;&#x679C;&#x6B65;&#x9AA4;1&#x548C;2&#x540C;&#x65F6;&#x6210;&#x7ACB;&#xFF0C;&#x5219;&#x8BC1;&#x660E;&#x8FD9;&#x4E24;&#x5F20;&#x8868;&#x65F6;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x7684;&#x591A;&#x5BF9;&#x4E00;&#xFF0C;&#x5373;&#x591A;&#x5BF9;&#x591A;,&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8FD9;&#x4E24;&#x5F20;&#x8868;&#x7684;&#x5173;&#x7CFB;&#x8868;&#x6765;&#x4E13;&#x95E8;&#x5B58;&#x653E;&#x4E8C;&#x8005;&#x7684;&#x5173;&#x7CFB;
+
+#&#x4E00;&#x5BF9;&#x4E00;:
+&#x5982;&#x679C;1&#x548C;2&#x90FD;&#x4E0D;&#x6210;&#x7ACB;&#xFF0C;&#x800C;&#x662F;&#x5DE6;&#x8868;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x552F;&#x4E00;&#x5BF9;&#x5E94;&#x53F3;&#x8868;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x5DE6;&#x8868;foreign key&#x53F3;&#x8868;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x5C06;&#x5DE6;&#x8868;&#x7684;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x6210;unique&#x5373;&#x53EF;
+</code></pre><h3 id="&#x4E09;-&#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><a name="&#x4E09;-&#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#&#x4E09;-&#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09; &#x5EFA;&#x7ACB;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h3>
+<pre><code>#&#x4E00;&#x5BF9;&#x591A;&#x6216;&#x79F0;&#x4E3A;&#x591A;&#x5BF9;&#x4E00;
+&#x4E09;&#x5F20;&#x8868;&#xFF1A;&#x51FA;&#x7248;&#x793E;&#xFF0C;&#x4F5C;&#x8005;&#x4FE1;&#x606F;&#xFF0C;&#x4E66;
+
+&#x4E00;&#x5BF9;&#x591A;&#xFF08;&#x6216;&#x591A;&#x5BF9;&#x4E00;&#xFF09;&#xFF1A;&#x4E00;&#x4E2A;&#x51FA;&#x7248;&#x793E;&#x53EF;&#x4EE5;&#x51FA;&#x7248;&#x591A;&#x672C;&#x4E66;
+
+&#x5173;&#x8054;&#x65B9;&#x5F0F;&#xFF1A;foreign key
+</code></pre><pre><code class="lang-sql">=====================&#x591A;&#x5BF9;&#x4E00;=====================
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> press(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>)
+);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> book(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+press_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+foreign <span class="hljs-keyword">key</span>(press_id) <span class="hljs-keyword">references</span> press(<span class="hljs-keyword">id</span>)
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">cascade</span>
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>
+);
+
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> press(<span class="hljs-keyword">name</span>) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;&#x5317;&#x4EAC;&#x5DE5;&#x4E1A;&#x5730;&#x96F7;&#x51FA;&#x7248;&#x793E;&apos;</span>),
+(<span class="hljs-string">&apos;&#x4EBA;&#x6C11;&#x97F3;&#x4E50;&#x4E0D;&#x597D;&#x542C;&#x51FA;&#x7248;&#x793E;&apos;</span>),
+(<span class="hljs-string">&apos;&#x77E5;&#x8BC6;&#x4EA7;&#x6743;&#x6CA1;&#x6709;&#x7528;&#x51FA;&#x7248;&#x793E;&apos;</span>)
+;
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> book(<span class="hljs-keyword">name</span>,press_id) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;&#x4E5D;&#x9633;&#x795E;&#x529F;&apos;</span>,<span class="hljs-number">1</span>),
+(<span class="hljs-string">&apos;&#x4E5D;&#x9634;&#x771F;&#x7ECF;&apos;</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-string">&apos;&#x4E5D;&#x9634;&#x767D;&#x9AA8;&#x722A;&apos;</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-string">&apos;&#x72EC;&#x5B64;&#x4E5D;&#x5251;&apos;</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-string">&apos;&#x964D;&#x9F99;&#x5341;&#x5DF4;&#x638C;&apos;</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-string">&apos;&#x8475;&#x82B1;&#x5B9D;&#x5178;&apos;</span>,<span class="hljs-number">3</span>)
+;
+</code></pre>
+<pre><code class="lang-sql">&#x4E00;&#x592B;&#x591A;&#x59BB;&#x5236;
+
+#&#x59BB;&#x5B50;&#x8868;&#x7684;&#x4E08;&#x592B;id&#x5916;&#x952E;&#x5230;&#x4E08;&#x592B;&#x8868;&#x7684;id
+</code></pre>
+<pre><code>#&#x591A;&#x5BF9;&#x591A;
+&#x4E09;&#x5F20;&#x8868;&#xFF1A;&#x51FA;&#x7248;&#x793E;&#xFF0C;&#x4F5C;&#x8005;&#x4FE1;&#x606F;&#xFF0C;&#x4E66;
+
+&#x591A;&#x5BF9;&#x591A;&#xFF1A;&#x4E00;&#x4E2A;&#x4F5C;&#x8005;&#x53EF;&#x4EE5;&#x5199;&#x591A;&#x672C;&#x4E66;&#xFF0C;&#x4E00;&#x672C;&#x4E66;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x4F5C;&#x8005;&#xFF0C;&#x53CC;&#x5411;&#x7684;&#x4E00;&#x5BF9;&#x591A;&#xFF0C;&#x5373;&#x591A;&#x5BF9;&#x591A;
+&#x3000;&#x3000;
+&#x5173;&#x8054;&#x65B9;&#x5F0F;&#xFF1A;foreign key+&#x4E00;&#x5F20;&#x65B0;&#x7684;&#x8868;
+</code></pre><pre><code class="lang-sql">=====================&#x591A;&#x5BF9;&#x591A;=====================
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> author(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>)
+);
+
+
+#&#x8FD9;&#x5F20;&#x8868;&#x5C31;&#x5B58;&#x653E;&#x4F5C;&#x8005;&#x8868;&#x4E0E;&#x4E66;&#x8868;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x67E5;&#x8BE2;&#x4E8C;&#x8005;&#x7684;&#x5173;&#x7CFB;&#x67E5;&#x8FD9;&#x8868;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> author2book(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span> auto_increment,
+author_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+book_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+<span class="hljs-keyword">constraint</span> fk_author foreign <span class="hljs-keyword">key</span>(author_id) <span class="hljs-keyword">references</span> author(<span class="hljs-keyword">id</span>)
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">cascade</span>
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>,
+<span class="hljs-keyword">constraint</span> fk_book foreign <span class="hljs-keyword">key</span>(book_id) <span class="hljs-keyword">references</span> book(<span class="hljs-keyword">id</span>)
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">cascade</span>
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>,
+primary <span class="hljs-keyword">key</span>(author_id,book_id)
+);
+
+
+#&#x63D2;&#x5165;&#x56DB;&#x4E2A;&#x4F5C;&#x8005;&#xFF0C;id&#x4F9D;&#x6B21;&#x6392;&#x5F00;
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> author(<span class="hljs-keyword">name</span>) <span class="hljs-keyword">values</span>(<span class="hljs-string">&apos;egon&apos;</span>),(<span class="hljs-string">&apos;alex&apos;</span>),(<span class="hljs-string">&apos;yuanhao&apos;</span>),(<span class="hljs-string">&apos;wpq&apos;</span>);
+
+#&#x6BCF;&#x4E2A;&#x4F5C;&#x8005;&#x4E0E;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x8868;&#x4F5C;&#x5982;&#x4E0B;
+egon: 
+&#x4E5D;&#x9633;&#x795E;&#x529F;
+&#x4E5D;&#x9634;&#x771F;&#x7ECF;
+&#x4E5D;&#x9634;&#x767D;&#x9AA8;&#x722A;
+&#x72EC;&#x5B64;&#x4E5D;&#x5251;
+&#x964D;&#x9F99;&#x5341;&#x5DF4;&#x638C;
+&#x8475;&#x82B1;&#x5B9D;&#x5178;
+alex: 
+&#x4E5D;&#x9633;&#x795E;&#x529F;
+&#x8475;&#x82B1;&#x5B9D;&#x5178;
+yuanhao:
+&#x72EC;&#x5B64;&#x4E5D;&#x5251;
+&#x964D;&#x9F99;&#x5341;&#x5DF4;&#x638C;
+&#x8475;&#x82B1;&#x5B9D;&#x5178;
+wpq:
+&#x4E5D;&#x9633;&#x795E;&#x529F;
+
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> author2book(author_id,book_id) <span class="hljs-keyword">values</span>
+(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">6</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">6</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">6</span>),
+(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>)
+;
+</code></pre>
+<pre><code>&#x5355;&#x5F20;&#x8868;&#xFF1A;&#x7528;&#x6237;&#x8868;+&#x76F8;&#x4EB2;&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#xFF1A;&#x7528;&#x6237;&#x8868;+&#x76F8;&#x4EB2;&#x5173;&#x7CFB;&#x8868;+&#x7528;&#x6237;&#x8868;
+&#x591A;&#x5F20;&#x8868;&#xFF1A;&#x7528;&#x6237;&#x8868;+&#x7528;&#x6237;&#x4E0E;&#x4E3B;&#x673A;&#x5173;&#x7CFB;&#x8868;+&#x4E3B;&#x673A;&#x8868;
+
+&#x4E2D;&#x95F4;&#x90A3;&#x4E00;&#x5F20;&#x5B58;&#x653E;&#x5173;&#x7CFB;&#x7684;&#x8868;&#xFF0C;&#x5BF9;&#x5916;&#x5173;&#x8054;&#x7684;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x8054;&#x5408;&#x552F;&#x4E00;
+</code></pre><pre><code>#&#x4E00;&#x5BF9;&#x4E00;
+&#x4E24;&#x5F20;&#x8868;&#xFF1A;&#x5B66;&#x751F;&#x8868;&#x548C;&#x5BA2;&#x6237;&#x8868;
+
+&#x4E00;&#x5BF9;&#x4E00;&#xFF1A;&#x4E00;&#x4E2A;&#x5B66;&#x751F;&#x662F;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#xFF0C;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x6709;&#x53EF;&#x80FD;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#xFF0C;&#x5373;&#x4E00;&#x5BF9;&#x4E00;&#x7684;&#x5173;&#x7CFB;
+
+&#x5173;&#x8054;&#x65B9;&#x5F0F;&#xFF1A;foreign key+unique
+</code></pre><pre><code class="lang-sql">#&#x4E00;&#x5B9A;&#x662F;student&#x6765;foreign key&#x8868;customer&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;&#xFF1A;
+#1 &#x5B66;&#x751F;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#xFF0C;
+#2 &#x5BA2;&#x6237;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5B66;&#x751F;&#xFF0C;&#x4F46;&#x6709;&#x53EF;&#x80FD;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x5B66;&#x751F;
+
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> customer(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+qq <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+phone <span class="hljs-built_in">char</span>(<span class="hljs-number">16</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>
+);
+
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> student(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+class_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+customer_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">unique</span>, #&#x8BE5;&#x5B57;&#x6BB5;&#x4E00;&#x5B9A;&#x8981;&#x662F;&#x552F;&#x4E00;&#x7684;
+foreign <span class="hljs-keyword">key</span>(customer_id) <span class="hljs-keyword">references</span> customer(<span class="hljs-keyword">id</span>) #&#x5916;&#x952E;&#x7684;&#x5B57;&#x6BB5;&#x4E00;&#x5B9A;&#x8981;&#x4FDD;&#x8BC1;<span class="hljs-keyword">unique</span>
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">cascade</span>
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>
+);
+
+
+#&#x589E;&#x52A0;&#x5BA2;&#x6237;
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer(<span class="hljs-keyword">name</span>,qq,phone) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;&#x674E;&#x98DE;&#x673A;&apos;</span>,<span class="hljs-string">&apos;31811231&apos;</span>,<span class="hljs-number">13811341220</span>),
+(<span class="hljs-string">&apos;&#x738B;&#x5927;&#x70AE;&apos;</span>,<span class="hljs-string">&apos;123123123&apos;</span>,<span class="hljs-number">15213146809</span>),
+(<span class="hljs-string">&apos;&#x5B88;&#x69B4;&#x5F39;&apos;</span>,<span class="hljs-string">&apos;283818181&apos;</span>,<span class="hljs-number">1867141331</span>),
+(<span class="hljs-string">&apos;&#x5434;&#x5766;&#x514B;&apos;</span>,<span class="hljs-string">&apos;283818181&apos;</span>,<span class="hljs-number">1851143312</span>),
+(<span class="hljs-string">&apos;&#x8D62;&#x706B;&#x7BAD;&apos;</span>,<span class="hljs-string">&apos;888818181&apos;</span>,<span class="hljs-number">1861243314</span>),
+(<span class="hljs-string">&apos;&#x6218;&#x5730;&#x96F7;&apos;</span>,<span class="hljs-string">&apos;112312312&apos;</span>,<span class="hljs-number">18811431230</span>)
+;
+
+
+#&#x589E;&#x52A0;&#x5B66;&#x751F;
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> student(class_name,customer_id) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;&#x8131;&#x4EA7;3&#x73ED;&apos;</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-string">&apos;&#x5468;&#x672B;19&#x671F;&apos;</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-string">&apos;&#x5468;&#x672B;19&#x671F;&apos;</span>,<span class="hljs-number">5</span>)
+;
+</code></pre>
+<pre><code class="lang-sql">&#x5176;&#x4ED6;&#x4F8B;&#x5B50;
+&#x4F8B;&#x4E00;&#xFF1A;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;
+
+    &#x7528;&#x6237;&#x8868;&#xFF1A;
+    id  name
+   egon
+   alex
+   wupeiqi
+
+
+    &#x535A;&#x5BA2;&#x8868;   
+           fk+unique
+    id url name_id
+ xxxx   1
+ yyyy   3
+ zzz    2
+
+
+
+&#x4F8B;&#x4E8C;&#xFF1A;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x5458;&#x552F;&#x4E00;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7528;&#x6237;
+    &#x7528;&#x6237;&#x8868;&#xFF1A;
+    id user  password
+ egon    xxxx
+ alex    yyyy
+
+    &#x7BA1;&#x7406;&#x5458;&#x8868;&#xFF1A;
+       fk+unique
+    id user_id password
+  1      xxxxx
+  2      yyyyy
+</code></pre>
+<h2 id="&#x4E03;-&#x4F5C;&#x4E1A;"><a name="&#x4E03;-&#x4F5C;&#x4E1A;" class="anchor-navigation-ex-anchor" href="#&#x4E03;-&#x4F5C;&#x4E1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E03; &#x4F5C;&#x4E1A;</h2>
+<p>&#x7EC3;&#x4E60;&#xFF1A;&#x8D26;&#x53F7;&#x4FE1;&#x606F;&#x8868;&#xFF0C;&#x7528;&#x6237;&#x7EC4;&#xFF0C;&#x4E3B;&#x673A;&#x8868;&#xFF0C;&#x4E3B;&#x673A;&#x7EC4;</p>
+<pre><code class="lang-sql">#&#x7528;&#x6237;&#x8868;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span>(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span> auto_increment,
+username <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+<span class="hljs-keyword">password</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+primary <span class="hljs-keyword">key</span>(username,<span class="hljs-keyword">password</span>)
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">user</span>(username,<span class="hljs-keyword">password</span>) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;root&apos;</span>,<span class="hljs-string">&apos;123&apos;</span>),
+(<span class="hljs-string">&apos;egon&apos;</span>,<span class="hljs-string">&apos;456&apos;</span>),
+(<span class="hljs-string">&apos;alex&apos;</span>,<span class="hljs-string">&apos;alex3714&apos;</span>)
+;
+
+
+#&#x7528;&#x6237;&#x7EC4;&#x8868;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> usergroup(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+groupname <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span>
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> usergroup(groupname) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;IT&apos;</span>),
+(<span class="hljs-string">&apos;Sale&apos;</span>),
+(<span class="hljs-string">&apos;Finance&apos;</span>),
+(<span class="hljs-string">&apos;boss&apos;</span>)
+;
+
+
+#&#x4E3B;&#x673A;&#x8868;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> host(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+ip <span class="hljs-built_in">char</span>(<span class="hljs-number">15</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span> <span class="hljs-keyword">default</span> <span class="hljs-string">&apos;127.0.0.1&apos;</span>
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> host(ip) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;172.16.45.2&apos;</span>),
+(<span class="hljs-string">&apos;172.16.31.10&apos;</span>),
+(<span class="hljs-string">&apos;172.16.45.3&apos;</span>),
+(<span class="hljs-string">&apos;172.16.31.11&apos;</span>),
+(<span class="hljs-string">&apos;172.10.45.3&apos;</span>),
+(<span class="hljs-string">&apos;172.10.45.4&apos;</span>),
+(<span class="hljs-string">&apos;172.10.45.5&apos;</span>),
+(<span class="hljs-string">&apos;192.168.1.20&apos;</span>),
+(<span class="hljs-string">&apos;192.168.1.21&apos;</span>),
+(<span class="hljs-string">&apos;192.168.1.22&apos;</span>),
+(<span class="hljs-string">&apos;192.168.2.23&apos;</span>),
+(<span class="hljs-string">&apos;192.168.2.223&apos;</span>),
+(<span class="hljs-string">&apos;192.168.2.24&apos;</span>),
+(<span class="hljs-string">&apos;192.168.3.22&apos;</span>),
+(<span class="hljs-string">&apos;192.168.3.23&apos;</span>),
+(<span class="hljs-string">&apos;192.168.3.24&apos;</span>)
+;
+
+
+#&#x4E1A;&#x52A1;&#x7EBF;&#x8868;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> business(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+business <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span>
+);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> business(business) <span class="hljs-keyword">values</span>
+(<span class="hljs-string">&apos;&#x8F7B;&#x677E;&#x8D37;&apos;</span>),
+(<span class="hljs-string">&apos;&#x968F;&#x4FBF;&#x82B1;&apos;</span>),
+(<span class="hljs-string">&apos;&#x5927;&#x5BCC;&#x7FC1;&apos;</span>),
+(<span class="hljs-string">&apos;&#x7A77;&#x4E00;&#x751F;&apos;</span>)
+;
+
+
+#&#x5EFA;&#x5173;&#x7CFB;&#xFF1A;user&#x4E0E;usergroup
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> user2usergroup(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span> auto_increment,
+user_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+<span class="hljs-keyword">group_id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+primary <span class="hljs-keyword">key</span>(user_id,<span class="hljs-keyword">group_id</span>),
+foreign <span class="hljs-keyword">key</span>(user_id) <span class="hljs-keyword">references</span> <span class="hljs-keyword">user</span>(<span class="hljs-keyword">id</span>),
+foreign <span class="hljs-keyword">key</span>(<span class="hljs-keyword">group_id</span>) <span class="hljs-keyword">references</span> usergroup(<span class="hljs-keyword">id</span>)
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> user2usergroup(user_id,<span class="hljs-keyword">group_id</span>) <span class="hljs-keyword">values</span>
+(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+;
+
+
+
+#&#x5EFA;&#x5173;&#x7CFB;&#xFF1A;host&#x4E0E;business
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> host2business(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span> auto_increment,
+host_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+business_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+primary <span class="hljs-keyword">key</span>(host_id,business_id),
+foreign <span class="hljs-keyword">key</span>(host_id) <span class="hljs-keyword">references</span> host(<span class="hljs-keyword">id</span>),
+foreign <span class="hljs-keyword">key</span>(business_id) <span class="hljs-keyword">references</span> business(<span class="hljs-keyword">id</span>)
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> host2business(host_id,business_id) <span class="hljs-keyword">values</span>
+(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+;
+
+#&#x5EFA;&#x5173;&#x7CFB;&#xFF1A;user&#x4E0E;host
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> user2host(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span> auto_increment,
+user_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+host_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+primary <span class="hljs-keyword">key</span>(user_id,host_id),
+foreign <span class="hljs-keyword">key</span>(user_id) <span class="hljs-keyword">references</span> <span class="hljs-keyword">user</span>(<span class="hljs-keyword">id</span>),
+foreign <span class="hljs-keyword">key</span>(host_id) <span class="hljs-keyword">references</span> host(<span class="hljs-keyword">id</span>)
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> user2host(user_id,host_id) <span class="hljs-keyword">values</span>
+(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">6</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">7</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">8</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">9</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">12</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">13</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">14</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">15</span>),
+(<span class="hljs-number">1</span>,<span class="hljs-number">16</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-number">5</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">10</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">11</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-number">12</span>)
+;
+</code></pre>
+<p><img src="href" alt="img"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3、MySQLl数据类型.html" class="navigation navigation-prev " aria-label="Previous page: 3、MySQLl数据类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5、多表查询之补充.html" class="navigation navigation-next " aria-label="Next page: 5、多表查询之补充">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4、完整性约束","level":"1.3.3.4","depth":3,"next":{"title":"5、多表查询之补充","level":"1.3.3.5","depth":3,"path":"MySQL学习/03-MySQL表操作/5、多表查询之补充.md","ref":"MySQL学习/03-MySQL表操作/5、多表查询之补充.md","articles":[]},"previous":{"title":"3、MySQLl数据类型","level":"1.3.3.3","depth":3,"path":"MySQL学习/03-MySQL表操作/3、MySQLl数据类型.md","ref":"MySQL学习/03-MySQL表操作/3、MySQLl数据类型.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"MySQL学习/03-MySQL表操作/4、完整性约束.md","mtime":"2018-06-12T01:20:56.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

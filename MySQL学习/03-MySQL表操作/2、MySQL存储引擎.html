@@ -1,0 +1,780 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2、MySQL存储引擎 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wenshiguo">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3、MySQLl数据类型.html" />
+    
+    
+    <link rel="prev" href="1、MySQL表操作.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../SUMMARY.html">
+            
+                <a href="../../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MySQL学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-初识数据库.html">
+            
+                <a href="../01-初识数据库.html">
+            
+                    
+                    初识数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-MySQL库操作.html">
+            
+                <a href="../02-MySQL库操作.html">
+            
+                    
+                    MySQL库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL表操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="1、MySQL表操作.html">
+            
+                <a href="1、MySQL表操作.html">
+            
+                    
+                    1、MySQL表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.2" data-path="2、MySQL存储引擎.html">
+            
+                <a href="2、MySQL存储引擎.html">
+            
+                    
+                    2、MySQL存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="3、MySQLl数据类型.html">
+            
+                <a href="3、MySQLl数据类型.html">
+            
+                    
+                    3、MySQLl数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="4、完整性约束.html">
+            
+                <a href="4、完整性约束.html">
+            
+                    
+                    4、完整性约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="5、多表查询之补充.html">
+            
+                <a href="5、多表查询之补充.html">
+            
+                    
+                    5、多表查询之补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../04-MySQL数据操作/">
+            
+                <a href="../04-MySQL数据操作/">
+            
+                    
+                    MySQL数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                <a href="../04-MySQL数据操作/1、MySQL数据操作.html">
+            
+                    
+                    1、MySQL数据操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../04-MySQL数据操作/2、单表查询.html">
+            
+                <a href="../04-MySQL数据操作/2、单表查询.html">
+            
+                    
+                    2、单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../04-MySQL数据操作/3、多表查询.html">
+            
+                <a href="../04-MySQL数据操作/3、多表查询.html">
+            
+                    
+                    3、多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                <a href="../04-MySQL数据操作/4、MySQL逻辑查询语句执行顺序.html">
+            
+                    
+                    4、MySQL逻辑查询语句执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                <a href="../04-MySQL数据操作/5、多表查询解析.html">
+            
+                    
+                    5、多表查询解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Python3连接MySQL.html">
+            
+                <a href="../Python3连接MySQL.html">
+            
+                    
+                    Python3连接MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../python/">
+            
+                <a href="../../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../python/Django/01.Django初识.html">
+            
+                <a href="../../python/Django/01.Django初识.html">
+            
+                    
+                    Django初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                <a href="../../python/Django/02.Web框架本质及第一个Django实例.html">
+            
+                    
+                    Web框架本质及第一个Django实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../python/Django/03.HTTP协议.html">
+            
+                <a href="../../python/Django/03.HTTP协议.html">
+            
+                    
+                    HTTP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../python/Django/04.Django框架简介.html">
+            
+                <a href="../../python/Django/04.Django框架简介.html">
+            
+                    
+                    Django框架简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../python/Django/05.Django的视图.html">
+            
+                <a href="../../python/Django/05.Django的视图.html">
+            
+                    
+                    Django的视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../python/Django/06.Django的路由系统.html">
+            
+                <a href="../../python/Django/06.Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../python/Django/07.Django模板系统.html">
+            
+                <a href="../../python/Django/07.Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../python/Django/08.Django模型ORM.html">
+            
+                <a href="../../python/Django/08.Django模型ORM.html">
+            
+                    
+                    Django模型ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../python/Django/09.Django路由系统.html">
+            
+                <a href="../../python/Django/09.Django路由系统.html">
+            
+                    
+                    Django路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../python/Django/10.ORM相关操作.html">
+            
+                <a href="../../python/Django/10.ORM相关操作.html">
+            
+                    
+                    ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../python/Django/111.ORM版学员管理系统.html">
+            
+                <a href="../../python/Django/111.ORM版学员管理系统.html">
+            
+                    
+                    ORM版学员管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../python/Django/11.Form组件.html">
+            
+                <a href="../../python/Django/11.Form组件.html">
+            
+                    
+                    Form组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../python/Django/博客项目点赞与灭操作.html">
+            
+                <a href="../../python/Django/博客项目点赞与灭操作.html">
+            
+                    
+                    博客项目点赞与灭操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../python/Django/博客项目评论.html">
+            
+                <a href="../../python/Django/博客项目评论.html">
+            
+                    
+                    博客项目评论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../python/lufei-payment/luffy结算中心.html">
+            
+                <a href="../../python/lufei-payment/luffy结算中心.html">
+            
+                    
+                    luffy结算中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2、MySQL存储引擎</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#2&#x3001;mysql&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>2&#x3001;MySQL&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>&#x4E00; &#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>&#x4E8C; mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>&#x4E09; &#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li></ul></ul></div><a href="#2&#x3001;mysql&#x5B58;&#x50A8;&#x5F15;&#x64CE;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="2&#x3001;mysql&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><a name="2&#x3001;mysql&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="anchor-navigation-ex-anchor" href="#2&#x3001;mysql&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;MySQL&#x5B58;&#x50A8;&#x5F15;&#x64CE;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#2&#x3001;mysql&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>2&#x3001;MySQL&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-&#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>&#x4E00; &#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>&#x4E8C; mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><b></b>&#x4E09; &#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></li></ul></ul></div>
+
+<h2 id="&#x4E00;-&#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><a name="&#x4E00;-&#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="anchor-navigation-ex-anchor" href="#&#x4E00;-&#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00; &#x4EC0;&#x4E48;&#x662F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</h2>
+<p>mysql&#x4E2D;&#x5EFA;&#x7ACB;&#x7684;&#x5E93;===&gt;&#x6587;&#x4EF6;&#x5939;</p>
+<p>&#x5E93;&#x4E2D;&#x5EFA;&#x7ACB;&#x7684;&#x8868;===&gt;&#x6587;&#x4EF6;</p>
+<p>&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x6211;&#x4EEC;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x6587;&#x4EF6;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6BCF;&#x79CD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;&#x5404;&#x81EA;&#x4E0D;&#x540C;&#x7684;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF1A;&#x6BD4;&#x5982;&#x5904;&#x7406;&#x6587;&#x672C;&#x7528;txt&#x7C7B;&#x578B;&#xFF0C;&#x5904;&#x7406;&#x8868;&#x683C;&#x7528;excel&#xFF0C;&#x5904;&#x7406;&#x56FE;&#x7247;&#x7528;png&#x7B49;</p>
+<p>&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x4E5F;&#x5E94;&#x8BE5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8868;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x4F1A;&#x5BF9;&#x5E94;mysql&#x4E0D;&#x540C;&#x7684;&#x5B58;&#x53D6;&#x673A;&#x5236;&#xFF0C;&#x8868;&#x7C7B;&#x578B;&#x53C8;&#x79F0;&#x4E3A;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;</p>
+<p>&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x8BF4;&#x767D;&#x4E86;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3001;&#x5982;&#x4F55;&#x4E3A;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x548C;&#x5982;&#x4F55;&#x66F4;&#x65B0;&#x3001;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7B49;&#x6280;&#x672F;&#x7684;&#x5B9E;&#x73B0;&#x65B9;
+&#x6CD5;&#x3002;&#x56E0;&#x4E3A;&#x5728;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x662F;&#x4EE5;&#x8868;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x4E5F;&#x53EF;&#x4EE5;&#x79F0;&#x4E3A;&#x8868;&#x7C7B;&#x578B;&#xFF08;&#x5373;&#x5B58;&#x50A8;&#x548C;
+&#x64CD;&#x4F5C;&#x6B64;&#x8868;&#x7684;&#x7C7B;&#x578B;&#xFF09;</p>
+<p>&#x5728;Oracle &#x548C;SQL Server&#x7B49;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x6240;&#x6709;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7BA1;&#x7406;&#x673A;&#x5236;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x800C;MySql
+&#x6570;&#x636E;&#x5E93;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x9700;&#x6C42;&#x4E3A;&#x6570;&#x636E;&#x8868;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x7528;&#x6237;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;
+&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x8981;&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</p>
+<p><img src="http://m.qpic.cn/psb?/V102A2lz4CNKDM/Tlmf4zDjjP*LnRunZVRjna6deZNYThLUarpy6w1YYoo!/b/dFYBAAAAAAAA&amp;bo=6wFEAQAAAAADJ60!&amp;rf=viewer_4" alt="image"></p>
+<p>SQL &#x89E3;&#x6790;&#x5668;&#x3001;SQL &#x4F18;&#x5316;&#x5668;&#x3001;&#x7F13;&#x51B2;&#x6C60;&#x3001;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7B49;&#x7EC4;&#x4EF6;&#x5728;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x90FD;&#x5B58;&#x5728;,&#x4F46;&#x4E0D;&#x662F;&#x6BCF; &#x4E2A;&#x6570;&#x636E;&#x5E93;&#x90FD;&#x6709;&#x8FD9;&#x4E48;&#x591A;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;MySQL &#x7684;&#x63D2;&#x4EF6;&#x5F0F;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x53EF;&#x4EE5;&#x8BA9;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x5C42;&#x7684;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x8BBE; &#x8BA1;&#x4ED6;&#x4EEC;&#x5E0C;&#x671B;&#x7684;&#x5B58;&#x50A8;&#x5C42;,&#x4F8B;&#x5982;,&#x6709;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x4E8B;&#x52A1;&#x7684;&#x8981;&#x6C42;,&#x6709;&#x7684;&#x5E94;&#x7528;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x5BF9;&#x4E8B;&#x52A1;&#x6709;&#x8FD9; &#x4E48;&#x5F3A;&#x7684;&#x8981;&#x6C42; ;&#x6709;&#x7684;&#x5E0C;&#x671B;&#x6570;&#x636E;&#x80FD;&#x6301;&#x4E45;&#x5B58;&#x50A8;,&#x6709;&#x7684;&#x53EA;&#x5E0C;&#x671B;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;,&#x4E34;&#x65F6;&#x5E76;&#x5FEB;&#x901F;&#x5730;&#x63D0;&#x4F9B;&#x5BF9;&#x6570;&#x636E; &#x7684;&#x67E5;&#x8BE2;&#x3002; </p>
+<h2 id="&#x4E8C;-mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><a name="&#x4E8C;-mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C; mysql&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</h2>
+<pre><code>#&#x67E5;&#x770B;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;
+MariaDB [(none)]&gt; show engines\G  #&#x67E5;&#x770B;&#x6240;&#x6709;&#x652F;&#x6301;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;
+MariaDB [(none)]&gt; show variables like &apos;storage_engine%&apos;;
+</code></pre><p>MySQL&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x4ECB;&#x7ECD;</p>
+<pre><code>#InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;
+&#x652F;&#x6301;&#x4E8B;&#x52A1;,&#x5176;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x4E3B;&#x8981;&#x9762;&#x5411;&#x8054;&#x673A;&#x4E8B;&#x52A1;&#x5904;&#x7406;(OLTP)&#x7684;&#x5E94;&#x7528;&#x3002;&#x5176;
+&#x7279;&#x70B9;&#x662F;&#x884C;&#x9501;&#x8BBE;&#x8BA1;&#x3001;&#x652F;&#x6301;&#x5916;&#x952E;,&#x5E76;&#x652F;&#x6301;&#x7C7B;&#x4F3C; Oracle &#x7684;&#x975E;&#x9501;&#x5B9A;&#x8BFB;,&#x5373;&#x9ED8;&#x8BA4;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x9501;&#x3002; &#x4ECE; MySQL 5.5.8 &#x7248;&#x672C;&#x5F00;&#x59CB;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;
+InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x5C06;&#x6570;&#x636E;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x903B;&#x8F91;&#x7684;&#x8868;&#x7A7A;&#x95F4;&#x4E2D;,&#x8FD9;&#x4E2A;&#x8868;&#x7A7A;&#x95F4;&#x5C31;&#x50CF;&#x9ED1;&#x76D2;&#x4E00;&#x6837;&#x7531; InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x81EA;&#x8EAB;&#x6765;&#x7BA1;&#x7406;&#x3002;&#x4ECE; MySQL 4.1(&#x5305;&#x62EC; 4.1)&#x7248;&#x672C;&#x5F00;&#x59CB;,&#x53EF;&#x4EE5;&#x5C06;&#x6BCF;&#x4E2A; InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7684; &#x8868;&#x5355;&#x72EC;&#x5B58;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684; ibd &#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x6B64;&#x5916;,InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x652F;&#x6301;&#x5C06;&#x88F8;&#x8BBE;&#x5907;(row disk)&#x7528; &#x4E8E;&#x5EFA;&#x7ACB;&#x5176;&#x8868;&#x7A7A;&#x95F4;&#x3002;
+InnoDB &#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x591A;&#x7248;&#x672C;&#x5E76;&#x53D1;&#x63A7;&#x5236;(MVCC)&#x6765;&#x83B7;&#x5F97;&#x9AD8;&#x5E76;&#x53D1;&#x6027;,&#x5E76;&#x4E14;&#x5B9E;&#x73B0;&#x4E86; SQL &#x6807;&#x51C6; &#x7684; 4 &#x79CD;&#x9694;&#x79BB;&#x7EA7;&#x522B;,&#x9ED8;&#x8BA4;&#x4E3A; REPEATABLE &#x7EA7;&#x522B;,&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x79F0;&#x4E3A; netx-key locking &#x7684;&#x7B56;&#x7565;&#x6765; &#x907F;&#x514D;&#x5E7B;&#x8BFB;(phantom)&#x73B0;&#x8C61;&#x7684;&#x4EA7;&#x751F;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;,InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x63D2;&#x5165;&#x7F13;&#x51B2;(insert buffer)&#x3001;&#x4E8C;&#x6B21;&#x5199;(double write)&#x3001;&#x81EA;&#x9002;&#x5E94;&#x54C8;&#x5E0C;&#x7D22;&#x5F15;(adaptive hash index)&#x3001;&#x9884;&#x8BFB;(read ahead) &#x7B49;&#x9AD8;&#x6027;&#x80FD;&#x548C;&#x9AD8;&#x53EF;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002;
+&#x5BF9;&#x4E8E;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;,InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x91C7;&#x7528;&#x4E86;&#x805A;&#x96C6;(clustered)&#x7684;&#x65B9;&#x5F0F;,&#x6BCF;&#x5F20;&#x8868;&#x90FD;&#x662F;&#x6309; &#x4E3B;&#x952E;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x5B58;&#x50A8;&#x7684;,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x5730;&#x5728;&#x8868;&#x5B9A;&#x4E49;&#x65F6;&#x6307;&#x5B9A;&#x4E3B;&#x952E;,InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E00; &#x884C;&#x751F;&#x6210;&#x4E00;&#x4E2A; 6 &#x5B57;&#x8282;&#x7684; ROWID,&#x5E76;&#x4EE5;&#x6B64;&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#x3002;
+InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x662F; MySQL &#x6570;&#x636E;&#x5E93;&#x6700;&#x4E3A;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5F15;&#x64CE;,Facebook&#x3001;Google&#x3001;Yahoo &#x7B49; &#x516C;&#x53F8;&#x7684;&#x6210;&#x529F;&#x5E94;&#x7528;&#x5DF2;&#x7ECF;&#x8BC1;&#x660E;&#x4E86; InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x5177;&#x5907;&#x9AD8;&#x53EF;&#x7528;&#x6027;&#x3001;&#x9AD8;&#x6027;&#x80FD;&#x4EE5;&#x53CA;&#x9AD8;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x3002;&#x5BF9;&#x5176; &#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x7684;&#x638C;&#x63E1;&#x548C;&#x7406;&#x89E3;&#x4E5F;&#x9700;&#x8981;&#x65F6;&#x95F4;&#x548C;&#x6280;&#x672F;&#x7684;&#x79EF;&#x7D2F;&#x3002;&#x5982;&#x679C;&#x60F3;&#x6DF1;&#x5165;&#x4E86;&#x89E3; InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7684;&#x5DE5;&#x4F5C; &#x539F;&#x7406;&#x3001;&#x5B9E;&#x73B0;&#x548C;&#x5E94;&#x7528;,&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x300A;MySQL &#x6280;&#x672F;&#x5185;&#x5E55;:InnoDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x300B;&#x4E00;&#x4E66;&#x3002;
+
+#MyISAM &#x5B58;&#x50A8;&#x5F15;&#x64CE;
+&#x4E0D;&#x652F;&#x6301;&#x4E8B;&#x52A1;&#x3001;&#x8868;&#x9501;&#x8BBE;&#x8BA1;&#x3001;&#x652F;&#x6301;&#x5168;&#x6587;&#x7D22;&#x5F15;,&#x4E3B;&#x8981;&#x9762;&#x5411;&#x4E00;&#x4E9B; OLAP &#x6570; &#x636E;&#x5E93;&#x5E94;&#x7528;,&#x5728; MySQL 5.5.8 &#x7248;&#x672C;&#x4E4B;&#x524D;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;(&#x9664; Windows &#x7248;&#x672C;&#x5916;)&#x3002;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF; &#x4E0E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#x5BF9;&#x4E8B;&#x52A1;&#x7684;&#x652F;&#x6301;,MyISAM &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x4E8B;&#x52A1;&#x7684;&#x3002;&#x7A76;&#x5176;&#x6839; &#x672C;,&#x8FD9;&#x4E5F;&#x5E76;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x3002;&#x7528;&#x6237;&#x5728;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x662F;&#x5426;&#x90FD;&#x9700;&#x8981;&#x4E8B;&#x52A1;&#x5462;?&#x5728;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x4E2D;,&#x5982;&#x679C;&#x6CA1;&#x6709; ETL &#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;,&#x53EA;&#x662F;&#x7B80;&#x5355;&#x5730;&#x901A;&#x8FC7;&#x62A5;&#x8868;&#x67E5;&#x8BE2;&#x8FD8;&#x9700;&#x8981;&#x4E8B;&#x52A1;&#x7684;&#x652F;&#x6301;&#x5417;?&#x6B64;&#x5916;,MyISAM &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7684; &#x53E6;&#x4E00;&#x4E2A;&#x4E0E;&#x4F17;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x662F;,&#x5B83;&#x7684;&#x7F13;&#x51B2;&#x6C60;&#x53EA;&#x7F13;&#x5B58;(cache)&#x7D22;&#x5F15;&#x6587;&#x4EF6;,&#x800C;&#x4E0D;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x6587;&#x4EF6;,&#x8FD9;&#x4E0E; &#x5927;&#x591A;&#x6570;&#x7684;&#x6570;&#x636E;&#x5E93;&#x90FD;&#x4E0D;&#x76F8;&#x540C;&#x3002;
+
+#NDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;
+&#x5E74;,MySQL AB &#x516C;&#x53F8;&#x4ECE; Sony Ericsson &#x516C;&#x53F8;&#x6536;&#x8D2D;&#x4E86; NDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002; NDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x662F;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x5B58;&#x50A8;&#x5F15;&#x64CE;,&#x7C7B;&#x4F3C;&#x4E8E; Oracle &#x7684; RAC &#x96C6;&#x7FA4;,&#x4E0D;&#x8FC7;&#x4E0E; Oracle RAC &#x7684; share everything &#x7ED3;&#x6784;&#x4E0D;&#x540C;&#x7684;&#x662F;,&#x5176;&#x7ED3;&#x6784;&#x662F; share nothing &#x7684;&#x96C6;&#x7FA4;&#x67B6;&#x6784;,&#x56E0;&#x6B64;&#x80FD;&#x63D0;&#x4F9B;&#x66F4;&#x9AD8;&#x7EA7;&#x522B;&#x7684; &#x9AD8;&#x53EF;&#x7528;&#x6027;&#x3002;NDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7684;&#x7279;&#x70B9;&#x662F;&#x6570;&#x636E;&#x5168;&#x90E8;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;(&#x4ECE; 5.1 &#x7248;&#x672C;&#x5F00;&#x59CB;,&#x53EF;&#x4EE5;&#x5C06;&#x975E;&#x7D22;&#x5F15;&#x6570; &#x636E;&#x653E;&#x5728;&#x78C1;&#x76D8;&#x4E0A;),&#x56E0;&#x6B64;&#x4E3B;&#x952E;&#x67E5;&#x627E;(primary key lookups)&#x7684;&#x901F;&#x5EA6;&#x6781;&#x5FEB;,&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x5728;&#x7EBF;&#x6DFB;&#x52A0; NDB &#x6570;&#x636E;&#x5B58;&#x50A8;&#x8282;&#x70B9;(data node)&#x4EE5;&#x4FBF;&#x7EBF;&#x6027;&#x5730;&#x63D0;&#x9AD8;&#x6570;&#x636E;&#x5E93;&#x6027;&#x80FD;&#x3002;&#x7531;&#x6B64;&#x53EF;&#x89C1;,NDB &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x662F;&#x9AD8;&#x53EF;&#x7528;&#x3001; &#x9AD8;&#x6027;&#x80FD;&#x3001;&#x9AD8;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x7684;&#x6570;&#x636E;&#x5E93;&#x96C6;&#x7FA4;&#x7CFB;&#x7EDF;,&#x5176;&#x9762;&#x5411;&#x7684;&#x4E5F;&#x662F; OLTP &#x7684;&#x6570;&#x636E;&#x5E93;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x3002;
+
+#Memory &#x5B58;&#x50A8;&#x5F15;&#x64CE;
+&#x6B63;&#x5982;&#x5176;&#x540D;,Memory &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x90FD;&#x5B58;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;,&#x6570;&#x636E;&#x5E93;&#x91CD; &#x542F;&#x6216;&#x53D1;&#x751F;&#x5D29;&#x6E83;,&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x90FD;&#x5C06;&#x6D88;&#x5931;&#x3002;&#x5B83;&#x975E;&#x5E38;&#x9002;&#x5408;&#x4E8E;&#x5B58;&#x50A8; OLTP &#x6570;&#x636E;&#x5E93;&#x5E94;&#x7528;&#x4E2D;&#x4E34;&#x65F6;&#x6570;&#x636E;&#x7684;&#x4E34;&#x65F6;&#x8868;,&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A; OLAP &#x6570;&#x636E;&#x5E93;&#x5E94;&#x7528;&#x4E2D;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x7684;&#x7EF4;&#x5EA6;&#x8868;&#x3002;Memory &#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x54C8;&#x5E0C; &#x7D22;&#x5F15;,&#x800C;&#x4E0D;&#x662F;&#x901A;&#x5E38;&#x719F;&#x6089;&#x7684; B+ &#x6811;&#x7D22;&#x5F15;&#x3002;
+
+#Infobright &#x5B58;&#x50A8;&#x5F15;&#x64CE;
+&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;&#x5176;&#x7279;&#x70B9;&#x662F;&#x5B58;&#x50A8;&#x662F;&#x6309;&#x7167;&#x5217;&#x800C;&#x975E;&#x884C;&#x7684;,&#x56E0;&#x6B64;&#x975E;&#x5E38; &#x9002;&#x5408; OLAP &#x7684;&#x6570;&#x636E;&#x5E93;&#x5E94;&#x7528;&#x3002;&#x5176;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x662F; http://www.infobright.org/,&#x4E0A;&#x9762;&#x6709;&#x4E0D;&#x5C11;&#x6210;&#x529F;&#x7684;&#x6570;&#x636E; &#x4ED3;&#x5E93;&#x6848;&#x4F8B;&#x53EF;&#x4F9B;&#x5206;&#x6790;&#x3002;
+
+#NTSE &#x5B58;&#x50A8;&#x5F15;&#x64CE;
+&#x7F51;&#x6613;&#x516C;&#x53F8;&#x5F00;&#x53D1;&#x7684;&#x9762;&#x5411;&#x5176;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;&#x76EE;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E0D;&#x652F;&#x6301;&#x4E8B;&#x52A1;, &#x4F46;&#x63D0;&#x4F9B;&#x538B;&#x7F29;&#x3001;&#x884C;&#x7EA7;&#x7F13;&#x5B58;&#x7B49;&#x7279;&#x6027;,&#x4E0D;&#x4E45;&#x7684;&#x5C06;&#x6765;&#x4F1A;&#x5B9E;&#x73B0;&#x9762;&#x5411;&#x5185;&#x5B58;&#x7684;&#x4E8B;&#x52A1;&#x652F;&#x6301;&#x3002;
+
+#BLACKHOLE
+&#x9ED1;&#x6D1E;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E8E;&#x4E3B;&#x5907;&#x590D;&#x5236;&#x4E2D;&#x7684;&#x5206;&#x53D1;&#x4E3B;&#x5E93;&#x3002;
+
+MySQL &#x6570;&#x636E;&#x5E93;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x5176;&#x4ED6;&#x5B58;&#x50A8;&#x5F15;&#x64CE;,&#x4E0A;&#x8FF0;&#x53EA;&#x662F;&#x5217;&#x4E3E;&#x4E86;&#x6700;&#x4E3A;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x5F15;&#x64CE;&#x3002;&#x5982;&#x679C; &#x4F60;&#x559C;&#x6B22;,&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4E13;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x5F15;&#x64CE;,&#x8FD9;&#x5C31;&#x662F;&#x5F00;&#x6E90;&#x8D4B;&#x4E88;&#x6211;&#x4EEC;&#x7684;&#x80FD;&#x529B;,&#x4E5F;&#x662F;&#x5F00;&#x6E90;&#x7684;&#x9B45; &#x529B;&#x6240;&#x5728;&#x3002;
+</code></pre><h2 id="&#x4E09;-&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><a name="&#x4E09;-&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="anchor-navigation-ex-anchor" href="#&#x4E09;-&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09; &#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</h2>
+<p>&#x65B9;&#x6CD5;1&#xFF1A;&#x5EFA;&#x8868;&#x65F6;&#x6307;&#x5B9A;</p>
+<pre><code>MariaDB [db1]&gt; creat table innodb_t1(id int,name char)engine=innodb;
+MariaDB [db1]&gt; create table innodb_t2(id int)engine=innodb;
+MariaDB [db1]&gt; show create table innodb_t1;
+MariaDB [db1]&gt; show create table innodb_t2;
+</code></pre><p>&#x65B9;&#x6CD5;2&#xFF1A;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</p>
+<pre><code>/etc/my.cnf
+[mysqld]
+default-storage-engine=INNODB
+innodb_file_per_table=1
+</code></pre><p>&#x67E5;&#x770B;</p>
+<pre><code>[root@egon db1]# cd /var/lib/mysql/db1/
+[root@egon db1]# ls
+db.opt  innodb_t1.frm  innodb_t1.ibd  innodb_t2.frm  innodb_t2.ibd
+</code></pre><p>&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x8868;&#xFF0C;&#x5206;&#x522B;&#x4F7F;&#x7528;innodb&#xFF0C;myisam&#xFF0C;memory&#xFF0C;blackhole&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6570;&#x636E;&#x6D4B;&#x8BD5;</p>
+<pre><code>MariaDB [db1]&gt; create table t1(id int)engine=innodb;
+MariaDB [db1]&gt; create table t2(id int)engine=myisam;
+MariaDB [db1]&gt; create table t3(id int)engine=memory;
+MariaDB [db1]&gt; create table t4(id int)engine=blackhole;
+MariaDB [db1]&gt; quit
+[root@egon db1]# ls /var/lib/mysql/db1/ #&#x53D1;&#x73B0;&#x540E;&#x4E24;&#x79CD;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x53EA;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x65E0;&#x6570;&#x636E;
+db.opt  t1.frm  t1.ibd  t2.MYD  t2.MYI  t2.frm  t3.frm  t4.frm
+
+#memory&#xFF0C;&#x5728;&#x91CD;&#x542F;mysql&#x6216;&#x8005;&#x91CD;&#x542F;&#x673A;&#x5668;&#x540E;&#xFF0C;&#x8868;&#x5185;&#x6570;&#x636E;&#x6E05;&#x7A7A;
+#blackhole&#xFF0C;&#x5F80;&#x8868;&#x5185;&#x63D2;&#x5165;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#xFF0C;&#x90FD;&#x76F8;&#x5F53;&#x4E8E;&#x4E22;&#x5165;&#x9ED1;&#x6D1E;&#xFF0C;&#x8868;&#x5185;&#x6C38;&#x8FDC;&#x4E0D;&#x5B58;&#x8BB0;&#x5F55;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1、MySQL表操作.html" class="navigation navigation-prev " aria-label="Previous page: 1、MySQL表操作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3、MySQLl数据类型.html" class="navigation navigation-next " aria-label="Next page: 3、MySQLl数据类型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2、MySQL存储引擎","level":"1.3.3.2","depth":3,"next":{"title":"3、MySQLl数据类型","level":"1.3.3.3","depth":3,"path":"MySQL学习/03-MySQL表操作/3、MySQLl数据类型.md","ref":"MySQL学习/03-MySQL表操作/3、MySQLl数据类型.md","articles":[]},"previous":{"title":"1、MySQL表操作","level":"1.3.3.1","depth":3,"path":"MySQL学习/03-MySQL表操作/1、MySQL表操作.md","ref":"MySQL学习/03-MySQL表操作/1、MySQL表操作.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/wenshiguo/articles"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/wenshiguo/articles/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"wenshiguo","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"MySQL学习/03-MySQL表操作/2、MySQL存储引擎.md","mtime":"2018-06-12T01:20:56.968Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T01:22:27.093Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
