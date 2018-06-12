@@ -2,6 +2,9 @@
 
 本文介绍Python3连接MySQL的第三方库--PyMySQL的基本使用。
 
+
+<extoc></extoc>
+
 ## PyMySQL介绍
 
 PyMySQL 是在 Python3.x 版本中用于连接 MySQL 服务器的一个库，Python2中则使用mysqldb。

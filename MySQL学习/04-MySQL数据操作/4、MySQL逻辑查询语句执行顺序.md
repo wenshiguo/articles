@@ -1,5 +1,8 @@
 # 4、MySQL逻辑查询语句执行顺序
 
+
+<extoc></extoc>
+
 ## 一 SELECT语句关键字的定义顺序
 
 ```sql
